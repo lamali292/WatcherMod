@@ -40,12 +40,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="images\relics\" />
-	  <Folder Include="images\packed\card_portraits\colorless\" />
-	  <Folder Include="images\powers\" />
-	  <Folder Include="scenes\combat\energy_counters\" />
-	  <Folder Include="scenes\creature_visuals\" />
-	  <Folder Include="scenes\vfx\" />
+		<Folder Include="images\relics\" />
+		<Folder Include="images\packed\card_portraits\colorless\" />
+		<Folder Include="images\powers\" />
+		<Folder Include="scenes\combat\energy_counters\" />
+		<Folder Include="scenes\creature_visuals\" />
+		<Folder Include="scenes\vfx\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -59,12 +59,12 @@
 		<PropertyGroup>
 			<ModManifestPath>$(GodotProject)\mod_manifest.json</ModManifestPath>
 			<ModManifestContent>
-{
-	"pck_name": "$(ModName)",
-	"name": "$(ModDisplayName)",
-	"author": "$(ModAuthor)",
-	"version": "$(ModVersion)"
-}
+				{
+				"pck_name": "$(ModName)",
+				"name": "$(ModDisplayName)",
+				"author": "$(ModAuthor)",
+				"version": "$(ModVersion)"
+				}
 			</ModManifestContent>
 		</PropertyGroup>
 
@@ -72,7 +72,7 @@
 		<Message Text="Generated mod_manifest.json" Importance="high" />
 	</Target>
 
-	
+
 	<Target Name="PostBuild" AfterTargets="Build">
 		<MakeDir Directories="$(ModsOutputDir)" />
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsOutputDir)" />
