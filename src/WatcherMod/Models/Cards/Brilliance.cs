@@ -36,9 +36,7 @@ public sealed class Brilliance() : CardModel(1, CardType.Attack, CardRarity.Rare
         Creature? dealer,
         CardModel? cardSource)
     {
-        if (cardSource == this) return _totalMantraThisCombat;
-
-        return 0m;
+        return cardSource == this ? _totalMantraThisCombat : 0m;
     }
 
     protected override async Task OnPlay(PlayerChoiceContext context, CardPlay play)

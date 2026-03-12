@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cjbhw1m3ra203"]
 
-[ext_resource type="Script" uid="uid://bbfwjpjovwk1s" path="res://src/Core/Nodes/Combat/NEnergyCounter.cs" id="1_1mbsk"]
+[ext_resource type="Script" uid="uid://dp11e6tlcjfk5" path="res://src/Core/SNEnergyCounter.cs" id="1_1mbsk"]
 [ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://themes/canvas_item_material_additive_shared.tres" id="2_ya08b"]
 [ext_resource type="Texture2D" uid="uid://dewhicwsve2aj" path="res://images/ui/combat/energy_counters/energy_burst/energy_orb_shine.png" id="3_5icxl"]
 [ext_resource type="Material" uid="uid://ft58cpw2uxdl" path="res://materials/ui/energy_orb_dark.tres" id="4_tcsga"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://mpaio5lpsfmp" path="res://images/ui/combat/energy_counters/watcher/watcher_orb_layer_5.png" id="9_8ngkv"]
 [ext_resource type="Texture2D" uid="uid://grebkhabi7os" path="res://images/ui/combat/energy_counters/energy_burst/energy_orb_burst.png" id="10_3tt4q"]
 [ext_resource type="FontVariation" uid="uid://bg85h22rkxs6g" path="res://themes/kreon_bold_shared.tres" id="11_tup8n"]
-[ext_resource type="Script" uid="uid://bvh4glj43xhh8" path="res://addons/mega_text/MegaLabel.cs" id="12_d5ucn"]
+[ext_resource type="Script" uid="uid://cneccmn4t8gpr" path="res://src/Core/SMegaLabel.cs" id="12_ya08b"]
 
 [sub_resource type="Curve" id="Curve_umldk"]
 _data = [Vector2(0.00596422, 0.0309963), 0.0, 4.46389, 0, 0, Vector2(0.298211, 0.736162), 0.832039, 0.832039, 0, 0, Vector2(0.99006, 0.932841), -0.247478, 0.0, 0, 0]
@@ -190,6 +190,4 @@ theme_override_font_sizes/font_size = 36
 text = "3/3"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("12_d5ucn")
-MinFontSize = 32
-MaxFontSize = 36
+script = ExtResource("12_ya08b")

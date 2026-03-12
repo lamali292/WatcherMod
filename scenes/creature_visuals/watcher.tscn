@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://kq7dmrg0ygyf"]
 
-[ext_resource type="Script" uid="uid://cghtlla3sw0po" path="res://src/Core/Nodes/Combat/NCreatureVisuals.cs" id="1_se58w"]
+[ext_resource type="Script" uid="uid://claogp36kh2hu" path="res://src/Core/SNCreatureVisuals.cs" id="1_se58w"]
 [ext_resource type="Texture2D" uid="uid://dmgtp1qvf0rd4" path="res://images/packed/Watcher.png" id="2_5occ7"]
 
 [node name="Defect" type="Node2D"]

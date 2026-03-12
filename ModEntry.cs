@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
+using Godot.Bridge;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using WatcherMod.Models.Characters;
@@ -10,6 +12,11 @@ public class ModEntry
     public static void Initialize()
     {
         var harmony = new Harmony("watchermod.patch");
+
+        Log.Info("WatcherMod");
+
+        var assembly = Assembly.GetExecutingAssembly();
+        ScriptManagerBridge.LookupScriptsInAssembly(assembly);
 
         //ProgressSaveManagerCustomCharPatch.Apply(harmony);
         harmony.PatchAll();

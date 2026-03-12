@@ -6,5 +6,4 @@ namespace WatcherMod.Core;
 [GlobalClass]
 public partial class SNRestSiteCharacter : NRestSiteCharacter
 {
-
 }

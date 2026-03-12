@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgy88bk44xxvk"]
 
-[ext_resource type="Script" uid="uid://x0d65dc506fq" path="res://src/Core/Nodes/Combat/NSelectionReticle.cs" id="1_lc2fu"]
-[ext_resource type="Texture2D" uid="uid://hm3yndjsncmt" path="res://images/ui/combat/combat_reticle.png" id="2_75ikg"]
+[ext_resource type="Script" uid="uid://42n22x7pwgct" path="res://src/Core/SNSelectionReticle.cs" id="1_kg5ub"]
+[ext_resource type="Texture2D" uid="uid://d34d8sduc1wa7" path="res://images/ui/combat/combat_reticle.png" id="2_75ikg"]
 
 [node name="SelectionReticle" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ offset_right = 123.0
 offset_bottom = -1.0
 pivot_offset = Vector2(126, 84)
 mouse_filter = 2
-script = ExtResource("1_lc2fu")
+script = ExtResource("1_kg5ub")
 
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 0

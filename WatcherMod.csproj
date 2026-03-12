@@ -37,16 +37,12 @@
 		<Content Include="src\Core\**">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Content>
-
+		<Content Include="local.props" />
+		<Content Include="mod_manifest.json" />
 		<!-- Import-Dateien verstecken -->
-		<None Remove="**\*.import" />
+		<Content Remove="**\*.import" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="src\Core\**\*.cs" />
-		<!-- Falls es noch andere Spiel-Ordner gibt: -->
-		<!-- <Compile Remove="src\GameSystems\**\*.cs" /> -->
-	</ItemGroup>
 
 	<!-- Generate mod_manifest.json -->
 	<Target Name="GenerateModManifest" BeforeTargets="BeforeBuild">
