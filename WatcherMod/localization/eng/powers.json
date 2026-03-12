@@ -82,5 +82,8 @@
   "ESTABLISHMENT_POWER.smartDescription": "Whenever a card is [blue]Retained[/blue], lower its cost by [blue]{Amount}[/blue].",
 
   "MASTER_REALITY_POWER.title": "Master Reality",
-  "MASTER_REALITY_POWER.description": "Whenever a card is created, it is [blue]Upgraded[/blue],"
+  "MASTER_REALITY_POWER.description": "Whenever a card is created, it is [blue]Upgraded[/blue],",
+
+  "DUALITY_POWER.title": "Duality"
+
 }

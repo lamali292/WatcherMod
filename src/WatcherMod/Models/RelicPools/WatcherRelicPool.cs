@@ -22,7 +22,14 @@ public sealed class WatcherRelicPool : RelicPoolModel
     {
         return
         [
-            ModelDb.Relic<PureWater>()
+            ModelDb.Relic<PureWater>(),
+            ModelDb.Relic<Damaru>(),
+            ModelDb.Relic<Duality>(),
+            ModelDb.Relic<TeardropLocket>(),
+            ModelDb.Relic<GoldenEye>(),
+            ModelDb.Relic<HolyWater>(),
+            ModelDb.Relic<VioletLotus>(),
+            ModelDb.Relic<Melange>()
         ];
     }
 

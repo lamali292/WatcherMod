@@ -1,5 +1,34 @@
 {
   "PURE_WATER.description": "At the start of each combat, add 1 [gold]Miracle[/gold] into your hand.",
   "PURE_WATER.flavor": "Filtered through fine sand and free of impurities.",
-  "PURE_WATER.title": "Pure Water"
+  "PURE_WATER.title": "Pure Water",
+
+  "DAMARU.description": "At the start of your turn, gain 1 [gold]Mantra[/gold].",
+  "DAMARU.flavor": "The sound of the small drum keeps your mind awake, revealing a path forward.",
+  "DAMARU.title": "Damaru",
+
+  "DUALITY.description": "Whenever you play an [gold]Attack[/gold], gain 1 temporary [gold]Dexterity[/gold]. ",
+  "DUALITY.flavor": "\"And the sun was extinguished forever, as if curtains fell before it.\" - Zoroth",
+  "DUALITY.title": "Duality",
+
+  "TEARDROP_LOCKET.description": "Start each combat in [gold]Calm[/gold].",
+  "TEARDROP_LOCKET.flavor": "Its owner blind, its contents unseen.",
+  "TEARDROP_LOCKET.title": "Teardrop Locket",
+
+  "GOLEN_EYE.description": "Whenever you [gold]Scry[/gold], [gold]Scry[/gold] 2 additional cards.",
+  "GOLEN_EYE.flavor": "See into the minds of those nearby, predicting their future moves.",
+  "GOLEN_EYE.title": "Golden Eye",
+
+
+  "HOLY_WATER.description": "Replaces [gold]Pure Water[/gold]. At the start of each combat, add 3 [gold]Miracles[/gold] into your hand. ",
+  "HOLY_WATER.flavor": "Collected from a time before the Spire.",
+  "HOLY_WATER.title": "Holy Water",
+
+  "VIOLET_LOTUS.description": "Whenever you exit [gold]Calm[/gold], gain an additional [gold]Energy[/gold]",
+  "VIOLET_LOTUS.flavor": "The old texts describe that the surface of \"mana pools\" were littered with these flowers.",
+  "VIOLET_LOTUS.title": "Violet Lotus",
+
+  "MELANGE.description": "Whenever you shuffle your draw pile, [gold]Scry[/gold] 3.",
+  "MELANGE.flavor": "Mysterious sands from an unknown origin. Smells of cinnamon.",
+  "MELANGE.title": "Melange"
 }

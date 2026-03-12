@@ -16,5 +16,7 @@ public class ExamplePatch
 
 
         //foreach (var card in latestCards) __result.Deck.AddInternal(card.ToMutable());
+        //var customRelic = ModelDb.Relic<Melange>().ToMutable();
+        //__result.AddRelicInternal(customRelic);
     }
 }

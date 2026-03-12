@@ -5,8 +5,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using WatcherMod.Commands;
-using WatcherMod.Models.Stances;
 
 namespace WatcherMod.Models.Cards;
 

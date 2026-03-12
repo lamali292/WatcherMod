@@ -7,9 +7,9 @@ using WatcherMod.Models.Cards;
 
 namespace WatcherMod.Relics;
 
-public sealed class HolyWater : RelicModel
+public sealed class PureWater : RelicModel
 {
-    public override RelicRarity Rarity => RelicRarity.Ancient;
+    public override RelicRarity Rarity => RelicRarity.Starter;
 
 
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
@@ -18,14 +18,8 @@ public sealed class HolyWater : RelicModel
         if (side != pureWater.Owner.Creature.Side || combatState.RoundNumber > 1)
             return;
 
-        var miracles =
-            new CardModel[]
-            {
-                combatState.CreateCard<Miracle>(Owner),
-                combatState.CreateCard<Miracle>(Owner),
-                combatState.CreateCard<Miracle>(Owner)
-            };
-        await CardPileCmd.AddGeneratedCardsToCombat(miracles, PileType.Hand, true);
+        var miracle = combatState.CreateCard<Miracle>(Owner);
+        await CardPileCmd.AddGeneratedCardToCombat(miracle, PileType.Hand, true);
         pureWater.Flash();
     }
 }

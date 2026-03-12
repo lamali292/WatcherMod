@@ -1,4 +1,5 @@
 ﻿using MegaCrit.Sts2.Core.Entities.Creatures;
+using WatcherMod.Relics;
 
 namespace WatcherMod.Models.Stances;
 
@@ -8,7 +9,9 @@ public class CalmStance : StancePower
 
     public override Task OnExitStance(Creature creature)
     {
-        if (creature.IsPlayer) creature.Player!.PlayerCombatState!.GainEnergy(2);
+        var amount = 2;
+        if (creature.Player?.GetRelic<VioletLotus>() != null) amount += 1;
+        if (creature.IsPlayer) creature.Player!.PlayerCombatState!.GainEnergy(amount);
         return base.OnExitStance(creature);
     }
 }

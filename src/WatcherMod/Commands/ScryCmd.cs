@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using WatcherMod.Models.Cards.CardModels;
+using WatcherMod.Relics;
 
 namespace WatcherMod.Commands;
 
@@ -13,10 +14,13 @@ public static class ScryCmd
 
     public static async Task Execute(PlayerChoiceContext choiceContext, Player player, int amount)
     {
+        if (player.GetRelic<GoldenEye>() != null) amount += 2;
+
         if (amount <= 0) return;
 
         var drawPile = PileType.Draw.GetPile(player);
         var cardsToScry = drawPile.Cards.Take(amount).ToList();
+
 
         if (!cardsToScry.Any()) return;
         var prefs = new CardSelectorPrefs(

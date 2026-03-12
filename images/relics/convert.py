@@ -2,7 +2,7 @@ import os
 import numpy as np
 from PIL import Image
 
-radius = 10
+radius = 12
 
 # folder where convert.py is
 script_dir = os.path.dirname(os.path.abspath(__file__))
