@@ -1,13 +1,13 @@
 <Project>
-  <PropertyGroup>
-    <!-- Paths -->
-    <STS2GamePath>D:\SteamLibrary\steamapps\common\Slay the Spire 2</STS2GamePath>
-    <GodotExePath>C:\Users\lamal\Desktop\Programmieren\sts2mods\Godot_v4.5.1-stable_mono_win64\Godot_v4.5.1-stable_mono_win64.exe</GodotExePath>
-    
-    <!-- Mod Metadata -->
-    <ModName>WatcherMod</ModName>
-    <ModDisplayName>Watcher Mod</ModDisplayName>
-    <ModAuthor>lamali</ModAuthor>
-    <ModVersion>1.0.0</ModVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<!-- Paths -->
+		<STS2GamePath>D:\SteamLibrary\steamapps\common\Slay the Spire 2</STS2GamePath>
+		<GodotExePath>C:\Users\lamal\Desktop\Programmieren\sts2mods\Godot_v4.5.1-stable_mono_win64\Godot_v4.5.1-stable_mono_win64.exe</GodotExePath>
+
+		<!-- Mod Metadata -->
+		<ModName>WatcherMod</ModName>
+		<ModDisplayName>The Watcher - Slay the Spire II</ModDisplayName>
+		<ModAuthor>lamali</ModAuthor>
+		<ModVersion>1.0.1</ModVersion>
+	</PropertyGroup>
 </Project>

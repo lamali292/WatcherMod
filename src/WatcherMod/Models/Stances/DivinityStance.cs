@@ -8,6 +8,8 @@ namespace WatcherMod.Models.Stances;
 
 public class DivinityStance : StancePower
 {
+    protected override string AuraScenePath => "res://scenes/watcher_mod/vfx/divinity_aura.tscn";
+
     public override Task OnEnterStance(Creature creature)
     {
         if (creature.IsPlayer) creature.Player!.PlayerCombatState!.GainEnergy(3);
