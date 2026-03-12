@@ -34,8 +34,9 @@ public sealed class Omniscience() : CardModel(4, CardType.Skill, CardRarity.Rare
         if (card != null)
         {
             await CardCmd.AutoPlay(choiceContext, card, null);
+            if (card.Type == CardType.Power) card.HasBeenRemovedFromState = false;
             await CardCmd.AutoPlay(choiceContext, card, null);
-            await CardCmd.Exhaust(choiceContext, card);
+            if (card.Type != CardType.Power) await CardCmd.Exhaust(choiceContext, card);
         }
     }
 

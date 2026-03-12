@@ -9,7 +9,7 @@ using WatcherMod.Models.Powers;
 
 namespace WatcherMod.Models.Cards;
 
-public sealed class SimmeringFury() : CardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public sealed class SimmeringFury() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
