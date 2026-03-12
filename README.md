@@ -103,4 +103,6 @@ I’d greatly appreciate it if you report any problems as issues or contribute f
 Animations are not included because Slay the Spire 2 uses Spine, and I currently don’t have the time or resources to learn it.
 
 
+### Credits
 
+Snumodder - Korean localization. 
