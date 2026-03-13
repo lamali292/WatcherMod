@@ -1,0 +1,33 @@
+{
+  "PURE_WATER.description": "在每场战斗开始时，将1张 [gold]奇迹[/gold] 放入你的手牌。",
+  "PURE_WATER.flavor": "用极细的沙粒过滤的水，去除了一切杂质。",
+  "PURE_WATER.title": "至纯之水",
+
+  "DAMARU.description": "在你的回合开始时，获得1层 [gold]真言[/gold] 。",
+  "DAMARU.flavor": "这面小鼓的声音让你时刻保持神志清醒，仿佛能看见前方何处才有道路。",
+  "DAMARU.title": "手摇鼓",
+
+  "DUALITY.description": "每回合中，你每次打出一张 [gold]攻击[/gold]，获得1点临时 [gold]敏捷[/gold] 。",
+  "DUALITY.flavor": "“于是太阳永远熄灭了，如同天幕在其之前坠下。”——佐罗斯",
+  "DUALITY.title": "两仪",
+
+  "TEARDROP_LOCKET.description": "每场战斗开始时处于 [gold]平静[/gold]。",
+  "TEARDROP_LOCKET.flavor": "盒子的主人双目失明，其中的东西无人知晓。",
+  "TEARDROP_LOCKET.title": "泪滴吊坠盒",
+
+  "GOLEN_EYE.description": "你每次 [gold]预见[/gold] 时，额外 [gold]预见[/gold] 2张卡牌。",
+  "GOLEN_EYE.flavor": "能够看见近处生灵的心智，让你可以预判他们将来的动作。",
+  "GOLEN_EYE.title": "黄金眼",
+
+  "HOLY_WATER.description": "替换 [gold]至纯之水[/gold]。在每场战斗开始时，将3张 [gold]奇迹[/gold] 放入你的手牌。",
+  "HOLY_WATER.flavor": "从高塔出现的时代前收集来的水。",
+  "HOLY_WATER.title": "圣水",
+
+  "VIOLET_LOTUS.description": "每次你离开 [gold]平静[/gold] 时，额外获得1 [gold]能量[/gold] 。",
+  "VIOLET_LOTUS.flavor": "远古的经书上记载着，“法力池”的水面上总是有许多这些花朵。",
+  "VIOLET_LOTUS.title": "紫色莲花",
+
+  "MELANGE.description": "你每次将抽牌堆洗牌时，[gold]预见[/gold] 3。",
+  "MELANGE.flavor": "来源不明的神秘沙子，气味有点像肉桂。",
+  "MELANGE.title": "美琅脂"
+}

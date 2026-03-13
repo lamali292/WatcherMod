@@ -1,0 +1,16 @@
+{
+  "WATCHER.aromaPrinciple": "[sine][purple]唯有自律，方得澄明……[/purple][/sine]",
+  "WATCHER.banter.alive.endTurnPing": "[sine]转瞬即逝。[/sine]",
+  "WATCHER.banter.dead.endTurnPing": "……",
+  "WATCHER.cardsModifierDescription": "观者卡牌现在会出现在奖励与商店中。",
+  "WATCHER.cardsModifierTitle": "观者卡牌",
+  "WATCHER.description": "一名目盲的修行者，前来“评估”高塔。\n掌握运用神圣“姿态”来战斗的方法。",
+  "WATCHER.eventDeathPrevention": "我必须生存下去。平衡全系于此。",
+  "WATCHER.goldMonologue": "[sine]我不求财富……但前路需要准备。[/sine]",
+  "WATCHER.possessiveAdjective": "她的",
+  "WATCHER.pronounObject": "她",
+  "WATCHER.pronounPossessive": "她的",
+  "WATCHER.pronounSubject": "她",
+  "WATCHER.title": "观者",
+  "WATCHER.titleObject": "观者"
+}
