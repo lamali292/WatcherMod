@@ -78,7 +78,7 @@
   "PROTECT.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。",
   
   "INNER_PEACE.title": "内心宁静",
-  "INNER_PEACE.description": "如果你处于 [gold]平静[/gold]，抽 {Cards:diff()} 张牌，否则进入 [gold]平静[/gold]。"
+  "INNER_PEACE.description": "如果你处于 [gold]平静[/gold]，抽 {Cards:diff()} 张牌，否则进入 [gold]平静[/gold]。",
 
   "RUSHDOWN.title": "猛虎下山",
   "RUSHDOWN.description": "每当你进入 [gold]愤怒[/gold] 时，抽 [blue]2[/blue] 张牌。",
@@ -258,5 +258,5 @@
   "WISH_WATCHER.title": "祈愿",
   "WISH_WATCHER.description": "选择一项：\n获得 {PlatingPower:diff()} 层覆甲，\n{StrengthPower:diff()} 点 [gold]力量[/gold]，或 {Gold:diff()} [gold]金币[/gold]。",
 
-  "WISH_WATCHER.selectionScreenPrompt": "选择一张要打出的牌。",
+  "WISH_WATCHER.selectionScreenPrompt": "选择一张要打出的牌。"
 }
