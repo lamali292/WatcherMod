@@ -1,6 +1,8 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using Watcher.Code.Nodes;
 using Watcher.Code.Stances;
 
 namespace Watcher.Code.Commands;
@@ -31,7 +33,7 @@ public static class StanceCmd
     {
         var current = creature.Powers.OfType<StancePower>().FirstOrDefault();
 
-        if (current?.GetType() == newStance?.GetType())
+        if (current?.GetType() == newStance?.GetType() || creature.Player == null)
             return;
 
         if (current != null)
@@ -46,5 +48,15 @@ public static class StanceCmd
             await PowerCmd.Apply(mutable, creature, 1, creature, cardSource);
             await ((StancePower)mutable).OnEnterStance(creature);
         }
+
+        var creatureNode = NCombatRoom.Instance?.GetCreatureNode(creature);
+        var visuals = creatureNode?.Visuals as SNCreatureVisuals;
+        visuals?.SetEyeStance(newStance switch
+        {
+            WrathStance => "wrath",
+            CalmStance => "calm",
+            DivinityStance => "divinity",
+            _ => "RESET"
+        });
     }
 }

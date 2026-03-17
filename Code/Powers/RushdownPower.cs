@@ -25,7 +25,6 @@ public sealed class RushdownPower : CustomPowerModel
         if (power is not WrathStance || amount <= 0 || applier != Owner || Owner.Player == null ||
             !LocalContext.IsMe(Owner.Player))
             return Task.CompletedTask;
-
         RunManager.Instance.ActionQueueSynchronizer.RequestEnqueue(
             new DrawCardsAction(Owner.Player, (uint)Amount));
         Flash();

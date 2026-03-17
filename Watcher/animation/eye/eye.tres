@@ -1,0 +1,8 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://dskhjiqgieduh"]
+
+[ext_resource type="SpineAtlasResource" path="<null>" id="1_pl5xq"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://bml86xwbnjrrq" path="res://Watcher/animation/eye/eye.spskel" id="2_pl5xq"]
+
+[resource]
+atlas_res = ExtResource("1_pl5xq")
+skeleton_file_res = ExtResource("2_pl5xq")

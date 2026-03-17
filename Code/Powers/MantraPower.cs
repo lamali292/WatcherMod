@@ -25,10 +25,11 @@ public sealed class MantraPower : CustomPowerModel
         if (power is not MantraPower || amount <= 0 || applier != Owner || player == null)
             return;
 
-        while (Amount >= 10)
-        {
-            await StanceCmd.EnterDivinity(player.Creature, cardSource);
-            await PowerCmd.ModifyAmount(this, -10m, Owner, cardSource);
-        }
+        var triggers = Amount / 10;
+        if (triggers <= 0) return;
+
+        var totalCost = triggers * 10m;
+        await PowerCmd.ModifyAmount(this, -totalCost, Owner, cardSource);
+        await StanceCmd.EnterDivinity(player.Creature, cardSource);
     }
 }

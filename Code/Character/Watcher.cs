@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Cards.Basic;
+using Watcher.Code.Nodes;
 using Watcher.Code.Relics;
 
 namespace Watcher.Code.Character;
@@ -22,7 +23,7 @@ public class Watcher : CustomCharacterModel
     public override CustomEnergyCounter? CustomEnergyCounter =>
         new CustomEnergyCounter(EnergyCounterPaths, new Color(0.4f, 0.1f, 0.9f), new Color(0.7f, 0.1f, 0.9f));
 
-    public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter.tscn";
+    public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter_empty.tscn";
 
     public override string CustomCharacterSelectLockedIconPath =>
         "res://Watcher/images/watcher/char_select_watcher_locked.png";
@@ -100,6 +101,7 @@ public class Watcher : CustomCharacterModel
         return "res://Watcher/images/ui/combat/energy_counters/watcher/watcher_orb_layer_" + i + ".png";
     }
 
+
     public override List<string> GetArchitectAttackVfx()
     {
         return
@@ -111,6 +113,8 @@ public class Watcher : CustomCharacterModel
 
     public override CreatureAnimator GenerateAnimator(MegaSprite controller)
     {
+        GD.Print("[Watcher] GenerateAnimator called");
+
         var animState = new AnimState("Idle", true);
         var state1 = new AnimState("Idle");
         var state2 = new AnimState("Idle");
@@ -129,6 +133,10 @@ public class Watcher : CustomCharacterModel
         animator.AddAnyState("Attack", state2);
         animator.AddAnyState("Cast", state1);
         animator.AddAnyState("Relaxed", state5);
+
+        var sn = (SNCreatureVisuals)((Node)controller.BoundObject).GetParent();
+        sn.InitEye(controller);
+
         return animator;
     }
 }

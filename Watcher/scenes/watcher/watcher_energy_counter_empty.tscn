@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bohgj75ytcbsr"]
+
+[ext_resource type="Script" uid="uid://dp11e6tlcjfk5" path="res://Code/Nodes/SNEnergyCounter.cs" id="1_alfp2"]
+
+[node name="IroncladEnergyCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(64, 64)
+script = ExtResource("1_alfp2")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
