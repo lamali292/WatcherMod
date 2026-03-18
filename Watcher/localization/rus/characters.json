@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]Через дисциплину я обретаю ясность...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]Мгновение проходит.[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "Карты Созерцающей теперь будут появляться в наградах и магазинах.",
+  "WATCHER-WATCHER.cardsModifierTitle": "Карты Созерцающей",
+  "WATCHER-WATCHER.description": "Слепая аскетка, пришедшая Оценить Шпиль.\nМастер божественных Стоек.",
+  "WATCHER-WATCHER.eventDeathPrevention": "Я должна выжить. От этого зависит равновесие.",
+  "WATCHER-WATCHER.goldMonologue": "[sine]Я не ищу богатства... но путь требует подготовки.[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "её",
+  "WATCHER-WATCHER.pronounObject": "её",
+  "WATCHER-WATCHER.pronounPossessive": "её",
+  "WATCHER-WATCHER.pronounSubject": "она",
+  "WATCHER-WATCHER.title": "Созерцающая",
+  "WATCHER-WATCHER.titleObject": "Созерцающая"
+}
