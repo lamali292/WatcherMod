@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Localization Editor</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif; font-size: 13px;
+      background: #1a1a1f; color: #ddd;
+      height: 100vh; display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Toolbar ── */
+    #toolbar {
+      padding: 8px 12px; background: #111; border-bottom: 1px solid #333;
+      display: flex; align-items: center; gap: 10px;
+      flex-shrink: 0; flex-wrap: wrap;
+    }
+    #toolbar h1 { font-size: 14px; font-weight: 600; color: #fff; }
+
+    select, input[type=text] {
+      padding: 4px 8px; background: #222; border: 1px solid #444; color: #ddd;
+      border-radius: 4px; font-size: 12px; outline: none;
+    }
+    select:focus, input[type=text]:focus { border-color: #7a6fff; }
+    #search { width: 180px; }
+
+    .lang-section { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .lang-label-text { font-size: 11px; color: #555; white-space: nowrap; }
+    #lang-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+    .lang-tag {
+      padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+      cursor: pointer; border: 1.5px solid transparent;
+      transition: opacity 0.15s; user-select: none; opacity: 0.3;
+      background: none;
+    }
+    .lang-tag.active { opacity: 1; }
+
+    .status { font-size: 11px; color: #555; margin-left: auto; transition: color 0.3s; white-space: nowrap; }
+    .status.saved { color: #6af79a; }
+    .status.error { color: #f76a6a; }
+
+    /* ── Add Key ── */
+    #add-key-form { display: flex; align-items: center; gap: 6px; }
+    #add-key-btn {
+      padding: 4px 10px; background: #7a6fff22; border: 1.5px solid #7a6fff66;
+      color: #7a6fff; border-radius: 4px; font-size: 12px; font-weight: 600;
+      cursor: pointer; white-space: nowrap;
+    }
+    #add-key-btn:hover { background: #7a6fff44; }
+    #new-key-input { width: 200px; display: none; border-color: #7a6fff; }
+    #new-key-input.visible { display: block; }
+    #add-key-err { font-size: 11px; color: #f76a6a; display: none; white-space: nowrap; }
+    #add-key-err.visible { display: inline; }
+
+    /* ── Table ── */
+    #table-area { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .table-scroll { flex: 1; overflow: auto; }
+
+    table {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: max-content;
+    }
+    thead { position: sticky; top: 0; z-index: 10; }
+    thead th {
+      background: #111; padding: 0; text-align: left; font-size: 12px;
+      border-bottom: 2px solid #333; border-right: 1px solid #2a2a2a;
+      white-space: nowrap; color: #aaa;
+      position: relative; overflow: hidden;
+    }
+    thead th:first-child { position: sticky; left: 0; z-index: 11; background: #111; }
+    .th-inner { padding: 8px 10px; display: flex; align-items: center; gap: 6px; overflow: hidden; }
+    .lang-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    .resize-handle {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 5px;
+      cursor: col-resize; background: transparent; z-index: 2;
+    }
+    .resize-handle:hover { background: #7a6fff55; }
+    .resize-handle.dragging { background: #7a6fff99; }
+
+    tbody tr { border-bottom: 1px solid #232328; }
+    tbody tr:hover td { background: #1e1e28 !important; }
+    tbody td { border-right: 1px solid #232328; vertical-align: top; padding: 0; overflow: hidden; }
+    tbody td:first-child { position: sticky; left: 0; background: #1a1a1f; overflow: hidden; }
+    tbody tr:hover td:first-child { background: #1e1e28; }
+
+    /* new-row highlight */
+    tbody tr.new-row td { background: #1a1a2e !important; }
+    tbody tr.new-row td:first-child { background: #1a1a2e !important; }
+
+    /* ── Key cell ── */
+    .key-display {
+      padding: 6px 10px; color: #666; font-size: 11px; font-family: monospace;
+      cursor: text; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      user-select: none; line-height: 1.5;
+    }
+    .key-display:hover { color: #999; }
+    .key-input {
+      display: none; width: 100%; padding: 6px 10px;
+      background: #1e1e30; border: none; border-bottom: 1.5px solid #7a6fff;
+      color: #ddd; font-size: 11px; font-family: monospace;
+      outline: none; line-height: 1.5;
+    }
+    .key-input.editing { display: block; }
+    .key-display.editing { display: none; }
+    .rename-error { display: none; color: #f76a6a; font-size: 10px; padding: 0 10px 4px; }
+    .rename-error.visible { display: block; }
+
+    /* ── Value textarea ── */
+    textarea {
+      width: 100%; padding: 6px 10px;
+      background: transparent; border: none;
+      border-left: 2px solid transparent;
+      color: #ddd; font-family: 'Segoe UI', sans-serif; font-size: 12px;
+      resize: none; outline: none; line-height: 1.5;
+      overflow: hidden; display: block;
+      height: calc(1.5em + 12px);
+    }
+    textarea:focus { background: #1e1e30; }
+    textarea.empty { color: #555; background: rgba(192,57,43,0.06); font-style: italic; }
+    textarea.has-newlines { border-left-color: #3a9a6a; }
+    textarea.has-newlines:focus { border-left-color: #5aca8a; }
+    textarea.multiline { height: auto; }
+  </style>
+</head>
+<body>
+
+<div id="toolbar">
+  <h1>🌐 Loc Editor</h1>
+  <label style="font-size:12px;color:#888;">File:</label>
+  <select id="file-select" onchange="switchFile()"></select>
+  <input id="search" type="text" placeholder="Filter keys or values…" oninput="filterRows()">
+  <div class="lang-section">
+    <span class="lang-label-text">Languages:</span>
+    <div id="lang-tags"></div>
+  </div>
+  <div id="add-key-form">
+    <button id="add-key-btn" onclick="toggleAddKey()">＋ New Key</button>
+    <input id="new-key-input" type="text" placeholder="key.name…"
+           onkeydown="handleAddKeyDown(event)" />
+    <span id="add-key-err"></span>
+  </div>
+  <span class="status" id="status"></span>
+</div>
+
+<div id="table-area">
+  <div class="table-scroll">
+    <table id="main-table">
+      <thead><tr id="header-row"></tr></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  // ── Bootstrap data ──────────────────────────────────────────────────────
+  const { files_data: ALL_DATA, all_langs: ALL_LANGS, settings: INIT_SETTINGS } = __PAYLOAD__;
+
+  const COLORS = ['#7a6fff','#f7c46a','#6af79a','#f7906a','#6ac8f7','#f76aaa','#c06af7','#f7e06a','#6af7e0'];
+  const getColor = lang => COLORS[ALL_LANGS.indexOf(lang) % COLORS.length];
+
+  // ── Mutable state ───────────────────────────────────────────────────────
+  const data = JSON.parse(JSON.stringify(ALL_DATA)); // editable copy
+  let settings = JSON.parse(JSON.stringify(INIT_SETTINGS));
+  if (!Array.isArray(settings.activeLangs)) settings.activeLangs = [...ALL_LANGS];
+  settings.activeLangs = settings.activeLangs.filter(l => ALL_LANGS.includes(l));
+  if (settings.activeLangs.length === 0) settings.activeLangs = [...ALL_LANGS];
+
+  const activeLangs = new Set(settings.activeLangs);
+  let currentFile = null;
+  let allKeys = [];
+
+  // ── File selector ───────────────────────────────────────────────────────
+  const fileSel = document.getElementById('file-select');
+  Object.keys(ALL_DATA).sort().forEach(f => {
+    const o = document.createElement('option');
+    o.value = f; o.textContent = f;
+    fileSel.appendChild(o);
+  });
+
+  // ── Language tags ───────────────────────────────────────────────────────
+  const tagsEl = document.getElementById('lang-tags');
+  ALL_LANGS.forEach(lang => {
+    const color = getColor(lang);
+    const btn = document.createElement('button');
+    btn.className = 'lang-tag' + (activeLangs.has(lang) ? ' active' : '');
+    btn.textContent = lang;
+    btn.style.color = color;
+    btn.style.borderColor = color + '66';
+    btn.style.background = color + '18';
+    btn.addEventListener('click', () => {
+      if (activeLangs.has(lang)) {
+        if (activeLangs.size === 1) return;
+        activeLangs.delete(lang);
+        btn.classList.remove('active');
+      } else {
+        activeLangs.add(lang);
+        btn.classList.add('active');
+      }
+      settings.activeLangs = [...activeLangs];
+      saveSettings();
+      renderHeader();
+      renderRows(getCurrentKeys());
+    });
+    tagsEl.appendChild(btn);
+  });
+
+  // ── Init ────────────────────────────────────────────────────────────────
+  switchFile();
+
+  function switchFile() {
+    currentFile = fileSel.value;
+    const keySet = new Set();
+    ALL_LANGS.forEach(l => Object.keys(data[currentFile][l] || {}).forEach(k => keySet.add(k)));
+    allKeys = [...keySet].sort();
+    renderHeader();
+    renderRows(allKeys);
+    updateStatus();
+  }
+
+  function getLangs() { return ALL_LANGS.filter(l => activeLangs.has(l)); }
+
+  // ── Column widths ───────────────────────────────────────────────────────
+  function getW(lang) { return (settings.colWidths || {})[lang] || 300; }
+  function getKeyW() { return settings.keyColWidth || 280; }
+
+  // ── Header ──────────────────────────────────────────────────────────────
+  function renderHeader() {
+    const hr = document.getElementById('header-row');
+    hr.innerHTML = '';
+
+    const keyTh = makeTh('Key', getKeyW(), null);
+    hr.appendChild(keyTh);
+
+    getLangs().forEach(lang => {
+      const color = getColor(lang);
+      const inner = `<span class="lang-dot" style="background:${color}"></span>${lang}`;
+      const th = makeTh(inner, getW(lang), lang);
+      hr.appendChild(th);
+    });
+  }
+
+  function makeTh(labelHtml, width, lang) {
+    const th = document.createElement('th');
+    th.style.width = width + 'px';
+    if (lang) th.dataset.lang = lang;
+    else th.dataset.key = '1';
+    const inner = document.createElement('div');
+    inner.className = 'th-inner';
+    inner.innerHTML = labelHtml;
+    th.appendChild(inner);
+    addResizeHandle(th);
+    return th;
+  }
+
+  // ── Resize ──────────────────────────────────────────────────────────────
+  function addResizeHandle(th) {
+    const handle = document.createElement('div');
+    handle.className = 'resize-handle';
+    th.appendChild(handle);
+    let startX, startW;
+    handle.addEventListener('mousedown', e => {
+      e.preventDefault();
+      startX = e.clientX;
+      startW = th.getBoundingClientRect().width;
+      handle.classList.add('dragging');
+      const onMove = e => {
+        const w = Math.max(60, startW + e.clientX - startX);
+        th.style.width = w + 'px';
+      };
+      const onUp = () => {
+        handle.classList.remove('dragging');
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+        const colWidths = {};
+        document.querySelectorAll('#header-row th[data-lang]').forEach(t => {
+          colWidths[t.dataset.lang] = Math.round(t.getBoundingClientRect().width);
+        });
+        const keyTh = document.querySelector('#header-row th[data-key]');
+        settings.colWidths = colWidths;
+        settings.keyColWidth = keyTh ? Math.round(keyTh.getBoundingClientRect().width) : 280;
+        saveSettings();
+        document.querySelectorAll('textarea').forEach(autoResize);
+      };
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+    });
+  }
+
+  // ── Rows ────────────────────────────────────────────────────────────────
+  function renderRows(keys, highlightKey = null) {
+    const tbody = document.getElementById('table-body');
+    tbody.innerHTML = '';
+    const tas = [];
+    const langs = getLangs();
+
+    keys.forEach(key => {
+      const tr = document.createElement('tr');
+      if (key === highlightKey) tr.classList.add('new-row');
+      tr.appendChild(makeKeyCell(key));
+
+      langs.forEach(lang => {
+        const td = document.createElement('td');
+        const val = data[currentFile][lang]?.[key] ?? '';
+        const ta = document.createElement('textarea');
+        ta.value = val;
+        if (!val) ta.classList.add('empty');
+
+        ta.addEventListener('input', () => {
+          autoResize(ta);
+          ta.classList.toggle('empty', !ta.value);
+          data[currentFile][lang] = data[currentFile][lang] || {};
+          data[currentFile][lang][key] = ta.value;
+          scheduleSave(currentFile, lang, key, ta.value);
+        });
+
+        td.appendChild(ta);
+        tr.appendChild(td);
+        tas.push(ta);
+      });
+
+      tbody.appendChild(tr);
+    });
+
+    requestAnimationFrame(() => tas.forEach(autoResize));
+  }
+
+  // ── Key cell ────────────────────────────────────────────────────────────
+  function makeKeyCell(key) {
+    const td = document.createElement('td');
+
+    const display = document.createElement('div');
+    display.className = 'key-display';
+    display.textContent = key; display.title = key;
+
+    const input = document.createElement('input');
+    input.className = 'key-input';
+    input.type = 'text'; input.value = key; input.dataset.key = key;
+
+    const err = document.createElement('div');
+    err.className = 'rename-error';
+
+    display.addEventListener('click', () => {
+      display.classList.add('editing');
+      input.classList.add('editing');
+      input.focus(); input.select();
+    });
+
+    const commit = () => {
+      const newKey = input.value.trim();
+      const oldKey = input.dataset.key;
+      display.classList.remove('editing');
+      input.classList.remove('editing');
+      err.classList.remove('visible');
+      if (!newKey || newKey === oldKey) { input.value = oldKey; return; }
+
+      if (allKeys.includes(newKey)) {
+        input.value = oldKey;
+        err.textContent = `"${newKey}" already exists`;
+        err.classList.add('visible');
+        return;
+      }
+
+      fetch('/rename', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file: currentFile, old_key: oldKey, new_key: newKey })
+      }).then(r => {
+        if (r.status === 409) {
+          input.value = oldKey;
+          r.text().then(t => { err.textContent = t; err.classList.add('visible'); });
+        } else if (r.ok) {
+          ALL_LANGS.forEach(lang => {
+            const d = data[currentFile][lang];
+            if (d && oldKey in d) { d[newKey] = d[oldKey]; delete d[oldKey]; }
+          });
+          const idx = allKeys.indexOf(oldKey);
+          if (idx !== -1) allKeys[idx] = newKey;
+          display.textContent = newKey; display.title = newKey;
+          input.value = newKey; input.dataset.key = newKey;
+        }
+      });
+    };
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); commit(); }
+      if (e.key === 'Escape') {
+        input.value = input.dataset.key;
+        display.classList.remove('editing');
+        input.classList.remove('editing');
+      }
+    });
+    input.addEventListener('blur', commit);
+
+    td.appendChild(display);
+    td.appendChild(input);
+    td.appendChild(err);
+    return td;
+  }
+
+  // ── Filter ──────────────────────────────────────────────────────────────
+  function getCurrentKeys() {
+    const q = document.getElementById('search').value.toLowerCase();
+    if (!q) return allKeys;
+    return allKeys.filter(k => {
+      if (k.toLowerCase().includes(q)) return true;
+      return ALL_LANGS.some(l => (data[currentFile][l]?.[k] ?? '').toLowerCase().includes(q));
+    });
+  }
+  function filterRows() { renderRows(getCurrentKeys()); }
+
+  // ── Auto-resize textarea ─────────────────────────────────────────────────
+  function autoResize(ta) {
+    const single = parseFloat(getComputedStyle(ta).fontSize) * 1.5 + 12;
+    if (ta.scrollHeight > single + 2) {
+      ta.classList.add('multiline');
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    } else {
+      ta.classList.remove('multiline');
+      ta.style.height = '';
+    }
+  }
+
+  // ── Save ─────────────────────────────────────────────────────────────────
+  const saveTimers = {};
+  function scheduleSave(file, lang, key, value) {
+    const k = file + '|' + lang + '|' + key;
+    clearTimeout(saveTimers[k]);
+    saveTimers[k] = setTimeout(() => doSaveOne(file, lang, key, value), 600);
+  }
+
+  async function doSaveOne(file, lang, key, value) {
+    try {
+      const r = await fetch('/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file, lang, key, value })
+      });
+      if (!r.ok) throw new Error(await r.text());
+      showStatus(`Saved ${lang}/${file}`, 'saved');
+    } catch(e) {
+      showStatus('Save error: ' + e, 'error');
+    }
+  }
+
+  // ── Add Key ───────────────────────────────────────────────────────────────
+  function toggleAddKey() {
+    const input = document.getElementById('new-key-input');
+    const err   = document.getElementById('add-key-err');
+    err.classList.remove('visible');
+    if (input.classList.toggle('visible')) {
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  async function commitAddKey() {
+    const input  = document.getElementById('new-key-input');
+    const err    = document.getElementById('add-key-err');
+    const newKey = input.value.trim();
+    err.classList.remove('visible');
+
+    if (!newKey) { input.classList.remove('visible'); return; }
+
+    if (allKeys.includes(newKey)) {
+      err.textContent = `"${newKey}" already exists`;
+      err.classList.add('visible');
+      return;
+    }
+
+    const r = await fetch('/add_key', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ file: currentFile, key: newKey })
+    });
+
+    if (r.status === 409) {
+      err.textContent = await r.text();
+      err.classList.add('visible');
+      return;
+    }
+    if (!r.ok) {
+      err.textContent = 'Server error';
+      err.classList.add('visible');
+      return;
+    }
+
+    // Update local state
+    ALL_LANGS.forEach(lang => {
+      data[currentFile][lang] = data[currentFile][lang] || {};
+      if (!(newKey in data[currentFile][lang])) data[currentFile][lang][newKey] = '';
+    });
+    allKeys.unshift(newKey);
+
+    input.classList.remove('visible');
+    input.value = '';
+
+    renderRows(getCurrentKeys(), newKey);
+    updateStatus();
+    showStatus(`Added "${newKey}"`, 'saved');
+
+    // Focus first textarea of the new row
+    requestAnimationFrame(() => {
+      const firstTa = document.querySelector('#table-body tr.new-row textarea');
+      if (firstTa) firstTa.focus();
+    });
+  }
+
+  function handleAddKeyDown(e) {
+    if (e.key === 'Enter')  { e.preventDefault(); commitAddKey(); }
+    if (e.key === 'Escape') {
+      document.getElementById('new-key-input').classList.remove('visible');
+      document.getElementById('add-key-err').classList.remove('visible');
+    }
+  }
+
+  // ── Settings ─────────────────────────────────────────────────────────────
+  function saveSettings() {
+    fetch('/settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(settings)
+    }).catch(() => {});
+  }
+
+  // ── Status ────────────────────────────────────────────────────────────────
+  let statusTimer = null;
+  function showStatus(msg, cls) {
+    const el = document.getElementById('status');
+    el.textContent = msg; el.className = 'status ' + (cls || '');
+    clearTimeout(statusTimer);
+    statusTimer = setTimeout(updateStatus, 2500);
+  }
+  function updateStatus() {
+    const el = document.getElementById('status');
+    el.className = 'status';
+    el.textContent = `${allKeys.length} keys · ${ALL_LANGS.length} langs`;
+  }
+</script>
+</body>
+</html>

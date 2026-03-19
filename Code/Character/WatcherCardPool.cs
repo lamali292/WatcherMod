@@ -14,7 +14,7 @@ public sealed class WatcherCardPool : CustomCardPoolModel
     public override Color DeckEntryCardColor => new("ffffff");
 
     public override bool IsColorless => false;
-    
+
     public override string? BigEnergyIconPath => "res://Watcher/images/ui/combat/watcher_energy_icon.png";
     public override string? TextEnergyIconPath => "res://Watcher/images/ui/combat/text_watcher_energy_icon.png";
 }

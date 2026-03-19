@@ -1,88 +1,72 @@
 {
   "WATCHER-CALM_STANCE.title": "명상",
   "WATCHER-CALM_STANCE.description": "이 경지에서 벗어날 때, {energyPrefix:energyIcons(1)} 를 [blue]2[/blue] 얻습니다.",
-
   "WATCHER-WRATH_STANCE.title": "진노",
   "WATCHER-WRATH_STANCE.description": "공격 피해를 두 배로 줍니다. 공격 피해를 두 배로 받습니다.",
-
   "WATCHER-DIVINITY_STANCE.title": "천신",
   "WATCHER-DIVINITY_STANCE.description": "피해를 세 배로 줍니다. {energyPrefix:energyIcons(1)} 를 [blue]3[/blue] 얻습니다. 다음 턴 시작 시 이 경지에서 벗어납니다.",
-
   "WATCHER-MARK_POWER.title": "표식",
   "WATCHER-MARK_POWER.description": "[blue]급소[/blue]를 사용할 때마다, 체력을 [blue]X[/blue] 잃습니다.",
   "WATCHER-MARK_POWER.smartDescription": "[blue]급소[/blue]를 사용할 때마다, 체력을 [blue]{Amount}[/blue] 잃습니다.",
-
   "WATCHER-MANTRA_POWER.title": "만트라",
   "WATCHER-MANTRA_POWER.description": "만트라를 10 얻을 때마다, [blue]강림[/blue]합니다.",
-
   "WATCHER-BATTLE_HYMN_POWER.title": "전투 찬가",
   "WATCHER-BATTLE_HYMN_POWER.description": "턴 시작 시, [blue]엄벌[/blue]을 [blue]X[/blue] 장 손으로 가져옵니다.",
   "WATCHER-BATTLE_HYMN_POWER.smartDescription": "턴 시작 시, [blue]엄벌[/blue]을 [blue]{Amount}[/blue] 장 손으로 가져옵니다.",
-
   "WATCHER-COLLECT_POWER.title": "수집",
   "WATCHER-COLLECT_POWER.description": "다음 [blue]X[/blue] 턴 동안 턴 시작 시 손으로 [blue]기적+[/blue]을 손으로 가져옵니다.",
   "WATCHER-COLLECT_POWER.smartDescription": "다음 [blue]{Amount}[/blue] 턴 동안 턴 시작 시 손으로 [blue]기적+[/blue]을 손으로 가져옵니다.",
-
   "WATCHER-FASTING_POWER.title": "단식",
   "WATCHER-FASTING_POWER.description": "턴 시작 시, {energyPrefix:energyIcons(1)} 를 [blue]X[/blue] 잃습니다.",
   "WATCHER-FASTING_POWER.smartDescription": "턴 시작 시, {energyPrefix:energyIcons(1)} 를 [blue]{Amount}[/blue] 잃습니다.",
-
   "WATCHER-FORESIGHT_POWER.title": "선견지명",
   "WATCHER-FORESIGHT_POWER.description": "턴 시작 시, [blue]예지[/blue] [blue]X[/blue].",
   "WATCHER-FORESIGHT_POWER.smartDescription": "턴 시작 시, [blue]예지[/blue] [blue]{Amount}[/blue].",
-
   "WATCHER-LIKE_WATER_POWER.title": "여류",
   "WATCHER-LIKE_WATER_POWER.description": "턴 종료 시, [blue]명상[/blue] 중이라면, {energyPrefix:energyIcons(1)} 를 [blue]X[/blue] 얻습니다.",
   "WATCHER-LIKE_WATER_POWER.smartDescription": "턴 종료 시, [blue]명상[/blue] 중이라면, {energyPrefix:energyIcons(1)} 를 [blue]{Amount}[/blue] 얻습니다.",
-
   "WATCHER-MENTAL_FORTRESS_POWER.title": "마음의 요새",
   "WATCHER-MENTAL_FORTRESS_POWER.description": "[blue]경지[/blue]를 바꿀 때마다, [gold]방어도[/gold]를 [blue]X[/blue] 얻습니다.",
   "WATCHER-MENTAL_FORTRESS_POWER.smartDescription": "[blue]경지[/blue]를 바꿀 때마다, [gold]방어도[/gold]를 [blue]{Amount}[/blue] 얻습니다.",
-
   "WATCHER-NIRVANA_POWER.title": "열반",
   "WATCHER-NIRVANA_POWER.description": "[blue]예지[/blue]할 때마다, [gold]방어도[/gold]를 [blue]X[/blue] 얻습니다.",
   "WATCHER-NIRVANA_POWER.smartDescription": "[blue]예지[/blue]할 때마다, [gold]방어도[/gold]를 [blue]{Amount}[/blue] 얻습니다.",
-
   "WATCHER-RUSHDOWN_POWER.title": "추월",
   "WATCHER-RUSHDOWN_POWER.description": "[gold]진노[/gold]할 때마다, 카드를 [blue]X[/blue] 장 뽑습니다.",
   "WATCHER-RUSHDOWN_POWER.smartDescription": "[gold]진노[/gold]할 때마다, 카드를 [blue]{Amount}[/blue] 장 뽑습니다.",
-
   "WATCHER-SIMMERING_RAGE_POWER.title": "들끓는 울화",
   "WATCHER-SIMMERING_RAGE_POWER.description": "턴 시작 시, [blue]진노[/blue]합니다.",
-
   "WATCHER-STUDY_POWER.title": "학습",
   "WATCHER-STUDY_POWER.description": "턴 종료 시, [blue]통찰[/blue]을 [blue]X[/blue] 장 뽑을 카드 더미에 섞어 넣습니다.",
   "WATCHER-STUDY_POWER.smartDescription": "턴 종료 시, [blue]통찰[/blue]을 [blue]{Amount}[/blue] 장 뽑을 카드 더미에 섞어 넣습니다.",
-
   "WATCHER-BLOCK_RETURN_POWER.title": "손절",
   "WATCHER-BLOCK_RETURN_POWER.description": "공격받을 때, [gold]방어도[/gold]를 [blue]X[/blue] 얻습니다.",
   "WATCHER-BLOCK_RETURN_POWER.smartDescription": "공격받을 때, [gold]방어도[/gold]를 [blue]{Amount}[/blue] 얻습니다.",
-
   "WATCHER-WAVE_OF_THE_HAND_POWER.title": "장법",
   "WATCHER-WAVE_OF_THE_HAND_POWER.description": "[gold]방어도[/gold]를 얻을 때마다, 모든 적에게 [gold]약화[/gold]를 [blue]X[/blue] 부여합니다.",
   "WATCHER-WAVE_OF_THE_HAND_POWER.smartDescription": "[gold]방어도[/gold]를 얻을 때마다, 모든 적에게 [gold]약화[/gold]를 [blue]{Amount}[/blue] 부여합니다.",
-
   "WATCHER-OMEGA_POWER.title": "오메가",
   "WATCHER-OMEGA_POWER.description": "턴 종료 시, 모든 적에게 피해를 [blue]X[/blue] 줍니다.",
   "WATCHER-OMEGA_POWER.smartDescription": "턴 종료 시, 모든 적에게 피해를 [blue]{Amount}[/blue] 줍니다.",
-
   "WATCHER-BLASPHEMER_POWER.title": "신성 모독",
   "WATCHER-BLASPHEMER_POWER.description": "턴 시작 시, 죽습니다.",
-
   "WATCHER-DEVA_POWER.title": "천신의 형상",
   "WATCHER-DEVA_POWER.description": "턴 시작 시, {energyPrefix:energyIcons(1)} 를 X번 얻고, 이 횟수를 Y만큼 증가시킵니다.",
   "WATCHER-DEVA_POWER.smartDescription": "턴 시작 시, {energyPrefix:energyIcons(1)} 를 [blue]{Energy:diff()}[/blue]번 얻고, 이 횟수를 {Amount}만큼 증가시킵니다.",
-
   "WATCHER-DEVOTION_POWER.title": "헌신",
   "WATCHER-DEVOTION_POWER.description": "턴 시작 시, [blue]만트라[/blue]를 [blue]X[/blue] 얻습니다.",
   "WATCHER-DEVOTION_POWER.smartDescription": "턴 시작 시, [blue]만트라[/blue]를 [blue]{Amount}[/blue] 얻습니다.",
-
   "WATCHER-ESTABLISHMENT_POWER.title": "지배",
   "WATCHER-ESTABLISHMENT_POWER.description": "카드가 [blue]보존[/blue]될 때마다, 그 카드의 비용을 X만큼 낮춥니다.",
   "WATCHER-ESTABLISHMENT_POWER.smartDescription": "카드가 [blue]보존[/blue]될 때마다, 그 카드의 비용을 [blue]{Amount}[/blue]만큼 낮춥니다.",
-
   "WATCHER-MASTER_REALITY_POWER.title": "현실 지배",
   "WATCHER-MASTER_REALITY_POWER.description": "카드가 생성될 때마다, 그 카드를 [blue]강화[/blue]합니다.",
-
-  "WATCHER-DUALITY_POWER.title": "음양성"
+  "WATCHER-DUALITY_POWER.title": "음양성",
+  "WATCHER-WRATH_STANCE.smartDescription": "공격 피해를 두 배로 줍니다. 공격 피해를 두 배로 받습니다.",
+  "WATCHER-CALM_STANCE.smartDescription": "이 경지에서 벗어날 때, {energyPrefix:energyIcons(1)} 를 [blue]2[/blue] 얻습니다.",
+  "WATCHER-DIVINITY_STANCE.smartDescription": "피해를 세 배로 줍니다. {energyPrefix:energyIcons(1)} 를 [blue]3[/blue] 얻습니다. 다음 턴 시작 시 이 경지에서 벗어납니다.",
+  "WATCHER-MANTRA_POWER.smartDescription": "만트라를 10 얻을 때마다, [blue]강림[/blue]합니다.",
+  "WATCHER-SIMMERING_RAGE_POWER.smartDescription": "턴 시작 시, [blue]진노[/blue]합니다.",
+  "WATCHER-BLASPHEMER_POWER.smartDescription": "턴 시작 시, 죽습니다.",
+  "WATCHER-MASTER_REALITY_POWER.smartDescription": "카드가 생성될 때마다, 그 카드를 [blue]강화[/blue]합니다."
 }

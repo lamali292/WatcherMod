@@ -68,8 +68,6 @@
   "WATCHER-MASTER_REALITY_POWER.title": "Подчинить реальность",
   "WATCHER-MASTER_REALITY_POWER.description": "Создаваемые в этом бою карты [blue]Улучшаются[/blue].",
   "WATCHER-MASTER_REALITY_POWER.smartDescription": "Создаваемые в этом бою карты [blue]Улучшаются[/blue].",
-  "DUALITY_POWER.smartDescription": "",
-  "DUALITY_POWER.description": "",
   "DUALITY_POWER.title": "Дуальность",
   "WATCHER-DISCIPLE_POWER.title": "Дисциплина",
   "WATCHER-DISCIPLE_POWER.description": "Если в конце хода остаётся {energyPrefix:energyIcons(1)}, вы дополнительно добираете столько же карт.",
