@@ -60,6 +60,6 @@ public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarit
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars["CalculationBase"].UpgradeValueBy(4m);
     }
 }

@@ -129,7 +129,7 @@
   "WATCHER-FORESIGHT.title": "先見の明",
   "WATCHER-FORESIGHT.description": "ターン開始時、[gold]占術[/gold]{ForesightPower:diff()}。",
   "WATCHER-BRILLIANCE.title": "光輝",
-  "WATCHER-BRILLIANCE.description": "{Damage:diff()}ダメージを与える。\nこの戦闘で得た[gold]マントラ[/gold]の数に等しい追加ダメージを与える。",
+  "WATCHER-BRILLIANCE.description": "{CalculatedDamage:diff()}ダメージを与える。\nこの戦闘で得た[gold]マントラ[/gold]の数に等しい追加ダメージを与える。",
   "WATCHER-LESSON_LEARNED.title": "得られた教訓",
   "WATCHER-LESSON_LEARNED.description": "{Damage:diff()}ダメージを与える。\nこの攻撃で敵を倒した時、デッキのランダムなカードを[gold]アップグレード[/gold]する。",
   "WATCHER-SANDS_OF_TIME.title": "刻一刻",

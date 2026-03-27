@@ -25,9 +25,7 @@ public sealed class FlyingSleeves() : CustomCardModel(1, CardType.Attack, CardRa
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
-            .Execute(choiceContext);
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
-            .WithHitFx("vfx/vfx_attack_slash")
+            .WithHitCount(2)
             .Execute(choiceContext);
     }
 

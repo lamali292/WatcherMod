@@ -129,7 +129,7 @@
   "WATCHER-FORESIGHT.title": "先见之明",
   "WATCHER-FORESIGHT.description": "在你的回合开始时，[gold]预见[/gold] {ForesightPower:diff()}。",
   "WATCHER-BRILLIANCE.title": "光辉",
-  "WATCHER-BRILLIANCE.description": "造成 {Damage:diff()} 点伤害。\n额外造成本场战斗中获得的 [gold]真言[/gold] 总层数的伤害。",
+  "WATCHER-BRILLIANCE.description": "造成 {CalculatedDamage:diff()} 点伤害。\n额外造成本场战斗中获得的 [gold]真言[/gold] 总层数的伤害。",
   "WATCHER-LESSON_LEARNED.title": "勤学精进",
   "WATCHER-LESSON_LEARNED.description": "造成 {Damage:diff()} 点伤害。\n[gold]斩杀[/gold] 时，[gold]升级[/gold] 你牌组中的一张随机牌。",
   "WATCHER-SANDS_OF_TIME.title": "时之沙",
