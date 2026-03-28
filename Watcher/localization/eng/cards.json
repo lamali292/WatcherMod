@@ -40,7 +40,7 @@
   "WATCHER-TRANQUILITY.title": "Tranquility",
   "WATCHER-TRANQUILITY.description": "Enter [gold]Calm[/gold].",
   "WATCHER-WINDMILL_STRIKE.title": "Windmill Strike",
-  "WATCHER-WINDMILL_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen this card is[gold]Retained[/gold],\nincrease its damage by {RetainIncrease:diff()}.",
+  "WATCHER-WINDMILL_STRIKE.description": "Deal {Damage:diff()} damage.\nWhen this card is [gold]Retained[/gold],\nincrease its damage by {RetainIncrease:diff()}.",
   "WATCHER-EMPTY_BODY.title": "Empty Body",
   "WATCHER-EMPTY_BODY.description": "Gain {Block:diff()} [gold]Block[/gold].\nExit your [gold]Stance[/gold].",
   "WATCHER-EMPTY_MIND.title": "Empty Mind",
