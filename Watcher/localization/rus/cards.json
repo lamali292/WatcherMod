@@ -173,7 +173,7 @@
   "WATCHER-LIVE_FOREVER.description": "Даёт {PlatingPower:diff()} [gold]Панциря[/gold]",
   "WATCHER-ANCIENT_CARD.title": "Дисциплина",
   "WATCHER-ANCIENT_CARD.description": "Если в конце хода остаётся не потраченная {energyPrefix:energyIcons(1)}, вы дополнительно добираете столько же карт в следующем ходу.",
-  "WATCHER-WISH_WATCHER.description": "Выберите 1:\n{PlatingPower:diff()} Панциря,\n{StrengthPower:diff()} [gold]Силы[/gold], или {Gold:diff()} [gold]Золота[/gold].",
+  "WATCHER-WISH_WATCHER.description": "Выберите 1:\n{PlatedArmorPower:diff()} Панциря,\n{StrengthPower:diff()} [gold]Силы[/gold], или {Gold:diff()} [gold]Золота[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Выберите карту, которую хотите разыграть.",
   "WATCHER-WISH_WATCHER.title": "Желание"
 }
