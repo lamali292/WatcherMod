@@ -2,7 +2,7 @@
   "WATCHER-PURE_WATER.description": "戦闘開始時、[gold]奇跡[/gold]を1枚手札に加える。",
   "WATCHER-PURE_WATER.flavor": "細かい砂で濾過され、不純物を含まない。",
   "WATCHER-PURE_WATER.title": "清水",
-  "WATCHER-DAMARU.description": "ターン開始時、1[gold]マントラ[/gold]1を得る。",
+  "WATCHER-DAMARU.description": "ターン開始時、[gold]マントラ[/gold]1を得る。",
   "WATCHER-DAMARU.flavor": "小さな太鼓の音が心を覚醒させ、前進への道を示す。",
   "WATCHER-DAMARU.title": "ダマル",
   "WATCHER-DUALITY.description": "アタックをプレイするたび、一時的に[gold]敏捷[/gold]1を得る。",
