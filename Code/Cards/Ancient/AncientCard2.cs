@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
@@ -15,7 +16,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Ancient;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class AncientCard2() : CustomCardModel(1, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
+public sealed class AncientCard2() : WatcherCardModel(1, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(11m, ValueProp.Move)];
 
@@ -24,7 +25,7 @@ public sealed class AncientCard2() : CustomCardModel(1, CardType.Attack, CardRar
         HoverTipFactory.FromPower<WrathStance>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

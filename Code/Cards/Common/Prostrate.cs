@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
@@ -15,7 +16,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Common;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Prostrate() : CustomCardModel(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+public sealed class Prostrate() : WatcherCardModel(0, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -32,7 +33,7 @@ public sealed class Prostrate() : CustomCardModel(0, CardType.Skill, CardRarity.
         HoverTipFactory.FromPower<DivinityStance>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

@@ -15,7 +15,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class FameAndFortune() : CustomCardModel(-1, CardType.Skill, CardRarity.Token, TargetType.None), IWishable
+public sealed class FameAndFortune() : WatcherCardModel(-1, CardType.Skill, CardRarity.Token, TargetType.None), IWishable
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
     protected override IEnumerable<DynamicVar> CanonicalVars => [new GoldVar(25)];
@@ -25,7 +25,7 @@ public sealed class FameAndFortune() : CustomCardModel(-1, CardType.Skill, CardR
         HoverTipFactory.FromPower<StrengthPower>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

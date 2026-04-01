@@ -52,7 +52,7 @@ public class Watcher : CustomCharacterModel
         "res://Watcher/images/watcher/transitions/watcher_transition_mat.tres";
 
     public override string CustomMapMarkerPath => "res://Watcher/images/watcher/map_marker_watcher.png";
-    //public override string CustomAttackSfx => "res://";
+    public override string CustomAttackSfx => "event:/sfx/characters/ironclad/ironclad_attack";
     //public override string CustomCastSfx => "res://";
     //public override string CustomDeathSfx => "res://";
     public override string CharacterSelectSfx => "res://Watcher/audio/watcher_select.ogg";

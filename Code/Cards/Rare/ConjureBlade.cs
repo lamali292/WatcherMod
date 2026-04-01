@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -12,7 +13,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class ConjureBlade() : CustomCardModel(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+public sealed class ConjureBlade() : WatcherCardModel(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     public override HashSet<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
@@ -24,7 +25,7 @@ public sealed class ConjureBlade() : CustomCardModel(0, CardType.Skill, CardRari
 
     protected override bool HasEnergyCostX => true;
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext context, CardPlay play)
     {

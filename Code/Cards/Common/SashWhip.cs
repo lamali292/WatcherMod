@@ -9,13 +9,14 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Common;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class SashWhip() : CustomCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class SashWhip() : WatcherCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => WasLastCardPlayedAttack;
 
@@ -46,7 +47,7 @@ public sealed class SashWhip() : CustomCardModel(1, CardType.Attack, CardRarity.
         new PowerVar<WeakPower>(1)
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

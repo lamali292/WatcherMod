@@ -6,16 +6,17 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class ForeignInfluence() : CustomCardModel(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class ForeignInfluence() : WatcherCardModel(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override HashSet<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

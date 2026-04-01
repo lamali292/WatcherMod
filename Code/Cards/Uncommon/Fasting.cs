@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
@@ -14,7 +15,7 @@ using Watcher.Code.Powers;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Fasting() : CustomCardModel(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public sealed class Fasting() : WatcherCardModel(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -29,7 +30,7 @@ public sealed class Fasting() : CustomCardModel(2, CardType.Power, CardRarity.Un
         HoverTipFactory.FromPower<DexterityPower>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

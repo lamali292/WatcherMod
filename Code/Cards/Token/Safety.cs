@@ -8,12 +8,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class Safety() : CustomCardModel(1, CardType.Skill, CardRarity.Token, TargetType.Self)
+public sealed class Safety() : WatcherCardModel(1, CardType.Skill, CardRarity.Token, TargetType.Self)
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
 
@@ -29,7 +30,7 @@ public sealed class Safety() : CustomCardModel(1, CardType.Skill, CardRarity.Tok
         CardKeyword.Exhaust
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

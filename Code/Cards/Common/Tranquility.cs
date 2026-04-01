@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
@@ -12,7 +13,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Common;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Tranquility() : CustomCardModel(1, CardType.Skill, CardRarity.Common, TargetType.None)
+public sealed class Tranquility() : WatcherCardModel(1, CardType.Skill, CardRarity.Common, TargetType.None)
 {
     public override HashSet<CardKeyword> CanonicalKeywords =>
     [
@@ -25,7 +26,7 @@ public sealed class Tranquility() : CustomCardModel(1, CardType.Skill, CardRarit
         HoverTipFactory.FromPower<CalmStance>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

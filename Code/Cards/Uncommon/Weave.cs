@@ -15,10 +15,10 @@ using Watcher.Code.Keywords;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Weave() : WatcherCardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Weave() : WatcherCardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy), IScryable
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4m, ValueProp.Move)];
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -41,7 +41,7 @@ public sealed class Weave() : WatcherCardModel(0, CardType.Attack, CardRarity.Un
     ///     Called whenever the player scrys.
     ///     Returns this card from discard pile to hand if it's still there.
     /// </summary>
-    public override async Task OnScryed(Player player, int amount)
+    public async Task OnScryed(Player player, int amount)
     {
         if (player != Owner)
             return;

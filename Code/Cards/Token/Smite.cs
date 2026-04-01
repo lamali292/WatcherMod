@@ -8,12 +8,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class Smite() : CustomCardModel(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
+public sealed class Smite() : WatcherCardModel(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
 
@@ -29,7 +30,7 @@ public sealed class Smite() : CustomCardModel(1, CardType.Attack, CardRarity.Tok
         CardKeyword.Exhaust
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

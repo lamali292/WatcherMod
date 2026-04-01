@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -15,7 +16,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Pray() : CustomCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Pray() : WatcherCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -30,7 +31,7 @@ public sealed class Pray() : CustomCardModel(1, CardType.Skill, CardRarity.Uncom
         new PowerVar<MantraPower>(3m)
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

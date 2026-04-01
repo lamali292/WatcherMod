@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -13,7 +14,7 @@ using Watcher.Code.Powers;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Study() : CustomCardModel(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
+public sealed class Study() : WatcherCardModel(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -21,7 +22,7 @@ public sealed class Study() : CustomCardModel(2, CardType.Power, CardRarity.Unco
         HoverTipFactory.FromPower<StudyPower>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

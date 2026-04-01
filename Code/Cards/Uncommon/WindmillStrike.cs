@@ -7,13 +7,14 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class WindmillStrike() : CustomCardModel(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class WindmillStrike() : WatcherCardModel(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     private const string _retainedIncreaseKey = "RetainIncrease";
 
@@ -42,7 +43,7 @@ public sealed class WindmillStrike() : CustomCardModel(2, CardType.Attack, CardR
     public override HashSet<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 
     public override bool ShouldReceiveCombatHooks => true;
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

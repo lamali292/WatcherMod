@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgy88bk44xxvk"]
 
 [ext_resource type="Script" uid="uid://42n22x7pwgct" path="res://Code/Nodes/SNSelectionReticle.cs" id="1_kg5ub"]
-[ext_resource type="Texture2D" uid="uid://d34d8sduc1wa7" path="res://Watcher/images/ui/combat/combat_reticle.png" id="2_75ikg"]
+[ext_resource type="Texture2D" uid="uid://phhfb85ruvoc" path="res://Watcher/images/ui/combat/combat_reticle.png" id="2_75ikg"]
 
 [node name="SelectionReticle" type="Control"]
 layout_mode = 3

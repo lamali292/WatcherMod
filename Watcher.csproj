@@ -7,6 +7,7 @@
         <DefaultItemExcludes>packages/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
         <RootNamespace>Watcher</RootNamespace>
+        <PlatformTarget>AnyCPU</PlatformTarget>
     </PropertyGroup>
 
 
@@ -89,7 +90,7 @@
             <Private>false</Private>
         </Reference>
 
-        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="0.2.1" PrivateAssets="All" />
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="0.2.2" PrivateAssets="All" />
         <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.0.9"/>
         <AdditionalFiles Include="Watcher/localization/**/*.json"/>
     </ItemGroup>
@@ -107,15 +108,6 @@
         <None Include="project.godot"/>
         <None Include="Watcher/**"/>
         <None Include="cardloc-presets.json"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Watcher\materials\transitions\"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Content Include="images\ui\top_panel\character_icon_watcher-watcher_outline.png"/>
-        <Content Include="images\ui\top_panel\character_icon_watcher-watcher_outline.png.import"/>
     </ItemGroup>
 
 

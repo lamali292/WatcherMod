@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
@@ -15,7 +16,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Meditate() : CustomCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Meditate() : WatcherCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -28,7 +29,7 @@ public sealed class Meditate() : CustomCardModel(1, CardType.Skill, CardRarity.U
         HoverTipFactory.FromPower<CalmStance>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

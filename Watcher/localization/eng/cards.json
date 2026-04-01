@@ -177,5 +177,7 @@
   "WATCHER-ANCIENT_CARD2.description": "Enter [gold]Wrath[/gold].\nDeal {Damage:diff()} damage.",
   "WATCHER-WISH_WATCHER.title": "Wish",
   "WATCHER-WISH_WATCHER.description": "Choose one:\nGain {PlatedArmorPower:diff()} [gold]Plated Armor[/gold],\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
-  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Choose a Card to play."
+  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Choose a Card to play.",
+  "WATCHER-WATCHER_CARD_MODEL.title": "",
+  "WATCHER-WATCHER_CARD_MODEL.description": ""
 }

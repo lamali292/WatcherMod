@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
@@ -19,7 +20,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class Brilliance() : WatcherCardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -35,7 +36,7 @@ public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarit
     ];
 
     public override bool ShouldReceiveCombatHooks => true;
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     private static decimal MantraGainedThisCombat(CardModel card, Creature? creature)
     {

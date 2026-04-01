@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -14,7 +15,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Common;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Evaluate() : CustomCardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+public sealed class Evaluate() : WatcherCardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -26,7 +27,7 @@ public sealed class Evaluate() : CustomCardModel(1, CardType.Skill, CardRarity.C
         HoverTipFactory.FromCard<Insight>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

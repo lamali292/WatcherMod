@@ -7,13 +7,14 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Perseverance() : CustomCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Perseverance() : WatcherCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     private const string _increaseKey = "Increase";
 
@@ -38,7 +39,7 @@ public sealed class Perseverance() : CustomCardModel(1, CardType.Skill, CardRari
     public override HashSet<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 
     public override bool ShouldReceiveCombatHooks => true;
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

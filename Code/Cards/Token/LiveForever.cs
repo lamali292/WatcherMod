@@ -16,7 +16,7 @@ using Watcher.Code.Powers;
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class LiveForever() : CustomCardModel(-1, CardType.Power, CardRarity.Token, TargetType.None), IWishable
+public sealed class LiveForever() : WatcherCardModel(-1, CardType.Power, CardRarity.Token, TargetType.None), IWishable
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<PlatedArmorPower>(6)];
@@ -26,7 +26,7 @@ public sealed class LiveForever() : CustomCardModel(-1, CardType.Power, CardRari
         HoverTipFactory.FromPower<PlatedArmorPower>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

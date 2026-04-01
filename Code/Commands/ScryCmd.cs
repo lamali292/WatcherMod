@@ -52,8 +52,7 @@ public static class ScryCmd
         if (player?.PlayerCombatState?.AllPiles != null)
             foreach (var pile in player.PlayerCombatState?.AllPiles!)
             {
-                var watcherCards = pile.Cards.OfType<WatcherCardModel>().ToList();
-
+                var watcherCards = pile.Cards.OfType<IScryable>().ToList();
                 foreach (var card in watcherCards) await card.OnScryed(player, amount);
             }
     }

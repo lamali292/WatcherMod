@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
@@ -15,7 +16,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Basic;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Vigilance() : CustomCardModel(2, CardType.Skill, CardRarity.Basic, TargetType.Self)
+public sealed class Vigilance() : WatcherCardModel(2, CardType.Skill, CardRarity.Basic, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8m, ValueProp.Move)];
 
@@ -25,7 +26,7 @@ public sealed class Vigilance() : CustomCardModel(2, CardType.Skill, CardRarity.
         HoverTipFactory.FromPower<CalmStance>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

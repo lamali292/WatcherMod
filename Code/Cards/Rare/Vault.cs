@@ -5,13 +5,14 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Vault() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
+public sealed class Vault() : WatcherCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
 {
     private bool _hasExtraTurn;
 
@@ -21,7 +22,7 @@ public sealed class Vault() : CustomCardModel(3, CardType.Skill, CardRarity.Rare
         CardKeyword.Exhaust
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     public override bool ShouldTakeExtraTurn(Player player)
     {

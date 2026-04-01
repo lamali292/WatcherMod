@@ -11,13 +11,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class LessonLearned() : CustomCardModel(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class LessonLearned() : WatcherCardModel(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     // Base damage
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -35,7 +36,7 @@ public sealed class LessonLearned() : CustomCardModel(2, CardType.Attack, CardRa
         HoverTipFactory.Static(StaticHoverTip.Fatal)
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

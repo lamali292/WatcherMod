@@ -7,12 +7,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class Insight() : CustomCardModel(0, CardType.Skill, CardRarity.Token, TargetType.None)
+public sealed class Insight() : WatcherCardModel(0, CardType.Skill, CardRarity.Token, TargetType.None)
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
 
@@ -28,7 +29,7 @@ public sealed class Insight() : CustomCardModel(0, CardType.Skill, CardRarity.To
         CardKeyword.Exhaust
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

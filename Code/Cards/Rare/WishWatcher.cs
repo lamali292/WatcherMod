@@ -17,7 +17,7 @@ using Watcher.Code.Powers;
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
+public sealed class WishWatcher() : WatcherCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new GoldVar(25), new PowerVar<StrengthPower>(3), new PowerVar<PlatedArmorPower>(6)];
@@ -34,7 +34,7 @@ public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarit
         HoverTipFactory.FromPower<PlatedArmorPower>()
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

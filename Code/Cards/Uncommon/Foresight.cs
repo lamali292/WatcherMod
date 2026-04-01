@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Keywords;
@@ -14,7 +15,7 @@ using Watcher.Code.Powers;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Foresight() : CustomCardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
+public sealed class Foresight() : WatcherCardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -27,7 +28,7 @@ public sealed class Foresight() : CustomCardModel(1, CardType.Power, CardRarity.
         new PowerVar<ForesightPower>(3)
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

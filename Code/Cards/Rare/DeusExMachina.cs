@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -14,7 +15,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class DeusExMachina() : CustomCardModel(-1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+public sealed class DeusExMachina() : WatcherCardModel(-1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     public override HashSet<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
@@ -31,7 +32,7 @@ public sealed class DeusExMachina() : CustomCardModel(-1, CardType.Skill, CardRa
         HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     ];
 
-    public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
 
     public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel drawnCard, bool fromHandDraw)
     {
