@@ -1,0 +1,10 @@
+{
+  "WATCHER-AMBROSIA.description": "Перейти в [blue]Божественность[/blue].",
+  "WATCHER-AMBROSIA.title": "Амброзия",
+  "WATCHER-BOTTLED_MIRACLE.title": "Закупоренное чудо",
+  "WATCHER-BOTTLED_MIRACLE.description": "Добавляет {Cards:diff()} [blue]Чуда[/blue] в руку.",
+  "WATCHER-CALM_POTION.description": "Перейти в [blue]Спокойствие[/blue].",
+  "WATCHER-WRATH_POTION.description": "Перейти в [blue]Гнев[/blue].",
+  "WATCHER-CALM_POTION.title": "Зелье спокойствия",
+  "WATCHER-WRATH_POTION.title": "Зелие гнева"
+}

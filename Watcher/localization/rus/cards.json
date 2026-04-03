@@ -102,7 +102,7 @@
   "WATCHER-LIKE_WATER.title": "Словно вода",
   "WATCHER-LIKE_WATER.description": "Если в конце хода вы находитесь в [gold]Спокойствии[/gold], даёт {LikeWaterPower:diff()} [gold]Защиты[/gold].",
   "WATCHER-MEDITATE.title": "Медитировать",
-  "WATCHER-MEDITATE.description": "Положите {Cards:diff()} {Cards:plural:карту|карты} из стопки добора в руку и [gold]Оставьте[/gold] {Cards:plural:её|их}.\nПерейти в [gold]Спокойствие[/gold].\nЗавершает ваш ход.",
+  "WATCHER-MEDITATE.description": "Положите {Cards:diff()} {Cards:plural:карту|карты} из стопки сброса в руку и [gold]Оставьте[/gold] {Cards:plural:её|их}.\nПерейти в [gold]Спокойствие[/gold].\nЗавершает ваш ход.",
   "WATCHER-MEDITATE.selectionScreenPrompt": "Выберите {Amount:plural:карту|[blue]{}[/blue] карты} чтобы [gold]Сохранить[/gold].",
   "WATCHER-MENTAL_FORTRESS.title": "Непоколебимость",
   "WATCHER-MENTAL_FORTRESS.description": "Даёт {MentalFortressPower:diff()} [gold]Защиты[/gold] при смене [gold]Стойки[/gold].",
@@ -175,5 +175,7 @@
   "WATCHER-ANCIENT_CARD.description": "Если в конце хода остаётся не потраченная {energyPrefix:energyIcons(1)}, вы дополнительно добираете столько же карт в следующем ходу.",
   "WATCHER-WISH_WATCHER.description": "Выберите 1:\n{PlatedArmorPower:diff()} Панциря,\n{StrengthPower:diff()} [gold]Силы[/gold], или {Gold:diff()} [gold]Золота[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Выберите карту, которую хотите разыграть.",
-  "WATCHER-WISH_WATCHER.title": "Желание"
+  "WATCHER-WISH_WATCHER.title": "Желание",
+  "WATCHER-ANCIENT_CARD2.title": "Воспламенение",
+  "WATCHER-ANCIENT_CARD2.description": "Перейти в [gold]Гнев[/gold].\\nНаносит {Damage:diff()} урона."
 }
