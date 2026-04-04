@@ -26,10 +26,20 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
         if (SpineBody != null)
             SpineBody.SetNormalMaterial(premultMat);
         else
-            GetCurrentBody().Material = premultMat;
+        { // beta
+            var body = GetNodeOrNull<Node2D>("%Visuals");
+            if (body != null)
+                body.Material = premultMat;
 
+            var phobiaBody = GetNodeOrNull<Node2D>("%PhobiaModeVisuals");
+            if (phobiaBody != null)
+                phobiaBody.Material = premultMat;
+        }
         //StancePower.EnsureEyeSetup(Body);
     }
+    
+    
+    
 
     private void SetupEye()
     {

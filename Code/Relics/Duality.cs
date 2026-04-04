@@ -25,6 +25,6 @@ public sealed class Duality : CustomRelicModel
     {
         if (command.Attacker != Owner.Creature)
             return;
-        await PowerCmd.Apply<DualityPower>(Owner.Creature, 1, Owner.Creature, null);
+        await PowerCmd.Apply<DualityPower>(Owner.Creature, 1, Owner.Creature, null, true);
     }
 }

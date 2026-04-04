@@ -1,12 +1,19 @@
-﻿using MegaCrit.Sts2.Core.Models;
+﻿using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using Watcher.Code.Extensions;
 using Watcher.Code.Relics;
 
 namespace Watcher.Code.Powers;
 
-#pragma warning disable STS003
-public class DualityPower : TemporaryDexterityPower
-#pragma warning restore STS003
+public class DualityPower : CustomTemporaryPowerModel
 {
+    protected override Func<Creature, decimal, Creature?, CardModel?, bool, Task> ApplyPowerFunc => PowerCmd.Apply<DexterityPower>;
+    public override PowerModel InternallyAppliedPower => ModelDb.Power<DexterityPower>();
     public override AbstractModel OriginModel => ModelDb.Relic<Duality>();
+    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+    public override string CustomBigIconPath => CustomPackedIconPath;
 }
