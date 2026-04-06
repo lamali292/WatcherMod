@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using BaseLib.Utils;
+﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -8,7 +7,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Abstract;
-using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 
 namespace Watcher.Code.Cards.Uncommon;

@@ -1,13 +1,9 @@
-﻿using System.Threading.Tasks;
-using BaseLib.Utils;
+﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Abstract;
-using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
 using Watcher.Code.Events;
 using Watcher.Code.Stances;
