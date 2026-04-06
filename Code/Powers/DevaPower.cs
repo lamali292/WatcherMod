@@ -4,11 +4,12 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Watcher.Code.Abstract;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Powers;
 
-public sealed class DevaPower : CustomPowerModel
+public sealed class DevaPower : WatcherPowerModel
 {
     public override PowerType Type => PowerType.Buff;
 
@@ -18,9 +19,6 @@ public sealed class DevaPower : CustomPowerModel
     ];
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
-
 
     public override async Task AfterEnergyReset(Player player)
     {

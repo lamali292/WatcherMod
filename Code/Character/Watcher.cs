@@ -142,7 +142,7 @@ internal static class NEnergyCounterReadyPatch
         {
             var node = new CpuParticles2D
             {
-                Name = (StringName)"BurstBack", Emitting = false, Amount = 0, Visible = false
+                Name = (StringName)"BurstBack", Emitting = false, Amount = 1, Visible = false
             };
             __instance.AddChild(node);
             node.Owner = __instance;
@@ -153,7 +153,7 @@ internal static class NEnergyCounterReadyPatch
         {
             var node = new CpuParticles2D
             {
-                Name = (StringName)"BurstFront", Emitting = false, Amount = 0, Visible = false
+                Name = (StringName)"BurstFront", Emitting = false, Amount = 1, Visible = false
             };
             __instance.AddChild(node);
             node.Owner = __instance;

@@ -8,33 +8,30 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Abstract;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Powers;
 
-public sealed class WaveOfTheHandPower : CustomPowerModel
+public sealed class WaveOfTheHandPower : WatcherPowerModel
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
 
     public override async Task AfterBlockGained(Creature creature, decimal amount, ValueProp props,
         CardModel? cardSource)
     {
-        // Only trigger for the owner of this power
         if (creature != Owner)
             return;
-
-        // Apply Weak to all enemies
-        var weakAmount = Amount; // Use power stacks
+        
+        var weakAmount = Amount; 
         if (weakAmount <= 0)
             return;
 
         await PowerCmd.Apply<WeakPower>(
-            CombatState.HittableEnemies, // all enemies
+            CombatState.HittableEnemies, 
             weakAmount,
-            Owner, // source is the creature with this power
+            Owner, 
             null
         );
     }

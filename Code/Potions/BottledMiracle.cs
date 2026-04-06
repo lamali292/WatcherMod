@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Watcher.Code.Abstract;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
@@ -11,7 +12,7 @@ using Watcher.Code.Commands;
 namespace Watcher.Code.Potions;
 
 [Pool(typeof(WatcherPotionPool))]
-public class BottledMiracle : WatcherPotion
+public class BottledMiracle : WatcherPotionModel
 {
     // The base amount of Miracles to add
     private const int BaseAmount = 2;

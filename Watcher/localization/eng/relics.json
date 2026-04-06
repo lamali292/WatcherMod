@@ -23,5 +23,8 @@
   "WATCHER-MELANGE.description": "Whenever you shuffle your draw pile, [gold]Scry[/gold] 3.",
   "WATCHER-MELANGE.flavor": "Mysterious sands from an unknown origin. Smells of cinnamon.",
   "WATCHER-MELANGE.title": "Melange",
-  "SEA_GLASS.WATCHER-WATCHER.title": "Oracle Glass"
+  "SEA_GLASS.WATCHER-WATCHER.title": "Oracle Glass",
+  "WATCHER-WATCHER_RELIC_MODEL.title": "",
+  "WATCHER-WATCHER_RELIC_MODEL.description": "",
+  "WATCHER-WATCHER_RELIC_MODEL.flavor": ""
 }

@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Abstract;
 using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
 using Watcher.Code.Stances;
@@ -12,13 +13,11 @@ using Watcher.Code.Stances.Vfx;
 
 namespace Watcher.Code.Powers;
 
-public sealed class MantraPower : CustomPowerModel
+public sealed class MantraPower : WatcherPowerModel
 {
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

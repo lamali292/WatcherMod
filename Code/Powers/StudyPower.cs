@@ -5,18 +5,17 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using Watcher.Code.Abstract;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Powers;
 
-public class StudyPower : CustomPowerModel
+public class StudyPower : WatcherPowerModel
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
-
+    
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
         if (Owner.Player == null || Owner.Player?.Creature.Side != side) return;

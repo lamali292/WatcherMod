@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "选择你抽牌堆中的一张牌。将这张牌打出两次并 [gold]消耗[/gold]。",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "选择一张牌以打出两次并 [gold]消耗[/gold]。",
   "WATCHER-SPIRIT_SHIELD.title": "精神护盾",
-  "WATCHER-SPIRIT_SHIELD.description": "你每有一张手牌，获得 {CalculationBase:diff()} 点 [gold]格挡[/gold]。",
+  "WATCHER-SPIRIT_SHIELD.description": "你每有一张手牌，获得 {Block:diff()} 点 [gold]格挡[/gold]。",
   "WATCHER-MASTER_REALITY.title": "操控现实",
   "WATCHER-MASTER_REALITY.description": "所有在战斗中临时增加的牌将被 [gold]升级[/gold]。",
   "WATCHER-WREATH_OF_FLAME.title": "烈焰编织",

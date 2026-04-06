@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "山札からカードを1枚選ぶ。\n選ばれたカードを2回プレイして廃棄する。",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "2回プレイして[gold]廃棄[/gold]するカードを選択してください。",
   "WATCHER-SPIRIT_SHIELD.title": "精神障壁",
-  "WATCHER-SPIRIT_SHIELD.description": "手札のカード1枚につき{CalculationBase:diff()}[gold]ブロック[/gold]を得る。",
+  "WATCHER-SPIRIT_SHIELD.description": "手札のカード1枚につき{Block:diff()}[gold]ブロック[/gold]を得る。",
   "WATCHER-MASTER_REALITY.title": "掌握した現実",
   "WATCHER-MASTER_REALITY.description": "カードが戦闘中に作られるたび、それを[gold]アップグレード[/gold]する。",
   "WATCHER-WREATH_OF_FLAME.title": "華炎輪",

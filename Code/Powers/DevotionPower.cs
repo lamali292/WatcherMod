@@ -6,17 +6,17 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Abstract;
 using Watcher.Code.Cards.Rare;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Powers;
 
-public class DevotionPower : CustomPowerModel
+public class DevotionPower : WatcherPowerModel
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
+
 
 
     public override async Task BeforeHandDrawLate(Player player, PlayerChoiceContext choiceContext,

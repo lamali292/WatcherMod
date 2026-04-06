@@ -2,9 +2,9 @@
 using BaseLib.Extensions;
 using Watcher.Code.Extensions;
 
-namespace Watcher.Code.Potions;
+namespace Watcher.Code.Abstract;
 
-public abstract class WatcherPotion : CustomPotionModel
+public abstract class WatcherPotionModel : CustomPotionModel
 {
     public override string CustomPackedImagePath =>
         $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.tres".PackedPotionImagePath();
