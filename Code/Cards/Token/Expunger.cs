@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using Watcher.Code.Abstract;
 
@@ -12,7 +13,7 @@ public sealed class Expunger : WatcherCardModel
     public Expunger() : base(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
     {
         WithDamage(9, 6);
-        WithVar("Repeat", -1);
+        WithVars(new RepeatVar(-1));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext context, CardPlay play)
