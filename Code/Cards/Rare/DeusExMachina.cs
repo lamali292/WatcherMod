@@ -24,6 +24,7 @@ public sealed class DeusExMachina : WatcherCardModel
 
     public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel drawnCard, bool fromHandDraw)
     {
+        if (drawnCard != this) return;
         await WatcherCmd.GiveCards<Miracle>(Owner, DynamicVars.Cards.IntValue, PileType.Hand, animationTime: 0.1f);
         await CardPileCmd.Add(this, PileType.Exhaust, CardPilePosition.Top);
     }

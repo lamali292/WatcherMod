@@ -21,11 +21,16 @@ public sealed class Indignation : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
-        if (cardPlay.Target == null) return;
+        if (CombatState == null) return;
         var isInWrath = Owner.IsInWatcherStance<WrathStance>();
         if (isInWrath)
-            await CommonActions.Apply<VulnerablePower>(cardPlay.Target, this);
+        {
+            await CommonActions.Apply<VulnerablePower>(CombatState.HittableEnemies, this);
+        }
         else
+        {
             await StanceCmd.EnterWrath(ctx, Owner, cardPlay.Card);
+        }
+           
     }
 }

@@ -1,6 +1,8 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 
@@ -12,7 +14,7 @@ public sealed class Ragnarok : WatcherCardModel
     public Ragnarok() : base(3, CardType.Attack, CardRarity.Rare, TargetType.RandomEnemy)
     {
         WithDamage(5, 1);
-        WithVar("Repeat", 5, 1);
+        WithVars(new RepeatVar(5).WithUpgrade(1));
     }
 
 

@@ -1,7 +1,9 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
@@ -15,7 +17,7 @@ public sealed class Tantrum : WatcherCardModel
     public Tantrum() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         WithDamage(3);
-        WithVar("Repeat", 3, 1);
+        WithVars(new RepeatVar(3).WithUpgrade(1));
         WithStanceTip<WrathStance>();
     }
 
