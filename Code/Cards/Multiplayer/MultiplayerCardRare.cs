@@ -25,4 +25,9 @@ public class MultiplayerCardRare : WatcherCardModel
         if (cardPlay.Target?.Player == null) return;
         await StanceCmd.EnterDivinity(ctx, cardPlay.Target.Player, this);
     }
+    
+    protected override void OnUpgrade()
+    {
+        RemoveKeyword(CardKeyword.Exhaust);
+    }
 }

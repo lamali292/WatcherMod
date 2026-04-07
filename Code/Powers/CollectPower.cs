@@ -20,7 +20,7 @@ public sealed class CollectPower : WatcherPowerModel
     {
         if (player != Owner.Player)
             return;
-        await WatcherCmd.GiveCard<Miracle>(Owner.Player, PileType.Hand, CardPilePosition.Top, upgraded: true);
+        await WatcherCmd.GiveCard<Miracle>(Owner.Player, PileType.Hand, CardPilePosition.Top, upgraded: true, skipAnimation: true);
         await PowerCmd.Decrement(this);
     }
 }

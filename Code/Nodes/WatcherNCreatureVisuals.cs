@@ -16,8 +16,6 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
     {
         base._Ready();
 
-        // Fix dark seams: atlas uses premultiplied alpha data,
-        // so the spine sprite must use PremultAlpha blend mode
         var premultMat = new CanvasItemMaterial
         {
             BlendMode = CanvasItemMaterial.BlendModeEnum.PremultAlpha
@@ -29,7 +27,6 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
         }
         else
         {
-            // beta
             var body = GetNodeOrNull<Node2D>("%Visuals");
             if (body != null)
                 body.Material = premultMat;
@@ -38,9 +35,9 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
             if (phobiaBody != null)
                 phobiaBody.Material = premultMat;
         }
-        //StancePower.EnsureEyeSetup(Body);
-    }
 
+        GetTree().ProcessFrame += SetupEye; // ← added
+    }
 
     private void SetupEye()
     {

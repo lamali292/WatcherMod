@@ -6,7 +6,7 @@ namespace Watcher.Code.Extensions;
 
 public static class PlayerExtensions
 {
-    public static WatcherStanceModel ChampStance(this Player player)
+    public static WatcherStanceModel WatcherStance(this Player player)
     {
         return WatcherModel.GetStanceModel(player);
     }

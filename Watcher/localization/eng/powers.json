@@ -79,5 +79,8 @@
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Block[/gold].\nReceiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
   "WATCHER-DUALITY_POWER.title": "Duality",
   "WATCHER-DUALITY_POWER.description": "Lose X [gold]Dexterity[/gold] until the end of this turn.",
-  "WATCHER-DUALITY_POWER.smartDescription": "Lose {Amount} [gold]Dexterity[/gold] until the end of this turn."
+  "WATCHER-DUALITY_POWER.smartDescription": "Lose {Amount} [gold]Dexterity[/gold] until the end of this turn.",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Fleeting Clarity",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "At the start of your turn, exit [gold]Calm[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "At the start of your turn, exit [gold]Calm[/gold]."
 }
