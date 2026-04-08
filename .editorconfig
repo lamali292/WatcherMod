@@ -1,0 +1,9 @@
+[*.cs]
+# STS001: Missing Localization Keys
+dotnet_diagnostic.STS001.severity = warning
+
+# STS002: No Localization JSON found
+dotnet_diagnostic.STS002.severity = warning
+
+# STS003: Custom Model usage
+dotnet_diagnostic.STS003.severity = warning

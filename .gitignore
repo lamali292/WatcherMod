@@ -12,7 +12,6 @@ bin/
 publish/
 Properties/
 packages/
-.editorconfig
 *.user
 __pycache__
 loc_editor_settings.json
