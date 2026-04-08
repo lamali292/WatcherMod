@@ -61,7 +61,11 @@ You only need to change:
 
 - **SteamLibraryPath** → Path to your Steam Library
 
-- **GodotPath** → Path to your [Godot 4.5.1 .Net exe](https://godotengine.org/download/archive/4.5.1-stable/)
+- **GodotPath** → Path to your Godot
+  
+Recommended: [MegaDot — MegaCrit's custom Godot fork](https://megadot.megacrit.com/)
+
+Standard: [Godot 4.5.1 .Net exe](https://godotengine.org/download/archive/4.5.1-stable/)
 
 
 
