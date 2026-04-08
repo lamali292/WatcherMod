@@ -12,5 +12,4 @@ packages/
 *.user
 __pycache__
 loc_editor_settings.json
-*.import
 !Watcher/animation/*.import
