@@ -20,7 +20,7 @@ public static class ScryCmd
         var cardsToScry = drawPile.Cards.Take(amount).ToList();
 
 
-        if (!cardsToScry.Any()) return;
+        if (cardsToScry.Count == 0) return;
         var prefs = new CardSelectorPrefs(
             CardSelectorPrefs.DiscardSelectionPrompt,
             0,
@@ -33,7 +33,7 @@ public static class ScryCmd
             player,
             prefs
         );
-        foreach (var card in cardsToDiscard) await CardPileCmd.Add(card, PileType.Discard);
+        foreach (var card in cardsToDiscard) await CardCmd.Discard(choiceContext, card);
         await WatcherHook.OnScryed(choiceContext, player, amount);
     }
     

@@ -21,6 +21,6 @@ public sealed class DeceiveReality : WatcherCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.CardBlock(this, cardPlay);
-        await WatcherCmd.GiveCard<Safety>(Owner, PileType.Hand, CardPilePosition.Top);
+        await WatcherCmd.GiveCard<Safety>(Owner, PileType.Hand, CardPilePosition.Top, skipAnimation: true);
     }
 }

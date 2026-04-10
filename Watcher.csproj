@@ -95,7 +95,7 @@
             <Private>false</Private>
         </Reference>
 
-        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="0.2.7" PrivateAssets="All" />
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="0.3.0" PrivateAssets="All" />
         <!--Reference Include="BaseLib">
             <HintPath>C:\Users\lamal\Desktop\Programmieren\sts2mods\BaseLib-StS2\publish\BaseLib.dll</HintPath>
             <Private>false</Private>

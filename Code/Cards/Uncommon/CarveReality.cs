@@ -20,7 +20,7 @@ public sealed class CarveReality : WatcherCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
-        await WatcherCmd.GiveCard<Smite>(Owner, PileType.Hand, CardPilePosition.Top);
+        await WatcherCmd.GiveCard<Smite>(Owner, PileType.Hand, CardPilePosition.Top, skipAnimation: true);
     }
 
     protected override void OnUpgrade()
