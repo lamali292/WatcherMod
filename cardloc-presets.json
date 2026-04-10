@@ -5,8 +5,7 @@
     {
       "id": "card",
       "markers": [
-        "WatcherCardModel",
-        "CustomCardModel"
+        "WatcherCardModel"
       ],
       "fields": [
         {
@@ -49,9 +48,8 @@
     {
       "id": "power",
       "markers": [
-        "CustomPowerModel",
-        "CustomTemporaryPowerModel",
-        "WatcherPowerModel"
+        "WatcherPowerModel",
+        "CustomTemporaryPowerModel"
       ],
       "fields": [
         {
@@ -74,7 +72,6 @@
     {
       "id": "potion",
       "markers": [
-        "CustomPotionModel",
         "WatcherPotion"
       ],
       "fields": [
@@ -171,7 +168,7 @@
     {
       "id": "relics",
       "markers": [
-        "CustomRelicModel"
+        "WatcherRelicModel"
       ],
       "fields": [
         {

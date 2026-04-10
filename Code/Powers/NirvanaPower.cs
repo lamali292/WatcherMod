@@ -17,7 +17,7 @@ public sealed class NirvanaPower : WatcherPowerModel, IOnScryed
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
    
-    public async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount)
+    public async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount, int discardedAmount)
     {
         if (player != Owner.Player)
             return;

@@ -1,0 +1,10 @@
+{
+  "WATCHER-AMBROSIA.description": "进入[blue]神圣[/blue]。",
+  "WATCHER-BOTTLED_MIRACLE.description": "将 {Cards:diff()} 张[blue]奇迹[/blue]加入手牌。",
+  "WATCHER-CALM_POTION.description": "进入[blue]平静[/blue]。",
+  "WATCHER-WRATH_POTION.description": "进入[blue]愤怒[/blue]。",
+  "WATCHER-AMBROSIA.title": "神馔",
+  "WATCHER-BOTTLED_MIRACLE.title": "瓶装奇迹",
+  "WATCHER-CALM_POTION.title": "瓶装奇迹",
+  "WATCHER-WRATH_POTION.title": "愤怒药水"
+}

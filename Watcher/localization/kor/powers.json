@@ -68,5 +68,11 @@
   "WATCHER-MANTRA_POWER.smartDescription": "만트라를 10 얻을 때마다, [blue]강림[/blue]합니다.",
   "WATCHER-SIMMERING_RAGE_POWER.smartDescription": "턴 시작 시, [blue]진노[/blue]합니다.",
   "WATCHER-BLASPHEMER_POWER.smartDescription": "턴 시작 시, 죽습니다.",
-  "WATCHER-MASTER_REALITY_POWER.smartDescription": "카드가 생성될 때마다, 그 카드를 [blue]강화[/blue]합니다."
+  "WATCHER-MASTER_REALITY_POWER.smartDescription": "카드가 생성될 때마다, 그 카드를 [blue]강화[/blue]합니다.",
+  "WATCHER-ANCIENT_CARD_POWER.description": "[gold]진노[/gold] 상태일 때, 피해가 +50% 증가한다.",
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "[gold]진노[/gold] 상태일 때, 피해가 +{Amount}% 증가한다.",
+  "WATCHER-ANCIENT_CARD_POWER.title": "축적",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "턴 시작 시, [gold]명상[/gold]에서 벗어납니다.",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "턴 시작 시, [gold]명상[/gold]에서 벗어납니다.",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "순간의 명료함"
 }

@@ -1,0 +1,10 @@
+{
+  "WATCHER-AMBROSIA.description": "[blue]강림[/blue]에 진입한다。",
+  "WATCHER-BOTTLED_MIRACLE.description": "{Cards:diff()}장의 [blue]기적[/blue]을 손에 추가한다.",
+  "WATCHER-CALM_POTION.description": "[blue]명상[/blue]합니다。",
+  "WATCHER-WRATH_POTION.description": "[blue]진노[/blue]에 진입한다。",
+  "WATCHER-AMBROSIA.title": "암브로시아",
+  "WATCHER-BOTTLED_MIRACLE.title": "병에 담긴 기적",
+  "WATCHER-CALM_POTION.title": "병에 담긴 기적 ",
+  "WATCHER-WRATH_POTION.title": "진노의 물약 "
+}

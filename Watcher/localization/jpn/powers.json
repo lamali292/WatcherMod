@@ -68,8 +68,11 @@
   "WATCHER-MASTER_REALITY_POWER.title": "掌握した現実",
   "WATCHER-MASTER_REALITY_POWER.description": "カードが戦闘中に作られるたび、それが[blue]アップグレード[/blue]される。",
   "WATCHER-MASTER_REALITY_POWER.smartDescription": "カードが戦闘中に作られるたび、それが[blue]アップグレード[/blue]される。",
-  "DUALITY_POWER.title": "二元性",
-  "WATCHER-DISCIPLE_POWER.title": "弟子",
-  "WATCHER-DISCIPLE_POWER.description": "{energyPrefix:energyIcons(1)}を残してターンを終了した場合、次のターン、その数だけカードを追加で引く。",
-  "WATCHER-DISCIPLE_POWER.smartDescription": "{energyPrefix:energyIcons(1)}を残してターンを終了した場合、次のターン、その数だけカードを追加で引く。"
+  "WATCHER-DUALITY_POWER.title": "二元性",
+  "WATCHER-ANCIENT_CARD_POWER.description": "[gold]憤怒[/gold]状態中、ダメージが+50%増加する",
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "[gold]憤怒[/gold]状態中、ダメージが+{Amount}%増加する。",
+  "WATCHER-ANCIENT_CARD_POWER.title": "蓄積",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "ターン開始時、[gold]平静[/gold]の[gold]スタンス[/gold]から抜け出す。",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "ターン開始時、[gold]平静[/gold]の[gold]スタンス[/gold]から抜け出す。",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "刹那の明晰"
 }

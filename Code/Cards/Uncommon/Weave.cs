@@ -19,7 +19,7 @@ public sealed class Weave : WatcherCardModel, IOnScryed
         WithTip(WatcherKeywords.Scry);
     }
 
-    public async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount)
+    public async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount, int discardedAmount)
     {
         if (player != Owner)
             return;

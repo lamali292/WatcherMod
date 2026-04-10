@@ -96,7 +96,7 @@
   "WATCHER-EVALUATE.title": "Оценить",
   "WATCHER-EVALUATE.description": "Даёт {Block:diff()} [gold]Защиты[/gold].\nДобавляет [gold]Озарение[/gold] в стопку добора.",
   "WATCHER-FASTING.title": "Пост",
-  "WATCHER-FASTING.description": "Даёт {StrengthPower:diff()} [gold]Силы[/gold]\nДаёт {DexterityPower:diff()} [gold]Ловкости[/gold]\nВы теряете 1 {Energy:energyIcons()} в начале каждого хода.",
+  "WATCHER-FASTING.description": "Даёт {StrengthPower:diff()} [gold]Силы[/gold]\nДаёт {DexterityPower:diff()} [gold]Ловкости[/gold]\nВы теряете 1 {energyPrefix:energyIcons(1)} в начале каждого хода.",
   "WATCHER-INDIGNATION.title": "Выйти из себя",
   "WATCHER-INDIGNATION.description": "Перейти в [gold]Гнев[/gold], накладывает {VulnerablePower:diff()} [gold]Уязвимости[/gold] на ВСЕХ врагов, если вы уже в [gold]Гневе[/gold].",
   "WATCHER-LIKE_WATER.title": "Словно вода",
@@ -171,11 +171,15 @@
   "WATCHER-FAME_AND_FORTUNE.description": "Даёт {Gold:diff()} [gold]Золота[/gold].",
   "WATCHER-LIVE_FOREVER.title": "Вечная жизнь",
   "WATCHER-LIVE_FOREVER.description": "Даёт {PlatingPower:diff()} [gold]Панциря[/gold]",
-  "WATCHER-ANCIENT_CARD.title": "Дисциплина",
-  "WATCHER-ANCIENT_CARD.description": "Если в конце хода остаётся не потраченная {energyPrefix:energyIcons(1)}, вы дополнительно добираете столько же карт в следующем ходу.",
+  "WATCHER-ANCIENT_CARD.title": "Накопление",
+  "WATCHER-ANCIENT_CARD.description": "В состоянии [gold]Гнева[/gold], наносите на +50% больше урона.",
   "WATCHER-WISH_WATCHER.description": "Выберите 1:\n{PlatedArmorPower:diff()} Панциря,\n{StrengthPower:diff()} [gold]Силы[/gold], или {Gold:diff()} [gold]Золота[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Выберите карту, которую хотите разыграть.",
   "WATCHER-WISH_WATCHER.title": "Желание",
-  "WATCHER-ANCIENT_CARD2.title": "Воспламенение",
-  "WATCHER-ANCIENT_CARD2.description": "Перейти в [gold]Гнев[/gold].\\nНаносит {Damage:diff()} урона."
+  "WATCHER-ANCIENT_CARD2.title": "Повторное Откровение",
+  "WATCHER-ANCIENT_CARD2.description": "Наносит {Damage:diff()} урона.\nПерейти в [gold]Божественность[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_RARE.description": "Другой игрок входит в [gold]Божественность[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_RARE.title": "Общая Мудрость",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.description": "Все союзники входят в [gold]Спокойствие[/gold]. \nОни выходят из [gold]Спокойствия[/gold] в начале своего следующего хода.",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.title": "Мимолётная Ясность"
 }

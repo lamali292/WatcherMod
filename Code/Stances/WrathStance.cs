@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Events;
 using Watcher.Code.Vfx;
 
 namespace Watcher.Code.Stances;
@@ -27,8 +28,15 @@ public sealed class WrathStance : WatcherStanceModel
         Creature? dealer,
         CardModel? cardSource)
     {
-        if ((dealer == Owner.Creature || target == Owner.Creature) && !props.HasFlag(ValueProp.Unpowered))
-            return 2m;
-        return 1m;
+        if (props.HasFlag(ValueProp.Unpowered) || Owner.Creature.CombatState == null)
+        {
+            return 1m;
+        }
+        var varA = WatcherHook.ModifyWrathDamage(Owner.Creature.CombatState, Owner, 0);
+        if (dealer == Owner.Creature)
+        {
+            return 2m + varA;
+        }
+        return target == Owner.Creature ? 2m : 1m;
     }
 }
