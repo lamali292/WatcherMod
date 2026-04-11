@@ -22,9 +22,4 @@ public sealed class CarveReality : WatcherCardModel
         await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
         await WatcherCmd.GiveCard<Smite>(Owner, PileType.Hand, CardPilePosition.Top, skipAnimation: true);
     }
-
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Damage.UpgradeValueBy(4m);
-    }
 }

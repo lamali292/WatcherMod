@@ -11,7 +11,7 @@ public class WatcherSubscriber
 {
     public static void Subscribe()
     {
-        //ModHelper.SubscribeForCombatStateHooks(WatcherMainFile.ModId, CollectModels2);
+        ModHelper.SubscribeForCombatStateHooks(WatcherMainFile.ModId, CollectModels2);
     }
 
     
@@ -22,6 +22,8 @@ public class WatcherSubscriber
             .Where(s => s is not NoStance);
     }
 }
+
+/*
 
 [HarmonyPatch(typeof(CombatState), nameof(CombatState.IterateHookListeners))]
 public static class CombatStateHookListenersPatch
@@ -38,4 +40,4 @@ public static class CombatStateHookListenersPatch
             yield return stanceModel;
         }
     }
-}
+}*/

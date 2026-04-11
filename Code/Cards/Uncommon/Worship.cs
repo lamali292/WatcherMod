@@ -15,16 +15,12 @@ public sealed class Worship : WatcherCardModel
     {
         WithPower<MantraPower>(5);
         WithStanceTip<DivinityStance>();
+        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
     }
 
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<MantraPower>(this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Retain);
     }
 }

@@ -15,15 +15,11 @@ public sealed class BattleHymn : WatcherCardModel
     {
         WithPower<BattleHymnPower>(1);
         WithTip(typeof(Smite));
+        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<BattleHymnPower>(this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Innate);
     }
 }

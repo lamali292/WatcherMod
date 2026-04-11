@@ -39,9 +39,4 @@ public sealed class Sanctity : WatcherCardModel
         await CommonActions.CardBlock(this, cardPlay);
         if (WasLastCardPlayedSkill) await CommonActions.Draw(this, ctx);
     }
-
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Block.UpgradeValueBy(3m);
-    }
 }

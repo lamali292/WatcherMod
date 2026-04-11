@@ -15,15 +15,11 @@ public sealed class Study : WatcherCardModel
     {
         WithTip(typeof(Insight));
         WithPower<StudyPower>(1);
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<StudyPower>(this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

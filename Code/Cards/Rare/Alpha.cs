@@ -19,16 +19,11 @@ public sealed class Alpha : WatcherCardModel
             .Select(m => new TooltipSource(_ => m))
             .ToList()
             .ForEach(t => WithTip(t));
+        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await WatcherCmd.GiveCard<Beta>(Owner, PileType.Draw, CardPilePosition.Random);
-    }
-
-
-    protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Innate);
     }
 }
