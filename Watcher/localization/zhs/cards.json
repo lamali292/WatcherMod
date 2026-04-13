@@ -141,7 +141,7 @@
   "WATCHER-BLASPHEMY.title": "渎神",
   "WATCHER-BLASPHEMY.description": "进入 [gold]神格[/gold]。\n在下回合死亡。",
   "WATCHER-CONJURE_BLADE.title": "聚能成刃",
-  "WATCHER-CONJURE_BLADE.description": "将一张 [gold]灭除之刃[/gold] 放入你的抽牌堆中。",
+  "WATCHER-CONJURE_BLADE.description": "将一张{IfUpgraded:show:X数值+1的 |}[gold]灭除之刃[/gold]放入你的抽牌堆中。",
   "WATCHER-EXPUNGER.title": "灭除之刃",
   "WATCHER-EXPUNGER.description": "造成 {Damage:diff()} 点伤害 {Repeat:cond:<0?X|{Repeat:diff()}} 次。",
   "WATCHER-DEUS_EX_MACHINA.title": "机械降神",
@@ -178,8 +178,8 @@
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "选择一张要打出的牌。",
   "WATCHER-WISH_WATCHER.title": "祈愿",
   "WATCHER-ANCIENT_CARD2.description": "造成 {Damage:diff()} 点伤害。\n进入[gold]神圣[/gold]。",
-  "WATCHER-MULTIPLAYER_CARD_RARE.description": "另一名玩家进入[gold]神圣[/gold]。",
+  "WATCHER-MULTIPLAYER_CARD_RARE.description": "另一名玩家进入[gold]神格[/gold]。",
   "WATCHER-MULTIPLAYER_CARD_RARE.title": "共享智慧",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON.description": "所有盟友进入[gold]平静[/gold]。\n他们在下一回合开始时退出[gold]平静[/gold]。",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.title": "短暂的清晰"
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.title": "昙花一悟"
 }

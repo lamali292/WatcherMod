@@ -74,5 +74,8 @@
   "WATCHER-ANCIENT_CARD_POWER.title": "积累",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "回合开始时，退出[gold]平静[/gold]。",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "回合开始时，退出[gold]平静[/gold]。",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "短暂的清晰 "
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "短暂的清晰 ",
+  "WATCHER-PLATED_ARMOR_POWER.title": "多层护甲",
+  "WATCHER-PLATED_ARMOR_POWER.smartDescription": "在你的回合结束时获得 [blue]{Amount}[/blue] 点[gold]格挡[/gold]。受到攻击伤害而失去生命时，[gold]多层护甲[/gold]的层数将会减少[blue]1[/blue]。",
+  "WATCHER-PLATED_ARMOR_POWER.description": "在你的回合结束时获得 [blue]X[/blue] 点[gold]格挡[/gold]。受到攻击伤害而失去生命时，[gold]多层护甲[/gold]的层数将会减少[blue]1[/blue]。"
 }
