@@ -17,16 +17,12 @@ public sealed class Blasphemy : WatcherCardModel
         WithPower<BlasphemerPower>(1);
         WithKeywords(CardKeyword.Exhaust);
         WithStanceTip<DivinityStance>();
+        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<BlasphemerPower>(this);
         await StanceCmd.EnterDivinity(ctx, Owner, cardPlay.Card);
-    }
-
-    protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Retain);
     }
 }

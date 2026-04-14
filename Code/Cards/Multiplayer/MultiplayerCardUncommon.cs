@@ -24,7 +24,7 @@ public class MultiplayerCardUncommon : WatcherCardModel
     {
         WithPower<MultiplayerCardUncommonPower>(1);
         WithStanceTip<CalmStance>();
-        WithKeywords(CardKeyword.Exhaust);
+        WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
@@ -38,10 +38,5 @@ public class MultiplayerCardUncommon : WatcherCardModel
             await StanceCmd.EnterCalm(ctx, player, this);
         }
         
-    }
-
-    protected override void OnUpgrade()
-    {
-        RemoveKeyword(CardKeyword.Exhaust);
     }
 }

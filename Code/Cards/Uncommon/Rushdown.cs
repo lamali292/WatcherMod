@@ -15,15 +15,11 @@ public sealed class Rushdown : WatcherCardModel
     {
         WithPower<RushdownPower>(2);
         WithStanceTip<WrathStance>();
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<RushdownPower>(this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

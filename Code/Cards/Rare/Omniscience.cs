@@ -14,6 +14,7 @@ public sealed class Omniscience : WatcherCardModel
     public Omniscience() : base(4, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
         WithKeywords(CardKeyword.Exhaust);
+        WithCostUpgradeBy(-1);
     }
 
 
@@ -42,11 +43,5 @@ public sealed class Omniscience : WatcherCardModel
             await CardCmd.AutoPlay(choiceContext, card, null);
             if (card.Type != CardType.Power) await CardCmd.Exhaust(choiceContext, card);
         }
-    }
-
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

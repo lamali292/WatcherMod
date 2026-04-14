@@ -14,15 +14,11 @@ public sealed class Establishment : WatcherCardModel
     {
         WithPower<EstablishmentPower>(1);
         WithKeywords(CardKeyword.Retain);
+        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<EstablishmentPower>(this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Innate);
     }
 }

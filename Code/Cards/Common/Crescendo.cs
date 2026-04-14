@@ -15,15 +15,11 @@ public sealed class Crescendo : WatcherCardModel
     {
         WithStanceTip<WrathStance>();
         WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust);
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         await StanceCmd.EnterWrath(ctx, Owner, cardPlay.Card);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

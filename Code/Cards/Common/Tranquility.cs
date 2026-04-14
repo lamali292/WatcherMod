@@ -15,15 +15,11 @@ public sealed class Tranquility : WatcherCardModel
     {
         WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust);
         WithStanceTip<CalmStance>();
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         await StanceCmd.EnterCalm(ctx, Owner, cardPlay.Card);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

@@ -12,17 +12,12 @@ public sealed class DevaForm : WatcherCardModel
 {
     public DevaForm() : base(3, CardType.Power, CardRarity.Rare, TargetType.None)
     {
-        WithKeywords(CardKeyword.Ethereal);
+        WithKeyword(CardKeyword.Ethereal, UpgradeType.Remove);
         WithPower<DevaPower>(1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<DevaPower>(this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        RemoveKeyword(CardKeyword.Ethereal);
     }
 }

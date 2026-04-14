@@ -15,6 +15,7 @@ public sealed class Eruption : WatcherCardModel
     {
         WithDamage(9);
         WithStanceTip<WrathStance>();
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
@@ -23,10 +24,5 @@ public sealed class Eruption : WatcherCardModel
         await CommonActions.CardAttack(this, cardPlay).WithHitFx("vfx/vfx_attack_slash")
             .Execute(ctx);
         await StanceCmd.EnterWrath(ctx, Owner, cardPlay.Card);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

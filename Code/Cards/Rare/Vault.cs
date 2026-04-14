@@ -19,6 +19,7 @@ public sealed class Vault : WatcherCardModel
     public Vault() : base(3, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
         WithKeywords(CardKeyword.Exhaust);
+        WithCostUpgradeBy(-1);
     }
 
 
@@ -53,10 +54,5 @@ public sealed class Vault : WatcherCardModel
         Traverse.Create(paelsEye).Field("_usedThisCombat").SetValue(false);
 
         return Task.CompletedTask;
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

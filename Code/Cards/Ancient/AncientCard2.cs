@@ -16,6 +16,7 @@ public sealed class AncientCard2 : WatcherCardModel
         WithDamage(12);
         WithStanceTip<DivinityStance>();
         WithKeywords(CardKeyword.Exhaust);
+        WithCostUpgradeBy(-1);
     }
     
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
@@ -23,10 +24,5 @@ public sealed class AncientCard2 : WatcherCardModel
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await CommonActions.CardAttack(this, cardPlay).WithHitFx("vfx/vfx_attack_slash").Execute(ctx);
         await StanceCmd.EnterDivinity(ctx, Owner, cardPlay.Card);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }

@@ -13,16 +13,12 @@ public sealed class ScrawlWatcher : WatcherCardModel
     public ScrawlWatcher() : base(1, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
         WithKeywords(CardKeyword.Exhaust);
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (Owner.PlayerCombatState == null) return;
         await CardPileCmd.Draw(choiceContext, 10 - Owner.PlayerCombatState.Hand.Cards.Count, Owner);
-    }
-
-    protected override void OnUpgrade()
-    {
-        EnergyCost.UpgradeBy(-1);
     }
 }
