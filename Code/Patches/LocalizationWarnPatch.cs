@@ -14,8 +14,9 @@ public static class LocalizationWarnPatch
         if (__instance.HasEntry(key))
             return true;
 
-        GD.PushWarning($"[LocTable] GetLocString: Key not found: '{key}' — using key as placeholder");
-        __result = new LocString(key, key);
+        var tableName = Traverse.Create(__instance).Field("_name").GetValue<string>();
+        GD.PushWarning($"[LocTable] GetLocString: Key '{key}' not found in table '{tableName}'");
+        __result = new LocString(tableName, key);
         return false;
     }
 
@@ -26,7 +27,8 @@ public static class LocalizationWarnPatch
         if (__instance.HasEntry(key))
             return true;
 
-        GD.PushWarning($"[LocTable] GetRawText: Key not found: '{key}' — using key as placeholder");
+        var tableName = Traverse.Create(__instance).Field("_name").GetValue<string>();
+        GD.PushWarning($"[LocTable] GetRawText: Key '{key}' not found in table '{tableName}'");
         __result = key;
         return false;
     }

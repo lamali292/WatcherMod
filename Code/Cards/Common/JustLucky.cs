@@ -4,11 +4,13 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
+using Watcher.Code.Keywords;
 
 namespace Watcher.Code.Cards.Common;
 
@@ -20,6 +22,11 @@ public sealed class JustLucky() : CustomCardModel(0, CardType.Attack, CardRarity
         new CardsVar(1),
         new BlockVar(2m, ValueProp.Move),
         new DamageVar(3m, ValueProp.Move)
+    ];
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromKeyword(WatcherKeywords.Scry)
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();

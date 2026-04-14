@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
+using Watcher.Code.Keywords;
 using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Uncommon;
@@ -22,7 +23,9 @@ public sealed class Nirvana() : CustomCardModel(1, CardType.Power, CardRarity.Un
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.Static(StaticHoverTip.Block)
+        HoverTipFactory.Static(StaticHoverTip.Block),
+        HoverTipFactory.FromPower<NirvanaPower>(),
+        HoverTipFactory.FromKeyword(WatcherKeywords.Scry)
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();

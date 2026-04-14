@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
+using Watcher.Code.Keywords;
 using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Uncommon;
@@ -17,7 +18,8 @@ public sealed class Foresight() : CustomCardModel(1, CardType.Power, CardRarity.
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<ForesightPower>()
+        HoverTipFactory.FromPower<ForesightPower>(),
+        HoverTipFactory.FromKeyword(WatcherKeywords.Scry)
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
