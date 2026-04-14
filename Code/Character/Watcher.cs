@@ -5,9 +5,10 @@ using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Models.Relics;
 using Watcher.Code.Cards.Basic;
 using Watcher.Code.Core;
+using Watcher.Code.Extensions;
 using Watcher.Code.Relics;
 using Watcher.Code.Stances;
 
@@ -61,6 +62,10 @@ public class Watcher : CustomCharacterModel
     //public override string CustomCastSfx => "res://";
     //public override string CustomDeathSfx => "res://";
     public override string CharacterSelectSfx => "res://Watcher/audio/watcher_select.ogg";
+
+    public string CustomYummyCookieBigIconPath => "watcher_cookie.png".BigRelicImagePath();
+    public string CustomYummyCookiePackedIconPath => "watcher_cookie.tres".TresRelicImagePath();
+    public string CustomYummyCookiePackedIconOutlinePath => "watcher_cookie_outline.tres".TresRelicImagePath();
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
@@ -133,3 +138,49 @@ public class Watcher : CustomCharacterModel
     }
 }
 
+
+[HarmonyPatch(typeof(RelicModel), nameof(RelicModel.PackedIconPath), MethodType.Getter)]
+public class CustomYummyCookiePackedIconPathPatch
+{
+   
+
+    [HarmonyPrefix]
+    static bool Prefix(RelicModel __instance, ref string __result)
+    {
+        if (__instance is not YummyCookie cookie) return true;
+        var character = cookie.IsCanonical ? null : cookie.Owner?.Character;
+        if (character is not Watcher {CustomYummyCookiePackedIconPath: { } path}) return true;
+        __result = path;
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(RelicModel), "PackedIconOutlinePath", MethodType.Getter)]
+public class CustomYummyCookieOutlinePathPatch
+{
+
+    [HarmonyPrefix]
+    static bool Prefix(RelicModel __instance, ref string __result)
+    {
+        if (__instance is not YummyCookie cookie) return true;
+        var character = cookie.IsCanonical ? null : cookie.Owner?.Character;
+        if (character is not Watcher {CustomYummyCookiePackedIconOutlinePath: { } path}) return true;
+        __result = path;
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(RelicModel), "BigIconPath", MethodType.Getter)]
+public class CustomYummyCookieBigIconPathPatch
+{
+   
+    [HarmonyPrefix]
+    static bool Prefix(RelicModel __instance, ref string __result)
+    {
+        if (__instance is not YummyCookie cookie) return true;
+        var character = cookie.IsCanonical ? null : cookie.Owner?.Character;
+        if (character is not Watcher {CustomYummyCookieBigIconPath: { } path}) return true;
+        __result = path;
+        return false;
+    }
+}

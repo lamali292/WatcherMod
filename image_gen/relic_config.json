@@ -1,0 +1,15 @@
+{
+    "paths": {
+        "input_dir": "relics",
+        "godot_root": "../",
+        "res_base": "res://Watcher/images"
+    },
+    "globals": {
+        "inset": -60
+    },
+    "per_image": {
+        "watcher_cookie.png": {
+            "inset": 17
+        }
+    }
+}
