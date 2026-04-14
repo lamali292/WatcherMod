@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using BaseLib.Abstracts;
 using Godot;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using Watcher.Code.Cards.Basic;
 using Watcher.Code.Relics;
 using Watcher.Code.Stances;
@@ -21,7 +25,7 @@ public class Watcher : CustomCharacterModel
     public override string CustomCharacterSelectIconPath => "res://Watcher/images/watcher/char_select_watcher.png";
 
 
-    public override CustomEnergyCounter? CustomEnergyCounter =>
+    public override CustomEnergyCounter? CustomEnergyCounter => 
         new CustomEnergyCounter(EnergyCounterPaths, new Color(0.4f, 0.1f, 0.9f), new Color(0.7f, 0.1f, 0.9f));
 
     //public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter_empty.tscn";
@@ -126,5 +130,36 @@ public class Watcher : CustomCharacterModel
     public override CreatureAnimator? SetupCustomAnimationStates(MegaSprite controller)
     {
         return SetupAnimationState(controller, "Idle", hitName: "Hit");
+    }
+}
+
+
+[HarmonyPatch(typeof(NEnergyCounter), nameof(NEnergyCounter._Ready))]
+internal static class NEnergyCounterReadyPatch
+{
+    [HarmonyPrefix]
+    static void SafeReady(NEnergyCounter __instance)
+    {
+        if (!__instance.HasNode("%BurstBack"))
+        {
+            var node = new CpuParticles2D
+            {
+                Name = (StringName)"BurstBack", Emitting = false, Amount = 0,Visible = false,
+            };
+            __instance.AddChild(node);
+            node.Owner = __instance;
+            node.UniqueNameInOwner = true;
+        }
+
+        if (__instance.HasNode("%BurstFront")) return;
+        {
+            var node = new CpuParticles2D
+            {
+                Name = (StringName)"BurstFront", Emitting = false, Amount = 0,Visible = false,
+            };
+            __instance.AddChild(node);
+            node.Owner = __instance;
+            node.UniqueNameInOwner = true;
+        }
     }
 }
