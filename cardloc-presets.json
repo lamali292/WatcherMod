@@ -1,6 +1,6 @@
-﻿{
-  "projectId": "Watcher",
+{
   "localizationBase": "Watcher/localization/eng",
+  "projectId": "Watcher",
   "presets": [
     {
       "id": "card",
@@ -162,6 +162,29 @@
         {
           "name": "aromaPrinciple",
           "file": "characters.json",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "relics",
+      "markers": [
+        "CustomRelicModel"
+      ],
+      "fields": [
+        {
+          "name": "title",
+          "file": "relics.json",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "file": "relics.json",
+          "optional": false
+        },
+        {
+          "name": "flavor",
+          "file": "relics.json",
           "optional": false
         }
       ]

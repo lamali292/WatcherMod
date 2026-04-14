@@ -15,17 +15,8 @@ internal class ProgressSaveManager_Patches
     {
         private static bool Prefix(ProgressSaveManager __instance, Player localPlayer, int act)
         {
-            Console.WriteLine(
-                $"[Prefix] ObtainCharUnlockEpoch started for {localPlayer.Character.GetType().Name}, Act {act + 1}");
-
-            // Skip method for Watcher or handle custom logic
             return localPlayer.Character is not Character.Watcher;
         }
-
-        private static void Postfix(ProgressSaveManager __instance, Player localPlayer, int act)
-        {
-            Console.WriteLine(
-                $"[Postfix] ObtainCharUnlockEpoch finished for {localPlayer.Character.GetType().Name}, Act {act + 1}");
-        }
+        
     }
 }
