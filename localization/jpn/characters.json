@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]鍛錬を通じて、私は明晰さを見出す...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]瞬間が過ぎ去る。[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "ウォッチャーのカードが報酬とショップに出現するようになります。",
+  "WATCHER-WATCHER.cardsModifierTitle": "ウォッチャーカード",
+  "WATCHER-WATCHER.description": "塔を評価するために来た盲目の修行者。\n神聖なるスタンスの達人。",
+  "WATCHER-WATCHER.eventDeathPrevention": "生き延びなければ。均衡がそれにかかっている。",
+  "WATCHER-WATCHER.goldMonologue": "[sine]私は富を求めない...しかし道は準備を要求する。[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "彼女の",
+  "WATCHER-WATCHER.pronounObject": "彼女を",
+  "WATCHER-WATCHER.pronounPossessive": "彼女のもの",
+  "WATCHER-WATCHER.pronounSubject": "彼女は",
+  "WATCHER-WATCHER.title": "ウォッチャー",
+  "WATCHER-WATCHER.titleObject": "ウォッチャー"
+}

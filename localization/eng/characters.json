@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]Through discipline, I find clarity...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]The moment passes.[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "Watcher cards will now appear in rewards and shops.",
+  "WATCHER-WATCHER.cardsModifierTitle": "Watcher Cards",
+  "WATCHER-WATCHER.description": "A blind ascetic who has come to \"Evaluate\" the Spire.\nMaster of the divine Stances.",
+  "WATCHER-WATCHER.eventDeathPrevention": "I must survive. Balance depends on it.",
+  "WATCHER-WATCHER.goldMonologue": "[sine]I seek no wealth... but the path demands preparation.[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "her",
+  "WATCHER-WATCHER.pronounObject": "her",
+  "WATCHER-WATCHER.pronounPossessive": "hers",
+  "WATCHER-WATCHER.pronounSubject": "she",
+  "WATCHER-WATCHER.title": "The Watcher",
+  "WATCHER-WATCHER.titleObject": "The Watcher"
+}
