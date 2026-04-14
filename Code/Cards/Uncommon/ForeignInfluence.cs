@@ -19,37 +19,50 @@ public sealed class ForeignInfluence() : CustomCardModel(0, CardType.Skill, Card
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // Get 3 random distinct attack cards from ALL card pools
-        var allAttacks = ModelDb.AllCards.Where(c => c.Type == CardType.Attack);
+        if (Owner.Creature.CombatState == null) return;
+        var rng = Owner.RunState.Rng.CombatCardGeneration;
 
-        var randomAttacks = CardFactory.GetDistinctForCombat(
-            Owner,
-            allAttacks,
-            3, // Get 3 cards
-            Owner.RunState.Rng.CombatCardGeneration
-        ).ToList();
+        // Build 3 distinct weighted-rarity attack cards from ALL pools
+        var attacksByRarity = CardFactory.FilterForCombat(ModelDb.AllCards)
+            .Where(c => c.Type == CardType.Attack)
+            .GroupBy(c => c.Rarity)
+            .ToDictionary(g => g.Key, g => g.ToList());
 
-        if (randomAttacks.Any())
+        var weightedAttacks = new List<CardModel>();
+        var seen = new HashSet<string>();
+
+        while (weightedAttacks.Count < 3)
         {
-            // Let player choose 1 of 3
-            var chosenCard = await CardSelectCmd.FromChooseACardScreen(
-                choiceContext,
-                randomAttacks,
-                Owner
+            var roll = rng.NextInt(100);
+            var rarity = roll < 55 ? CardRarity.Common
+                : roll < 85 ? CardRarity.Uncommon
+                : CardRarity.Rare;
+
+            if (!attacksByRarity.TryGetValue(rarity, out var pool)) continue;
+
+            var candidate = rng.NextItem(pool);
+            if (candidate == null || !seen.Add(candidate.Id.Entry)) continue;
+
+            weightedAttacks.Add(Owner.Creature.CombatState.CreateCard(candidate, Owner));
+        }
+
+        // Let player choose 1 of 3
+        var chosenCard = await CardSelectCmd.FromChooseACardScreen(
+            choiceContext,
+            weightedAttacks,
+            Owner,
+            true
+        );
+
+        if (chosenCard != null)
+        {
+            if (IsUpgraded) chosenCard.SetToFreeThisTurn();
+
+            await CardPileCmd.AddGeneratedCardToCombat(
+                chosenCard,
+                PileType.Hand,
+                true
             );
-
-            if (chosenCard != null)
-            {
-                // If upgraded, make it cost 0 this turn
-                if (IsUpgraded) chosenCard.SetToFreeThisTurn();
-
-                // Add to hand
-                await CardPileCmd.AddGeneratedCardToCombat(
-                    chosenCard,
-                    PileType.Hand,
-                    true
-                );
-            }
         }
     }
 
