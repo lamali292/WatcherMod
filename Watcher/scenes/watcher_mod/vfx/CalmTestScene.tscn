@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq8au1jr08s6c"]
+
+[ext_resource type="PackedScene" uid="uid://kq7dmrg0ygyf" path="res://scenes/creature_visuals/watcher.tscn" id="1_j0o0l"]
+[ext_resource type="PackedScene" uid="uid://dxmjc5hdqlmwd" path="res://scenes/watcher_mod/vfx/calm_aura.tscn" id="2_j0o0l"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Watcher" parent="." instance=ExtResource("1_j0o0l")]
+
+[node name="CalmAura" parent="." instance=ExtResource("2_j0o0l")]

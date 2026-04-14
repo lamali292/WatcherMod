@@ -1,0 +1,262 @@
+{
+  "WATCHER-DEFEND_WATCHER.title": "防御",
+  "WATCHER-DEFEND_WATCHER.description": "获得 {Block:diff()} [gold]格挡[/gold]。",
+  "WATCHER-STRIKE_WATCHER.title": "打击",
+  "WATCHER-STRIKE_WATCHER.description": "造成 {Damage:diff()} 点伤害。",
+  "WATCHER-VIGILANCE.title": "警惕",
+  "WATCHER-VIGILANCE.description": "获得 {Block:diff()} [gold]格挡[/gold]。\n进入 [gold]平静[/gold]。",
+  "WATCHER-ERUPTION.title": "暴怒",
+  "WATCHER-ERUPTION.description": "造成 {Damage:diff()} 点伤害。\n进入 [gold]愤怒[/gold]。",
+
+  "WATCHER-BOWLING_BASH.title": "碰撞连击",
+  "WATCHER-BOWLING_BASH.description": "当前每有一名敌人，造成 {Damage:diff()} 点伤害",
+
+  "WATCHER-CONSECRATE.title": "供奉",
+  "WATCHER-CONSECRATE.description": "对所有敌人造成 {Damage:diff()} 点伤害。",
+
+  "WATCHER-CRESCENDO.title": "渐强",
+  "WATCHER-CRESCENDO.description": "进入 [gold]愤怒[/gold]。",
+
+  "WATCHER-CRUSH_JOINTS.title": "粉碎关节",
+  "WATCHER-CRUSH_JOINTS.description": "造成 {Damage:diff()} 点伤害。\n如果本场战斗中打出的上一张牌是 [gold]技能[/gold]，给予 [blue]1[/blue] [gold]易伤[/gold]。",
+
+  "WATCHER-CUT_THROUGH_FATE.title": "斩破命运",
+  "WATCHER-CUT_THROUGH_FATE.description": "造成 {Damage:diff()} 点伤害。\n[gold]预见[/gold] {Cards:diff()}。\n抽 [blue]1[/blue] 张牌。",
+  
+  "WATCHER-EMPTY_FIST.title": "化拳为空",
+  "WATCHER-EMPTY_FIST.description": "造成 {Damage:diff()} 点伤害。\n退出当前 [gold]姿态[/gold]。",
+  
+  "WATCHER-INSIGHT.title": "洞见",
+  "WATCHER-INSIGHT.description": "抽 {Cards:diff()} 张牌。",
+  
+  "WATCHER-FLURRY_OF_BLOWS.title": "疾风连击",
+  "WATCHER-FLURRY_OF_BLOWS.description": "造成 {Damage:diff()} 点伤害。\n你每次转换 [gold]姿态[/gold] 时，将这张牌从弃牌堆放回你的手牌。",
+  
+  "WATCHER-FLYING_SLEEVES.title": "流云飞袖",
+  "WATCHER-FLYING_SLEEVES.description": "造成 {Damage:diff()} 点伤害两次。",
+  
+  "WATCHER-FOLLOW_UP.title": "追击",
+  "WATCHER-FOLLOW_UP.description": "造成 {Damage:diff()} 点伤害。\n如果打出的上一张牌是攻击牌，获得 [blue]1[/blue] {energyPrefix:energyIcons(1)}。",
+  
+  "WATCHER-JUST_LUCKY.title": "幸运一击",
+  "WATCHER-JUST_LUCKY.description": "[gold]预见[/gold] {Cards:diff()}。\n获得 {Block:diff()} 点 [gold]格挡[/gold]。\n造成 {Damage:diff()} 点伤害。",
+  
+  "WATCHER-REACH_HEAVEN.title": "立地升天",
+  "WATCHER-REACH_HEAVEN.description": "造成 {Damage:diff()} 点伤害。\n在你的抽牌堆中加入 1 张 [gold]以暴易暴[/gold]。",
+  
+  "WATCHER-THROUGH_VIOLENCE.title": "以暴易暴",
+  "WATCHER-THROUGH_VIOLENCE.description": "造成 {Damage:diff()} 点伤害。",
+  
+  "WATCHER-SASH_WHIP.title": "腰带抽打",
+  "WATCHER-SASH_WHIP.description": "造成 {Damage:diff()} 点伤害。\n如果本场战斗中打出的\n上一张牌是攻击牌，\n给予 {WeakPower:diff()} 层 [gold]虚弱[/gold]。",
+  
+  "WATCHER-THIRD_EYE.title": "天眼",
+  "WATCHER-THIRD_EYE.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n[gold]预见[/gold] {Cards:diff()}。",
+  
+  "WATCHER-TRANQUILITY.title": "安宁",
+  "WATCHER-TRANQUILITY.description": "进入 [gold]平静[/gold]。",
+  
+  "WATCHER-WINDMILL_STRIKE.title": "旋转打击",
+  "WATCHER-WINDMILL_STRIKE.description": "造成 {Damage:diff()} 点伤害。\n每当这张牌被 [gold]保留[/gold] 时，将其在本场战斗的伤害增加 {RetainIncrease:diff()} 点。",
+  
+  "WATCHER-EMPTY_BODY.title": "化体为空",
+  "WATCHER-EMPTY_BODY.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n退出当前 [gold]姿态[/gold]。",
+  
+  "WATCHER-EMPTY_MIND.title": "化智为空",
+  "WATCHER-EMPTY_MIND.description": "抽 {Cards:diff()} 张牌。\n退出当前 [gold]姿态[/gold]。",
+  
+  "WATCHER-HALT.title": "停顿",
+  "WATCHER-HALT.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n如果你处于 [gold]愤怒[/gold]，\n获得 {WrathBlock:diff()} 点额外\n[gold]格挡[/gold]。",
+  
+  "WATCHER-PRESSURE_POINTS.title": "点穴",
+  "WATCHER-PRESSURE_POINTS.description": "给予 {MarkPower:diff()} 层 [gold]印记[/gold]。\n所有敌人失去与 [gold]印记[/gold]\n层数相等的生命。",
+  
+  "WATCHER-PROSTRATE.title": "五体投地",
+  "WATCHER-PROSTRATE.description": "获得 {MantraPower:diff()} 层 [gold]真言[/gold]。\n获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+  
+  "WATCHER-PROTECT.title": "护身",
+  "WATCHER-PROTECT.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+  
+  "WATCHER-INNER_PEACE.title": "内心宁静",
+  "WATCHER-INNER_PEACE.description": "如果你处于 [gold]平静[/gold]，抽 {Cards:diff()} 张牌，否则进入 [gold]平静[/gold]。",
+
+  "WATCHER-RUSHDOWN.title": "猛虎下山",
+  "WATCHER-RUSHDOWN.description": "每当你进入 [gold]愤怒[/gold] 时，抽 [blue]2[/blue] 张牌。",
+
+  "WATCHER-CARVE_REALITY.title": "改造现实",
+  "WATCHER-CARVE_REALITY.description": "造成 {Damage:diff()} 点伤害。\n将一张 [gold]惩恶[/gold] 加入你的手牌。",
+
+  "WATCHER-CONCLUDE.title": "结末",
+  "WATCHER-CONCLUDE.description": "对所有敌人造成 {Damage:diff()} 点伤害。\n结束你的回合。",
+
+  "WATCHER-DECEIVE_REALITY.title": "欺瞒现实",
+  "WATCHER-DECEIVE_REALITY.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n将一张 [gold]平安[/gold] 加入你的手牌。",
+
+  "WATCHER-FEAR_NO_EVIL.title": "不惧妖邪",
+  "WATCHER-FEAR_NO_EVIL.description": "造成 {Damage:diff()} 点伤害。\n如果目标敌人的意图是攻击，则进入 [gold]平静[/gold]。",
+
+  "WATCHER-FOREIGN_INFLUENCE.title": "他山之石",
+  "WATCHER-FOREIGN_INFLUENCE.description": "从 3 张任意颜色的攻击牌中选择 1 张加入你的手牌。{IfUpgraded:show:\n这张牌在本回合耗能变为 0|}",
+
+  "WATCHER-JUDGMENT.title": "审判",
+  "WATCHER-JUDGMENT.description": "如果目标敌人的生命值小于等于 {DamageThreshold:diff()} 点，设置其生命值为 0。",
+
+  "WATCHER-RAGNAROK.title": "诸神之黄昏",
+  "WATCHER-RAGNAROK.description": "随机对敌人造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。",
+
+  "WATCHER-SIGNATURE_MOVE.title": "招牌技",
+  "WATCHER-SIGNATURE_MOVE.description": "只有当这张牌是你手中唯一的一张攻击牌时才可以被打出。\n造成 {Damage:diff()} 点伤害。",
+
+  "WATCHER-SIMMERING_FURY.title": "怒火中烧",
+  "WATCHER-SIMMERING_FURY.description": "在你的下个回合开始时，进入 [gold]愤怒[/gold] 并抽 {DrawCardsNextTurnPower:diff()} 张牌。",
+
+  "WATCHER-TANTRUM.title": "发泄",
+  "WATCHER-TANTRUM.description": "造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次。\n进入 [gold]愤怒[/gold]。\n将这张牌放入你的抽牌堆。",
+
+  "WATCHER-WAVE_OF_THE_HAND.title": "摆手",
+  "WATCHER-WAVE_OF_THE_HAND.description": "在本回合，你每次获得 [gold]格挡[/gold] 时，给予所有敌人 {WaveOfTheHandPower:diff()} 层 [gold]虚弱[/gold]。",
+
+  "WATCHER-WEAVE.title": "迂回",
+  "WATCHER-WEAVE.description": "造成 {Damage:diff()} 点伤害。每当你 [gold]预见[/gold] 时，将这张牌从弃牌堆放回你的手牌。",
+
+  "WATCHER-WHEEL_KICK.title": "回环踢",
+  "WATCHER-WHEEL_KICK.description": "造成 {Damage:diff()} 点伤害。\n抽 {Cards:diff()} 张牌。",
+
+  "WATCHER-BATTLE_HYMN.title": "战歌",
+  "WATCHER-BATTLE_HYMN.description": "在每回合开始时，将一张 [gold]惩恶[/gold] 加入你的手牌。",
+
+  "WATCHER-SMITE.title": "惩恶",
+  "WATCHER-SMITE.description": "造成 {Damage:diff()} 点伤害。",
+
+  "WATCHER-SAFETY.title": "平安",
+  "WATCHER-SAFETY.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+
+  "WATCHER-COLLECT.title": "收集",
+  "WATCHER-COLLECT.description": "在你的下 {IfUpgraded:show:X+1|X} 个回合开始时，\n增加一张 [gold]奇迹+[/gold] \n到你的手牌。",
+
+  "WATCHER-MIRACLE.title": "奇迹",
+  "WATCHER-MIRACLE.description": "获得 {Energy:energyIcons()}。",
+
+  "WATCHER-EVALUATE.title": "评估",
+  "WATCHER-EVALUATE.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n在你的抽牌堆中加入一张 [gold]洞见[/gold]。",
+
+  "WATCHER-FASTING.title": "斋戒",
+  "WATCHER-FASTING.description": "获得 {StrengthPower:diff()} 点 [gold]力量[/gold]\n获得 {DexterityPower:diff()} 点 [gold]敏捷[/gold]\n每回合开始时少获得 1 个 {Energy:energyIcons()}。",
+
+  "WATCHER-INDIGNATION.title": "义愤填膺",
+  "WATCHER-INDIGNATION.description": "如果你处于 [gold]愤怒[/gold]，给予所有敌人 {VulnerablePower:diff()} 层 [gold]易伤[/gold]，否则进入 [gold]愤怒[/gold]。",
+
+  "WATCHER-LIKE_WATER.title": "如水",
+  "WATCHER-LIKE_WATER.description": "在你的回合结束时，如果你处于 [gold]平静[/gold]，获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+
+  "WATCHER-MEDITATE.title": "冥想",
+  "WATCHER-MEDITATE.description": "将弃牌堆中的 {Cards:diff()} 张牌放入你的手牌，并将其 [gold]保留[/gold]。\n进入 [gold]平静[/gold]。\n结束你的回合。",
+
+  "WATCHER-MEDITATE.selectionScreenPrompt": "选择 {Amount:plural:一张牌|[blue]{}[/blue] 张牌} 以 [gold]保留[/gold]。",
+  
+  "WATCHER-MENTAL_FORTRESS.title": "心灵堡垒",
+  "WATCHER-MENTAL_FORTRESS.description": "每当你转换 [gold]姿态[/gold] 时，获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+
+  "WATCHER-NIRVANA.title": "涅槃",
+  "WATCHER-NIRVANA.description": "你每次 [gold]预见[/gold] 时，获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+
+  "WATCHER-PERSEVERANCE.title": "坚韧",
+  "WATCHER-PERSEVERANCE.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n每当这张牌被 [gold]保留[/gold] 时，将其在本场战斗的 [gold]格挡[/gold] 增加 {Increase:diff()} 点。",
+
+  "WATCHER-PRAY.title": "祈祷",
+  "WATCHER-PRAY.description": "获得 {MantraPower:diff()} 层 [gold]真言[/gold]。\n在你的抽牌堆中加入一张 [gold]洞见[/gold]。",
+
+  "WATCHER-SANCTITY.title": "圣洁",
+  "WATCHER-SANCTITY.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n如果本场战斗中打出的上一张牌是技能牌，抽 2 张牌。",
+
+  "WATCHER-STUDY.title": "研习",
+  "WATCHER-STUDY.description": "在你的回合结束时，在你的抽牌堆中加入一张 [gold]洞见[/gold]。",
+
+  "WATCHER-SWIVEL.title": "旋身",
+  "WATCHER-SWIVEL.description": "获得 {Block:diff()} 点 [gold]格挡[/gold]。\n你打出的下一张攻击牌耗能变为 0。",
+
+  "WATCHER-TALK_TO_THE_HAND.title": "以手拒之",
+  "WATCHER-TALK_TO_THE_HAND.description": "造成 {Damage:diff()} 点伤害。\n每当目标敌人受到攻击时，你获得 {BlockReturnPower:diff()} 点 [gold]格挡[/gold]。",
+
+  "WATCHER-WALLOP.title": "当头棒喝",
+  "WATCHER-WALLOP.description": "造成 {Damage:diff()} 点伤害。\n获得与所造成的未被格挡的伤害相等的 [gold]格挡[/gold]。",
+
+  "WATCHER-WORSHIP.title": "敬拜",
+  "WATCHER-WORSHIP.description": "获得 [blue]5[/blue] 层 [gold]真言[/gold]。",
+
+  "WATCHER-DEVOTION.title": "虔信",
+  "WATCHER-DEVOTION.description": "在你的回合开始时，获得 {DevotionPower:diff()} 层 [gold]真言[/gold]。",
+
+  "WATCHER-FORESIGHT.title": "先见之明",
+  "WATCHER-FORESIGHT.description": "在你的回合开始时，[gold]预见[/gold] {ForesightPower:diff()}。",
+
+  "WATCHER-BRILLIANCE.title": "光辉",
+  "WATCHER-BRILLIANCE.description": "造成 {Damage:diff()} 点伤害。\n额外造成本场战斗中获得的 [gold]真言[/gold] 总层数的伤害。",
+
+  "WATCHER-LESSON_LEARNED.title": "勤学精进",
+  "WATCHER-LESSON_LEARNED.description": "造成 {Damage:diff()} 点伤害。\n[gold]斩杀[/gold] 时，[gold]升级[/gold] 你牌组中的一张随机牌。",
+
+  "WATCHER-SANDS_OF_TIME.title": "时之沙",
+  "WATCHER-SANDS_OF_TIME.description": "造成 {Damage:diff()} 点伤害。\n当这张牌被 [gold]保留[/gold] 时，将其在本场战斗的耗能减少 1。",
+
+  "WATCHER-SCRAWL_WATCHER.title": "潦草急就",
+  "WATCHER-SCRAWL_WATCHER.description": "抽牌直到将手牌抽满。",
+
+  "WATCHER-VAULT.title": "腾跃",
+  "WATCHER-VAULT.description": "在本回合结束后，额外获得一回合。\n结束你的回合。",
+
+  "WATCHER-BLASPHEMY.title": "渎神",
+  "WATCHER-BLASPHEMY.description": "进入 [gold]神格[/gold]。\n在下回合死亡。",
+
+  "WATCHER-CONJURE_BLADE.title": "聚能成刃",
+  "WATCHER-CONJURE_BLADE.description": "将一张 [gold]灭除之刃[/gold] 放入你的抽牌堆中。",
+
+  "WATCHER-EXPUNGER.title": "灭除之刃",
+  "WATCHER-EXPUNGER.description": "造成 {Damage:diff()} 点伤害 {Repeat:cond:<0?X|{Repeat:diff()}} 次。",
+
+  "WATCHER-DEUS_EX_MACHINA.title": "机械降神",
+  "WATCHER-DEUS_EX_MACHINA.description": "当你抽到这张牌时，在你的手牌中加入 {Cards:diff()} 张 [gold]奇迹[/gold] 并 [gold]消耗[/gold]。",
+
+  "WATCHER-ESTABLISHMENT.title": "确立基础",
+  "WATCHER-ESTABLISHMENT.description": "每当有卡牌被 [gold]保留[/gold] 时，将其在本场战斗的耗能减少 1。",
+
+  "WATCHER-OMNISCIENCE.title": "通晓万物",
+  "WATCHER-OMNISCIENCE.description": "选择你抽牌堆中的一张牌。将这张牌打出两次并 [gold]消耗[/gold]。",
+
+  "WATCHER-OMNISCIENCE.selectionScreenPrompt": "选择一张牌以打出两次并 [gold]消耗[/gold]。",
+  
+  "WATCHER-SPIRIT_SHIELD.title": "精神护盾",
+  "WATCHER-SPIRIT_SHIELD.description": "你每有一张手牌，获得 {Block:diff()} 点 [gold]格挡[/gold]。",
+
+  "WATCHER-MASTER_REALITY.title": "操控现实",
+  "WATCHER-MASTER_REALITY.description": "所有在战斗中临时增加的牌将被 [gold]升级[/gold]。",
+
+  "WATCHER-WREATH_OF_FLAME.title": "烈焰编织",
+  "WATCHER-WREATH_OF_FLAME.description": "你的下一张攻击牌额外造成 {VigorPower:diff()} 点伤害。",
+
+  "WATCHER-OMEGA.title": "奥米茄",
+  "WATCHER-OMEGA.description": "在你的回合结束时，对所有敌人造成 {Damage:diff()} 点伤害。",
+
+  "WATCHER-BETA.title": "贝塔",
+  "WATCHER-BETA.description": "在你的抽牌堆中加入一张 [gold]奥米茄[/gold]。",
+
+  "WATCHER-ALPHA.title": "阿尔法",
+  "WATCHER-ALPHA.description": "在你的抽牌堆中加入一张 [gold]贝塔[/gold]。",
+
+  "WATCHER-DEVA_FORM.title": "天人形态",
+  "WATCHER-DEVA_FORM.description": "在你的回合开始时，获得 {energyPrefix:energyIcons(1)} 且每回合此项获得增加 1。",
+
+  "WATCHER-BECOME_ALMIGHTY.title": "无所不能",
+  "WATCHER-BECOME_ALMIGHTY.description": "获得 {StrengthPower:diff()} 点 [gold]力量[/gold]。",
+
+  "WATCHER-FAME_AND_FORTUNE.title": "名利双收",
+  "WATCHER-FAME_AND_FORTUNE.description": "获得 {Gold:diff()} [gold]金币[/gold]。",
+
+  "WATCHER-LIVE_FOREVER.title": "长生不老",
+  "WATCHER-LIVE_FOREVER.description": "获得 {PlatingPower:diff()} 层 [gold]覆甲[/gold]。",
+
+  "WATCHER-WISH_WATCHER.title": "祈愿",
+  "WATCHER-WISH_WATCHER.description": "选择一项：\n获得 {PlatingPower:diff()} 层覆甲，\n{StrengthPower:diff()} 点 [gold]力量[/gold]，或 {Gold:diff()} [gold]金币[/gold]。",
+
+  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "选择一张要打出的牌。"
+}

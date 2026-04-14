@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]수련을 통해 나는 깨달음을 얻는다...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]시간이 흘러간다.[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "이제 와쳐 카드가 보상과 상점에 등장합니다.",
+  "WATCHER-WATCHER.cardsModifierTitle": "와쳐",
+  "WATCHER-WATCHER.description": "첨탑을 평가하기 위하여 찾아온 눈먼 수도사입니다.\n강림의 경지에 이른 고수입니다.",
+  "WATCHER-WATCHER.eventDeathPrevention": "나는 반드시 살아남아야 한다. 모든 균형이 그것에 달려 있기 때문이다.",
+  "WATCHER-WATCHER.goldMonologue": "[sine]나는 부를 추구하지 않는다… 하지만 이 길을 가려면 준비가 필요하다.[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "그녀의",
+  "WATCHER-WATCHER.pronounObject": "그녀를",
+  "WATCHER-WATCHER.pronounPossessive": "그녀의 것",
+  "WATCHER-WATCHER.pronounSubject": "그녀",
+  "WATCHER-WATCHER.title": "와쳐",
+  "WATCHER-WATCHER.titleObject": "와쳐"
+}

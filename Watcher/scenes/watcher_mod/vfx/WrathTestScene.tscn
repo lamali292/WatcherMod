@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsdxujusohwwf"]
+
+[ext_resource type="PackedScene" uid="uid://kq7dmrg0ygyf" path="res://scenes/creature_visuals/watcher.tscn" id="1_3nic8"]
+[ext_resource type="PackedScene" uid="uid://chrybgjj06cj2" path="res://scenes/watcher_mod/vfx/wrath_aura.tscn" id="2_wotrw"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Watcher" parent="." instance=ExtResource("1_3nic8")]
+
+[node name="WrathAura" parent="." instance=ExtResource("2_wotrw")]

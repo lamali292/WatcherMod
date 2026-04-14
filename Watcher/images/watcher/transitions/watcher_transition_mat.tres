@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://watcher_trans_mat001"]
+
+[ext_resource type="Texture2D" uid="uid://watcher_trans_tex001" path="res://images/ui/transitions/watcher_transition.png" id="1_watcher"]
+
+[sub_resource type="Shader" id="Shader_watcher_trans"]
+code = "shader_type canvas_item;
+uniform sampler2D transitionTex;
+uniform float threshold : hint_range(0,1);
+void fragment() {
+    float falloff = 1.0 - texture(transitionTex, UV).r;
+    
+    // helps with falloff artifacts issues towards the transition extremes
+    float remap  = mix(-0.1, 1.1, threshold);
+    falloff = step(falloff, remap);
+    COLOR.a = falloff;
+}
+"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource("Shader_watcher_trans")
+shader_parameter/threshold = 0.332
+shader_parameter/transitionTex = ExtResource("1_watcher")

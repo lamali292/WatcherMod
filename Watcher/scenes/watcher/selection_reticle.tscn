@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgy88bk44xxvk"]
+
+[ext_resource type="Script" uid="uid://42n22x7pwgct" path="res://Code/Nodes/SNSelectionReticle.cs" id="1_kg5ub"]
+[ext_resource type="Texture2D" uid="uid://d34d8sduc1wa7" path="res://Watcher/images/ui/combat/combat_reticle.png" id="2_75ikg"]
+
+[node name="SelectionReticle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -129.0
+offset_top = -179.0
+offset_right = 123.0
+offset_bottom = -1.0
+pivot_offset = Vector2(126, 84)
+mouse_filter = 2
+script = ExtResource("1_kg5ub")
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 22.0
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Border"]
+self_modulate = Color(0, 0, 0, 0.501961)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 35.0
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Border2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = 11.0
+offset_right = 22.0
+offset_bottom = 43.0
+grow_vertical = 0
+scale = Vector2(1, -1)
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Shadow2" type="TextureRect" parent="Border2"]
+self_modulate = Color(0, 0, 0, 0.501961)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 29.0
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Border3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = -10.0
+offset_right = 42.0
+offset_bottom = 22.0
+grow_horizontal = 0
+scale = Vector2(-1, 1)
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Shadow4" type="TextureRect" parent="Border3"]
+self_modulate = Color(0, 0, 0, 0.501961)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -4.0
+offset_top = 3.0
+offset_right = 28.0
+offset_bottom = 35.0
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Border4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 42.0
+offset_bottom = 43.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-1, -1)
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1
+
+[node name="Shadow3" type="TextureRect" parent="Border4"]
+self_modulate = Color(0, 0, 0, 0.501961)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 28.0
+offset_bottom = 29.0
+mouse_filter = 2
+texture = ExtResource("2_75ikg")
+expand_mode = 1

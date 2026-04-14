@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1o0sdn255167"]
+
+[ext_resource type="Script" uid="uid://cnvpkjva4eeq" path="res://Code/Nodes/SNMerchantCharacter.cs" id="1_b7tdn"]
+[ext_resource type="Texture2D" uid="uid://dmgtp1qvf0rd4" path="res://Watcher/images/watcher/Watcher.png" id="1_p7yjc"]
+
+[node name="WatcherMerchant" type="Node2D"]
+script = ExtResource("1_b7tdn")
+
+[node name="SpineSprite" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="SpineSprite"]
+offset_left = -342.0
+offset_top = -476.0
+offset_right = 392.36456
+offset_bottom = 17.0
+texture = ExtResource("1_p7yjc")

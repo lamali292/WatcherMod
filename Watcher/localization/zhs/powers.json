@@ -1,0 +1,89 @@
+{
+  "WATCHER-CALM_STANCE.title": "平静",
+  "WATCHER-CALM_STANCE.description": "当你退出此 姿态 时，获得 [blue]2[/blue] {energyPrefix:energyIcons(1)}。",
+
+  "WATCHER-WRATH_STANCE.title": "愤怒",
+  "WATCHER-WRATH_STANCE.description": "造成双倍伤害。受到双倍伤害。",
+
+  "WATCHER-DIVINITY_STANCE.title": "神格",
+  "WATCHER-DIVINITY_STANCE.description": "造成三倍伤害。获得 [blue]3[/blue] {energyPrefix:energyIcons(1)}。在你的下个回合开始时退出此 姿态 。",
+
+  "WATCHER-MARK_POWER.title": "印记",
+  "WATCHER-MARK_POWER.description": "每当你打出 [blue]点穴[/blue] 时，失去 [blue]X[/blue] 点生命。",
+  "WATCHER-MARK_POWER.smartDescription": "每当你打出 [blue]点穴[/blue] 时，失去 [blue]{Amount}[/blue] 点生命。",
+  
+  "WATCHER-MANTRA_POWER.title": "真言",
+  "WATCHER-MANTRA_POWER.description": "当你获得 10 层 真言 时，进入 [blue]神格[/blue]。",
+
+  "WATCHER-BATTLE_HYMN_POWER.title": "战歌",
+  "WATCHER-BATTLE_HYMN_POWER.description": "在你的回合开始时，在你的手牌中加入 [blue]X[/blue] 张 [blue]惩恶[/blue]。",
+  "WATCHER-BATTLE_HYMN_POWER.smartDescription": "在你的回合开始时，在你的手牌中加入 [blue]{Amount}[/blue] 张 [blue]惩恶[/blue]。",
+  
+  "WATCHER-COLLECT_POWER.title": "收集",
+  "WATCHER-COLLECT_POWER.description": "在你的下 [blue]X[/blue] 个回合开始时，增加一张 [blue]奇迹+[/blue] 到你的手牌。",
+  "WATCHER-COLLECT_POWER.smartDescription": "在你的下 [blue]{Amount}[/blue] 个回合开始时，增加一张 [blue]奇迹+[/blue] 到你的手牌。",
+  
+  "WATCHER-FASTING_POWER.title": "斋戒",
+  "WATCHER-FASTING_POWER.description": "在你的回合开始时，失去 [blue]X[/blue] {energyPrefix:energyIcons(1)} 能量。",
+  "WATCHER-FASTING_POWER.smartDescription": "在你的回合开始时，失去 [blue]{Amount}[/blue] {energyPrefix:energyIcons(1)} 能量。",
+  
+  "WATCHER-FORESIGHT_POWER.title": "先见之明",
+  "WATCHER-FORESIGHT_POWER.description": "在你的回合开始时， [blue]预见[/blue] [blue]X[/blue] 。",
+  "WATCHER-FORESIGHT_POWER.smartDescription": "在你的回合开始时， [blue]预见[/blue] [blue]{Amount}[/blue] 。",
+  
+  "WATCHER-LIKE_WATER_POWER.title": "如水",
+  "WATCHER-LIKE_WATER_POWER.description": "在你的回合结束时，如果你处于 [blue]平静[/blue] ，获得 [blue]X[/blue] 点 [blue]格挡[/blue]。",
+  "WATCHER-LIKE_WATER_POWER.smartDescription": "在你的回合结束时，如果你处于 [blue]平静[/blue] ，获得 [blue]{Amount}[/blue] 点 [blue]格挡[/blue]。",
+  
+  "WATCHER-MENTAL_FORTRESS_POWER.title": "心灵堡垒",
+  "WATCHER-MENTAL_FORTRESS_POWER.description": "每当你转换 [blue]姿态[/blue] 时，获得 [blue]X[/blue] 点 [blue]格挡[/blue]。",
+  "WATCHER-MENTAL_FORTRESS_POWER.smartDescription": "每当你转换 [blue]姿态[/blue] 时，获得 [blue]{Amount}[/blue] 点 [blue]格挡[/blue]。",
+  
+  "WATCHER-NIRVANA_POWER.title": "涅槃",
+  "WATCHER-NIRVANA_POWER.description": "你每次 [blue]预见[/blue] 时，获得 [blue]X[/blue] 点 [blue]格挡[/blue]。",
+  "WATCHER-NIRVANA_POWER.smartDescription": "你每次 [blue]预见[/blue] 时，获得 [blue]{Amount}[/blue] 点 [blue]格挡[/blue]。",
+  
+  "WATCHER-RUSHDOWN_POWER.title": "猛虎下山",
+  "WATCHER-RUSHDOWN_POWER.description": "每当你进入 [gold]愤怒[/gold] 时，抽 [blue]X[/blue] 张牌。",
+  "WATCHER-RUSHDOWN_POWER.smartDescription": "每当你进入 [gold]愤怒[/gold] 时，抽 [blue]{Amount}[/blue] 张牌。",
+  
+  "WATCHER-SIMMERING_RAGE_POWER.title": "怒火中烧",
+  "WATCHER-SIMMERING_RAGE_POWER.description": "在你的回合开始时进入 [blue]愤怒[/blue]。",
+
+  "WATCHER-STUDY_POWER.title": "研习",
+  "WATCHER-STUDY_POWER.description": "在你的回合结束时，在你的抽牌堆中加入 [blue]X[/blue] 张 [blue]洞见[/blue]。",
+  "WATCHER-STUDY_POWER.smartDescription": "在你的回合结束时，在你的抽牌堆中加入 [blue]{Amount}[/blue] 张 [blue]洞见[/blue]。",
+  
+  "WATCHER-BLOCK_RETURN_POWER.title": "格挡返还",
+  "WATCHER-BLOCK_RETURN_POWER.description": "当被你攻击时，你获得 [blue]X[/blue] 点 [blue]格挡[/blue]。",
+  "WATCHER-BLOCK_RETURN_POWER.smartDescription": "当被你攻击时，你获得 [blue]{Amount}[/blue] 点 [blue]格挡[/blue]。",
+  
+  "WATCHER-WAVE_OF_THE_HAND_POWER.title": "摆手",
+  "WATCHER-WAVE_OF_THE_HAND_POWER.description": "在本回合，你每次获得 [blue]格挡[/blue] 时，给予所有敌人 [blue]X[/blue] 层 [blue]虚弱[/blue]。",
+  "WATCHER-WAVE_OF_THE_HAND_POWER.smartDescription": "在本回合，你每次获得 [blue]格挡[/blue] 时，给予所有敌人 [blue]{Amount}[/blue] 层 [blue]虚弱[/blue]。",
+  
+  "WATCHER-OMEGA_POWER.title": "欧米伽",
+  "WATCHER-OMEGA_POWER.description": "在你的回合结束时，对所有敌人造成 [blue]X[/blue] 点伤害。",
+  "WATCHER-OMEGA_POWER.smartDescription": "在你的回合结束时，对所有敌人造成 [blue]{Amount}[/blue] 点伤害。",
+  
+  "WATCHER-BLASPHEMER_POWER.title": "渎神者",
+  "WATCHER-BLASPHEMER_POWER.description": "在你的回合开始时死亡。",
+
+  "WATCHER-DEVA_POWER.title": "天人",
+  "WATCHER-DEVA_POWER.description": "在你的回合开始时，获得 {energyPrefix:energyIcons(1)} [blue]X[/blue] 次，并将次数增加 [blue]Y[/blue] 。",
+  "WATCHER-DEVA_POWER.smartDescription": "在你的回合开始时，获得 {energyPrefix:energyIcons(1)} [blue]{Energy:diff()}[/blue] 次，并将次数增加 [blue]{Amount}[/blue] 。",
+  
+  "WATCHER-DEVOTION_POWER.title": "虔信",
+  "WATCHER-DEVOTION_POWER.description": "在你的回合开始时，获得 [blue]X[/blue] 层 [blue]真言[/blue]。",
+  "WATCHER-DEVOTION_POWER.smartDescription": "在你的回合开始时，获得 [blue]{Amount}[/blue] 层 [blue]真言[/blue]。",
+  
+  "WATCHER-ESTABLISHMENT_POWER.title": "确立基础",
+  "WATCHER-ESTABLISHMENT_POWER.description": "每当有卡牌被 [blue]保留[/blue] 时，将其耗能减少 [blue]X[/blue] 。",
+  "WATCHER-ESTABLISHMENT_POWER.smartDescription": "每当有卡牌被 [blue]保留[/blue] 时，将其耗能减少 [blue]{Amount}[/blue] 。",
+  
+  "WATCHER-MASTER_REALITY_POWER.title": "操控现实",
+  "WATCHER-MASTER_REALITY_POWER.description": "所有在战斗中临时增加的牌将被 [blue]升级[/blue]。",
+
+  "WATCHER-DUALITY_POWER.title": "两仪"
+
+}

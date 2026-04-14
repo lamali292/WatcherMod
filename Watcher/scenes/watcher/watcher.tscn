@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://kq7dmrg0ygyf"]
+
+[ext_resource type="Script" uid="uid://claogp36kh2hu" path="res://Code/Nodes/SNCreatureVisuals.cs" id="1_se58w"]
+[ext_resource type="Texture2D" uid="uid://dmgtp1qvf0rd4" path="res://Watcher/images/watcher/Watcher.png" id="2_5occ7"]
+
+[node name="Defect" type="Node2D"]
+script = ExtResource("1_se58w")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(10.69, -170)
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("2_5occ7")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -125.0
+offset_top = -260.0
+offset_right = 125.0
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3, -181)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2, -362)

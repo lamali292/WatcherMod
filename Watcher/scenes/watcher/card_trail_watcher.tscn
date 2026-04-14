@@ -1,0 +1,123 @@
+[gd_scene load_steps=15 format=3 uid="uid://0k165d7vf3h"]
+
+[ext_resource type="Script" uid="uid://cls0orqe3fnxl" path="res://Code/Nodes/SNCardTrailVfx.cs" id="1_num8n"]
+[ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://Watcher/themes/canvas_item_material_additive_shared.tres" id="2_ps8f6"]
+[ext_resource type="Texture2D" uid="uid://djck45yn3ba4s" path="res://Watcher/images/packed/vfx/trail.png" id="3_hk2in"]
+[ext_resource type="Script" uid="uid://gp1kxffycry3" path="res://Code/Nodes/SNCardTrail.cs" id="4_num8n"]
+[ext_resource type="Texture2D" uid="uid://d0v5ki8nnilxw" path="res://Watcher/images/packed/vfx/trail2.png" id="5_2uixr"]
+[ext_resource type="Texture2D" uid="uid://bye2kf6y17erd" path="res://Watcher/images/vfx/brush_particle_2.png" id="6_i2v5g"]
+[ext_resource type="Texture2D" uid="uid://b5mp1yvvyjcwo" path="res://Watcher/images/vfx/vfx_ghostly_power_up/sparkle.png" id="7_d3bhx"]
+[ext_resource type="Texture2D" uid="uid://7fvvxfqj4vb4" path="res://Watcher/images/packed/vfx/small_card_silhouette.png" id="8_js030"]
+
+[sub_resource type="Curve" id="Curve_0ojw2"]
+_data = [Vector2(0, 0.111037), 0.0, 0.0, 0, 0, Vector2(0.839578, 0.663793), -2.61019, -2.61019, 0, 0, Vector2(0.922468, 0.94341), 0.0, 0.0, 0, 0, Vector2(1, 0.685611), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_6eyfw"]
+offsets = PackedFloat32Array(0, 0.141431, 0.522463)
+colors = PackedColorArray(0, 0, 0, 0, 0.25, 0.25, 0.25, 0.305882, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_eaky7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.801075, 0.571397), -3.15833, -3.15833, 0, 0, Vector2(0.900922, 0.367031), 0.0, 0.0, 0, 0, Vector2(0.938291, 0.930834), 0.0, 0.0, 0, 0, Vector2(1, 0.742201), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_fdg7u"]
+offsets = PackedFloat32Array(0.261231, 0.647255, 0.821549)
+colors = PackedColorArray(0, 0, 0, 0, 0.25, 0.25, 0.25, 0.305882, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_miu0s"]
+offsets = PackedFloat32Array(0, 0.554377, 0.806366, 1)
+colors = PackedColorArray(0.54901963, 0, 0.5411765, 1, 0.718333, 0.008465622, 0.78016603, 0.447059, 0.4807012, 0.0006114531, 0.5793099, 0.482353, 0.55183434, 0.00019310057, 0.5425759, 0)
+
+[sub_resource type="Gradient" id="Gradient_ytddg"]
+colors = PackedColorArray(0.9843137, 0.78039217, 0.99607843, 1, 0.8784314, 0, 0.8862745, 0)
+
+[node name="CardTrailWatcher" type="Node2D"]
+show_behind_parent = true
+script = ExtResource("1_num8n")
+
+[node name="Trails" type="Node2D" parent="."]
+
+[node name="OuterTrail" type="Line2D" parent="Trails"]
+modulate = Color(0.86767584, 0.0010916054, 0.9374961, 0.7529412)
+material = ExtResource("2_ps8f6")
+width = 96.0
+width_curve = SubResource("Curve_0ojw2")
+default_color = Color(1, 1, 1, 0.752941)
+gradient = SubResource("Gradient_6eyfw")
+texture = ExtResource("3_hk2in")
+texture_mode = 2
+joint_mode = 2
+script = ExtResource("4_num8n")
+
+[node name="InnerTrail" type="Line2D" parent="Trails"]
+modulate = Color(0.9779224, 0.7912807, 1, 0.5019608)
+material = ExtResource("2_ps8f6")
+width = 64.0
+width_curve = SubResource("Curve_eaky7")
+gradient = SubResource("Gradient_fdg7u")
+texture = ExtResource("5_2uixr")
+texture_mode = 2
+joint_mode = 2
+script = ExtResource("4_num8n")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="BigSparks" type="CPUParticles2D" parent="Sprites"]
+material = ExtResource("2_ps8f6")
+amount = 64
+texture = ExtResource("6_i2v5g")
+lifetime = 2.0
+randomness = 0.5
+lifetime_randomness = 1.0
+fract_delta = false
+emission_shape = 3
+emission_rect_extents = Vector2(24, 24)
+direction = Vector2(5, -5)
+gravity = Vector2(0, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 32.0
+angular_velocity_min = -32.0
+angular_velocity_max = 32.0
+damping_min = 1.0
+damping_max = 5.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.2
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_miu0s")
+
+[node name="LittleSparks" type="CPUParticles2D" parent="Sprites"]
+material = ExtResource("2_ps8f6")
+amount = 64
+texture = ExtResource("7_d3bhx")
+lifetime = 0.3
+explosiveness = 0.35
+randomness = 1.0
+lifetime_randomness = 1.0
+fract_delta = false
+emission_shape = 3
+emission_rect_extents = Vector2(24, 24)
+particle_flag_align_y = true
+direction = Vector2(0, -5)
+gravity = Vector2(0, 1960)
+initial_velocity_max = 480.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.02
+scale_amount_max = 0.05
+color_ramp = SubResource("Gradient_ytddg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.67721146, 0.0009868729, 0.78063303, 0.7529412)
+material = ExtResource("2_ps8f6")
+scale = Vector2(1.1, 1.054)
+texture = ExtResource("8_js030")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.9197349, 0.24102429, 0.99999994, 0.5019608)
+material = ExtResource("2_ps8f6")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_js030")
