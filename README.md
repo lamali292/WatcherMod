@@ -104,6 +104,9 @@ Animations are not included because Slay the Spire 2 uses Spine, and I currently
 ### Credits
 
 chaendizzle - Calm, Divinity and Wrath SFX / VFX
+
 Snumodder - Korean localization. 
+
 NoFires - Chinese localization
+
 Cany0udance - for helping me to port the animations. 
