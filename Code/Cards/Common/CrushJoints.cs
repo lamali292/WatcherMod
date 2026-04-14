@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -21,6 +22,12 @@ public sealed class CrushJoints() : CustomCardModel(1, CardType.Attack, CardRari
         new DamageVar(8m, ValueProp.Move),
         new PowerVar<VulnerablePower>(1)
     ];
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<VulnerablePower>()
+    ];
+
 
     protected override bool ShouldGlowGoldInternal => WasLastCardPlayedSkill;
 

@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
+using Watcher.Code.Stances;
 
 namespace Watcher.Code.Cards.Uncommon;
 
@@ -19,8 +20,11 @@ public sealed class LikeWater() : CustomCardModel(1, CardType.Power, CardRarity.
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<LikeWaterPower>()
+        HoverTipFactory.FromPower<LikeWaterPower>(),
+        HoverTipFactory.Static(StaticHoverTip.Block),
+        HoverTipFactory.FromPower<CalmStance>()
     ];
+
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 

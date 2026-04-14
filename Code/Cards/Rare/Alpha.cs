@@ -15,9 +15,8 @@ namespace Watcher.Code.Cards.Rare;
 public sealed class Alpha() : CustomCardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromCard<Beta>()
-    ];
+        HoverTipFactory.FromCardWithCardHoverTips<Beta>();
+
 
     public override HashSet<CardKeyword> CanonicalKeywords =>
     [

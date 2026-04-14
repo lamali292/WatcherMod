@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
@@ -22,8 +23,11 @@ public sealed class WaveOfTheHand() : CustomCardModel(1, CardType.Skill, CardRar
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<WaveOfTheHandPower>()
+        HoverTipFactory.FromPower<WaveOfTheHandPower>(),
+        HoverTipFactory.FromPower<WeakPower>(),
+        HoverTipFactory.Static(StaticHoverTip.Block)
     ];
+
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 

@@ -27,7 +27,8 @@ public sealed class DeusExMachina() : CustomCardModel(-1, CardType.Skill, CardRa
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<Miracle>()
+        HoverTipFactory.FromCard<Miracle>(),
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();

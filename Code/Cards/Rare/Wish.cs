@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -24,6 +25,12 @@ public sealed class Wish() : CustomCardModel(3, CardType.Skill, CardRarity.Rare,
     public override HashSet<CardKeyword> CanonicalKeywords =>
     [
         CardKeyword.Exhaust
+    ];
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<StrengthPower>(),
+        HoverTipFactory.FromPower<PlatingPower>()
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
@@ -51,10 +58,7 @@ public sealed class Wish() : CustomCardModel(3, CardType.Skill, CardRarity.Rare,
             Owner
         );
 
-        if (card is IWishable wish)
-        {
-            await wish.OnWish(choiceContext, cardPlay);
-        }
+        if (card is IWishable wish) await wish.OnWish(choiceContext, cardPlay);
     }
 
     protected override void OnUpgrade()

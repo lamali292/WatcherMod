@@ -1,24 +1,17 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
-using Godot;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Logging;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
-using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
-using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -38,18 +31,19 @@ public sealed class LessonLearned() : CustomCardModel(2, CardType.Attack, CardRa
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<LikeWaterPower>()
+        HoverTipFactory.Static(StaticHoverTip.Fatal)
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
-    
+
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var card = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         var shouldTriggerFatal = cardPlay.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal());
-        var attackCommand = await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue).FromCard(card).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        var attackCommand = await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue).FromCard(card)
+            .Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (!shouldTriggerFatal || !attackCommand.Results.Any(r => r.WasTargetKilled))
             return;
         var upgradableCards = PileType.Deck.GetPile(card.Owner).Cards.Where(c => c.IsUpgradable).ToList();
@@ -66,7 +60,7 @@ public sealed class LessonLearned() : CustomCardModel(2, CardType.Attack, CardRa
             ])!);
         }
     }
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m); // 10 -> 13

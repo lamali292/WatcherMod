@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
+using Watcher.Code.Stances;
 
 namespace Watcher.Code.Cards.Uncommon;
 
@@ -24,7 +25,8 @@ public sealed class SimmeringFury() : CustomCardModel(1, CardType.Skill, CardRar
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<SimmeringRagePower>(),
-        HoverTipFactory.FromPower<DrawCardsNextTurnPower>()
+        HoverTipFactory.FromPower<DrawCardsNextTurnPower>(),
+        HoverTipFactory.FromPower<WrathStance>()
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();

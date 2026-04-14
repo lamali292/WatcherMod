@@ -7,10 +7,10 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Multiplayer.Game.Lobby;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -21,15 +21,19 @@ namespace Watcher.Code.Cards.Rare;
 [Pool(typeof(WatcherCardPool))]
 public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(12m, ValueProp.Move)
     ];
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<MantraPower>()
+    ];
+
     public override bool ShouldReceiveCombatHooks => true;
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
-    
+
 
     public override decimal ModifyDamageAdditive(
         Creature? target,
@@ -39,24 +43,19 @@ public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarit
         CardModel? cardSource)
     {
         Log.Info("test");
-        return cardSource == this ? MantraGainedThisCombat()  : 0m;
+        return cardSource == this ? MantraGainedThisCombat() : 0m;
     }
 
-    private int MantraGainedThisCombat() {
+    private int MantraGainedThisCombat()
+    {
         var mantraGained = 0;
         foreach (var e in CombatManager.Instance.History.Entries.OfType<PowerReceivedEntry>())
-        {
-      
-            
             if (e is { Power: MantraPower, Applier: not null } && e.Applier.Player == Owner)
-            {
-                mantraGained += (int) e.Amount;
-            }
-            
-        }
+                mantraGained += (int)e.Amount;
+
         return mantraGained;
     }
-    
+
     protected override async Task OnPlay(PlayerChoiceContext context, CardPlay play)
     {
         if (play.Target == null) return;
