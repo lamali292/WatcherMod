@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Extensions;
+using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Token;
 
@@ -18,11 +19,11 @@ namespace Watcher.Code.Cards.Token;
 public sealed class LiveForever() : CustomCardModel(-1, CardType.Power, CardRarity.Token, TargetType.None), IWishable
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<PlatingPower>(6)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<PlatedArmorPower>(6)];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<PlatingPower>()
+        HoverTipFactory.FromPower<PlatedArmorPower>()
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
@@ -35,11 +36,11 @@ public sealed class LiveForever() : CustomCardModel(-1, CardType.Power, CardRari
     
     public async Task OnWish(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<PlatingPower>(Owner.Creature, DynamicVars["PlatingPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<PlatedArmorPower>(Owner.Creature, DynamicVars["PlatedArmorPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PlatingPower"].UpgradeValueBy(2);
+        DynamicVars["PlatedArmorPower"].UpgradeValueBy(2);
     }
 }

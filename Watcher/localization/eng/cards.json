@@ -170,12 +170,12 @@
   "WATCHER-FAME_AND_FORTUNE.title": "Fame and Fortune",
   "WATCHER-FAME_AND_FORTUNE.description": "Gain {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-LIVE_FOREVER.title": "Live Forever",
-  "WATCHER-LIVE_FOREVER.description": "Gain {PlatingPower:diff()} [gold]Plating[/gold]",
+  "WATCHER-LIVE_FOREVER.description": "Gain {PlatedArmorPower:diff()} [gold]Plated Armor[/gold].",
   "WATCHER-ANCIENT_CARD.title": "Discipline",
   "WATCHER-ANCIENT_CARD.description": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn.",
   "WATCHER-ANCIENT_CARD2.title": "Combustion",
   "WATCHER-ANCIENT_CARD2.description": "Enter [gold]Wrath[/gold].\nDeal {Damage:diff()} damage.",
   "WATCHER-WISH_WATCHER.title": "Wish",
-  "WATCHER-WISH_WATCHER.description": "Choose one:\nGain {PlatingPower:diff()} Plating,\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
+  "WATCHER-WISH_WATCHER.description": "Choose one:\nGain {PlatedArmorPower:diff()} [gold]Plated Armor[/gold],\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Choose a Card to play."
 }

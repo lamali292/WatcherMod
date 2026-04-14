@@ -73,5 +73,8 @@
   "DUALITY_POWER.smartDescription": "",
   "WATCHER-DISCIPLE_POWER.title": "Disciple",
   "WATCHER-DISCIPLE_POWER.description": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn.",
-  "WATCHER-DISCIPLE_POWER.smartDescription": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn."
+  "WATCHER-DISCIPLE_POWER.smartDescription": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn.",
+  "WATCHER-PLATED_ARMOR_POWER.title": "Plated Armor",
+  "WATCHER-PLATED_ARMOR_POWER.description": "At the end of your turn, gain [blue]X[/blue] [gold]Block[/gold]. Receiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
+  "WATCHER-PLATED_ARMOR_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Block[/gold].\nReceiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue]."
 }

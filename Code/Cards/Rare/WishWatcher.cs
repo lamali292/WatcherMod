@@ -12,6 +12,7 @@ using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
+using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -19,7 +20,7 @@ namespace Watcher.Code.Cards.Rare;
 public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new GoldVar(25), new PowerVar<StrengthPower>(3), new PowerVar<PlatingPower>(6)];
+        [new GoldVar(25), new PowerVar<StrengthPower>(3), new PowerVar<PlatedArmorPower>(6)];
 
 
     public override HashSet<CardKeyword> CanonicalKeywords =>
@@ -30,7 +31,7 @@ public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarit
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<StrengthPower>(),
-        HoverTipFactory.FromPower<PlatingPower>()
+        HoverTipFactory.FromPower<PlatedArmorPower>()
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
@@ -64,7 +65,7 @@ public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarit
     protected override void OnUpgrade()
     {
         DynamicVars.Gold.UpgradeValueBy(5);
-        DynamicVars["PlatingPower"].UpgradeValueBy(2);
+        DynamicVars["PlatedArmorPower"].UpgradeValueBy(2);
         DynamicVars.Strength.UpgradeValueBy(1);
     }
 }
