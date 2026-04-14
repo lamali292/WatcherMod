@@ -15,7 +15,7 @@ namespace Watcher.Code.Cards.Uncommon;
 [Pool(typeof(WatcherCardPool))]
 public sealed class MentalFortress() : CustomCardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4m, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4m, ValueProp.Unpowered)];
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 
 

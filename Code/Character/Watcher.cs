@@ -1,18 +1,12 @@
 ﻿using BaseLib.Abstracts;
 using Godot;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Cards.Basic;
 using Watcher.Code.Relics;
-using MegaCrit.Sts2.Core.Entities.Players;
-using System.Reflection;
-using MegaCrit.Sts2.Core.Assets;
-using BaseLib.Utils.Patching;
-using System.Reflection.Emit;
-using HarmonyLib;
-using MegaCrit.Sts2.Core.Nodes.Combat;
-using Watcher.Code.Patches;
 
 namespace Watcher.Code.Character;
 
@@ -21,18 +15,15 @@ public class Watcher : CustomCharacterModel
     public const string CharacterId = "Watcher";
 
     public static readonly Color Color = StsColors.purple;
-    
+
     public override string CustomIconTexturePath => "res://Watcher/images/watcher/character_icon_watcher.png";
     public override string CustomCharacterSelectIconPath => "res://Watcher/images/watcher/char_select_watcher.png";
 
-    public override CustomEnergyCounter? CustomEnergyCounter => new CustomEnergyCounter(EnergyCounterPaths,StsColors.red, StsColors.blue);
+    public override CustomEnergyCounter? CustomEnergyCounter =>
+        new CustomEnergyCounter(EnergyCounterPaths, StsColors.red, StsColors.blue);
+
     public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter.tscn";
 
-    private string EnergyCounterPaths(int i)
-    {
-        return "res://Watcher/images/ui/combat/energy_counters/watcher/watcher_orb_layer_"+i+".png";
-    }
-    
     public override string CustomCharacterSelectLockedIconPath =>
         "res://Watcher/images/watcher/char_select_watcher_locked.png";
 
@@ -97,6 +88,11 @@ public class Watcher : CustomCharacterModel
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<WatcherRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<WatcherPotionPool>();
 
+    private string EnergyCounterPaths(int i)
+    {
+        return "res://Watcher/images/ui/combat/energy_counters/watcher/watcher_orb_layer_" + i + ".png";
+    }
+
     public override List<string> GetArchitectAttackVfx()
     {
         return
@@ -105,5 +101,28 @@ public class Watcher : CustomCharacterModel
             "vfx/vfx_rock_shatter"
         ];
     }
-    
+
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller)
+    {
+        var animState = new AnimState("Idle", true);
+        var state1 = new AnimState("Idle");
+        var state2 = new AnimState("Idle");
+        var state3 = new AnimState("Hit");
+        var state4 = new AnimState("Hit");
+        var state5 = new AnimState("Idle");
+        var state6 = new AnimState("Idle", true);
+        state1.NextState = animState;
+        state2.NextState = animState;
+        state3.NextState = animState;
+        state5.NextState = animState;
+        state5.AddBranch("Idle", animState);
+        var animator = new CreatureAnimator(animState, controller);
+        animator.AddAnyState("Idle", animState);
+        animator.AddAnyState("Dead", state4);
+        animator.AddAnyState("Hit", state3);
+        animator.AddAnyState("Attack", state2);
+        animator.AddAnyState("Cast", state1);
+        animator.AddAnyState("Relaxed", state5);
+        return animator;
+    }
 }

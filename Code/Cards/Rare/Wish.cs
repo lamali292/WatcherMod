@@ -15,7 +15,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
+public sealed class Wish() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new GoldVar(25), new PowerVar<StrengthPower>(3), new PowerVar<PlatingPower>(6)];
@@ -30,12 +30,12 @@ public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarit
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var cardsToChoose = new List<WishModel>
+        var cardsToChoose = new List<CardModel>
         {
-            (ModelDb.Card<BecomeAlmighty>().MutableClone() as WishModel)!,
-            (ModelDb.Card<FameAndFortune>().MutableClone() as WishModel)!,
-            (ModelDb.Card<LiveForever>().MutableClone() as WishModel)!
-        };
+            ModelDb.Card<BecomeAlmighty>(),
+            ModelDb.Card<FameAndFortune>(),
+            ModelDb.Card<LiveForever>()
+        }.Select(e => (CardModel)e.MutableClone()).ToList();
 
         foreach (var c in cardsToChoose)
         {
@@ -51,13 +51,10 @@ public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarit
             Owner
         );
 
-        if (card == null)
-            return;
-
-        var wish = card as WishModel;
-
-        if (wish != null)
+        if (card is IWishable wish)
+        {
             await wish.OnWish(choiceContext, cardPlay);
+        }
     }
 
     protected override void OnUpgrade()

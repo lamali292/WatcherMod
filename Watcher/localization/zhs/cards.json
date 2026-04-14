@@ -255,8 +255,8 @@
   "WATCHER-LIVE_FOREVER.title": "长生不老",
   "WATCHER-LIVE_FOREVER.description": "获得 {PlatingPower:diff()} 层 [gold]覆甲[/gold]。",
 
-  "WATCHER-WISH_WATCHER.title": "祈愿",
-  "WATCHER-WISH_WATCHER.description": "选择一项：\n获得 {PlatingPower:diff()} 层覆甲，\n{StrengthPower:diff()} 点 [gold]力量[/gold]，或 {Gold:diff()} [gold]金币[/gold]。",
+  "WATCHER-WISH.title": "祈愿",
+  "WATCHER-WISH.description": "选择一项：\n获得 {PlatingPower:diff()} 层覆甲，\n{StrengthPower:diff()} 点 [gold]力量[/gold]，或 {Gold:diff()} [gold]金币[/gold]。",
 
-  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "选择一张要打出的牌。"
+  "WATCHER-WISH.selectionScreenPrompt": "选择一张要打出的牌。"
 }

@@ -171,9 +171,9 @@
   "WATCHER-FAME_AND_FORTUNE.description": "Gain {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-LIVE_FOREVER.title": "Live Forever",
   "WATCHER-LIVE_FOREVER.description": "Gain {PlatingPower:diff()} [gold]Plated Armor[/gold]",
-  "WATCHER-WISH_WATCHER.title": "Wish",
-  "WATCHER-WISH_WATCHER.description": "Choose one:\nGain {PlatingPower:diff()} Plated Armor,\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
-  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Choose a Card to play.",
+  "WATCHER-WISH.title": "Wish",
+  "WATCHER-WISH.description": "Choose one:\nGain {PlatingPower:diff()} Plated Armor,\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
+  "WATCHER-WISH.selectionScreenPrompt": "Choose a Card to play.",
   "WATCHER-ANCIENT_CARD.title": "Ancient Card",
   "WATCHER-ANCIENT_CARD.description": "This is a placeholder card used for testing. It does nothing."
 }

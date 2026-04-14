@@ -1,4 +1,5 @@
 using System.Reflection;
+using BaseLib.Patches.Content;
 using Godot;
 using Godot.Bridge;
 using HarmonyLib;
@@ -19,7 +20,6 @@ public partial class MainFile : Node
     public static void Initialize()
     {
         Harmony harmony = new(ModId);
-
         var assembly = Assembly.GetExecutingAssembly();
         ScriptManagerBridge.LookupScriptsInAssembly(assembly);
         harmony.PatchAll();

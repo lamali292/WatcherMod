@@ -1,4 +1,5 @@
-﻿using BaseLib.Extensions;
+﻿using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -14,7 +15,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class BecomeAlmighty() : WishModel(-1, CardType.Power, CardRarity.Token, TargetType.None)
+public sealed class BecomeAlmighty() : CustomCardModel(-1, CardType.Power, CardRarity.Token, TargetType.None), IWishable
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(3)];
@@ -26,7 +27,13 @@ public sealed class BecomeAlmighty() : WishModel(-1, CardType.Power, CardRarity.
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 
-    public override async Task OnWish(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        await OnWish(choiceContext, cardPlay);
+    }
+    
+    public async Task OnWish(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars.Strength.BaseValue, Owner.Creature, this);
     }

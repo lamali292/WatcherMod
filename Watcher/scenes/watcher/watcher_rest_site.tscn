@@ -1,19 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvtdsx5v7l4b4"]
 
 [ext_resource type="Script" uid="uid://dih2tcpwgm37s" path="res://Code/Nodes/SNRestSiteCharacter.cs" id="1_awmq8"]
-[ext_resource type="Texture2D" uid="uid://dmgtp1qvf0rd4" path="res://Watcher/images/watcher/Watcher.png" id="2_awmq8"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://bdapmsjn710l5" path="res://Watcher/animation/watcher_skel_data.tres" id="2_ynh71"]
 [ext_resource type="PackedScene" uid="uid://bgy88bk44xxvk" path="res://Watcher/scenes/watcher/selection_reticle.tscn" id="3_evojs"]
 
 [node name="RegentRestSite" type="Node2D"]
 scale = Vector2(0.760006, 0.760006)
 script = ExtResource("1_awmq8")
 
-[node name="SpineSprite2" type="TextureRect" parent="."]
-offset_left = -457.8911
-offset_top = -511.83807
-offset_right = 533.6183
-offset_bottom = 153.79059
-texture = ExtResource("2_awmq8")
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("2_ynh71")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(-6, 0)
+scale = Vector2(2.065, 2.065)
 
 [node name="ControlRoot" type="Control" parent="."]
 layout_mode = 3

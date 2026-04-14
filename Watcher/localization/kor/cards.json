@@ -254,8 +254,8 @@
   "WATCHER-LIVE_FOREVER.title": "영생",
   "WATCHER-LIVE_FOREVER.description": "[gold]판금 갑옷[/gold]을 {PlatingPower:diff()} 얻습니다.",
 
-  "WATCHER-WISH_WATCHER.title": "염원",
-  "WATCHER-WISH_WATCHER.description": "하나 선택:\n판금 갑옷을 {PlatingPower:diff()} 얻거나,\n[gold]힘[/gold]을 {StrengthPower:diff()} 얻거나, [gold]골드[/gold]를 {Gold:diff()} 얻습니다.",
-  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "사용할 카드를 선택하십시오."
+  "WATCHER-WISH.title": "염원",
+  "WATCHER-WISH.description": "하나 선택:\n판금 갑옷을 {PlatingPower:diff()} 얻거나,\n[gold]힘[/gold]을 {StrengthPower:diff()} 얻거나, [gold]골드[/gold]를 {Gold:diff()} 얻습니다.",
+  "WATCHER-WISH.selectionScreenPrompt": "사용할 카드를 선택하십시오."
 
 }

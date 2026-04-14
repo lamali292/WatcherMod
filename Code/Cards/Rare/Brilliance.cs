@@ -1,12 +1,16 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Multiplayer.Game.Lobby;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -34,9 +38,24 @@ public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarit
         Creature? dealer,
         CardModel? cardSource)
     {
-        return cardSource == this ? Owner.Creature.GetPowerAmount<BrilliancePower>() : 0m;
+        Log.Info("test");
+        return cardSource == this ? MantraGainedThisCombat()  : 0m;
     }
 
+    private int MantraGainedThisCombat() {
+        var mantraGained = 0;
+        foreach (var e in CombatManager.Instance.History.Entries.OfType<PowerReceivedEntry>())
+        {
+      
+            
+            if (e.Power is MantraPower && e.Applier != null && e.Applier.Player == Owner)
+            {
+                mantraGained += (int) e.Amount;
+            }
+        }
+        return mantraGained;
+    }
+    
     protected override async Task OnPlay(PlayerChoiceContext context, CardPlay play)
     {
         if (play.Target == null) return;

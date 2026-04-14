@@ -7,47 +7,6 @@ namespace Watcher.Code.Patches;
 [HarmonyPatch]
 internal class ProgressSaveManager_Patches
 {
-    // -------------------------------
-    // Patch CheckFifteenElitesDefeatedEpoch
-    // -------------------------------
-    [HarmonyPatch(typeof(ProgressSaveManager), "CheckFifteenElitesDefeatedEpoch")]
-    [HarmonyPatch(new[] { typeof(Player) })]
-    private static class ElitesPatch
-    {
-        private static bool Prefix(ProgressSaveManager __instance, Player localPlayer)
-        {
-            Console.WriteLine("[Prefix] CheckFifteenElitesDefeatedEpoch started for " +
-                              localPlayer.Character.GetType().Name);
-            return localPlayer.Character is not Character.Watcher; // skip original for Watcher
-        }
-
-        private static void Postfix(ProgressSaveManager __instance, Player localPlayer)
-        {
-            Console.WriteLine("[Postfix] CheckFifteenElitesDefeatedEpoch finished for " +
-                              localPlayer.Character.GetType().Name);
-        }
-    }
-
-    // -------------------------------
-    // Patch CheckFifteenBossesDefeatedEpoch
-    // -------------------------------
-    [HarmonyPatch(typeof(ProgressSaveManager), "CheckFifteenBossesDefeatedEpoch")]
-    [HarmonyPatch(new[] { typeof(Player) })]
-    private static class BossesPatch
-    {
-        private static bool Prefix(ProgressSaveManager __instance, Player localPlayer)
-        {
-            Console.WriteLine("[Prefix] CheckFifteenBossesDefeatedEpoch started for " +
-                              localPlayer.Character.GetType().Name);
-            return localPlayer.Character is not Character.Watcher; // skip original for Watcher
-        }
-
-        private static void Postfix(ProgressSaveManager __instance, Player localPlayer)
-        {
-            Console.WriteLine("[Postfix] CheckFifteenBossesDefeatedEpoch finished for " +
-                              localPlayer.Character.GetType().Name);
-        }
-    }
 
     [HarmonyPatch(typeof(ProgressSaveManager))]
     [HarmonyPatch("ObtainCharUnlockEpoch")]

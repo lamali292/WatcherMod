@@ -5,6 +5,8 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Cards.Rare;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Powers;
@@ -23,7 +25,7 @@ public class DevotionPower : CustomPowerModel
         if (!player.Creature.HasPower<DevotionPower>())
             return;
 
-        await PowerCmd.Apply<MantraPower>(player.Creature, Amount, player.Creature, null);
+        await PowerCmd.Apply<MantraPower>(player.Creature, Amount, player.Creature, ModelDb.Card<Devotion>());
         Flash();
     }
 }

@@ -5,9 +5,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4333g"]
 shader = ExtResource("1_1adal")
 shader_parameter/base_color = Vector4(0, 0.475, 1, 1)
-shader_parameter/time_speed = 0.050000002375
-shader_parameter/cloud_scale = 0.20000000624012
-shader_parameter/alpha_strength = 0.8090000384275
+shader_parameter/time_speed = 0.05
+shader_parameter/cloud_scale = 0.2
+shader_parameter/alpha_strength = 0.8
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4333g"]
 

@@ -6,7 +6,7 @@
 shader = ExtResource("1_4333g")
 shader_parameter/base_color = Vector4(1, 0, 0, 1)
 shader_parameter/time_speed = 0.2
-shader_parameter/cloud_scale = 0.47500001930262
+shader_parameter/cloud_scale = 0.47
 shader_parameter/alpha_strength = 0.8
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4333g"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://k5e84jv2rvbx"
-path="res://.godot/imported/wish_watcher.png-741b4012a1e2e570e2cb149a6561a35b.ctex"
+path="res://.godot/imported/wish.png-72fff3dd54daa531fc3a8216f078dcdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Watcher/images/card_portraits/wish_watcher.png"
-dest_files=["res://.godot/imported/wish_watcher.png-741b4012a1e2e570e2cb149a6561a35b.ctex"]
+source_file="res://Watcher/images/card_portraits/wish.png"
+dest_files=["res://.godot/imported/wish.png-72fff3dd54daa531fc3a8216f078dcdd.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2fagke4q7e0q"]
+
+[ext_resource type="SpineSkeletonDataResource" uid="uid://bdapmsjn710l5" path="res://Watcher/animation/watcher_skel_data.tres" id="1_egocj"]
+
+[node name="WatcherNode" type="SpineSprite"]
+skeleton_data_res = ExtResource("1_egocj")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0

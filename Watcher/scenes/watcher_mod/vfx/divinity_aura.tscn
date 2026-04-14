@@ -5,9 +5,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4333g"]
 shader = ExtResource("1_aumh4")
 shader_parameter/base_color = Vector4(0.9, 0, 0.8, 1)
-shader_parameter/time_speed = 0.010000000475
-shader_parameter/cloud_scale = 0.10000000149012
-shader_parameter/alpha_strength = 0.918000043605
+shader_parameter/time_speed = 0.01
+shader_parameter/cloud_scale = 0.1
+shader_parameter/alpha_strength = 0.9
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4333g"]
 
