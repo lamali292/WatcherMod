@@ -1,11 +1,9 @@
 ﻿using BaseLib.Abstracts;
 using Godot;
-using Watcher.Code.Abstracts;
-using Watcher.Code.Patches;
 
 namespace Watcher.Code.Character;
 
-public sealed class WatcherCardPool : CustomCardPoolModel, ICustomEnergyIconPool
+public sealed class WatcherCardPool : CustomCardPoolModel
 {
     public override string Title => Watcher.CharacterId;
 
@@ -17,7 +15,6 @@ public sealed class WatcherCardPool : CustomCardPoolModel, ICustomEnergyIconPool
 
     public override bool IsColorless => false;
     
-    public override string EnergyColorName => CustomEnergyIconPatches.GetEnergyColorName(Id);
-    public string? BigEnergyIconPath => "res://Watcher/images/ui/combat/watcher_energy_icon.png";
-    public string? TextEnergyIconPath => "res://Watcher/images/ui/combat/text_watcher_energy_icon.png";
+    public override string? BigEnergyIconPath => "res://Watcher/images/ui/combat/watcher_energy_icon.png";
+    public override string? TextEnergyIconPath => "res://Watcher/images/ui/combat/text_watcher_energy_icon.png";
 }
