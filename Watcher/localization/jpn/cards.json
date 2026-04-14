@@ -171,9 +171,9 @@
   "WATCHER-FAME_AND_FORTUNE.description": "{Gold:diff()}[gold]ゴールド[/gold]を得る。",
   "WATCHER-LIVE_FOREVER.title": "不死",
   "WATCHER-LIVE_FOREVER.description": "[gold]プレートアーマー[/gold]{PlatingPower:diff()}を得る。",
-  "WATCHER-WISH.title": "願いごと",
-  "WATCHER-WISH.description": "願いごとを1つ選び、それを叶える。",
-  "WATCHER-WISH.selectionScreenPrompt": "プレイするカードを選択してください。",
   "WATCHER-ANCIENT_CARD.title": "鍛錬",
-  "WATCHER-ANCIENT_CARD.description": "{energyPrefix:energyIcons(1)}を残してターンを終了した場合、次のターン、その数だけ追加でカードを引く。"
+  "WATCHER-ANCIENT_CARD.description": "{energyPrefix:energyIcons(1)}を残してターンを終了した場合、次のターン、その数だけ追加でカードを引く。",
+  "WATCHER-WISH_WATCHER.description": "願いごとを1つ選び、それを叶える。",
+  "WATCHER-WISH_WATCHER.selectionScreenPrompt": "プレイするカードを選択してください。",
+  "WATCHER-WISH_WATCHER.title": "願いごと"
 }

@@ -16,7 +16,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Rare;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Wish() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
+public sealed class WishWatcher() : CustomCardModel(3, CardType.Skill, CardRarity.Rare, TargetType.None)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new GoldVar(25), new PowerVar<StrengthPower>(3), new PowerVar<PlatingPower>(6)];
