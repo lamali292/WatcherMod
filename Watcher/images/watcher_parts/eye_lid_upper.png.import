@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwunme6pccw3i"
-path="res://.godot/imported/watcher.png-1b4638364d73c4dc19ebc27ca7915e4a.ctex"
+uid="uid://dj884mlufp8vf"
+path="res://.godot/imported/eye_lid_upper.png-aacff1ec5a0fc961d2033a5c0a16d6d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Watcher/animation/watcher.png"
-dest_files=["res://.godot/imported/watcher.png-1b4638364d73c4dc19ebc27ca7915e4a.ctex"]
+source_file="res://Watcher/images/watcher_parts/eye_lid_upper.png"
+dest_files=["res://.godot/imported/eye_lid_upper.png-aacff1ec5a0fc961d2033a5c0a16d6d0.ctex"]
 
 [params]
 

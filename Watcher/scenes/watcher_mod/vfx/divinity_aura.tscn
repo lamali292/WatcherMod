@@ -1,25 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://u2pogvbv8n7v"]
+[gd_scene load_steps=4 format=3 uid="uid://u2pogvbv8n7v"]
 
-[ext_resource type="Shader" uid="uid://bn6su4sdlefyk" path="res://scenes/watcher_mod/vfx/wrath_aura.gdshader" id="1_aumh4"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4333g"]
-shader = ExtResource("1_aumh4")
-shader_parameter/base_color = Vector4(0.9, 0, 0.8, 1)
-shader_parameter/time_speed = 0.01
-shader_parameter/cloud_scale = 0.1
-shader_parameter/alpha_strength = 0.9
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_4333g"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wa8i0"]
-noise = SubResource("FastNoiseLite_4333g")
-seamless = true
+[ext_resource type="Script" path="res://Code/Stances/DivinityEyeSpawner.cs" id="1_eyes"]
+[ext_resource type="Script" path="res://Code/Stances/DivinityActivationBurst.cs" id="2_burst"]
+[ext_resource type="Script" path="res://Code/Stances/AuraBlobEmitter.cs" id="3_blobs"]
 
 [node name="DivinityAura" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_4333g")
-position = Vector2(8.000015, -202)
-scale = Vector2(0.7260742, 0.7260742)
-texture = SubResource("NoiseTexture2D_wa8i0")
+[node name="FloatingEyes" type="Node2D" parent="."]
+position = Vector2(0, -150)
+script = ExtResource("1_eyes")
+
+[node name="AuraBlobs" type="Node2D" parent="."]
+position = Vector2(0, -188)
+script = ExtResource("3_blobs")
+BlobColor = Color(0.15, 0, 0.15, 1)
+
+[node name="ActivationBurst" type="Node2D" parent="."]
+position = Vector2(0, -175)
+script = ExtResource("2_burst")
