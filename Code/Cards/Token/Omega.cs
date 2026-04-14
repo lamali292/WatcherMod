@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
-using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
 
@@ -20,7 +19,7 @@ public sealed class Omega() : CustomCardModel(3, CardType.Power, CardRarity.Toke
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(50m, ValueProp.Unpowered)
+        new PowerVar<OmegaPower>(50m)
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
@@ -28,11 +27,11 @@ public sealed class Omega() : CustomCardModel(3, CardType.Power, CardRarity.Toke
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<OmegaPower>(Owner.Creature, DynamicVars.Damage.IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<OmegaPower>(Owner.Creature, DynamicVars["OmegaPower"].IntValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(10m);
+        DynamicVars["OmegaPower"].UpgradeValueBy(10m);
     }
 }

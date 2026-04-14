@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -30,7 +31,7 @@ public sealed class BowlingBash() : CustomCardModel(1, CardType.Attack, CardRari
         // Count enemies in combat
         if (combatState != null)
         {
-            var enemyCount = combatState.Enemies.Count;
+            var enemyCount = combatState.Enemies.Count(e => NCombatRoom.Instance?.GetCreatureNode(e)?.Visible ?? true);
             // Calculate damage: base damage × enemy count
             var totalDamage = DynamicVars.Damage.BaseValue;
             await DamageCmd.Attack(totalDamage)

@@ -26,7 +26,7 @@ public class DivinityStance : StancePower
         Creature? dealer,
         CardModel? cardSource)
     {
-        if (dealer == Owner)
+        if (dealer == Owner && !props.HasFlag(ValueProp.Unpowered))
             return 3m;
         return 1m;
     }

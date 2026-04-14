@@ -20,7 +20,7 @@ public sealed class WrathStance : StancePower
         Creature? dealer,
         CardModel? cardSource)
     {
-        if (dealer == Owner || target == Owner)
+        if ((dealer == Owner || target == Owner) && !props.HasFlag(ValueProp.Unpowered))
             return DynamicVars[DamageMultiplier].BaseValue;
 
         return 1m;
