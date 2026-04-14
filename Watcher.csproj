@@ -10,7 +10,12 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
     </PropertyGroup>
 
-
+    <PropertyGroup>
+        <AssemblyVersion>1.2.6.0</AssemblyVersion>
+        <FileVersion>1.2.6.0</FileVersion>
+        <Version>1.2.6</Version>
+    </PropertyGroup>
+    
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
         <Optimize>false</Optimize>
         <DebugType>portable</DebugType>
