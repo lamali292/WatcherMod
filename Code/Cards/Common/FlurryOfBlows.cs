@@ -27,7 +27,7 @@ public sealed class FlurryOfBlows : WatcherCardModel, IOnStanceChange
 
     public async Task OnStanceChange(PlayerChoiceContext ctx, Player player, WatcherStanceModel oldStance, WatcherStanceModel newStance)
     {
-        if (newStance.Owner != Owner && Pile?.Type != PileType.Discard) return;
+        if (newStance.Owner != Owner || Pile?.Type != PileType.Discard) return;
         await CardPileCmd.Add(this, PileType.Hand);
     }
 }
