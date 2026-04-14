@@ -3,7 +3,7 @@
   "name": "Watcher",
   "author": "lamali",
   "description": "The Watcher - ports the original character to Sts2\n\nCredits:\nchaendizzle - Calm, Divinity and Wrath SFX / VFX\nSnumodder - Korean localization\nNoFires - Chinese localization\nContinuous - Russian localization\niwasreturnsolomon-svg - Japanese localization\nCany0udance - for helping me port the animations",
-  "version": "v1.2.7",
+  "version": "v1.2.9",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [
