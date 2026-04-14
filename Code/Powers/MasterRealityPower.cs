@@ -17,6 +17,9 @@ public sealed class MasterRealityPower : CustomPowerModel
 
     public override Task AfterCardGeneratedForCombat(CardModel card, bool addedByPlayer)
     {
+        // TODO : is this correct. What if both players have this power?. Does it get trigger double?
+        if (!card.Owner.Creature.HasPower<MasterRealityPower>())
+            return Task.CompletedTask;
         if (card is { IsUpgradable: true, IsUpgraded: false }) CardCmd.Upgrade(card);
         return Task.CompletedTask;
     }

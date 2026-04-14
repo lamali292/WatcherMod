@@ -7,255 +7,171 @@
   "WATCHER-VIGILANCE.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n[gold]명상[/gold]합니다.",
   "WATCHER-ERUPTION.title": "분화",
   "WATCHER-ERUPTION.description": "피해를 {Damage:diff()} 줍니다.\n[gold]진노[/gold]합니다.",
-
   "WATCHER-BOWLING_BASH.title": "충돌 강타",
   "WATCHER-BOWLING_BASH.description": "적 하나당 피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-CONSECRATE.title": "축성",
   "WATCHER-CONSECRATE.description": "모든 적에게 피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-CRESCENDO.title": "백열",
   "WATCHER-CRESCENDO.description": "[gold]진노[/gold]합니다.",
-
   "WATCHER-CRUSH_JOINTS.title": "관절 부수기",
-  "WATCHER-CRUSH_JOINTS.description": "피해를 {Damage:diff()} 줍니다.\n가장 최근에 사용한 카드가 [gold]스킬[/gold] 카드라면, [gold]취약[/gold]을 [blue]1[/blue] 부여합니다.",
-
+  "WATCHER-CRUSH_JOINTS.description": "피해를 {Damage:diff()} 줍니다.\n가장 최근에 사용한 카드가 [gold]스킬[/gold] 카드라면, [gold]취약[/gold]을 {VulnerablePower:diff()} 부여합니다.",
   "WATCHER-CUT_THROUGH_FATE.title": "운명 가르기",
   "WATCHER-CUT_THROUGH_FATE.description": "피해를 {Damage:diff()} 줍니다.\n[gold]예지[/gold] {Cards:diff()}\n카드를 [blue]1[/blue] 장 뽑습니다.",
-
   "WATCHER-EMPTY_FIST.title": "정권 수양",
   "WATCHER-EMPTY_FIST.description": "피해를 {Damage:diff()} 줍니다.\n현재 [gold]경지[/gold]에서 벗어납니다.",
-
-
   "WATCHER-INSIGHT.title": "통찰",
   "WATCHER-INSIGHT.description": "카드를 {Cards:diff()} 장 뽑습니다.",
-
   "WATCHER-FLURRY_OF_BLOWS.title": "일진광풍",
   "WATCHER-FLURRY_OF_BLOWS.description": "피해를 {Damage:diff()} 줍니다.\n경지를 바꿀 때마다 버린 카드 더미에서 손으로 가져옵니다.",
-
   "WATCHER-FLYING_SLEEVES.title": "흩날리는 소매",
   "WATCHER-FLYING_SLEEVES.description": "피해를 {Damage:diff()} 만큼 두 번 줍니다.",
-
   "WATCHER-FOLLOW_UP.title": "뒤처리",
   "WATCHER-FOLLOW_UP.description": "피해를 {Damage:diff()} 줍니다.\n가장 최근에 사용한 카드가 공격 카드라면, {energyPrefix:energyIcons(1)} [blue]1[/blue] 를 얻습니다.",
-
   "WATCHER-JUST_LUCKY.title": "요행",
   "WATCHER-JUST_LUCKY.description": "[gold]예지[/gold] {Cards:diff()}\n[gold]방어도[/gold]를 {Block:diff()} 얻습니다\n피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-REACH_HEAVEN.title": "천국의 계단",
   "WATCHER-REACH_HEAVEN.description": "피해를 {Damage:diff()} 줍니다.\n뽑을 카드 더미에 [gold]무력 돌파[/gold]를 섞어 넣습니다.",
-
   "WATCHER-THROUGH_VIOLENCE.title": "무력 돌파",
   "WATCHER-THROUGH_VIOLENCE.description": "피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-SASH_WHIP.title": "벨트 휘두르기",
   "WATCHER-SASH_WHIP.description": "피해를 {Damage:diff()} 줍니다.\n가장 최근에 사용한 카드가 공격 카드라면, [gold]약화[/gold]를 {WeakPower:diff()} 부여합니다.",
-
   "WATCHER-THIRD_EYE.title": "제 3의 눈",
   "WATCHER-THIRD_EYE.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n[gold]예지[/gold] {Cards:diff()}.",
-
   "WATCHER-TRANQUILITY.title": "고요함",
   "WATCHER-TRANQUILITY.description": "[gold]명상[/gold]합니다.",
-
   "WATCHER-WINDMILL_STRIKE.title": "회오리 타격",
   "WATCHER-WINDMILL_STRIKE.description": "피해를 {Damage:diff()} 줍니다.\n[gold]보존[/gold]될 때마다, 이번 전투 동안 이 카드의 피해량이 {RetainIncrease:diff()} 만큼 증가합니다.",
-
   "WATCHER-EMPTY_BODY.title": "육체 수양",
   "WATCHER-EMPTY_BODY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n현재 [gold]경지[/gold]에서 벗어납니다.",
-
   "WATCHER-EMPTY_MIND.title": "정신 수양",
   "WATCHER-EMPTY_MIND.description": "카드를 {Cards:diff()} 장 뽑습니다.\n현재 [gold]경지[/gold]에서 벗어납니다.",
-
   "WATCHER-HALT.title": "저지",
   "WATCHER-HALT.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n[gold]진노[/gold] 중일 경우,\n[gold]방어도[/gold]를 추가로 {WrathBlock:diff()} 얻습니다.",
-
   "WATCHER-PRESSURE_POINTS.title": "급소",
   "WATCHER-PRESSURE_POINTS.description": "[gold]표식[/gold]을 {MarkPower:diff()} 부여합니다.\n모든 적의 체력을 대상에게 부여된 [gold]표식[/gold] 만큼 감소시킵니다.",
-
   "WATCHER-PROSTRATE.title": "부복",
   "WATCHER-PROSTRATE.description": "[gold]만트라[/gold]를 {MantraPower:diff()} 얻습니다.\n[gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-PROTECT.title": "보호",
   "WATCHER-PROTECT.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-INNER_PEACE.title": "내면의 평화",
   "WATCHER-INNER_PEACE.description": "[gold]명상[/gold] 중이라면, 카드를 {Cards:diff()} 장 뽑습니다. 그렇지 않다면 [gold]명상[/gold]합니다.",
-
   "WATCHER-RUSHDOWN.title": "추월",
   "WATCHER-RUSHDOWN.description": "[gold]진노[/gold]할 때마다, 카드를 [blue]2[/blue] 장 뽑습니다.",
-
   "WATCHER-CARVE_REALITY.title": "현실 개척",
   "WATCHER-CARVE_REALITY.description": "피해를 {Damage:diff()} 줍니다.\n[gold]엄벌[/gold]을 손으로 가져옵니다.",
-
   "WATCHER-CONCLUDE.title": "결론",
   "WATCHER-CONCLUDE.description": "모든 적에게 피해를 {Damage:diff()} 줍니다.\n턴을 종료합니다.",
-
   "WATCHER-DECEIVE_REALITY.title": "현실 속이기",
   "WATCHER-DECEIVE_REALITY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n[gold]안전[/gold]을 손으로 가져옵니다.",
-
   "WATCHER-FEAR_NO_EVIL.title": "무외",
   "WATCHER-FEAR_NO_EVIL.description": "피해를 {Damage:diff()} 줍니다.\n적이 공격할 의도가 있다면, [gold]명상[/gold]합니다.",
-
   "WATCHER-FOREIGN_INFLUENCE.title": "외세",
   "WATCHER-FOREIGN_INFLUENCE.description": "모든 직업의 공격 카드 3장 중 1장을 선택해 손으로 가져옵니다. {IfUpgraded:show:\n이번 턴에 비용이 0이 됩니다.|}",
-
   "WATCHER-JUDGMENT.title": "심판",
   "WATCHER-JUDGMENT.description": "적의 체력이 {DamageThreshold:diff()} 이하일 경우, 체력을 0으로 만듭니다.",
-
   "WATCHER-RAGNAROK.title": "라그나로크",
   "WATCHER-RAGNAROK.description": "무작위 적에게 피해를 {Damage:diff()} 줍니다 만큼 {Repeat:diff()} 번 줍니다.",
-
   "WATCHER-SIGNATURE_MOVE.title": "개인기",
   "WATCHER-SIGNATURE_MOVE.description": "이 카드가 손에 있는 유일한 공격 카드일 경우에만 사용 가능합니다.\n피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-SIMMERING_FURY.title": "들끓는 울화",
   "WATCHER-SIMMERING_FURY.description": "다음 턴 시작 시, [gold]진노[/gold]하고 카드를 {DrawCardsNextTurnPower:diff()} 장 뽑습니다.",
-
   "WATCHER-TANTRUM.title": "격분",
   "WATCHER-TANTRUM.description": "피해를 {Damage:diff()} 만큼 {Repeat:diff()} 번 줍니다.\n[gold]진노[/gold]합니다.\n이 카드를 뽑을 카드 더미에 섞어 넣습니다.",
-
   "WATCHER-WAVE_OF_THE_HAND.title": "장법",
   "WATCHER-WAVE_OF_THE_HAND.description": "이번 턴에 [gold]방어도[/gold]를 얻을 때마다, 모든 적에게 [gold]약화[/gold]를 {WaveOfTheHandPower:diff()} 부여합니다.",
-
   "WATCHER-WEAVE.title": "횡행",
   "WATCHER-WEAVE.description": "피해를 {Damage:diff()} 줍니다. [gold]예지[/gold]할 때마다 이 카드를 버린 카드 더미에서 손으로 들고 옵니다.",
-
   "WATCHER-WHEEL_KICK.title": "돌려차기",
   "WATCHER-WHEEL_KICK.description": "피해를 {Damage:diff()} 줍니다.\n카드를 {Cards:diff()} 장 뽑습니다.",
-
   "WATCHER-BATTLE_HYMN.title": "전투 찬가",
   "WATCHER-BATTLE_HYMN.description": "매 턴 시작 시, [gold]엄벌[/gold]을 손으로 가져옵니다.",
-
   "WATCHER-SMITE.title": "엄벌",
   "WATCHER-SMITE.description": "피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-SAFETY.title": "안전",
   "WATCHER-SAFETY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-COLLECT.title": "수집",
   "WATCHER-COLLECT.description": "다음 {IfUpgraded:show:X+1|X} 턴 동안 턴 시작 시 손으로 [gold]기적+[/gold]을 가져옵니다.",
-
   "WATCHER-MIRACLE.title": "기적",
   "WATCHER-MIRACLE.description": "{Energy:energyIcons()} 를 얻습니다.",
-
   "WATCHER-EVALUATE.title": "평가",
   "WATCHER-EVALUATE.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n[gold]통찰[/gold]을 뽑을 카드 더미에 섞어 넣습니다.",
-
   "WATCHER-FASTING.title": "단식",
   "WATCHER-FASTING.description": "[gold]힘[/gold]을 {StrengthPower:diff()} 얻습니다.\n[gold]민첩[/gold]을 {DexterityPower:diff()} 얻습니다.\n매 턴 시작 시 {Energy:energyIcons()}를 1 적게 얻습니다.",
-
   "WATCHER-INDIGNATION.title": "분개",
   "WATCHER-INDIGNATION.description": "[gold]진노[/gold] 중이라면, 모든 적에게 [gold]취약[/gold]을 {VulnerablePower:diff()} 부여합니다. 그렇지 않으면 [gold]진노[/gold]합니다.",
-
   "WATCHER-LIKE_WATER.title": "여류",
   "WATCHER-LIKE_WATER.description": "턴 종료 시 [gold]명상[/gold] 중이라면, [gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-MEDITATE.title": "사색",
   "WATCHER-MEDITATE.description": "버린 카드 더미에서 카드 {Cards:diff()} {Cards:plural:장|장} 을 손으로 들고 온 뒤 [gold]보존[/gold]합니다. {Cards:plural:|}.\n[gold]명상[/gold]합니다.\n턴을 종료합니다.",
   "WATCHER-MEDITATE.selectionScreenPrompt": "[gold]보존[/gold]할 {Amount:plural:1 장의 카드를|[blue]{}[/blue] 장의 카드를} 선택하십시오.",
-
   "WATCHER-MENTAL_FORTRESS.title": "마음의 요새",
   "WATCHER-MENTAL_FORTRESS.description": "[gold]경지[/gold]를 바꿀 때마다, [gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-NIRVANA.title": "열반",
   "WATCHER-NIRVANA.description": "[gold]예지[/gold]할 때마다, [gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-PERSEVERANCE.title": "인내",
   "WATCHER-PERSEVERANCE.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n [gold]보존[/gold]될 떄마다, 이번 전투 동안 이 카드의 [gold]방어도[/gold]가 {Increase:diff()} 증가합니다.",
-
   "WATCHER-PRAY.title": "기도",
   "WATCHER-PRAY.description": "[gold]만트라[/gold]를 {MantraPower:diff()} 얻습니다.\n뽑을 카드 더미에 [gold]통찰[/gold]을 섞어 넣습니다.",
-
   "WATCHER-SANCTITY.title": "존엄",
   "WATCHER-SANCTITY.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n가장 최근에 사용한 카드가 스킬 카드라면 카드를 2 장 뽑습니다.",
-
   "WATCHER-STUDY.title": "학습",
   "WATCHER-STUDY.description": "턴 종료 시, [gold]통찰[/gold]을 뽑을 카드 더미에 섞어 넣습니다.",
-
   "WATCHER-SWIVEL.title": "회전",
   "WATCHER-SWIVEL.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n다음으로 사용하는 공격 카드의 비용이 0이 됩니다.",
-
   "WATCHER-TALK_TO_THE_HAND.title": "손절",
   "WATCHER-TALK_TO_THE_HAND.description": "피해를 {Damage:diff()} 줍니다.\n이 적을 공격할 때마다, [gold]방어도[/gold]를 {BlockReturnPower:diff()} 얻습니다.",
-
   "WATCHER-WALLOP.title": "맹공",
   "WATCHER-WALLOP.description": "피해를 {Damage:diff()} 줍니다.\n막히지 않은 피해만큼 [gold]방어도[/gold]를 얻습니다.",
-
   "WATCHER-WORSHIP.title": "숭배",
   "WATCHER-WORSHIP.description": "[gold]만트라[/gold]를 [blue]5[/blue] 얻습니다.",
-
   "WATCHER-DEVOTION.title": "헌신",
   "WATCHER-DEVOTION.description": "턴 시작 시, [gold]만트라[/gold]를 {DevotionPower:diff()} 얻습니다.",
-
   "WATCHER-FORESIGHT.title": "선견지명",
   "WATCHER-FORESIGHT.description": "턴 시작 시, [gold]예지[/gold] {ForesightPower:diff()}",
-
   "WATCHER-BRILLIANCE.title": "광휘",
   "WATCHER-BRILLIANCE.description": "피해를 {Damage:diff()} 줍니다.\n이번 전투에서 얻었던 [gold]만트라[/gold]만큼 추가 피해를 줍니다.",
-
   "WATCHER-LESSON_LEARNED.title": "교훈",
   "WATCHER-LESSON_LEARNED.description": "피해를 {Damage:diff()} 줍니다.\n[gold]치명타[/gold]라면, 덱에 있는 무작위 카드를 영구히 [gold]강화[/gold]합니다.",
-
   "WATCHER-SANDS_OF_TIME.title": "시간의 모래",
   "WATCHER-SANDS_OF_TIME.description": "피해를 {Damage:diff()} 줍니다.\n[gold]보존[/gold]될 때마다, 이번 전투 동안 이 카드의 비용이 1 줄어듭니다.",
-
   "WATCHER-SCRAWL_WATCHER.title": "휘갈김",
   "WATCHER-SCRAWL_WATCHER.description": "손이 가득 찰 때까지 카드를 뽑습니다.",
-
   "WATCHER-VAULT.title": "회피 도약",
   "WATCHER-VAULT.description": "이번 턴 후에 내 턴을 추가로 진행합니다.\n턴을 종료합니다.",
-
   "WATCHER-BLASPHEMY.title": "신성 모독",
   "WATCHER-BLASPHEMY.description": "[gold]강림[/gold]합니다.\n다음 턴에 죽습니다.",
-
   "WATCHER-CONJURE_BLADE.title": "마술 칼날",
   "WATCHER-CONJURE_BLADE.description": "뽑을 카드 더미에 [gold]말살검[/gold]을 섞어 넣습니다.",
-
   "WATCHER-EXPUNGER.title": "말살검",
   "WATCHER-EXPUNGER.description": "피해를 {Damage:diff()} 만큼 {Repeat:cond:<0?X|{Repeat:diff()}} 번 줍니다.",
-
   "WATCHER-DEUS_EX_MACHINA.title": "데우스 엑스 마키나",
   "WATCHER-DEUS_EX_MACHINA.description": "이 카드를 뽑으면 소멸하면서 [gold]기적[/gold]을 {Cards:diff()} 장 손으로 가져옵니다.",
-
   "WATCHER-ESTABLISHMENT.title": "지배",
   "WATCHER-ESTABLISHMENT.description": "카드가 [gold]보존[/gold]될 때마다, 그 카드의 비용을 이번 전투 동안 1 낮춥니다.",
-
   "WATCHER-OMNISCIENCE.title": "전지",
   "WATCHER-OMNISCIENCE.description": "뽑을 카드 더미에서 카드를 선택합니다. 선택한 카드를 두 번 사용하고 [gold]소멸[/gold]시킵니다.",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "두 번 사용하고 [gold]소멸[/gold]시킬 카드를 선택하십시오.",
-
   "WATCHER-SPIRIT_SHIELD.title": "영혼 방패",
   "WATCHER-SPIRIT_SHIELD.description": "손에 있는 카드 한 장 당 [gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
-
   "WATCHER-MASTER_REALITY.title": "현실 지배",
   "WATCHER-MASTER_REALITY.description": "전투 중에 카드를 생성할 때마다 그 카드를 [gold]강화[/gold]합니다.",
-
   "WATCHER-WREATH_OF_FLAME.title": "불의 고리",
   "WATCHER-WREATH_OF_FLAME.description": "다음에 사용하는 공격 카드의 피해량이 {VigorPower:diff()} 증가합니다.",
-
   "WATCHER-OMEGA.title": "오메가",
   "WATCHER-OMEGA.description": "턴 종료 시, 모든 적에게 피해를 {Damage:diff()} 줍니다.",
-
   "WATCHER-BETA.title": "베타",
   "WATCHER-BETA.description": "뽑을 카드 더미에 [gold]오메가[/gold]를 섞어 넣습니다.",
-
   "WATCHER-ALPHA.title": "알파",
   "WATCHER-ALPHA.description": "뽑을 카드 더미에 [gold]베타[/gold]를 섞어 넣습니다.",
-
   "WATCHER-DEVA_FORM.title": "천신의 형상",
   "WATCHER-DEVA_FORM.description": "턴 시작 시, {energyPrefix:energyIcons(1)} 를 얻습니다. 얻는 에너지는 매 턴 1 만큼 증가합니다.",
-
   "WATCHER-BECOME_ALMIGHTY.title": "전능",
   "WATCHER-BECOME_ALMIGHTY.description": "[gold]힘[/gold]을 {StrengthPower:diff()} 얻습니다.",
-
   "WATCHER-FAME_AND_FORTUNE.title": "부와 명예",
   "WATCHER-FAME_AND_FORTUNE.description": "[gold]골드[/gold]를 {Gold:diff()} 얻습니다.",
-
   "WATCHER-LIVE_FOREVER.title": "영생",
   "WATCHER-LIVE_FOREVER.description": "[gold]판금 갑옷[/gold]을 {PlatingPower:diff()} 얻습니다.",
-
   "WATCHER-WISH.title": "염원",
   "WATCHER-WISH.description": "하나 선택:\n판금 갑옷을 {PlatingPower:diff()} 얻거나,\n[gold]힘[/gold]을 {StrengthPower:diff()} 얻거나, [gold]골드[/gold]를 {Gold:diff()} 얻습니다.",
   "WATCHER-WISH.selectionScreenPrompt": "사용할 카드를 선택하십시오."
-
 }

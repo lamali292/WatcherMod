@@ -20,7 +20,7 @@ public class Watcher : CustomCharacterModel
     public override string CustomCharacterSelectIconPath => "res://Watcher/images/watcher/char_select_watcher.png";
 
     public override CustomEnergyCounter? CustomEnergyCounter =>
-        new CustomEnergyCounter(EnergyCounterPaths, StsColors.red, StsColors.blue);
+        new CustomEnergyCounter(EnergyCounterPaths, new Color(0.4f, 0.1f, 0.9f), new Color(0.7f, 0.1f, 0.9f));
 
     public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter.tscn";
 
@@ -75,6 +75,13 @@ public class Watcher : CustomCharacterModel
         ModelDb.Card<Eruption>()
     ];
 
+    protected override IEnumerable<string> ExtraAssetPaths =>
+    [
+        "res://Watcher/scenes/watcher_mod/vfx/calm_aura.tscn",
+        "res://Watcher/scenes/watcher_mod/vfx/wrath_aura.tscn",
+        "res://Watcher/scenes/watcher_mod/vfx/divinity_aura.tscn"
+    ];
+
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
         ModelDb.Relic<PureWater>()
@@ -108,9 +115,8 @@ public class Watcher : CustomCharacterModel
         var state1 = new AnimState("Idle");
         var state2 = new AnimState("Idle");
         var state3 = new AnimState("Hit");
-        var state4 = new AnimState("Hit");
+        var state4 = new AnimState("Idle");
         var state5 = new AnimState("Idle");
-        var state6 = new AnimState("Idle", true);
         state1.NextState = animState;
         state2.NextState = animState;
         state3.NextState = animState;

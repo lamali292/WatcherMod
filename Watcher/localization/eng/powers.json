@@ -70,5 +70,8 @@
   "WATCHER-MASTER_REALITY_POWER.smartDescription": "Whenever a card is created, it is [blue]Upgraded[/blue].",
   "DUALITY_POWER.smartDescription": "",
   "DUALITY_POWER.description": "",
-  "DUALITY_POWER.title": "Duality"
+  "DUALITY_POWER.title": "Duality",
+  "WATCHER-DISCIPLE_POWER.title": "Disciple",
+  "WATCHER-DISCIPLE_POWER.description": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn.",
+  "WATCHER-DISCIPLE_POWER.smartDescription": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn."
 }

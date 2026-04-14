@@ -34,6 +34,6 @@ public sealed class SpiritShield() : CustomCardModel(2, CardType.Skill, CardRari
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(2);
+        DynamicVars.Block.UpgradeValueBy(1);
     }
 }

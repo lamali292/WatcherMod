@@ -3,7 +3,7 @@
   "name": "Watcher",
   "author": "lamali",
   "description": "Slay the Spire 2 character mod created from a template for use with BaseLib",
-  "version": "v1.0.5",
+  "version": "v1.0.6",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [

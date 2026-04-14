@@ -20,6 +20,8 @@ public sealed class BlasphemerPower : CustomPowerModel
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, CombatState combatState)
     {
+        if (player != Owner.Player)
+            return;
         await CreatureCmd.Damage(
             choiceContext,
             Owner,

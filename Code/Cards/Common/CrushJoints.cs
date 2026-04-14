@@ -18,7 +18,8 @@ public sealed class CrushJoints() : CustomCardModel(1, CardType.Attack, CardRari
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(8m, ValueProp.Move)
+        new DamageVar(8m, ValueProp.Move),
+        new PowerVar<VulnerablePower>(1)
     ];
 
     protected override bool ShouldGlowGoldInternal => WasLastCardPlayedSkill;
@@ -30,7 +31,6 @@ public sealed class CrushJoints() : CustomCardModel(1, CardType.Attack, CardRari
             var lastCardEntry = CombatManager.Instance.History.CardPlaysStarted
                 .LastOrDefault(e =>
                     e.CardPlay.Card.Owner == Owner &&
-                    e.HappenedThisTurn(CombatState) &&
                     e.CardPlay.Card != this);
 
             if (lastCardEntry == null) return false;
@@ -56,7 +56,7 @@ public sealed class CrushJoints() : CustomCardModel(1, CardType.Attack, CardRari
         if (WasLastCardPlayedSkill)
             await PowerCmd.Apply<VulnerablePower>(
                 cardPlay.Target,
-                1,
+                DynamicVars.Vulnerable.BaseValue,
                 Owner.Creature,
                 this
             );
@@ -64,6 +64,7 @@ public sealed class CrushJoints() : CustomCardModel(1, CardType.Attack, CardRari
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2m); // 8 → 10
+        DynamicVars.Damage.UpgradeValueBy(2m);
+        DynamicVars.Vulnerable.UpgradeValueBy(1m);
     }
 }

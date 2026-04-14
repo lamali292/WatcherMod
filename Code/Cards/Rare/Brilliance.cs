@@ -48,10 +48,11 @@ public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarit
         {
       
             
-            if (e.Power is MantraPower && e.Applier != null && e.Applier.Player == Owner)
+            if (e is { Power: MantraPower, Applier: not null } && e.Applier.Player == Owner)
             {
                 mantraGained += (int) e.Amount;
             }
+            
         }
         return mantraGained;
     }

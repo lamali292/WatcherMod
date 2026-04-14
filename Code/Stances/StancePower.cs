@@ -3,6 +3,7 @@
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
@@ -40,12 +41,12 @@ public abstract class StancePower : CustomPowerModel
 
     private Task CreateAura(Creature owner)
     {
-        var creatureNode = NCombatRoom.Instance?.GetCreatureNode(owner); // use passed owner
+        if (AuraScenePath == null) return Task.CompletedTask;
 
+        var creatureNode = NCombatRoom.Instance?.GetCreatureNode(owner);
         var visuals = creatureNode?.Visuals;
         if (visuals == null) return Task.CompletedTask;
 
-        // Get or create container
         var container = visuals.GetNodeOrNull<Node2D>("StanceVfxContainer");
         if (container == null)
         {
@@ -53,20 +54,19 @@ public abstract class StancePower : CustomPowerModel
             visuals.AddChild(container);
         }
 
-        // Remove any previous aura to prevent duplicates
-        if (_vfxInstance != null && GodotObject.IsInstanceValid(_vfxInstance)) _vfxInstance.QueueFree();
+        if (_vfxInstance != null && GodotObject.IsInstanceValid(_vfxInstance))
+            _vfxInstance.QueueFree();
 
-        var scene = GD.Load<PackedScene>(AuraScenePath);
-        if (scene == null) return Task.CompletedTask;
+        var scene = PreloadManager.Cache.GetScene(AuraScenePath);
 
         _vfxInstance = scene.Instantiate<Node2D>();
         _vfxInstance.Position = Vector2.Zero;
-
-        container.AddChild(_vfxInstance);
         _vfxInstance.Scale = Vector2.One;
+        container.AddChild(_vfxInstance);
 
         return Task.CompletedTask;
     }
+
 
     private void RemoveAura()
     {

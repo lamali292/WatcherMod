@@ -21,6 +21,8 @@ public sealed class CollectPower : CustomPowerModel
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, CombatState combatState)
     {
+        if (player != Owner.Player)
+            return;
         var insightCard = CombatState.CreateCard<Miracle>(player);
         CardCmd.Upgrade(insightCard);
         // Add to hand at top position

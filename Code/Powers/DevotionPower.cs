@@ -22,7 +22,7 @@ public class DevotionPower : CustomPowerModel
     public override async Task BeforeHandDrawLate(Player player, PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
-        if (!player.Creature.HasPower<DevotionPower>())
+        if (player != Owner.Player)
             return;
 
         await PowerCmd.Apply<MantraPower>(player.Creature, Amount, player.Creature, ModelDb.Card<Devotion>());

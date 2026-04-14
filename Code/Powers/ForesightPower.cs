@@ -19,6 +19,8 @@ public class ForesightPower : CustomPowerModel
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, CombatState combatState)
     {
+        if (player != Owner.Player)
+            return;
         await ScryCmd.Execute(choiceContext, player, Amount);
     }
 }

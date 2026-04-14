@@ -39,13 +39,14 @@ public sealed class PressurePoints() : CustomCardModel(1, CardType.Skill, CardRa
         );
         var combatState = cardPlay.Target.CombatState;
         var enemies = combatState!.Enemies.ToList();
-        foreach (var enemy in enemies )
+        foreach (var enemy in enemies)
         {
             var markPower = enemy.GetPower<MarkPower>();
             if (markPower is { Amount: > 0 })
                 await DamageCmd.Attack(markPower.Amount)
                     .FromCard(this)
                     .Targeting(enemy)
+                    .Unpowered()
                     .Execute(choiceContext);
         }
     }

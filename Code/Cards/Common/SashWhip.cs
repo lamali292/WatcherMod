@@ -25,7 +25,6 @@ public sealed class SashWhip() : CustomCardModel(1, CardType.Attack, CardRarity.
             var lastCardEntry = CombatManager.Instance.History.CardPlaysStarted
                 .LastOrDefault(e =>
                     e.CardPlay.Card.Owner == Owner &&
-                    e.HappenedThisTurn(CombatState) &&
                     e.CardPlay.Card != this);
 
             if (lastCardEntry == null) return false;

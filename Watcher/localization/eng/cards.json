@@ -14,7 +14,7 @@
   "WATCHER-CRESCENDO.title": "Crescendo",
   "WATCHER-CRESCENDO.description": "Enter [gold]Wrath[/gold].",
   "WATCHER-CRUSH_JOINTS.title": "Crush Joints",
-  "WATCHER-CRUSH_JOINTS.description": "Deal {Damage:diff()} damage.\nIf the last card played this combat was a [gold]Skill[/gold], apply [blue]1[/blue] [gold]Vulnerable[/gold].",
+  "WATCHER-CRUSH_JOINTS.description": "Deal {Damage:diff()} damage.\nIf the last card played this combat was a [gold]Skill[/gold], apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "WATCHER-CUT_THROUGH_FATE.title": "Cut Through Fate",
   "WATCHER-CUT_THROUGH_FATE.description": "Deal {Damage:diff()} damage.\n[gold]Scry[/gold] {Cards:diff()}\nDraw [blue]1[/blue] card.",
   "WATCHER-EMPTY_FIST.title": "Empty Fist",
@@ -174,6 +174,6 @@
   "WATCHER-WISH.title": "Wish",
   "WATCHER-WISH.description": "Choose one:\nGain {PlatingPower:diff()} Plated Armor,\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-WISH.selectionScreenPrompt": "Choose a Card to play.",
-  "WATCHER-ANCIENT_CARD.title": "Ancient Card",
-  "WATCHER-ANCIENT_CARD.description": "This is a placeholder card used for testing. It does nothing."
+  "WATCHER-ANCIENT_CARD.title": "Discipline",
+  "WATCHER-ANCIENT_CARD.description": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn."
 }
