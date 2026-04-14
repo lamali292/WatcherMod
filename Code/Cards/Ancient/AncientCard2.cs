@@ -37,6 +37,6 @@ public sealed class AncientCard2() : CustomCardModel(1, CardType.Power, CardRari
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1); // Reduces cost from 2 to 1
+        AddKeyword(CardKeyword.Innate);
     }
 }
