@@ -39,10 +39,4 @@ public sealed class FollowUp : WatcherCardModel
             .Execute(choiceContext);
         if (WasLastCardPlayedAttack) Owner.PlayerCombatState!.GainEnergy(1);
     }
-
-    public override Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
-    {
-        if (cardPlay.Card.Owner != Owner) EnergyCost.AddThisTurn(-1);
-        return Task.CompletedTask;
-    }
 }
