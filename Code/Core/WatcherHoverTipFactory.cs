@@ -1,5 +1,4 @@
 ﻿using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Stances;
 
 namespace Watcher.Code.Core;

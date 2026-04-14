@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace Watcher.Code.Extensions;
+﻿namespace Watcher.Code.Extensions;
 
 //Mostly utilities to get asset paths.
 public static class StringExtensions

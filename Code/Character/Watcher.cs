@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BaseLib.Abstracts;
+﻿using BaseLib.Abstracts;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Animation;

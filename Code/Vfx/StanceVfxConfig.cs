@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Godot;
+﻿using Godot;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 
 namespace Watcher.Code.Vfx;
