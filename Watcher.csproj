@@ -127,4 +127,47 @@
     <Target Name="GodotPublishSkipped" AfterTargets="Publish" Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')">
         <Message Text="Skipping Godot .pck export because GodotPath is not configured." Importance="high"/>
     </Target>
+
+
+    <!-- ── Release packaging ───────────────────────────────────────── -->
+    <Target Name="CreateReleaseZip" AfterTargets="GodotPublish" Condition="'$(ReleaseVersion)' != ''">
+        <Message Text="Packaging release $(ReleaseVersion)..." Importance="high"/>
+
+        <PropertyGroup>
+            <ZipName>Watcher-release-$(ReleaseVersion).zip</ZipName>
+            <TempReleaseDir>$(MSBuildProjectDirectory)\_release-temp</TempReleaseDir>
+        </PropertyGroup>
+
+        <!-- Create temp folder structure -->
+        <MakeDir Directories="$(TempReleaseDir)\Watcher"/>
+        <MakeDir Directories="$(TempReleaseDir)\BaseLib"/>
+
+        <!-- Copy Watcher files -->
+        <Copy SourceFiles="$(ModsPath)Watcher\Watcher.dll"  DestinationFolder="$(TempReleaseDir)\Watcher\"/>
+        <Copy SourceFiles="$(ModsPath)Watcher\Watcher.pck"  DestinationFolder="$(TempReleaseDir)\Watcher\"/>
+        <Copy SourceFiles="$(ModsPath)Watcher\Watcher.json" DestinationFolder="$(TempReleaseDir)\Watcher\"/>
+
+        <!-- Copy BaseLib files -->
+        <Copy SourceFiles="$(ModsPath)BaseLib\BaseLib.dll"  DestinationFolder="$(TempReleaseDir)\BaseLib\"/>
+        <Copy SourceFiles="$(ModsPath)BaseLib\BaseLib.pck"  DestinationFolder="$(TempReleaseDir)\BaseLib\"/>
+        <Copy SourceFiles="$(ModsPath)BaseLib\BaseLib.json" DestinationFolder="$(TempReleaseDir)\BaseLib\"/>
+
+        <!-- Create zip using PowerShell -->
+        <Exec Command="powershell -Command &quot;Compress-Archive -Path '$(TempReleaseDir)\*' -DestinationPath '$(MSBuildProjectDirectory)\$(ZipName)' -Force&quot;"/>
+
+        <!-- Cleanup temp folder -->
+        <RemoveDir Directories="$(TempReleaseDir)"/>
+
+        <Message Text="Created $(ZipName)" Importance="high"/>
+    </Target>
+
+    <Target Name="CreateGitHubRelease" AfterTargets="CreateReleaseZip" Condition="'$(ReleaseVersion)' != ''">
+        <Message Text="Tagging and publishing GitHub release $(ReleaseVersion)..." Importance="high"/>
+
+        <Exec Command="git tag $(ReleaseVersion)"/>
+        <Exec Command="git push origin $(ReleaseVersion)"/>
+        <Exec Command="gh release create $(ReleaseVersion) &quot;$(MSBuildProjectDirectory)\Watcher-release-$(ReleaseVersion).zip&quot; --title &quot;Watcher $(ReleaseVersion)&quot; --generate-notes"/>
+
+        <Message Text="GitHub release $(ReleaseVersion) published!" Importance="high"/>
+    </Target>
 </Project>

@@ -25,13 +25,20 @@ public class Watcher : CustomCharacterModel
     public override string CustomIconTexturePath => "res://Watcher/images/watcher/character_icon_watcher.png";
     public override string CustomCharacterSelectIconPath => "res://Watcher/images/watcher/char_select_watcher.png";
 
+    public override CustomEnergyCounter? CustomEnergyCounter => new CustomEnergyCounter(EnergyCounterPaths,StsColors.red, StsColors.blue);
+    public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter.tscn";
+
+    private string EnergyCounterPaths(int i)
+    {
+        return "res://Watcher/images/ui/combat/energy_counters/watcher/watcher_orb_layer_"+i+".png";
+    }
+    
     public override string CustomCharacterSelectLockedIconPath =>
         "res://Watcher/images/watcher/char_select_watcher_locked.png";
 
     public override string CustomVisualPath => "res://Watcher/scenes/watcher/watcher.tscn";
     public override string CustomTrailPath => "res://Watcher/scenes/watcher/card_trail_watcher.tscn";
     public override string CustomIconPath => "res://Watcher/scenes/watcher/watcher_icon.tscn";
-    public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter.tscn";
     public override string CustomRestSiteAnimPath => "res://Watcher/scenes/watcher/watcher_rest_site.tscn";
     public override string CustomMerchantAnimPath => "res://Watcher/scenes/watcher/watcher_merchant.tscn";
 

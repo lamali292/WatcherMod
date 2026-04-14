@@ -12,7 +12,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Common;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Consecrate() : CustomCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+public sealed class Consecrate() : CustomCardModel(0, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
