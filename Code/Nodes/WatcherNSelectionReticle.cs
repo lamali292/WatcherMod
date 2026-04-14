@@ -4,6 +4,6 @@ using MegaCrit.Sts2.Core.Nodes.Combat;
 namespace Watcher.Code.Nodes;
 
 [GlobalClass]
-public partial class SNSelectionReticle : NSelectionReticle
+public partial class WatcherNSelectionReticle : NSelectionReticle
 {
 }

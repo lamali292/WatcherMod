@@ -1,0 +1,5 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://3n16jqm"]
+[ext_resource type="Texture2D" path="res://Watcher/images/potions/atlas/watcher_outline_atlas.png" id="1"]
+[resource]
+atlas = ExtResource("1")
+region = Rect2(0, 80, 80, 80)

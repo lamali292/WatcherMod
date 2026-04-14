@@ -1,11 +1,11 @@
-using Godot;
+﻿using Godot;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
-using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Screens.Shops;
 
 namespace Watcher.Code.Nodes;
 
 [GlobalClass]
-public partial class SNCreatureVisuals : NCreatureVisuals
+public partial class WatcherNMerchantCharacter : NMerchantCharacter
 {
     public override void _Ready()
     {
@@ -17,12 +17,10 @@ public partial class SNCreatureVisuals : NCreatureVisuals
         {
             BlendMode = CanvasItemMaterial.BlendModeEnum.PremultAlpha
         };
+        var spineBody = new MegaSprite((Variant)(GodotObject)GetChild(0));
+        spineBody.SetNormalMaterial(premultMat);
 
-        if (SpineBody != null)
-            SpineBody.SetNormalMaterial(premultMat);
-        else
-            GetCurrentBody().Material = premultMat;
 
-        //StancePower.EnsureEyeSetup(Body);
+        PlayAnimation("Idle", true);
     }
 }

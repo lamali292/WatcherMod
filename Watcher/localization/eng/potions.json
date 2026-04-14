@@ -1,0 +1,10 @@
+{
+  "WATCHER-BOTTLED_MIRACLE.title": "Bottled Miracle",
+  "WATCHER-BOTTLED_MIRACLE.description": "Add {Cards:diff()} [blue]Miracles[/blue] to your hand.",
+  "WATCHER-CALM_POTION.title": "Calm Potion",
+  "WATCHER-CALM_POTION.description": "Enter [blue]Calm[/blue].",
+  "WATCHER-WRATH_POTION.title": "Wrath Potion",
+  "WATCHER-WRATH_POTION.description": "Enter [blue]Wrath[/blue].",
+  "WATCHER-AMBROSIA.title": "Ambrosia",
+  "WATCHER-AMBROSIA.description": "Enter [blue]Divinity[/blue]."
+}

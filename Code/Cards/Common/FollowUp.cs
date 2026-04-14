@@ -46,8 +46,19 @@ public sealed class FollowUp() : CustomCardModel(1, CardType.Attack, CardRarity.
         if (WasLastCardPlayedAttack) Owner.PlayerCombatState!.GainEnergy(1);
     }
 
+
+    public override Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+    {
+        if (cardPlay.Card.Owner != Owner)
+        {
+            EnergyCost.AddThisTurn(-1);
+        }
+        return Task.CompletedTask;
+    }
+
     protected override void OnUpgrade()
     {
+      
         DynamicVars.Damage.UpgradeValueBy(4m);
     }
 }

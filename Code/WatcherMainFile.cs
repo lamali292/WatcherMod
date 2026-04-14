@@ -6,10 +6,10 @@ using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
-namespace Watcher;
+namespace Watcher.Code;
 
 [ModInitializer(nameof(Initialize))]
-public partial class MainFile : Node
+public partial class WatcherMainFile : Node
 {
     public const string ModId = "Watcher"; //At the moment, this is used only for the Logger and harmony names.
 

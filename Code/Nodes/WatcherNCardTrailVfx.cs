@@ -4,6 +4,6 @@ using MegaCrit.Sts2.Core.Nodes.Vfx;
 namespace Watcher.Code.Nodes;
 
 [GlobalClass]
-public partial class SNCardTrailVfx : NCardTrailVfx
+public partial class WatcherNCardTrailVfx : NCardTrailVfx
 {
 }

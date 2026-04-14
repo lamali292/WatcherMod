@@ -56,7 +56,7 @@ public static class StanceCmd
         }
 
         var creatureNode = NCombatRoom.Instance?.GetCreatureNode(creature);
-        var visuals = creatureNode?.Visuals as SNCreatureVisuals;
+        var visuals = creatureNode?.Visuals as WatcherNCreatureVisuals;
         visuals?.SetEyeStance(newStance switch
         {
             WrathStance => "wrath",
