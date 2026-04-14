@@ -8,7 +8,6 @@ publish/
 Properties/
 packages/
 .editorconfig
-*cs.uid
 *.user
 __pycache__
 loc_editor_settings.json
