@@ -6,9 +6,21 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <DefaultItemExcludes>packages/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
-        <PathMap>$(AppOutputBase)=.\</PathMap>
+        <RootNamespace>Watcher</RootNamespace>
     </PropertyGroup>
 
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <Optimize>false</Optimize>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <Optimize>true</Optimize>
+        <DebugType>none</DebugType>
+        <PathMap>$(AppOutputBase)=.\</PathMap>
+    </PropertyGroup>
+    
     <!-- OS Detection -->
     <PropertyGroup>
         <IsWindows>false</IsWindows>
@@ -110,6 +122,10 @@
         <Message Text="Copying .dll and manifest to mods folder." Importance="high"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
         <Copy SourceFiles="Watcher.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb"
+              DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"
+              Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+
         <Message Text="Copying BaseLib to mods folder." Importance="high"/>
         <ItemGroup>
             <BaseLibFiles Include="$(NuGetPackageRoot)alchyr.sts2.baselib/**/lib/**/BaseLib.dll;$(NuGetPackageRoot)alchyr.sts2.baselib/**/Content/BaseLib.pck;$(NuGetPackageRoot)alchyr.sts2.baselib/**/Content/BaseLib.json;"/>

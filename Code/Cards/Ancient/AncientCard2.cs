@@ -37,6 +37,6 @@ public sealed class AncientCard2() : CustomCardModel(1, CardType.Attack, CardRar
 
     protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Innate);
+        AddKeyword(CardKeyword.Retain);
     }
 }

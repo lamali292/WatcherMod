@@ -4,7 +4,10 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -21,15 +24,17 @@ public sealed class PureWater : CustomRelicModel
 
     protected override string PackedIconOutlinePath =>
         $"{Id.Entry.RemovePrefix().ToLowerInvariant()}_outline.tres".TresRelicImagePath();
-
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    
+    public override async Task BeforeHandDraw(
+        Player player,
+        PlayerChoiceContext choiceContext,
+        CombatState combatState)
     {
-        var pureWater = this;
-        if (side != pureWater.Owner.Creature.Side || combatState.RoundNumber > 1)
-            return;
-
+        if (player != Owner || combatState.RoundNumber > 1) return;
         var miracle = combatState.CreateCard<Miracle>(Owner);
         await CardPileCmd.AddGeneratedCardToCombat(miracle, PileType.Hand, true);
-        pureWater.Flash();
+        Flash();
     }
+
+    public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<HolyWater>();
 }
