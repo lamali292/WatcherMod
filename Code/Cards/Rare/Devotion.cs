@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
+using Watcher.Code.Stances;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -17,7 +18,8 @@ public sealed class Devotion() : CustomCardModel(1, CardType.Power, CardRarity.R
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MantraPower>()
+        HoverTipFactory.FromPower<MantraPower>(),
+        HoverTipFactory.FromPower<DivinityStance>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

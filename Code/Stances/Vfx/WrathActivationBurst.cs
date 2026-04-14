@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 
 namespace Watcher.Code.Stances.Vfx;
 
@@ -22,11 +23,12 @@ public partial class WrathActivationBurst : Node2D
 
         _lines = new BurstLine[LineCount];
         var mat = new CanvasItemMaterial { BlendMode = CanvasItemMaterial.BlendModeEnum.Add };
+        var texture = PreloadManager.Cache.GetAsset<Texture2D>("res://Watcher/images/vfx/strike_line.png");
 
         for (var i = 0; i < LineCount; i++)
         {
             var sprite = new Sprite2D();
-            sprite.Texture = GD.Load<Texture2D>("res://Watcher/images/vfx/strike_line.png");
+            sprite.Texture = texture;
             sprite.Material = mat;
 
             var g = rng.RandfRange(0.15f, 0.35f);

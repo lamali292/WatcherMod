@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 
 namespace Watcher.Code.Stances.Vfx;
 
@@ -33,7 +34,7 @@ public partial class WrathGlowSparkSpawner : Node2D
         _rng = new RandomNumberGenerator();
         _rng.Randomize();
         _mat = new CanvasItemMaterial { BlendMode = CanvasItemMaterial.BlendModeEnum.Add };
-        _texture = GD.Load<Texture2D>("res://Watcher/images/vfx/glow_spark.png");
+        _texture = PreloadManager.Cache.GetAsset<Texture2D>("res://Watcher/images/vfx/glow_spark.png");
 
         for (var i = 0; i < 20; i++)
         {

@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 
@@ -22,8 +23,12 @@ public static class StanceVfx
     {
         if (NonInteractiveMode.IsActive) return;
 
-        var stream = GD.Load<AudioStream>(path);
-        if (stream == null)
+        AudioStream stream;
+        try
+        {
+            stream = PreloadManager.Cache.GetAsset<AudioStream>(path);
+        }
+        catch
         {
             GD.PrintErr($"[StanceVfx] Could not load audio: {path}");
             return;

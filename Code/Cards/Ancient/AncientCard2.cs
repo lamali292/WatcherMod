@@ -15,7 +15,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Ancient;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class AncientCard2() : CustomCardModel(1, CardType.Power, CardRarity.Ancient, TargetType.None)
+public sealed class AncientCard2() : CustomCardModel(1, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(11m, ValueProp.Move)];
 

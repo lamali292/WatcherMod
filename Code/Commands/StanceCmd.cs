@@ -26,7 +26,7 @@ public static class StanceCmd
 
     public static Task ExitStance(Creature creature, CardModel? cardSource)
     {
-        return Execute(creature, null, cardSource);
+        return Execute(creature, ModelDb.Power<NoStance>(), cardSource);
     }
 
     private static async Task Execute(Creature creature, StancePower? newStance, CardModel? cardSource)
@@ -36,7 +36,10 @@ public static class StanceCmd
 
         var current = creature.Powers.OfType<StancePower>().FirstOrDefault();
 
-        if (current?.GetType() == newStance?.GetType() || creature.Player == null)
+        var currentIsNone = current is null or NoStance;
+        var newIsNone = newStance is null or NoStance;
+
+        if ((currentIsNone && newIsNone) || current?.GetType() == newStance?.GetType() || creature.Player == null)
             return;
 
         if (current != null)

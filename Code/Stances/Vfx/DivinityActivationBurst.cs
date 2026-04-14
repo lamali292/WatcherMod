@@ -13,7 +13,7 @@ public partial class DivinityActivationBurst : Node2D
 
     public override void _Ready()
     {
-        var s = StanceVfx.VfxScale;
+        const float s = StanceVfx.VfxScale;
         Position *= s;
 
         var rng = new RandomNumberGenerator();

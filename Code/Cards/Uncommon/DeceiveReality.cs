@@ -14,7 +14,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class DeceiveReality() : CustomCardModel(1, CardType.Status, CardRarity.Uncommon, TargetType.Self)
+public sealed class DeceiveReality() : CustomCardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4m, ValueProp.Move)];
 

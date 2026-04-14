@@ -10,6 +10,7 @@ using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
+using Watcher.Code.Stances;
 
 namespace Watcher.Code.Cards.Uncommon;
 
@@ -19,6 +20,7 @@ public sealed class Pray() : CustomCardModel(1, CardType.Skill, CardRarity.Uncom
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<MantraPower>(),
+        HoverTipFactory.FromPower<DivinityStance>(),
         HoverTipFactory.FromCard<Insight>()
     ];
 

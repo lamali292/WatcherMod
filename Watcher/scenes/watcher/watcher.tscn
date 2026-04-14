@@ -22,9 +22,10 @@ position = Vector2(-146.50206, -245.428)
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -65.0
+offset_left = -91.0
 offset_top = -305.0
-offset_right = 67.0
+offset_right = 100.0
+offset_bottom = -2.0
 mouse_filter = 2
 
 [node name="CenterPos" type="Marker2D" parent="."]

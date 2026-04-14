@@ -3,11 +3,11 @@ using Godot;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
-using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Cards.Basic;
 using Watcher.Code.Nodes;
 using Watcher.Code.Relics;
+using Watcher.Code.Stances;
 
 namespace Watcher.Code.Character;
 
@@ -15,8 +15,8 @@ public class Watcher : CustomCharacterModel
 {
     public const string CharacterId = "Watcher";
 
-    public static readonly Color Color = StsColors.purple;
-
+    public static readonly Color Color = new(0.5f, 0.0f, 0.5f);
+    public override Color MapDrawingColor => Color;
     public override string CustomIconTexturePath => "res://Watcher/images/watcher/character_icon_watcher.png";
     public override string CustomCharacterSelectIconPath => "res://Watcher/images/watcher/char_select_watcher.png";
 
@@ -80,7 +80,16 @@ public class Watcher : CustomCharacterModel
     [
         "res://Watcher/scenes/watcher_mod/vfx/calm_aura.tscn",
         "res://Watcher/scenes/watcher_mod/vfx/wrath_aura.tscn",
-        "res://Watcher/scenes/watcher_mod/vfx/divinity_aura.tscn"
+        "res://Watcher/scenes/watcher_mod/vfx/divinity_aura.tscn",
+        .. ModelDb.Power<CalmStance>().AssetPaths,
+        .. ModelDb.Power<WrathStance>().AssetPaths,
+        .. ModelDb.Power<DivinityStance>().AssetPaths,
+        "res://Watcher/images/vfx/screenflash.png",
+        "res://Watcher/images/vfx/eye_anim.png",
+        "res://Watcher/images/vfx/frost_streak.png",
+        "res://Watcher/images/vfx/big_blur.png",
+        "res://Watcher/images/vfx/strike_line.png",
+        "res://Watcher/images/vfx/glow_spark.png"
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>

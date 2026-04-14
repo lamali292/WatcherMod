@@ -25,10 +25,11 @@ public sealed class Prostrate() : CustomCardModel(0, CardType.Skill, CardRarity.
         new BlockVar(4m, ValueProp.Move),
         new PowerVar<MantraPower>(2m)
     ];
-    
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MantraPower>()
+        HoverTipFactory.FromPower<MantraPower>(),
+        HoverTipFactory.FromPower<DivinityStance>()
     ];
 
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();

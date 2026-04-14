@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 
 namespace Watcher.Code.Stances.Vfx;
 
@@ -24,7 +25,7 @@ public partial class AuraBlobEmitter : Node2D
 		];
 
 		var cpu = new CpuParticles2D();
-		cpu.Texture = GD.Load<Texture2D>("res://Watcher/images/vfx/big_blur.png");
+		cpu.Texture = PreloadManager.Cache.GetAsset<Texture2D>("res://Watcher/images/vfx/big_blur.png");
 		cpu.Material = new CanvasItemMaterial { BlendMode = CanvasItemMaterial.BlendModeEnum.Add };
 
 		cpu.Amount = 6;

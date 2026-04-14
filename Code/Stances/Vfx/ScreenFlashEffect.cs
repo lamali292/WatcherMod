@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Helpers;
 
 namespace Watcher.Code.Stances.Vfx;
@@ -28,7 +29,8 @@ public partial class ScreenFlashEffect : CanvasLayer
     public override void _Ready()
     {
         _tex = new TextureRect();
-        _tex.Texture = GD.Load<Texture2D>("res://Watcher/images/vfx/screenflash.png");
+        _tex.MouseFilter = Control.MouseFilterEnum.Ignore;
+        _tex.Texture = PreloadManager.Cache.GetAsset<Texture2D>("res://Watcher/images/vfx/screenflash.png");
         _tex.Material = new CanvasItemMaterial { BlendMode = CanvasItemMaterial.BlendModeEnum.Add };
         _tex.StretchMode = TextureRect.StretchModeEnum.Scale;
         _tex.AnchorRight = 1;

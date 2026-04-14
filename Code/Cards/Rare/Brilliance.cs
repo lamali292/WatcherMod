@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
+using Watcher.Code.Stances;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -28,7 +29,8 @@ public sealed class Brilliance() : CustomCardModel(1, CardType.Attack, CardRarit
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MantraPower>()
+        HoverTipFactory.FromPower<MantraPower>(),
+        HoverTipFactory.FromPower<DivinityStance>()
     ];
 
     public override bool ShouldReceiveCombatHooks => true;

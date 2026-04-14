@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 
 namespace Watcher.Code.Stances.Vfx;
 
@@ -29,7 +30,7 @@ public partial class DivinityEyeSpawner : Node2D
         _rng.Randomize();
         _mat = new CanvasItemMaterial { BlendMode = CanvasItemMaterial.BlendModeEnum.Add };
 
-        var strip = GD.Load<Texture2D>("res://Watcher/images/vfx/eye_anim.png");
+        var strip = PreloadManager.Cache.GetAsset<Texture2D>("res://Watcher/images/vfx/eye_anim.png");
         _frames = new AtlasTexture[7];
         for (var i = 0; i < 7; i++)
         {
@@ -99,19 +100,22 @@ public partial class DivinityEyeSpawner : Node2D
 
     private static int GetEyeFrame(float progress)
     {
-        if (progress < 0.15f) return 0;
-        if (progress < 0.20f) return 1;
-        if (progress < 0.25f) return 2;
-        if (progress < 0.30f) return 3;
-        if (progress < 0.35f) return 4;
-        if (progress < 0.40f) return 5;
-        if (progress < 0.55f) return 6;
-        if (progress < 0.62f) return 5;
-        if (progress < 0.70f) return 4;
-        if (progress < 0.75f) return 3;
-        if (progress < 0.80f) return 2;
-        if (progress < 0.85f) return 1;
-        return 0;
+        return progress switch
+        {
+            < 0.15f => 0,
+            < 0.20f => 1,
+            < 0.25f => 2,
+            < 0.30f => 3,
+            < 0.35f => 4,
+            < 0.40f => 5,
+            < 0.55f => 6,
+            < 0.62f => 5,
+            < 0.70f => 4,
+            < 0.75f => 3,
+            < 0.80f => 2,
+            < 0.85f => 1,
+            _ => 0
+        };
     }
 
     private float GetVerticalBob(float progress, float scale)

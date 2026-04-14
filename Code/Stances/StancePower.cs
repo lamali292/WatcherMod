@@ -27,6 +27,16 @@ public abstract class StancePower : CustomPowerModel
     // ---------- Aura System ----------
     private Node2D? _vfxInstance;
 
+    public IEnumerable<string> AssetPaths
+    {
+        get
+        {
+            if (AuraScenePath != null) yield return AuraScenePath;
+            if (AmbienceLoopPath != null) yield return AmbienceLoopPath;
+            if (EnterSfxPath != null) yield return EnterSfxPath;
+        }
+    }
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.None;
     protected override bool IsVisibleInternal => false;
@@ -216,8 +226,7 @@ public abstract class StancePower : CustomPowerModel
         if (_ambiencePlayer != null && GodotObject.IsInstanceValid(_ambiencePlayer))
             _ambiencePlayer.QueueFree();
 
-        var stream = GD.Load<AudioStream>(AmbienceLoopPath);
-        if (stream == null) return;
+        var stream = PreloadManager.Cache.GetAsset<AudioStream>(AmbienceLoopPath);
 
         _ambiencePlayer = new AudioStreamPlayer();
         _ambiencePlayer.Stream = stream;
