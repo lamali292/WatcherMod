@@ -19,8 +19,7 @@ This mod requires BaseLib-StS2 for better mod compatibility and future update su
 
 
 
-## Setup
-
+## Setup - for developers
 
 
 ### 1. Download the Repository
