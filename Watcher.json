@@ -3,7 +3,7 @@
   "name": "Watcher",
   "author": "lamali",
   "description": "The Watcher - ports of the original character to Sts2",
-  "version": "v1.0.8",
+  "version": "v1.0.9",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [

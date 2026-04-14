@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx1t33hintqui"]
+
+[ext_resource type="SpineSkeletonDataResource" uid="uid://dskhjiqgieduh" path="res://Watcher/animation/eye/eye.tres" id="1_reybp"]
+
+[node name="Eye" type="SpineSprite"]
+skeleton_data_res = ExtResource("1_reybp")
+preview_skin = "Default"
+preview_animation = "Wrath"
+preview_frame = false
+preview_time = 0.0
