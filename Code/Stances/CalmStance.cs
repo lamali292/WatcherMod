@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Events;
 using Watcher.Code.Relics;
 using Watcher.Code.Vfx;
 
@@ -20,8 +21,7 @@ public class CalmStance : WatcherStanceModel
 
     public override Task OnExitStance(PlayerChoiceContext ctx, Player player, CardModel? source)
     {
-        var amount = 2;
-        if (player.GetRelic<VioletLotus>() != null) amount += 1;
+        var amount = WatcherHook.ModifyCalmEnergyGain(player.Creature.CombatState!, player, 2);
         player.PlayerCombatState!.GainEnergy(amount);
         return base.OnExitStance(ctx, player,source);
     }

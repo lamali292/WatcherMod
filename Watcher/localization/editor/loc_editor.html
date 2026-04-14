@@ -402,6 +402,7 @@
     let settings = JSON.parse(JSON.stringify(INIT_SETTINGS));
     if (!Array.isArray(settings.activeLangs)) settings.activeLangs = [...ALL_LANGS];
     settings.activeLangs = settings.activeLangs.filter(l => ALL_LANGS.includes(l));
+    ALL_LANGS.forEach(l => { if (!settings.activeLangs.includes(l)) settings.activeLangs.push(l); });
     if (settings.activeLangs.length === 0) settings.activeLangs = [...ALL_LANGS];
 
     const activeLangs = new Set(settings.activeLangs);

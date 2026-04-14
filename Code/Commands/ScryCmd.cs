@@ -27,14 +27,14 @@ public static class ScryCmd
             cardsToScry.Count
         );
 
-        var cardsToDiscard = await CardSelectCmd.FromSimpleGrid(
+        var cardsToDiscard = (await CardSelectCmd.FromSimpleGrid(
             choiceContext,
             cardsToScry,
             player,
             prefs
-        );
+        )).ToList();
         foreach (var card in cardsToDiscard) await CardCmd.Discard(choiceContext, card);
-        await WatcherHook.OnScryed(choiceContext, player, amount);
+        await WatcherHook.OnScryed(choiceContext, player, amount, cardsToDiscard.Count);
     }
     
 }

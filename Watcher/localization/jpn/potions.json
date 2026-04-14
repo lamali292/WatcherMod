@@ -1,0 +1,10 @@
+{
+  "WATCHER-AMBROSIA.description": "[blue]神聖[/blue]に入る。",
+  "WATCHER-BOTTLED_MIRACLE.description": "{Cards:diff()} 枚の[blue]奇跡[/blue]を手札に加える。",
+  "WATCHER-CALM_POTION.description": "[blue]平静[/blue]の[blue]スタンス[/blue]に入る。",
+  "WATCHER-WRATH_POTION.description": "[blue]憤怒[/blue]に入る。",
+  "WATCHER-AMBROSIA.title": "アンブロシア",
+  "WATCHER-BOTTLED_MIRACLE.title": "瓶詰めの奇跡",
+  "WATCHER-CALM_POTION.title": "瓶詰めの奇跡",
+  "WATCHER-WRATH_POTION.title": "憤怒のポーション"
+}

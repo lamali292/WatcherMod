@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]Durch Disziplin finde ich Klarheit...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]Der Moment vergeht.[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "Karten der Seherin erscheinen nun in Belohnungen und Läden.",
+  "WATCHER-WATCHER.cardsModifierTitle": "Karten der Seherin",
+  "WATCHER-WATCHER.description": "Eine blinde Asketin, die kam, um den Spire \"auszuwerten\".\nMeisterin der göttlichen Haltungen.",
+  "WATCHER-WATCHER.eventDeathPrevention": "Ich muss überleben. Das Gleichgewicht hängt davon ab.",
+  "WATCHER-WATCHER.goldMonologue": "[sine]Ich strebe nach keinem Reichtum... doch der Weg verlangt Vorbereitung.[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "ihr",
+  "WATCHER-WATCHER.pronounObject": "sie",
+  "WATCHER-WATCHER.pronounPossessive": "ihres",
+  "WATCHER-WATCHER.pronounSubject": "sie",
+  "WATCHER-WATCHER.title": "Die Seherin",
+  "WATCHER-WATCHER.titleObject": "Die Seherin"
+}

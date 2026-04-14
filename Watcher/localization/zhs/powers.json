@@ -68,5 +68,11 @@
   "WATCHER-MANTRA_POWER.smartDescription": "当你获得 10 层 真言 时，进入 [blue]神格[/blue]。",
   "WATCHER-SIMMERING_RAGE_POWER.smartDescription": "在你的回合开始时进入 [blue]愤怒[/blue]。",
   "WATCHER-BLASPHEMER_POWER.smartDescription": "在你的回合开始时死亡。",
-  "WATCHER-MASTER_REALITY_POWER.smartDescription": "所有在战斗中临时增加的牌将被 [blue]升级[/blue]。"
+  "WATCHER-MASTER_REALITY_POWER.smartDescription": "所有在战斗中临时增加的牌将被 [blue]升级[/blue]。",
+  "WATCHER-ANCIENT_CARD_POWER.description": "处于[gold]愤怒[/gold]时，伤害提高+50%。",
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "处于[gold]愤怒[/gold]时，伤害提高+{Amount}%。",
+  "WATCHER-ANCIENT_CARD_POWER.title": "积累",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "回合开始时，退出[gold]平静[/gold]。",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "回合开始时，退出[gold]平静[/gold]。",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "短暂的清晰 "
 }

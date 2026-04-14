@@ -1,0 +1,10 @@
+{
+  "WATCHER-BOTTLED_MIRACLE.title": "Abgefülltes Wunder",
+  "WATCHER-BOTTLED_MIRACLE.description": "Nimm {Cards:diff()} [blue]Wunder[/blue] auf die Hand.",
+  "WATCHER-CALM_POTION.title": "Ruhetrank",
+  "WATCHER-CALM_POTION.description": "Nimm [blue]Ruhe[/blue] an.",
+  "WATCHER-WRATH_POTION.title": "Zorntrank",
+  "WATCHER-WRATH_POTION.description": "Nimm [blue]Zorn[/blue] an.",
+  "WATCHER-AMBROSIA.title": "Ambrosia",
+  "WATCHER-AMBROSIA.description": "Nimm [blue]Göttlichkeit[/blue] an."
+}

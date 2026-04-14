@@ -68,11 +68,14 @@
   "WATCHER-MASTER_REALITY_POWER.title": "Подчинить реальность",
   "WATCHER-MASTER_REALITY_POWER.description": "Создаваемые в этом бою карты [blue]Улучшаются[/blue].",
   "WATCHER-MASTER_REALITY_POWER.smartDescription": "Создаваемые в этом бою карты [blue]Улучшаются[/blue].",
-  "DUALITY_POWER.title": "Дуальность",
-  "WATCHER-DISCIPLE_POWER.title": "Дисциплина",
-  "WATCHER-DISCIPLE_POWER.description": "Если в конце хода остаётся {energyPrefix:energyIcons(1)}, вы дополнительно добираете столько же карт.",
-  "WATCHER-DISCIPLE_POWER.smartDescription": "Если в конце хода остаётся {energyPrefix:energyIcons(1)}, вы дополнительно добираете столько же карт.",
   "WATCHER-PLATED_ARMOR_POWER.title": "Пластинчатая броня",
   "WATCHER-PLATED_ARMOR_POWER.description": "В конце вашего хода, даёт [blue]X[/blue] [gold]Защиты[/gold]. Получение не заблокированного урона понижает [gold]Пластинчатую броню[/gold] на [blue]1[/blue].",
-  "WATCHER-PLATED_ARMOR_POWER.smartDescription": "В конце вашего хода, даёт [blue]X[/blue] [gold]Защиты[/gold]. Получение не заблокированного урона понижает [gold]Пластинчатую броню[/gold] на [blue]1[/blue]."
+  "WATCHER-PLATED_ARMOR_POWER.smartDescription": "В конце вашего хода, даёт [blue]X[/blue] [gold]Защиты[/gold]. Получение не заблокированного урона понижает [gold]Пластинчатую броню[/gold] на [blue]1[/blue].",
+  "WATCHER-DUALITY_POWER.title": "Дуальность",
+  "WATCHER-ANCIENT_CARD_POWER.description": "В состоянии [gold]Гнева[/gold], наносите на +50% больше урона.",
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "В состоянии [gold]Гнева[/gold], наносите на +{Amount}% больше урона.",
+  "WATCHER-ANCIENT_CARD_POWER.title": "Накопление",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "В начале вашего хода, выйти из [gold]Спокойствия[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "В начале вашего хода, выйти из [gold]Спокойствия[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Мимолётная Ясность"
 }

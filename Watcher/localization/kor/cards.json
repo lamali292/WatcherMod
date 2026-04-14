@@ -96,7 +96,7 @@
   "WATCHER-EVALUATE.title": "평가",
   "WATCHER-EVALUATE.description": "[gold]방어도[/gold]를 {Block:diff()} 얻습니다.\n[gold]통찰[/gold]을 뽑을 카드 더미에 섞어 넣습니다.",
   "WATCHER-FASTING.title": "단식",
-  "WATCHER-FASTING.description": "[gold]힘[/gold]을 {StrengthPower:diff()} 얻습니다.\n[gold]민첩[/gold]을 {DexterityPower:diff()} 얻습니다.\n매 턴 시작 시 {Energy:energyIcons()}를 1 적게 얻습니다.",
+  "WATCHER-FASTING.description": "[gold]힘[/gold]을 {StrengthPower:diff()} 얻습니다.\n[gold]민첩[/gold]을 {DexterityPower:diff()} 얻습니다.\n매 턴 시작 시 {energyPrefix:energyIcons(1)}를 1 적게 얻습니다.",
   "WATCHER-INDIGNATION.title": "분개",
   "WATCHER-INDIGNATION.description": "[gold]진노[/gold] 중이라면, 모든 적에게 [gold]취약[/gold]을 {VulnerablePower:diff()} 부여합니다. 그렇지 않으면 [gold]진노[/gold]합니다.",
   "WATCHER-LIKE_WATER.title": "여류",
@@ -173,5 +173,13 @@
   "WATCHER-LIVE_FOREVER.description": "[gold]판금 갑옷[/gold]을 {PlatingPower:diff()} 얻습니다.",
   "WATCHER-WISH_WATCHER.description": "하나 선택:\n판금 갑옷을 {PlatedArmorPower:diff()} 얻거나,\n[gold]힘[/gold]을 {StrengthPower:diff()} 얻거나, [gold]골드[/gold]를 {Gold:diff()} 얻습니다.",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "사용할 카드를 선택하십시오.",
-  "WATCHER-WISH_WATCHER.title": "염원"
+  "WATCHER-WISH_WATCHER.title": "염원",
+  "WATCHER-ANCIENT_CARD.title": "축적",
+  "WATCHER-ANCIENT_CARD2.description": "{Damage:diff()} 피해를 입힌다.\n [gold]강림[/gold]에 진입한다.",
+  "WATCHER-ANCIENT_CARD.description": "[gold]진노[/gold] 상태일 때, 피해가 +50% 증가한다.",
+  "WATCHER-ANCIENT_CARD2.title": "재계시 ",
+  "WATCHER-MULTIPLAYER_CARD_RARE.description": "다른 플레이어가 [gold]강림[/gold]에 진입한다。",
+  "WATCHER-MULTIPLAYER_CARD_RARE.title": "공유된 지혜",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.description": "모든 아군이 [gold]명상[/gold]합니다. \n다음 턴 시작 시 [gold]명상[/gold]에서 벗어납니다.",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.title": "순간의 명료함"
 }

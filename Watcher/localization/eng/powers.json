@@ -68,12 +68,6 @@
   "WATCHER-MASTER_REALITY_POWER.title": "Master Reality",
   "WATCHER-MASTER_REALITY_POWER.description": "Whenever a card is created, it is [blue]Upgraded[/blue].",
   "WATCHER-MASTER_REALITY_POWER.smartDescription": "Whenever a card is created, it is [blue]Upgraded[/blue].",
-  "DUALITY_POWER.title": "Duality",
-  "DUALITY_POWER.description": "",
-  "DUALITY_POWER.smartDescription": "",
-  "WATCHER-DISCIPLE_POWER.title": "Disciple",
-  "WATCHER-DISCIPLE_POWER.description": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn.",
-  "WATCHER-DISCIPLE_POWER.smartDescription": "If you end your turn with unused {energyPrefix:energyIcons(1)}, draw that many additional cards next turn.",
   "WATCHER-PLATED_ARMOR_POWER.title": "Plated Armor",
   "WATCHER-PLATED_ARMOR_POWER.description": "At the end of your turn, gain [blue]X[/blue] [gold]Block[/gold]. Receiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Block[/gold].\nReceiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
@@ -82,5 +76,8 @@
   "WATCHER-DUALITY_POWER.smartDescription": "Lose {Amount} [gold]Dexterity[/gold] until the end of this turn.",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Fleeting Clarity",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "At the start of your turn, exit [gold]Calm[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "At the start of your turn, exit [gold]Calm[/gold]."
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "At the start of your turn, exit [gold]Calm[/gold].",
+  "WATCHER-ANCIENT_CARD_POWER.title": "Accumulate",
+  "WATCHER-ANCIENT_CARD_POWER.description": "While in [gold]Wrath[/gold], deal +50% damage.",
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "While in [gold]Wrath[/gold], deal +{Amount}% damage."
 }

@@ -13,17 +13,11 @@ public sealed class AncientCard : WatcherCardModel
 {
     public AncientCard() : base(2, CardType.Power, CardRarity.Ancient, TargetType.None)
     {
+        WithKeyword(CardKeyword.Ethereal, UpgradeType.Remove);
     }
-
-
+    
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<DisciplePower>(Owner.Creature, 1, Owner.Creature, this);
-    }
-
-
-    protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Innate);
+        await PowerCmd.Apply<AncientCardPower>(Owner.Creature, 50, Owner.Creature, this);
     }
 }
