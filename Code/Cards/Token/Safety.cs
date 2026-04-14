@@ -13,7 +13,7 @@ using Watcher.Code.Extensions;
 namespace Watcher.Code.Cards.Token;
 
 [Pool(typeof(TokenCardPool))]
-public sealed class Safety() : CustomCardModel(1, CardType.Status, CardRarity.Token, TargetType.Self)
+public sealed class Safety() : CustomCardModel(1, CardType.Skill, CardRarity.Token, TargetType.Self)
 {
     public override CardPoolModel Pool => ModelDb.CardPool<TokenCardPool>();
 

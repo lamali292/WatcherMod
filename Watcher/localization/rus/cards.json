@@ -129,7 +129,7 @@
   "WATCHER-FORESIGHT.title": "Прозрение",
   "WATCHER-FORESIGHT.description": "Вы [gold]Предсказываете[/gold] {ForesightPower:diff()} в начале хода.",
   "WATCHER-BRILLIANCE.title": "Великолепие",
-  "WATCHER-BRILLIANCE.description": "Наносит {Damage:diff()} урона.\nУрон увеличивается на кол-во [gold]Мантры[/gold] полученной в этом бою.",
+  "WATCHER-BRILLIANCE.description": "Наносит {CalculatedDamage:diff()} урона.\nУрон увеличивается на кол-во [gold]Мантры[/gold] полученной в этом бою.",
   "WATCHER-LESSON_LEARNED.title": "Усвоенный урок",
   "WATCHER-LESSON_LEARNED.description": "Наносит {Damage:diff()} урона.\n[gold]Улучшает[/gold] случайную карту в колоде, если [gold]Казнит[/gold] врага.",
   "WATCHER-SANDS_OF_TIME.title": "Пески времени",

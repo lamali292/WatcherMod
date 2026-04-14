@@ -129,7 +129,7 @@
   "WATCHER-FORESIGHT.title": "선견지명",
   "WATCHER-FORESIGHT.description": "턴 시작 시, [gold]예지[/gold] {ForesightPower:diff()}",
   "WATCHER-BRILLIANCE.title": "광휘",
-  "WATCHER-BRILLIANCE.description": "피해를 {Damage:diff()} 줍니다.\n이번 전투에서 얻었던 [gold]만트라[/gold]만큼 추가 피해를 줍니다.",
+  "WATCHER-BRILLIANCE.description": "피해를 {CalculatedDamage:diff()} 줍니다.\n이번 전투에서 얻었던 [gold]만트라[/gold]만큼 추가 피해를 줍니다.",
   "WATCHER-LESSON_LEARNED.title": "교훈",
   "WATCHER-LESSON_LEARNED.description": "피해를 {Damage:diff()} 줍니다.\n[gold]치명타[/gold]라면, 덱에 있는 무작위 카드를 영구히 [gold]강화[/gold]합니다.",
   "WATCHER-SANDS_OF_TIME.title": "시간의 모래",
