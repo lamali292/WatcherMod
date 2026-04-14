@@ -1,7 +1,9 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using Watcher.Code.Cards.CardModels;
 
@@ -13,7 +15,7 @@ public sealed class Miracle : WatcherCardModel
     public Miracle() : base(0, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
         WithEnergyTip();
-        WithVar("Energy", 1, 1);
+        WithVars(new EnergyVar(1).WithUpgrade(1));
         WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust);
     }
 

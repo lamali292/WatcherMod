@@ -27,11 +27,4 @@ public sealed class JustLucky : WatcherCardModel
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }
-
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Cards.UpgradeValueBy(1m);
-        DynamicVars.Damage.UpgradeValueBy(1m);
-        DynamicVars.Block.UpgradeValueBy(1m);
-    }
 }

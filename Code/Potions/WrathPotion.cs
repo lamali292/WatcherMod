@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
 using Watcher.Code.Stances;
@@ -11,7 +12,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Potions;
 
 [Pool(typeof(WatcherPotionPool))]
-public class WrathPotion : WatcherPotion
+public class WrathPotion : WatcherPotionModel
 {
     public override PotionRarity Rarity => PotionRarity.Uncommon;
     public override PotionUsage Usage => PotionUsage.CombatOnly;

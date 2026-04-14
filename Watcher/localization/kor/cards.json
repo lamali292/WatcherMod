@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "뽑을 카드 더미에서 카드를 선택합니다. 선택한 카드를 두 번 사용하고 [gold]소멸[/gold]시킵니다.",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "두 번 사용하고 [gold]소멸[/gold]시킬 카드를 선택하십시오.",
   "WATCHER-SPIRIT_SHIELD.title": "영혼 방패",
-  "WATCHER-SPIRIT_SHIELD.description": "손에 있는 카드 한 장 당 [gold]방어도[/gold]를 {CalculationBase:diff()} 얻습니다.",
+  "WATCHER-SPIRIT_SHIELD.description": "손에 있는 카드 한 장 당 [gold]방어도[/gold]를 {Block:diff()} 얻습니다.",
   "WATCHER-MASTER_REALITY.title": "현실 지배",
   "WATCHER-MASTER_REALITY.description": "전투 중에 카드를 생성할 때마다 그 카드를 [gold]강화[/gold]합니다.",
   "WATCHER-WREATH_OF_FLAME.title": "불의 고리",
