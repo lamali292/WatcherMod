@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://lu7usvkljwkr" path="res://Code/Stances/Vfx/AuraBlobEmitter.cs" id="3_blobs"]
 
 [node name="WrathAura" type="Node2D"]
+scale = Vector2(0.85, 0.85)
 
 [node name="GlowSparks" type="Node2D" parent="."]
 position = Vector2(0, -125)

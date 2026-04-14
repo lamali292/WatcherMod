@@ -1,10 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://bq8au1jr08s6c"]
 
-[ext_resource type="PackedScene" uid="uid://kq7dmrg0ygyf" path="res://scenes/creature_visuals/watcher.tscn" id="1_j0o0l"]
-[ext_resource type="PackedScene" uid="uid://dxmjc5hdqlmwd" path="res://scenes/watcher_mod/vfx/calm_aura.tscn" id="2_j0o0l"]
+[ext_resource type="PackedScene" uid="uid://kq7dmrg0ygyf" path="res://Watcher/scenes/watcher/watcher.tscn" id="1_j0o0l"]
+[ext_resource type="PackedScene" uid="uid://dxmjc5hdqlmwd" path="res://Watcher/scenes/watcher_mod/vfx/calm_aura.tscn" id="2_j0o0l"]
 
 [node name="TestScene" type="Node2D"]
 
-[node name="Watcher" parent="." instance=ExtResource("1_j0o0l")]
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -751.99994
+offset_top = -560.0
+offset_right = -711.99994
+offset_bottom = -520.0
+rotation = -0.007058706
+scale = Vector2(54.94727, 21.085466)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(38, -129)
+scale = Vector2(0.9804354, 1.277788)
+zoom = Vector2(1.715, 1.715)
 
 [node name="CalmAura" parent="." instance=ExtResource("2_j0o0l")]
+unique_name_in_owner = true
+
+[node name="Watcher" parent="." instance=ExtResource("1_j0o0l")]

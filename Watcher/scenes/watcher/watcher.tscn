@@ -12,7 +12,6 @@ metadata/_edit_lock_ = true
 [node name="Visuals" parent="." instance=ExtResource("2_o1arn")]
 unique_name_in_owner = true
 position = Vector2(0, -19.805)
-scale = Vector2(1.215, 1.215)
 
 [node name="Eye" parent="Visuals" instance=ExtResource("3_vk6fc")]
 unique_name_in_owner = true

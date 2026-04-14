@@ -1,21 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvtdsx5v7l4b4"]
 
 [ext_resource type="Script" uid="uid://dih2tcpwgm37s" path="res://Code/Nodes/SNRestSiteCharacter.cs" id="1_awmq8"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://bdapmsjn710l5" path="res://Watcher/animation/watcher_skel_data.tres" id="2_ynh71"]
+[ext_resource type="Texture2D" uid="uid://c086wo6t3ql1x" path="res://Watcher/images/watcher/sitting.png" id="2_ynh71"]
 [ext_resource type="PackedScene" uid="uid://bgy88bk44xxvk" path="res://Watcher/scenes/watcher/selection_reticle.tscn" id="3_evojs"]
 
 [node name="RegentRestSite" type="Node2D"]
 scale = Vector2(0.760006, 0.760006)
 script = ExtResource("1_awmq8")
 
-[node name="SpineSprite" type="SpineSprite" parent="."]
-skeleton_data_res = ExtResource("2_ynh71")
-preview_skin = "Default"
-preview_animation = "-- Empty --"
-preview_frame = false
-preview_time = 0.0
-position = Vector2(-6, 0)
-scale = Vector2(2.065, 2.065)
+[node name="SpineSprite" type="TextureRect" parent="."]
+offset_left = -314.4712
+offset_top = -327.629
+offset_right = 363.3982
+offset_bottom = 69.05603
+texture = ExtResource("2_ynh71")
+expand_mode = 1
 
 [node name="ControlRoot" type="Control" parent="."]
 layout_mode = 3
@@ -28,18 +27,18 @@ offset_bottom = 24.999802
 [node name="SelectionReticle" parent="ControlRoot" instance=ExtResource("3_evojs")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -238.0
-offset_top = -567.0
-offset_right = 203.0
-offset_bottom = 136.0
+offset_left = -181.5775
+offset_top = -335.52365
+offset_right = 146.05147
+offset_bottom = 30.262909
 
 [node name="Hitbox" type="Control" parent="ControlRoot"]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = -238.0
-offset_top = -570.0
-offset_right = 203.0
-offset_bottom = 139.0
+offset_left = -189.4722
+offset_top = -365.78653
+offset_right = 159.20926
+offset_bottom = 34.210327
 
 [node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
 unique_name_in_owner = true

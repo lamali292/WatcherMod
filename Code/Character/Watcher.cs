@@ -46,7 +46,7 @@ public class Watcher : CustomCharacterModel
     public override string CustomArmScissorsTexturePath =>
         "res://Watcher/images/watcher/hands/multiplayer_hand_watcher_scissors.png";
 
-    public override string CustomCharacterSelectBg => "res://Watcher/scenes/watcher/char_select_bg_watcher.tscn";
+    public override string CustomCharacterSelectBg => "res://Watcher/scenes/watcher/char_select_bg_watcher2.tscn";
 
     public override string CustomCharacterSelectTransitionPath =>
         "res://Watcher/images/watcher/transitions/watcher_transition_mat.tres";
