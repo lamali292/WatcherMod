@@ -20,4 +20,17 @@ public class WatcherHook
             ctx.PopModel(abstractModel);
         }
     }
+    
+    public static async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount)
+    {
+        var combatState = player.Creature.CombatState;
+        if (combatState == null) return;
+        foreach (var model in combatState.IterateHookListeners().OfType<IOnScryed>())
+        {
+            var abstractModel = (AbstractModel)model;
+            ctx.PushModel(abstractModel);
+            await model.OnScryed(ctx, player, amount);
+            ctx.PopModel(abstractModel);
+        }
+    }
 }

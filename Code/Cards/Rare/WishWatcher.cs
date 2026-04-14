@@ -1,11 +1,12 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using Watcher.Code.Abstract;
-using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Powers;
@@ -17,7 +18,7 @@ public sealed class WishWatcher : WatcherCardModel
 {
     public WishWatcher() : base(3, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
-        WithVar("Gold", 25, 5);
+        WithVars(new GoldVar(25).WithUpgrade(5));
         WithPower<StrengthPower>(3, 1);
         WithPower<PlatedArmorPower>(6, 2);
         WithKeywords(CardKeyword.Exhaust);
@@ -26,7 +27,7 @@ public sealed class WishWatcher : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var cardsToChoose = new List<CardModel>
+        var cardsToChoose = new CardModel[]
         {
             ModelDb.Card<BecomeAlmighty>(),
             ModelDb.Card<FameAndFortune>(),
@@ -46,6 +47,6 @@ public sealed class WishWatcher : WatcherCardModel
             Owner
         );
 
-        if (card is IWishable wish) await wish.OnWish(choiceContext, cardPlay);
+        if (card is WishableWatcherCard wish) await wish.OnWish(choiceContext, cardPlay);
     }
 }

@@ -4,14 +4,14 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using Watcher.Code.Abstract;
-using Watcher.Code.Cards.CardModels;
 using Watcher.Code.Character;
+using Watcher.Code.Events;
 using Watcher.Code.Keywords;
 
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Weave : WatcherCardModel, IScryable
+public sealed class Weave : WatcherCardModel, IOnScryed
 {
     public Weave() : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
@@ -19,7 +19,7 @@ public sealed class Weave : WatcherCardModel, IScryable
         WithTip(WatcherKeywords.Scry);
     }
 
-    public async Task OnScryed(Player player, int amount)
+    public async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount)
     {
         if (player != Owner)
             return;
@@ -34,4 +34,6 @@ public sealed class Weave : WatcherCardModel, IScryable
         if (cardPlay.Target == null) return;
         await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
     }
+
+   
 }
