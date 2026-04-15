@@ -5,9 +5,38 @@ This mod ports **The Watcher** from Slay the Spire into Slay the Spire 2, recrea
 # Dependency
 This mod requires BaseLib-StS2 for better mod compatibility and future update support.
 
+# ⚠️ Important Notice (Read Before Using This Repo)
+
+This project is **NOT A TEMPLATE** and is not intended to be used as a base for creating your own mods.
+
+A large portion of this mod is tightly coupled to its internal structure, including (but not limited to):
+
+- the mod ID
+- folder structure
+- animation and asset paths
+- internal registration systems
+- various hardcoded assumptions required for the Watcher implementation
+
+Because of this, reusing this project directly (e.g. copying it and modifying it into your own mod) will very likely:
+
+- break compatibility with this mods.
+- cause ID conflicts
+- introduce hard-to-debug issues
+- create maintenance problems across updates
+
+It would also be unfair to the modding ecosystem if multiple incompatible mods were built directly on top of this project.
+
+## ✅ What is allowed
+- Using this project as a reference
+- Learning from the implementation
+- Copying individual pieces of code or logic into your own properly structured mod
+## ❌ What is not recommended
+- Renaming this project and publishing it as your own mod base
+- Using it as a plug-and-play template
+- Extending it directly without fully understanding and restructuring it
+
+
 ## Features
-
-
 
 - 83 Watcher Cards + associated powers / status effects
 
