@@ -48,7 +48,7 @@ public class WatcherCmd
         }
 
         var result = await CardPileCmd.AddGeneratedCardsToCombat(cardsToGive, pileType, true, pos);
-        if (skipAnimation) return;
+        if (skipAnimation || pileType == PileType.Hand) return;
         CardCmd.PreviewCardPileAdd(result, animationTime, animationStyle);
     }
 }

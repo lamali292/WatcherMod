@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]Attraverso la disciplina, trovo la chiarezza...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]Notte...[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "Le carte della Veggente appariranno ora nelle ricompense e nei negozi.",
+  "WATCHER-WATCHER.cardsModifierTitle": "Carte della Veggente",
+  "WATCHER-WATCHER.description": "Un'asceta cieca venuta a \"Valutare\" la Guglia.\nMaestra delle divine Posture.",
+  "WATCHER-WATCHER.eventDeathPrevention": "Devo sopravvivere. L'equilibrio dipende da questo.",
+  "WATCHER-WATCHER.goldMonologue": "[sine]Non cerco ricchezze... ma il cammino richiede preparazione.[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "sua",
+  "WATCHER-WATCHER.pronounObject": "lei",
+  "WATCHER-WATCHER.pronounPossessive": "suo",
+  "WATCHER-WATCHER.pronounSubject": "lei",
+  "WATCHER-WATCHER.title": "La Veggente",
+  "WATCHER-WATCHER.titleObject": "La Veggente"
+}
