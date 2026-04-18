@@ -136,7 +136,7 @@
   "WATCHER-SANDS_OF_TIME.description": "Наносит {Damage:diff()} урона.\nКогда [gold]оставляется[/gold], стоимость снижается на 1 в этом бою.",
   "WATCHER-SCRAWL_WATCHER.title": "Испещрить",
   "WATCHER-SCRAWL_WATCHER.description": "Вы добираете карты, пока [gold]рука[/gold] не заполнится.",
-  "WATCHER-VAULT.title": "Кульбит",
+  "WATCHER-VAULT.title": "Пируэт",
   "WATCHER-VAULT.description": "Вы получаете дополнительный ход.\nВаш ход завершается.",
   "WATCHER-BLASPHEMY.title": "Святотатство",
   "WATCHER-BLASPHEMY.description": "Вы переходите в [gold]Божественность[/gold].\nВы умрете в начале следующего хода.",
