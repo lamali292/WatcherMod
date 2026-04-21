@@ -9,6 +9,8 @@ This mod requires BaseLib-StS2 for better mod compatibility and future update su
 
 This project is **NOT A TEMPLATE** and is not intended to be used as a base for creating your own mods.
 
+If you need a template use this https://github.com/Alchyr/ModTemplate-StS2/wiki/Setup
+
 A large portion of this mod is tightly coupled to its internal structure, including (but not limited to):
 
 - the mod ID
