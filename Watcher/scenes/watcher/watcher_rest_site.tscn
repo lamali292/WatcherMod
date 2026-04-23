@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvtdsx5v7l4b4"]
 
-[ext_resource type="Script" uid="uid://dih2tcpwgm37s" path="res://Code/Nodes/SNRestSiteCharacter.cs" id="1_awmq8"]
+[ext_resource type="Script" uid="uid://dih2tcpwgm37s" path="res://Code/Nodes/WatcherNRestSiteCharacter.cs" id="1_awmq8"]
 [ext_resource type="Texture2D" uid="uid://b7tm406grlkms" path="res://Watcher/images/watcher/sitting.png" id="2_ynh71"]
 [ext_resource type="PackedScene" uid="uid://bgy88bk44xxvk" path="res://Watcher/scenes/watcher/selection_reticle.tscn" id="3_evojs"]
 
@@ -9,6 +9,7 @@ scale = Vector2(0.760006, 0.760006)
 script = ExtResource("1_awmq8")
 
 [node name="SpineSprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
 offset_left = -314.4712
 offset_top = -327.629
 offset_right = 363.3982

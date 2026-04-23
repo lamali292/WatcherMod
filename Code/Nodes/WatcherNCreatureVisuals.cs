@@ -1,4 +1,6 @@
 using Godot;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 
@@ -11,32 +13,26 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
     private MegaBone? _eyeBone;
     private Node2D? _eyeNode;
     private bool _eyeSetupDone;
+    private AnimationNodeStateMachinePlayback _playback;
+    private CreatureAnimator _animator;
+    private CanvasItemMaterial _premultMat;
+    private Material? _oldMaterial;
 
     public override void _Ready()
     {
         base._Ready();
-
-        var premultMat = new CanvasItemMaterial
+        _oldMaterial = SpineBody?.GetNormalMaterial();
+        _premultMat = new CanvasItemMaterial
         {
             BlendMode = CanvasItemMaterial.BlendModeEnum.PremultAlpha
         };
-
-        if (SpineBody != null)
-        {
-            SpineBody.SetNormalMaterial(premultMat);
-        }
-        else
-        {
-            var body = GetNodeOrNull<Node2D>("%Visuals");
-            if (body != null)
-                body.Material = premultMat;
-
-            var phobiaBody = GetNodeOrNull<Node2D>("%PhobiaModeVisuals");
-            if (phobiaBody != null)
-                phobiaBody.Material = premultMat;
-        }
-
-        GetTree().ProcessFrame += SetupEye; // ← added
+        SpineBody?.SetNormalMaterial(_premultMat);
+        _body.Material = _premultMat;
+      
+        GetTree().ProcessFrame += SetupEye;
+        var animTree = GetNode<AnimationTree>("%AnimationTree");
+        animTree.Active = true;
+        _playback = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/playback");
     }
 
     private void SetupEye()
@@ -44,18 +40,15 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
         if (_eyeSetupDone) return;
         _eyeSetupDone = true;
         GetTree().ProcessFrame -= SetupEye;
-        
+
         _eyeBone = SpineBody?.GetSkeleton()?.FindBone("eye_anchor");
         SpineBody?.ConnectWorldTransformsChanged(Callable.From<Variant>(OnEyeWorldTransformsChanged));
-        _eyeNode = ((Node)SpineBody!.BoundObject).GetNodeOrNull<Node2D>("Eye");
-        if (_eyeNode == null)
-        {
-            GD.PrintErr("[SNCreatureVisuals] Eye node not found!");
-            return;
-        }
-        _eyeAnimPlayer = _eyeNode.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
+        _eyeNode = GetNode<Node2D>("%Eye");
+        if (_eyeNode == null) return;
+        _eyeAnimPlayer = _eyeNode.GetNodeOrNull<AnimationPlayer>("%EyeAnimationPlayer");
         _eyeAnimPlayer?.Play("RESET");
     }
+
 
     private void OnEyeWorldTransformsChanged(Variant _)
     {
@@ -69,4 +62,51 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
     {
         _eyeAnimPlayer?.Play(stance); // "calm", "divinity", "wrath"
     }
+
+
+    private void OnAnimationTrigger(string trigger)
+    {
+        switch (trigger)
+        {
+            case "Idle":
+            case "Hit":
+                _animator.SetTrigger(trigger);
+                break;
+            case "Attack":
+                _playback.Travel(trigger);
+                break;
+            case "Dead":
+                SpineBody?.SetNormalMaterial(_oldMaterial);
+                _body.Material = null;
+                _playback.Travel(trigger);
+                break;
+        }
+    }
+    
+    [HarmonyPatch(typeof(NCreature), nameof(NCreature.SetAnimationTrigger))]
+    static class HexaghostAnimationPatch
+    {
+        [HarmonyPrefix]
+        static bool MyAnimations(NCreature __instance, string trigger)
+        {
+            if (__instance.Visuals is not WatcherNCreatureVisuals hexVisuals) return true;
+            hexVisuals._animator = __instance._spineAnimator;
+            hexVisuals.OnAnimationTrigger(trigger);
+            return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(NCreature), nameof(NCreature.StartDeathAnim))]
+    static class HexaghostDeathAnimPatch
+    {
+        [HarmonyPrefix]
+        static bool MyDeathAnimation(NCreature __instance)
+        {
+            if (__instance.Visuals is not WatcherNCreatureVisuals hexVisuals) return true;
+            hexVisuals._animator = __instance._spineAnimator;
+            hexVisuals.OnAnimationTrigger("Dead");
+            return false;
+        }
+    }
 }
+
