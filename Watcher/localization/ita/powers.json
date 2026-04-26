@@ -1,5 +1,5 @@
 {
-  "WATCHER-CALM_STANCE.title": "Serenità",
+  "WATCHER-CALM_STANCE.title": "Calma",
   "WATCHER-CALM_STANCE.description": "Quando esci da questa Posa, guadagna [blue]2[/blue] {energyPrefix:energyIcons(1)}.",
   "WATCHER-CALM_STANCE.smartDescription": "Quando esci da questa Posa, guadagna [blue]2[/blue] {energyPrefix:energyIcons(1)}.",
   "WATCHER-WRATH_STANCE.title": "Ira",
@@ -27,8 +27,8 @@
   "WATCHER-FORESIGHT_POWER.description": "All'inizio del tuo turno, [blue]Scruta[/blue] [blue]X[/blue].",
   "WATCHER-FORESIGHT_POWER.smartDescription": "All'inizio del tuo turno, [blue]Scruta[/blue] [blue]{Amount}[/blue].",
   "WATCHER-LIKE_WATER_POWER.title": "Come l'Acqua",
-  "WATCHER-LIKE_WATER_POWER.description": "Alla fine del tuo turno, se sei in [blue]Serenità[/blue], guadagna [blue]X[/blue] [blue]Blocco[/blue].",
-  "WATCHER-LIKE_WATER_POWER.smartDescription": "Alla fine del tuo turno, se sei in [blue]Serenità[/blue], guadagna [blue]{Amount}[/blue] [blue]Blocco[/blue].",
+  "WATCHER-LIKE_WATER_POWER.description": "Alla fine del tuo turno, se sei in [blue]Calma[/blue], guadagna [blue]X[/blue] [blue]Blocco[/blue].",
+  "WATCHER-LIKE_WATER_POWER.smartDescription": "Alla fine del tuo turno, se sei in [blue]Calma[/blue], guadagna [blue]{Amount}[/blue] [blue]Blocco[/blue].",
   "WATCHER-MENTAL_FORTRESS_POWER.title": "Fortezza Mentale",
   "WATCHER-MENTAL_FORTRESS_POWER.description": "Ogni volta che cambi [blue]Posa[/blue], guadagna [blue]X[/blue] [blue]Blocco[/blue].",
   "WATCHER-MENTAL_FORTRESS_POWER.smartDescription": "Ogni volta che cambi [blue]Posa[/blue], guadagna [blue]{Amount}[/blue] [blue]Blocco[/blue].",
@@ -75,8 +75,8 @@
   "WATCHER-DUALITY_POWER.description": "Perdi X [gold]Destrezza[/gold] fino alla fine di questo turno.",
   "WATCHER-DUALITY_POWER.smartDescription": "Perdi {Amount} [gold]Destrezza[/gold] fino alla fine di questo turno.",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Chiarezza Fugace",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "All'inizio del tuo turno, esci dalla [gold]Serenità[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "All'inizio del tuo turno, esci dalla [gold]Serenità[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "All'inizio del tuo turno, esci dalla [gold]Calma[/gold].",
+  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "All'inizio del tuo turno, esci dalla [gold]Calma[/gold].",
   "WATCHER-ANCIENT_CARD_POWER.title": "Accumulo",
   "WATCHER-ANCIENT_CARD_POWER.description": "Mentre sei in [gold]Ira[/gold], infliggi +50% di danni.",
   "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Mentre sei in [gold]Ira[/gold], infliggi +{Amount}% di danni."
