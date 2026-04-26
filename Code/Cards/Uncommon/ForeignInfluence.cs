@@ -69,7 +69,7 @@ public sealed class ForeignInfluence : WatcherCardModel
             await CardPileCmd.AddGeneratedCardToCombat(
                 chosenCard,
                 PileType.Hand,
-                Owner
+                true
             );
         }
     }

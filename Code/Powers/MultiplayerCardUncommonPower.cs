@@ -1,4 +1,4 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -21,7 +21,7 @@ public class MultiplayerCardUncommonPower : WatcherPowerModel
         WatcherHoverTipFactory.FromStance<CalmStance>()
     ];
 
-    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext ctx, ICombatState combatState)
+    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext ctx, CombatState combatState)
     {
         if (player.Creature != Owner) return;
         if (player.IsInWatcherStance<CalmStance>())

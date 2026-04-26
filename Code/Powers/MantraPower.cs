@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -26,7 +27,7 @@ public sealed class MantraPower : WatcherPowerModel
 
 
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext ctx,
+    public override async Task AfterPowerAmountChanged(
         PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         var player = Owner.Player;
@@ -35,12 +36,18 @@ public sealed class MantraPower : WatcherPowerModel
 
         StanceVfx.PlayStanceSfx("res://Watcher/audio/mantra_gain.ogg");
 
-
         var triggers = Amount / 10;
         if (triggers <= 0) return;
 
         var totalCost = triggers * 10m;
-        await PowerCmd.ModifyAmount(ctx, this, -totalCost, Owner, cardSource);
-        await StanceCmd.EnterDivinity(ctx, player, cardSource);
+        await PowerCmd.ModifyAmount(this, -totalCost, Owner, cardSource);
+        await StanceCmd.EnterDivinity(new LocalPlayerChoiceContext(), player, cardSource);
+    }
+
+    private sealed class LocalPlayerChoiceContext : PlayerChoiceContext
+    {
+        public override Task SignalPlayerChoiceBegun(PlayerChoiceOptions options) => Task.CompletedTask;
+
+        public override Task SignalPlayerChoiceEnded() => Task.CompletedTask;
     }
 }

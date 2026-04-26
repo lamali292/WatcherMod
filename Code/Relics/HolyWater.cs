@@ -1,4 +1,4 @@
-﻿using BaseLib.Utils;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -20,7 +20,7 @@ public sealed class HolyWater : WatcherRelicModel
     public override async Task BeforeHandDraw(
         Player player,
         PlayerChoiceContext choiceContext,
-        ICombatState combatState)
+        CombatState combatState)
     {
         if (player != Owner || combatState.RoundNumber > 1) return;
         var miracles =
@@ -30,7 +30,7 @@ public sealed class HolyWater : WatcherRelicModel
                 combatState.CreateCard<Miracle>(Owner),
                 combatState.CreateCard<Miracle>(Owner)
             };
-        await CardPileCmd.AddGeneratedCardsToCombat(miracles, PileType.Hand, player);
+        await CardPileCmd.AddGeneratedCardsToCombat(miracles, PileType.Hand, true);
         Flash();
     }
 }

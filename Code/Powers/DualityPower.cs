@@ -13,7 +13,10 @@ namespace Watcher.Code.Powers;
 public class DualityPower : CustomTemporaryPowerModel
 {
     protected override Func<PlayerChoiceContext, Creature, decimal, Creature?, CardModel?, bool, Task> ApplyPowerFunc =>
-        PowerCmd.Apply<DexterityPower>;
+        async (_, target, amount, applier, cardSource, silent) =>
+        {
+            await PowerCmd.Apply<DexterityPower>(target, amount, applier, cardSource, silent);
+        };
 
     public override PowerModel InternallyAppliedPower => ModelDb.Power<DexterityPower>();
     public override AbstractModel OriginModel => ModelDb.Relic<Duality>();

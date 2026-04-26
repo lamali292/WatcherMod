@@ -1,4 +1,4 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -16,7 +16,7 @@ public sealed class SimmeringRagePower : WatcherPowerModel
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext ctx, ICombatState combatState)
+    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext ctx, CombatState combatState)
     {
         if (!player.Creature.HasPower<SimmeringRagePower>())
             return;

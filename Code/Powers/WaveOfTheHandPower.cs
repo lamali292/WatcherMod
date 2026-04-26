@@ -28,10 +28,9 @@ public sealed class WaveOfTheHandPower : WatcherPowerModel
             return;
         
         await PowerCmd.Apply<WeakPower>(
-            new ThrowingPlayerChoiceContext(),
-            CombatState.HittableEnemies, 
+            CombatState.HittableEnemies,
             weakAmount,
-            Owner, 
+            Owner,
             null
         );
     }

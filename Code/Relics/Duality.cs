@@ -15,9 +15,9 @@ public sealed class Duality : WatcherRelicModel
     public override RelicRarity Rarity => RelicRarity.Uncommon;
 
 
-    public override async Task AfterAttack(PlayerChoiceContext choiceContext, AttackCommand command)
+    public override async Task AfterAttack(AttackCommand command)
     {
         if (command.Attacker != Owner.Creature) return;
-        await PowerCmd.Apply<DualityPower>(choiceContext, Owner.Creature, 1, Owner.Creature, null, true);
+        await PowerCmd.Apply<DualityPower>(Owner.Creature, 1, Owner.Creature, null, true);
     }
 }

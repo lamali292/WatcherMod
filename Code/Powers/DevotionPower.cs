@@ -1,4 +1,4 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -17,12 +17,12 @@ public class DevotionPower : WatcherPowerModel
 
 
     public override async Task BeforeHandDrawLate(Player player, PlayerChoiceContext choiceContext,
-        ICombatState combatState)
+        CombatState combatState)
     {
         if (player != Owner.Player)
             return;
 
-        await PowerCmd.Apply<MantraPower>(choiceContext, player.Creature, Amount, player.Creature, ModelDb.Card<Devotion>());
+        await PowerCmd.Apply<MantraPower>(player.Creature, Amount, player.Creature, ModelDb.Card<Devotion>());
         Flash();
     }
 }
