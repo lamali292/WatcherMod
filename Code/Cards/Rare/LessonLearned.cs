@@ -25,24 +25,22 @@ public sealed class LessonLearned : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         var shouldTriggerFatal = cardPlay.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal());
-        var attackCommand = await CommonActions.CardAttack(card, cardPlay).WithHitFx("vfx/vfx_attack_slash")
+        var attackCommand = await CommonActions.CardAttack(this, cardPlay).WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         if (!shouldTriggerFatal || !attackCommand.Results.Any(r => r.WasTargetKilled))
             return;
-        var upgradableCards = PileType.Deck.GetPile(card.Owner).Cards.Where(c => c.IsUpgradable).ToList();
+        var upgradableCards = PileType.Deck.GetPile(Owner).Cards.Where(c => c.IsUpgradable).ToList();
         if (upgradableCards.Count > 0)
         {
             await Cmd.Wait(0.5f);
-            var cardModel = card.Owner.RunState.Rng.Niche.NextItem(upgradableCards);
+            var cardModel = Owner.RunState.Rng.Niche.NextItem(upgradableCards);
             if (cardModel == null) return;
-
-            card.Owner.RunState.CurrentMapPointHistoryEntry?.GetEntry(card.Owner.NetId).UpgradedCards.Add(cardModel.Id);
+            Owner.RunState.CurrentMapPointHistoryEntry?.GetEntry(Owner.NetId).UpgradedCards.Add(cardModel.Id);
             cardModel.UpgradeInternal();
             cardModel.FinalizeUpgradeInternal();
-            if (LocalContext.IsMe(card.Owner))
+            if (LocalContext.IsMe(Owner))
                 NRun.Instance?.GlobalUi.CardPreviewContainer.AddChildSafely(NCardSmithVfx.Create([
                     cardModel
                 ])!);
