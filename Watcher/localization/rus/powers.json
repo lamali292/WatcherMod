@@ -21,7 +21,7 @@
   "WATCHER-COLLECT_POWER.description": "Добавляет в [gold]руку[/gold] [gold]«Чудо+»[/gold] в начале [blue]X[/blue] следующих ходов.",
   "WATCHER-COLLECT_POWER.smartDescription": "Добавляет в [gold]руку[/gold] [gold]«Чудо+»[/gold] в начале {Amount:plural(ru):следующего хода|[blue]{}[/blue] следующих ходов|[blue]{}[/blue] следующих ходов}.",
   "WATCHER-FASTING_POWER.title": "Пост",
-  "WATCHER-FASTING_POWER.description": "Вы теряете [blue]X[/blue] {energyPrefix:energyIcons()} в начале хода.",
+  "WATCHER-FASTING_POWER.description": "Вы теряете [blue]X[/blue] {energyPrefix:energyIcons(1)} в начале хода.",
   "WATCHER-FASTING_POWER.smartDescription": "Вы теряете [blue]{Amount:plural(ru):{energyPrefix:energyIcons(1)}|{} {energyPrefix:energyIcons(1)}|{} {energyPrefix:energyIcons(1)}}[/blue] в начале хода.",
   "WATCHER-FORESIGHT_POWER.title": "Прозрение",
   "WATCHER-FORESIGHT_POWER.description": "Вы [gold]Предсказываете[/gold] [blue]X[/blue] карт в начале хода.",
@@ -71,6 +71,7 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Пластинчатая броня",
   "WATCHER-PLATED_ARMOR_POWER.description": "Дает [blue]X[/blue] [gold]защиты[/gold] в конце хода. Эффект снижается на [blue]1[/blue] при получении незаблокированного урона.",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "Дает [blue]{Amount}[/blue] [gold]защиты[/gold] в конце хода. Эффект снижается на [blue]1[/blue] при получении незаблокированного урона.",
+  "DUALITY_POWER.title": "Дуальность",
   "WATCHER-DUALITY_POWER.description": "Вы теряете [blue]X[/blue] [gold]ловкости[/gold] в этот ход.",
   "WATCHER-DUALITY_POWER.smartDescription": "Вы теряете [blue]{Amount}[/blue] [gold]ловкости[/gold] в этот ход.",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Мимолетная ясность",
@@ -78,6 +79,5 @@
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Вы выходите из [gold]Спокойствия[/gold] в начале следующего хода.",
   "WATCHER-ANCIENT_CARD_POWER.title": "Накопление",
   "WATCHER-ANCIENT_CARD_POWER.description": "Наносимый урон повышается на [blue]50%[/blue], если вы в [gold]Гневе[/gold].",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Наносимый урон повышается на [blue]{Amount}%[/blue], если вы в [gold]Гневе[/gold].",
-  "WATCHER-DUALITY_POWER.title": "Дуальность"
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Наносимый урон повышается на [blue]{Amount}%[/blue], если вы в [gold]Гневе[/gold]."
 }
