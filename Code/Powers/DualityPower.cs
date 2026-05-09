@@ -1,22 +1,27 @@
-﻿using BaseLib.Abstracts;
-using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using Watcher.Code.Extensions;
-using Watcher.Code.Relics;
+using Watcher.Code.Abstract;
 
 namespace Watcher.Code.Powers;
 
-public class DualityPower : CustomTemporaryPowerModel
+// Bookkeeping debuff for the Duality relic. Each stack represents one point of Dexterity granted
+// earlier in the turn that must be subtracted at turn end, making the relic's Dexterity gain temporary.
+public sealed class DualityPower : WatcherPowerModel
 {
-    protected override Func<PlayerChoiceContext, Creature, decimal, Creature?, CardModel?, bool, Task> ApplyPowerFunc =>
-        PowerCmd.Apply<DexterityPower>;
+    public override PowerType Type => PowerType.Debuff;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override PowerModel InternallyAppliedPower => ModelDb.Power<DexterityPower>();
-    public override AbstractModel OriginModel => ModelDb.Relic<Duality>();
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
+    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    {
+        // Only fire on the player's own turn end; Amount<=0 guards against stacking with no payload.
+        if (Owner.Player?.Creature.Side != side || Amount <= 0) return;
+
+        // Strip exactly the Dexterity granted by Duality this turn, then clean up so the next turn starts fresh.
+        await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Player.Creature, -Amount, Owner.Player.Creature, null);
+        Flash();
+        if (Owner.IsAlive) RemoveInternal();
+    }
 }
