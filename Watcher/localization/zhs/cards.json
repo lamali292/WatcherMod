@@ -170,7 +170,7 @@
   "WATCHER-FAME_AND_FORTUNE.title": "名利双收",
   "WATCHER-FAME_AND_FORTUNE.description": "获得{Gold:diff()}[gold]金币[/gold]。",
   "WATCHER-LIVE_FOREVER.title": "长生不老",
-  "WATCHER-LIVE_FOREVER.description": "获得{PlatingPower:diff()}层[gold]覆甲[/gold]。",
+  "WATCHER-LIVE_FOREVER.description": "获得{PlatedArmorPower:diff()}层[gold]覆甲[/gold]。",
   "WATCHER-ANCIENT_CARD.title": "积累",
   "WATCHER-ANCIENT_CARD.description": "处于[gold]愤怒[/gold]时，伤害额外提高50%。",
   "WATCHER-ANCIENT_CARD2.title": "启示",
