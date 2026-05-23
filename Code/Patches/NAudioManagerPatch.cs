@@ -20,6 +20,7 @@ internal class NAudioManagerPatch
 
         var settings = SaveManager.Instance.SettingsSave;
         // Todo check if this is right sound before release
+        // use ModAudio
         AudioStreamPlayer2D audioPlayer = new()
         {
             Bus = "SFX",

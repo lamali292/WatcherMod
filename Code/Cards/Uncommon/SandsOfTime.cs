@@ -24,12 +24,13 @@ public sealed class SandsOfTime : WatcherCardModel
         await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
     }
 
-    public override async Task AfterFlush(PlayerChoiceContext choiceContext, Player player,
+    public override Task AfterFlush(PlayerChoiceContext choiceContext, Player player,
         IReadOnlyCollection<CardModel> flushedCards,
         IReadOnlyCollection<CardModel> retainedCards)
     {
-        if (!retainedCards.Contains(this)) return;
+        if (!retainedCards.Contains(this)) return Task.CompletedTask; 
         var currentCost = EnergyCost.GetWithModifiers(CostModifiers.Local);
         if (currentCost > 0) EnergyCost.SetThisCombat(currentCost - 1);
+        return Task.CompletedTask;
     }
 }

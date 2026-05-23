@@ -1,7 +1,9 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
@@ -16,7 +18,7 @@ public sealed class Halt : WatcherCardModel
     public Halt() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithBlock(3, 1);
-        WithVar("WrathBlock", 9, 5);
+        WithVar(new BlockVar("WrathBlock", 9, ValueProp.Move).WithUpgrade(5));
         WithStanceTip<WrathStance>();
     }
 
