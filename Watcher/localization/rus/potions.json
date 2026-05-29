@@ -1,10 +1,10 @@
 {
   "WATCHER-BOTTLED_MIRACLE.title": "Закупоренное чудо",
-  "WATCHER-BOTTLED_MIRACLE.description": "Добавляет в [gold]руку[/gold] [blue]{Cards:diff()}[/blue] [blue]«Чуда»[/blue].",
+  "WATCHER-BOTTLED_MIRACLE.description": "Добавляет в [gold]руку[/gold] [blue]{Cards:diff()}[/blue] [gold]«Чуда»[/gold].",
   "WATCHER-CALM_POTION.title": "Зелье спокойствия",
-  "WATCHER-CALM_POTION.description": "Вы переходите в [blue]Спокойствие[/blue].",
+  "WATCHER-CALM_POTION.description": "Вы переходите в [gold]Спокойствие[/gold].",
   "WATCHER-WRATH_POTION.title": "Зелье гнева",
-  "WATCHER-WRATH_POTION.description": "Вы переходите в [blue]Гнев[/blue].",
+  "WATCHER-WRATH_POTION.description": "Вы переходите в [gold]Гнев[/gold].",
   "WATCHER-AMBROSIA.title": "Амброзия",
-  "WATCHER-AMBROSIA.description": "Вы переходите в [blue]Божественность[/blue]."
+  "WATCHER-AMBROSIA.description": "Вы переходите в [gold]Божественность[/gold]."
 }

@@ -39,8 +39,10 @@ public sealed class BlockReturnPower : WatcherPowerModel, IAddDumbVariablesToPow
     {
         if (Applier == null || command.Attacker != Applier) return;
         _applierIsAttacking = false;
-        if (command.Results.SelectMany(s => s).All(e => e.Receiver != Owner)) return;
-        await CreatureCmd.GainBlock(Applier, Amount, ValueProp.Unpowered, null);
+        var count = command.Results.SelectMany(s => s).Count(e => e.Receiver == Owner);
+        if (count == 0) return;
+        for (var i = 0; i < count; i++)
+            await CreatureCmd.GainBlock(Applier, Amount, ValueProp.Unpowered, null);
     }
 
     public void AddDumbVariablesToPowerDescription(LocString description)

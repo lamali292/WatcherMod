@@ -14,6 +14,7 @@ public sealed class Beta : WatcherCardModel
     {
         WithKeywords(CardKeyword.Exhaust);
         WithTip(typeof(Omega));
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
