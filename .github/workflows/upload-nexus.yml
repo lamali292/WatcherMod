@@ -1,0 +1,34 @@
+name: Upload to NexusMods
+ 
+# Fires when release.ps1 runs `gh release create "v$new" $zip` (a published, non-draft release).
+on:
+  release:
+    types: [published]
+ 
+jobs:
+  nexus:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the release zip
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download "${{ github.event.release.tag_name }}" --repo "${{ github.repository }}" --pattern "*.zip"
+ 
+      - name: Resolve version + filename
+        id: meta
+        run: |
+          tag="${{ github.event.release.tag_name }}"
+          echo "version=${tag#v}" >> "$GITHUB_OUTPUT"
+          echo "filename=$(ls *.zip | head -n1)" >> "$GITHUB_OUTPUT"
+ 
+      - name: Upload to NexusMods
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.7
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_group_id: 7342526
+          filename: ${{ steps.meta.outputs.filename }}
+          version: ${{ steps.meta.outputs.version }}
+          display_name: Watcher ${{ steps.meta.outputs.version }}
+          file_category: main
+          archive_existing_file: true
+          allow_mod_manager_download: true
