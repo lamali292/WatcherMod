@@ -11,9 +11,9 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <AssemblyVersion>1.4.7.0</AssemblyVersion>
-        <FileVersion>1.4.7.0</FileVersion>
-        <Version>1.4.7</Version>
+        <AssemblyVersion>1.4.8.0</AssemblyVersion>
+        <FileVersion>1.4.8.0</FileVersion>
+        <Version>1.4.8</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -116,6 +116,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <None Include="release.ps1"/>
         <None Include=".gitignore"/>
         <None Include="Watcher.json"/>
         <None Include="project.godot"/>
