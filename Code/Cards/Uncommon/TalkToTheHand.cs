@@ -13,7 +13,7 @@ public sealed class TalkToTheHand : WatcherCardModel
     public TalkToTheHand() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         WithDamage(5, 2);
-        WithPower<BlockReturnPower>(2, 1);
+        WithPower<BlockReturnPower>(2, 1, false);
         WithKeywords(CardKeyword.Exhaust);
     }
 

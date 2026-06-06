@@ -12,7 +12,7 @@ public sealed class Omega : WatcherCardModel
 {
     public Omega() : base(3, CardType.Power, CardRarity.Token, TargetType.None)
     {
-        WithPower<OmegaPower>(50, 10);
+        WithPower<OmegaPower>(50, 10, false);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)

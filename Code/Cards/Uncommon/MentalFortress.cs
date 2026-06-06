@@ -13,7 +13,7 @@ public sealed class MentalFortress : WatcherCardModel
 {
     public MentalFortress() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
-        WithPower<MentalFortressPower>(4, 2);
+        WithPower<MentalFortressPower>(4, 2, false);
         WithTip(StaticHoverTip.Block);
     }
 

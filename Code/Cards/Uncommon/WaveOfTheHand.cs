@@ -14,7 +14,7 @@ public sealed class WaveOfTheHand : WatcherCardModel
 {
     public WaveOfTheHand() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<WaveOfTheHandPower>(1, 1);
+        WithPower<WaveOfTheHandPower>(1, 1, false);
         WithTip(typeof(WeakPower));
         WithTip(StaticHoverTip.Block);
     }

@@ -16,7 +16,6 @@ public sealed class FameAndFortune : WishableWatcherCard
     public FameAndFortune() : base(-1, CardType.Skill, CardRarity.Token, TargetType.None)
     {
         WithVars(new GoldVar(25).WithUpgrade(5));
-        WithTip(typeof(StrengthPower));
     }
 
     public override async Task OnWish(PlayerChoiceContext choiceContext, CardPlay cardPlay)

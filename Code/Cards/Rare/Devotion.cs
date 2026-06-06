@@ -12,7 +12,7 @@ public sealed class Devotion : WatcherCardModel
 {
     public Devotion() : base(1, CardType.Power, CardRarity.Rare, TargetType.None)
     {
-        WithPower<DevotionPower>(2, 1);
+        WithPower<DevotionPower>(2, 1, false);
         WithTip(typeof(MantraPower));
     }
 

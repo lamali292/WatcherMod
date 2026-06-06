@@ -13,7 +13,7 @@ public sealed class BattleHymn : WatcherCardModel
 {
     public BattleHymn() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
-        WithPower<BattleHymnPower>(1);
+        WithPower<BattleHymnPower>(1, false);
         WithTip(typeof(Smite));
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
     }

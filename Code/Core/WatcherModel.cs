@@ -11,7 +11,7 @@ using Watcher.Code.Stances;
 
 namespace Watcher.Code.Core;
 
-public class WatcherModel() : CustomSingletonModel(true, false)
+public class WatcherModel() : CustomSingletonModel(HookType.Combat)
 {
     private static readonly SpireField<Player, WatcherStanceModel> ActiveStance =
         new(WatcherModelDb.WatcherStance<NoStance>);

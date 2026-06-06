@@ -12,7 +12,7 @@ public sealed class Establishment : WatcherCardModel
 {
     public Establishment() : base(1, CardType.Power, CardRarity.Rare, TargetType.None)
     {
-        WithPower<EstablishmentPower>(1);
+        WithPower<EstablishmentPower>(1, false);
         WithTip(CardKeyword.Retain);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
     }

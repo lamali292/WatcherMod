@@ -1,5 +1,5 @@
 {
-  "WATCHER-PURE_WATER.description": "Nimm zu Beginn jedes Kampfes ein [gold]Wunder[/gold] auf die Hand.",
+  "WATCHER-PURE_WATER.description": "Nimm zu Beginn jedes Kampfes ein [gold]Wunder[/gold] auf die [gold]Hand[/gold].",
   "WATCHER-PURE_WATER.flavor": "Durch feinen Sand gefiltert und frei von Unreinheiten.",
   "WATCHER-PURE_WATER.title": "Reines Wasser",
   "WATCHER-DAMARU.description": "Erhalte zu Beginn deines Zuges 1 [gold]Mantra[/gold].",
@@ -14,7 +14,7 @@
   "WATCHER-GOLDEN_EYE.description": "Immer wenn du [gold]spähst[/gold], spähe 2 Karten mehr.",
   "WATCHER-GOLDEN_EYE.flavor": "Lies die Gedanken der Umstehenden und sieh voraus, was sie gleich tun.",
   "WATCHER-GOLDEN_EYE.title": "Goldenes Auge",
-  "WATCHER-HOLY_WATER.description": "Ersetzt [gold]Reines Wasser[/gold]. Nimm zu Beginn jedes Kampfes 3 [gold]Wunder[/gold] auf die Hand.",
+  "WATCHER-HOLY_WATER.description": "Ersetzt [gold]Reines Wasser[/gold]. Nimm zu Beginn jedes Kampfes 3 [gold]Wunder[/gold] auf die [gold]Hand[/gold].",
   "WATCHER-HOLY_WATER.flavor": "Noch aus einer Zeit vor dem Spire.",
   "WATCHER-HOLY_WATER.title": "Heiliges Wasser",
   "WATCHER-VIOLET_LOTUS.description": "Immer wenn du [gold]Ruhe[/gold] verlässt, erhalte eine zusätzliche [gold]Energie[/gold].",

@@ -14,7 +14,7 @@ public sealed class Study : WatcherCardModel
     public Study() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
         WithTip(typeof(Insight));
-        WithPower<StudyPower>(1);
+        WithPower<StudyPower>(1, false);
         WithCostUpgradeBy(-1);
     }
 

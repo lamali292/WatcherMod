@@ -15,7 +15,8 @@ public sealed class Fasting : WatcherCardModel
     {
         WithPower<StrengthPower>(3, 1);
         WithPower<DexterityPower>(3, 1);
-        WithPower<FastingPower>(1);
+        WithPower<FastingPower>(1, false);
+        WithEnergyTip();
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)

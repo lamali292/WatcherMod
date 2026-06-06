@@ -35,9 +35,14 @@ class PipelinePaths:
     def out_atlases(self) -> Path:
         return self.godot_root / self.relative_res_path / "atlases"
         
+    @property
+    def out_tres(self) -> Path:
+        return self.out_atlases / "relic_atlas.sprites"
+
     def ensure_directories(self) -> None:
         self.out_relics.mkdir(parents=True, exist_ok=True)
         self.out_atlases.mkdir(parents=True, exist_ok=True)
+        self.out_tres.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
 # CORE PROCESSING LOGIC
@@ -510,8 +515,12 @@ class RelicApp(tk.Tk):
                 full_atlas.paste(img, (x, y))
                 full_outline.paste(out, (x, y))
                 
-                tres_path = paths.out_atlases / f"{name}.tres"
+                tres_path = paths.out_tres / f"{name}.tres"
                 generate_godot_tres(tres_path, f"{paths.res_base}/atlases/relic_atlas.png", x, y, atlas_size)
+
+                outline_tres_path = paths.out_tres / f"{name}_outline.tres"
+                generate_godot_tres(outline_tres_path, f"{paths.res_base}/atlases/relic_outline_atlas.png", x, y, atlas_size)
+
 
             full_atlas.save(paths.out_atlases / "relic_atlas.png")
             full_outline.save(paths.out_atlases / "relic_outline_atlas.png")

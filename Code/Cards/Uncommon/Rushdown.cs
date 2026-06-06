@@ -13,7 +13,7 @@ public sealed class Rushdown : WatcherCardModel
 {
     public Rushdown() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
-        WithPower<RushdownPower>(2);
+        WithPower<RushdownPower>(2, false);
         WithStanceTip<WrathStance>();
         WithCostUpgradeBy(-1);
     }

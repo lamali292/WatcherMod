@@ -12,7 +12,7 @@ public sealed class WreathOfFlame : WatcherCardModel
 {
     public WreathOfFlame() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<VigorPower>(5, 3);
+        WithPower<VigorPower>(5, 3, false);
     }
 
 

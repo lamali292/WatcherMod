@@ -1,6 +1,6 @@
 {
   "WATCHER-BOTTLED_MIRACLE.title": "Bottled Miracle",
-  "WATCHER-BOTTLED_MIRACLE.description": "Add {Cards:diff()} [gold]Miracles[/gold] to your Hand.",
+  "WATCHER-BOTTLED_MIRACLE.description": "Add {Cards:diff()} [gold]Miracles[/gold] to your [gold]Hand[/gold].",
   "WATCHER-CALM_POTION.title": "Calm Potion",
   "WATCHER-CALM_POTION.description": "Enter [gold]Calm[/gold].",
   "WATCHER-WRATH_POTION.title": "Wrath Potion",

@@ -14,7 +14,7 @@ public class MultiplayerCardUncommon : WatcherCardModel
 {
     public MultiplayerCardUncommon() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
     {
-        WithPower<MultiplayerCardUncommonPower>(1);
+        WithPower<MultiplayerCardUncommonPower>(1, false);
         WithStanceTip<CalmStance>();
         WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
     }

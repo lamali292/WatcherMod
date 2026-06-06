@@ -13,7 +13,7 @@ public sealed class Swivel : WatcherCardModel
     public Swivel() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithBlock(8, 3);
-        WithPower<FreeAttackPower>(1);
+        WithPower<FreeAttackPower>(1, false);
     }
 
 

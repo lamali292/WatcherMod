@@ -14,8 +14,8 @@ public sealed class SimmeringFury : WatcherCardModel
 {
     public SimmeringFury() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<DrawCardsNextTurnPower>(2, 1);
-        WithPower<SimmeringRagePower>(1);
+        WithPower<DrawCardsNextTurnPower>(2, 1, false);
+        WithPower<SimmeringRagePower>(1, false);
         WithStanceTip<WrathStance>();
     }
 

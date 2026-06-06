@@ -15,7 +15,7 @@ public sealed class Nirvana : WatcherCardModel
 {
     public Nirvana() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<NirvanaPower>(3, 1);
+        WithPower<NirvanaPower>(3, 1, false);
         WithTip(StaticHoverTip.Block);
         WithTip(WatcherKeywords.Scry);
     }

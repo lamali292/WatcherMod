@@ -13,7 +13,7 @@ public sealed class DevaForm : WatcherCardModel
     public DevaForm() : base(3, CardType.Power, CardRarity.Rare, TargetType.None)
     {
         WithKeyword(CardKeyword.Ethereal, UpgradeType.Remove);
-        WithPower<DevaPower>(1);
+        WithPower<DevaPower>(1, false);
         WithEnergy(1);
     }
 

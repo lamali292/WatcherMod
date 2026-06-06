@@ -12,7 +12,7 @@ public sealed class MasterReality : WatcherCardModel
 {
     public MasterReality() : base(1, CardType.Power, CardRarity.Rare, TargetType.None)
     {
-        WithPower<MasterRealityPower>(1);
+        WithPower<MasterRealityPower>(1, false);
         WithCostUpgradeBy(-1);
     }
 

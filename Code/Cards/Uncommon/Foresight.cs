@@ -13,7 +13,7 @@ public sealed class Foresight : WatcherCardModel
 {
     public Foresight() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
-        WithPower<ForesightPower>(3, 1);
+        WithPower<ForesightPower>(3, 1, false);
         WithTip(WatcherKeywords.Scry);
     }
 

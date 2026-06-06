@@ -14,7 +14,7 @@ public sealed class LikeWater : WatcherCardModel
 {
     public LikeWater() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
-        WithPower<LikeWaterPower>(5, 2);
+        WithPower<LikeWaterPower>(5, 2, false);
         WithStanceTip<CalmStance>();
         WithTip(StaticHoverTip.Block);
     }
