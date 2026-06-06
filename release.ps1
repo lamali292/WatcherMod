@@ -52,18 +52,25 @@ foreach ($f in @($pck, $dll)) {
     }
 }
 
+# --- the display name shown on Nexus (spaces are fine -- it's sent as a value, not a file name) ---
+$display = "The Watcher - $new - StS2 - $gameVersion"
+# --- the zip's file name. GitHub dots out spaces in asset names, so keep it space-free. ---
+$safeName = ($display -replace ' - ', '-') -replace ' ', '_'   # The_Watcher-1.4.10-StS2-v0.107.0
+
 # --- package the zip from the published mod folder ---
-# The zip filename IS the Nexus display name (the workflow reads it back). Keep the " - " separators.
 $stage = "dist/$modName"
 if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
 New-Item -ItemType Directory -Path $stage -Force | Out-Null
 Copy-Item $pck, $dll, (Join-Path $modsFolder "$modName.json") $stage
-$zip = "dist/The Watcher - $new - StS2 - $gameVersion.zip"
+$zip = "dist/$safeName.zip"
 if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path $stage -DestinationPath $zip
 Write-Host "Packaged $zip"
 
-# --- write the Nexus description (forwarded by the workflow). Edit the wording freely. ---
+# --- metadata files for the workflow. Their CONTENTS keep spaces; only asset file NAMES get dotted. ---
+$nameFile = "dist/nexus-display-name.txt"
+Set-Content $nameFile $display -Encoding UTF8 -NoNewline
+
 $descFile = "dist/nexus-description.txt"
 $desc = @"
 Works ONLY on the Beta branch of Slay the Spire 2 (game version $gameVersion).
@@ -71,10 +78,10 @@ Works with BaseLib $baseLib.
 "@
 Set-Content $descFile $desc -Encoding UTF8
 
-# --- only now: commit, tag, upload (attach both the zip and the description) ---
+# --- only now: commit, tag, upload (attach the zip + both metadata files) ---
 git add $csproj $manifest
 git commit -m "Release v$new (StS2 $gameVersion, BaseLib $baseLib)"
 git tag "v$new"
 git push origin HEAD --tags
-gh release create "v$new" "$zip" "$descFile" --title "v$new" --generate-notes
+gh release create "v$new" "$zip" "$nameFile" "$descFile" --title "v$new" --generate-notes
 Write-Host "Released v$new"

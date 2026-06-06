@@ -1,6 +1,6 @@
 name: Upload to NexusMods
 
-# Fires when release.ps1 runs `gh release create "v$new" $zip $descFile` (a published, non-draft release).
+# Fires when release.ps1 runs `gh release create ...` (a published, non-draft release).
 on:
   release:
     types: [published]
@@ -9,22 +9,36 @@ jobs:
   nexus:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the release assets (zip + description)
+      - name: Download the release assets (zip + metadata)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download "${{ github.event.release.tag_name }}" --repo "${{ github.repository }}"
+          TAG: ${{ github.event.release.tag_name }}
+          REPO: ${{ github.repository }}
+        run: gh release download "$TAG" --repo "$REPO"
 
       - name: Resolve metadata
         id: meta
+        env:
+          TAG: ${{ github.event.release.tag_name }}
         run: |
-          tag="${{ github.event.release.tag_name }}"
-          file="$(ls *.zip | head -n1)"        # The Watcher - 1.4.9 - StS2 - v0.107.0.zip
-          name="${file%.zip}"                  # display name = filename without .zip
-          echo "version=${tag#v}"   >> "$GITHUB_OUTPUT"   # mod version, e.g. 1.4.9
-          echo "filename=$file"     >> "$GITHUB_OUTPUT"
-          echo "displayname=$name"  >> "$GITHUB_OUTPUT"
+          file="$(ls *.zip | head -n1)"
+          # Display name comes from the file's CONTENTS (spaces intact), not from any file name.
+          if [ -f nexus-display-name.txt ]; then
+            dn="$(cat nexus-display-name.txt)"
+          else
+            dn="${file%.zip}"
+          fi
+          {
+            echo "version=${TAG#v}"
+            echo "filename=$file"
+            echo "displayname=$dn"
+          } >> "$GITHUB_OUTPUT"
           if [ -f nexus-description.txt ]; then
-            { echo "description<<DESC_EOF"; cat nexus-description.txt; echo "DESC_EOF"; } >> "$GITHUB_OUTPUT"
+            {
+              echo "description<<DESC_EOF"
+              cat nexus-description.txt
+              echo "DESC_EOF"
+            } >> "$GITHUB_OUTPUT"
           else
             echo "description=" >> "$GITHUB_OUTPUT"
           fi
