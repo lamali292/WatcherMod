@@ -7,6 +7,8 @@ $csproj   = "Watcher.csproj"
 $manifest = "Watcher.json"
 # Must match $(ModsPath)$(MSBuildProjectName) from the .csproj -- where publish drops the built mod.
 $modsFolder = "D:/SteamLibrary/steamapps/common/Slay the Spire 2/mods/Watcher"
+# StS2 version this build targets. Bump this one line when the game updates.
+$gameVersion = "v0.107.0"
 
 # --- read current version, compute bump ---
 $proj = Get-Content $csproj -Raw
@@ -15,7 +17,13 @@ if ($proj -notmatch '<Version>(\d+)\.(\d+)\.(\d+)</Version>') {
 }
 $current = "{0}.{1}.{2}" -f $matches[1],$matches[2],$matches[3]
 $new     = "{0}.{1}.{2}" -f $matches[1],$matches[2],([int]$matches[3] + 1)
-Write-Host "$current -> $new"
+
+# --- read BaseLib version straight from the PackageReference ---
+if ($proj -notmatch 'Alchyr\.Sts2\.BaseLib"\s+Version="([^"]+)"') {
+    throw "Couldn't find the Alchyr.Sts2.BaseLib PackageReference version in $csproj"
+}
+$baseLib = $matches[1]
+Write-Host "$current -> $new  (StS2 $gameVersion, BaseLib $baseLib)"
 
 # --- fail early on a stale tag, before changing anything ---
 if (git tag --list "v$new") { throw "Tag v$new already exists. Delete it (git tag -d v$new) or bump." }
@@ -45,19 +53,28 @@ foreach ($f in @($pck, $dll)) {
 }
 
 # --- package the zip from the published mod folder ---
+# The zip filename IS the Nexus display name (the workflow reads it back). Keep the " - " separators.
 $stage = "dist/$modName"
 if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
 New-Item -ItemType Directory -Path $stage -Force | Out-Null
 Copy-Item $pck, $dll, (Join-Path $modsFolder "$modName.json") $stage
-$zip = "dist/$modName-$new.zip"
+$zip = "dist/The Watcher - $new - StS2 - $gameVersion.zip"
 if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path $stage -DestinationPath $zip
 Write-Host "Packaged $zip"
 
-# --- only now: commit, tag, upload ---
+# --- write the Nexus description (forwarded by the workflow). Edit the wording freely. ---
+$descFile = "dist/nexus-description.txt"
+$desc = @"
+Works ONLY on the Beta branch of Slay the Spire 2 (game version $gameVersion).
+Works with BaseLib $baseLib.
+"@
+Set-Content $descFile $desc -Encoding UTF8
+
+# --- only now: commit, tag, upload (attach both the zip and the description) ---
 git add $csproj $manifest
-git commit -m "Release v$new"
+git commit -m "Release v$new (StS2 $gameVersion, BaseLib $baseLib)"
 git tag "v$new"
 git push origin HEAD --tags
-gh release create "v$new" $zip --title "v$new" --generate-notes
+gh release create "v$new" "$zip" "$descFile" --title "v$new" --generate-notes
 Write-Host "Released v$new"

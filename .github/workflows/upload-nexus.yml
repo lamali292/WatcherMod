@@ -1,26 +1,34 @@
 name: Upload to NexusMods
- 
-# Fires when release.ps1 runs `gh release create "v$new" $zip` (a published, non-draft release).
+
+# Fires when release.ps1 runs `gh release create "v$new" $zip $descFile` (a published, non-draft release).
 on:
   release:
     types: [published]
- 
+
 jobs:
   nexus:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the release zip
+      - name: Download the release assets (zip + description)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download "${{ github.event.release.tag_name }}" --repo "${{ github.repository }}" --pattern "*.zip"
- 
-      - name: Resolve version + filename
+        run: gh release download "${{ github.event.release.tag_name }}" --repo "${{ github.repository }}"
+
+      - name: Resolve metadata
         id: meta
         run: |
           tag="${{ github.event.release.tag_name }}"
-          echo "version=${tag#v}" >> "$GITHUB_OUTPUT"
-          echo "filename=$(ls *.zip | head -n1)" >> "$GITHUB_OUTPUT"
- 
+          file="$(ls *.zip | head -n1)"        # The Watcher - 1.4.9 - StS2 - v0.107.0.zip
+          name="${file%.zip}"                  # display name = filename without .zip
+          echo "version=${tag#v}"   >> "$GITHUB_OUTPUT"   # mod version, e.g. 1.4.9
+          echo "filename=$file"     >> "$GITHUB_OUTPUT"
+          echo "displayname=$name"  >> "$GITHUB_OUTPUT"
+          if [ -f nexus-description.txt ]; then
+            { echo "description<<DESC_EOF"; cat nexus-description.txt; echo "DESC_EOF"; } >> "$GITHUB_OUTPUT"
+          else
+            echo "description=" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Upload to NexusMods
         uses: Nexus-Mods/upload-action@v1.0.0-beta.7
         with:
@@ -28,7 +36,8 @@ jobs:
           file_group_id: 7342526
           filename: ${{ steps.meta.outputs.filename }}
           version: ${{ steps.meta.outputs.version }}
-          display_name: Watcher ${{ steps.meta.outputs.version }}
+          display_name: ${{ steps.meta.outputs.displayname }}
+          description: ${{ steps.meta.outputs.description }}
           file_category: main
           archive_existing_file: true
           allow_mod_manager_download: true
