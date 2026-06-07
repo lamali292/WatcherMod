@@ -27,7 +27,7 @@ public sealed class Brilliance : WatcherCardModel
 
     private static decimal MantraGainedThisCombat(CardModel card, Creature? creature)
         => CombatManager.Instance.History.Entries.OfType<PowerReceivedEntry>()
-            .Where(e => e is { Power: MantraPower, Applier: not null } && e.Applier.Player == card.Owner)
+            .Where(e => e.Power is MantraPower && e.Applier?.Player == card.Owner && e.Amount > 0)
             .Sum(e => e.Amount);
 
     protected override async Task OnPlay(PlayerChoiceContext context, CardPlay play)
