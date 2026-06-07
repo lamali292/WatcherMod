@@ -5,10 +5,25 @@ Set-Location $PSScriptRoot
 $modName  = "Watcher"
 $csproj   = "Watcher.csproj"
 $manifest = "Watcher.json"
-# Must match $(ModsPath)$(MSBuildProjectName) from the .csproj -- where publish drops the built mod.
-$modsFolder = "D:/SteamLibrary/steamapps/common/Slay the Spire 2/mods/Watcher"
-# StS2 version this build targets. Bump this one line when the game updates.
-$gameVersion = "v0.107.0"
+
+# Resolve game + mods paths exactly as the build does -- this honours local.props AND
+# the OS defaults in Watcher.csproj, so there's one source of truth, not a copy here.
+# (`-getProperty` needs .NET SDK 8.0.200+. Older SDK fallback below.)
+$gameRoot   = (& dotnet msbuild $csproj -getProperty:Sts2Path).Trim()
+$modsFolder = Join-Path ((& dotnet msbuild $csproj -getProperty:ModsPath).Trim()) $modName
+if ([string]::IsNullOrWhiteSpace($gameRoot)) { throw "Couldn't resolve Sts2Path from $csproj (SDK 8.0.200+?)." }
+# Fallback for older SDKs -- parse local.props directly:
+#   $steam = (Select-Xml ./local.props -XPath '//SteamLibraryPath').Node.InnerText
+#   $gameRoot = Join-Path $steam 'common/Slay the Spire 2'
+
+# StS2 version this build targets, read from the game's own release_info.json
+# (the 'version' field already includes the leading 'v', e.g. v0.107.0).
+$relPath = Join-Path $gameRoot "release_info.json"
+if (-not (Test-Path $relPath)) {
+    throw "release_info.json not found at $relPath -- check the game path, or Steam hasn't written it for this build."
+}
+$gameVersion = (Get-Content $relPath -Raw | ConvertFrom-Json).version
+if ([string]::IsNullOrWhiteSpace($gameVersion)) { throw "No 'version' in $relPath" }
 
 # --- read current version, compute bump ---
 $proj = Get-Content $csproj -Raw
@@ -52,7 +67,7 @@ foreach ($f in @($pck, $dll)) {
     }
 }
 
-# --- the display name shown on Nexus (spaces are fine -- it's sent as a value, not a file name) ---
+# --- the display name shown on Nexus (spaces are fine -- it rides on the release NAME) ---
 $display = "The Watcher - $new - StS2 - $gameVersion"
 # --- the zip's file name. GitHub dots out spaces in asset names, so keep it space-free. ---
 $safeName = ($display -replace ' - ', '-') -replace ' ', '_'   # The_Watcher-1.4.10-StS2-v0.107.0
@@ -67,21 +82,38 @@ if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path $stage -DestinationPath $zip
 Write-Host "Packaged $zip"
 
-# --- metadata files for the workflow. Their CONTENTS keep spaces; only asset file NAMES get dotted. ---
-$nameFile = "dist/nexus-display-name.txt"
-Set-Content $nameFile $display -Encoding UTF8 -NoNewline
+# --- Steam branch this build came from. release_info.json's "branch" is just the
+#     version, so read the real branch from Steam's app manifest (betakey).
+#     Empty betakey == the default/public branch. ---
+$steamApps = Split-Path (Split-Path $gameRoot -Parent) -Parent   # ...\steamapps
+$acf = Get-ChildItem $steamApps -Filter "appmanifest_*.acf" -ErrorAction SilentlyContinue |
+        Where-Object { (Get-Content $_.FullName -Raw) -match '"name"\s+"Slay the Spire 2"' } |
+        Select-Object -First 1
+$branch = "default"
+if ($acf -and ((Get-Content $acf.FullName -Raw) -match '"betakey"\s+"([^"]+)"')) {
+    $branch = $matches[1]
+}
 
-$descFile = "dist/nexus-description.txt"
-$desc = @"
-Works ONLY on the Beta branch of Slay the Spire 2 (game version $gameVersion).
+# --- Nexus metadata rides on the release itself: NAME = display, BODY = banner + auto-notes.
+#     No metadata files are attached -- the release carries only the zip. ---
+$banner = @"
+Works on the '$branch' branch of Slay the Spire 2 (game version $gameVersion).
 Works with BaseLib $baseLib.
 "@
-Set-Content $descFile $desc -Encoding UTF8
 
-# --- only now: commit, tag, upload (attach the zip + both metadata files) ---
+# --- commit + tag first; generate-notes reads the pushed tag ---
 git add $csproj $manifest
 git commit -m "Release v$new (StS2 $gameVersion, BaseLib $baseLib)"
 git tag "v$new"
 git push origin HEAD --tags
-gh release create "v$new" "$zip" "$nameFile" "$descFile" --title "v$new" --generate-notes
+
+# --- generate GitHub's auto release notes for this tag, then prepend the banner.
+#     Building the full body up front means the single `gh release create` below
+#     publishes with the complete body, so the release event carries all of it. ---
+$repo = gh repo view --json nameWithOwner -q ".nameWithOwner"
+$auto = gh api "repos/$repo/releases/generate-notes" -f tag_name="v$new" -q ".body"
+$body = "$banner`n`n---`n`n$auto"
+
+# --- create the release once, with the combined body (attach ONLY the zip) ---
+gh release create "v$new" "$zip" --title "$display" --notes "$body"
 Write-Host "Released v$new"

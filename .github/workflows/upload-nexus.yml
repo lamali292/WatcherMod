@@ -9,39 +9,22 @@ jobs:
   nexus:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the release assets (zip + metadata)
+      - name: Download the release zip
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.event.release.tag_name }}
           REPO: ${{ github.repository }}
-        run: gh release download "$TAG" --repo "$REPO"
+        run: gh release download "$TAG" --repo "$REPO" --pattern '*.zip'
 
-      - name: Resolve metadata
+      - name: Resolve filename + version
         id: meta
         env:
           TAG: ${{ github.event.release.tag_name }}
         run: |
-          file="$(ls *.zip | head -n1)"
-          # Display name comes from the file's CONTENTS (spaces intact), not from any file name.
-          if [ -f nexus-display-name.txt ]; then
-            dn="$(cat nexus-display-name.txt)"
-          else
-            dn="${file%.zip}"
-          fi
           {
+            echo "filename=$(ls *.zip | head -n1)"
             echo "version=${TAG#v}"
-            echo "filename=$file"
-            echo "displayname=$dn"
           } >> "$GITHUB_OUTPUT"
-          if [ -f nexus-description.txt ]; then
-            {
-              echo "description<<DESC_EOF"
-              cat nexus-description.txt
-              echo "DESC_EOF"
-            } >> "$GITHUB_OUTPUT"
-          else
-            echo "description=" >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Upload to NexusMods
         uses: Nexus-Mods/upload-action@v1.0.0-beta.7
@@ -50,8 +33,8 @@ jobs:
           file_group_id: 7342526
           filename: ${{ steps.meta.outputs.filename }}
           version: ${{ steps.meta.outputs.version }}
-          display_name: ${{ steps.meta.outputs.displayname }}
-          description: ${{ steps.meta.outputs.description }}
+          display_name: ${{ github.event.release.name }}
+          description: ${{ github.event.release.body }}
           file_category: main
           archive_existing_file: true
           allow_mod_manager_download: true

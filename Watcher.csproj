@@ -9,7 +9,7 @@
         <RootNamespace>Watcher</RootNamespace>
         <PlatformTarget>AnyCPU</PlatformTarget>
     </PropertyGroup>
-
+    <Import Project="$(MSBuildThisFileDirectory)local.props" Condition="Exists('$(MSBuildThisFileDirectory)local.props')"/>
     <PropertyGroup>
         <AssemblyVersion>1.4.13.0</AssemblyVersion>
         <FileVersion>1.4.13.0</FileVersion>
@@ -120,6 +120,8 @@
         <None Include=".gitignore"/>
         <None Include="Watcher.json"/>
         <None Include="project.godot"/>
+        <Content Include="local.props"/>
+        <Content Include="local.props.example"/>
         <None Include="Watcher/**"/>
         <None Include="cardloc-presets.json"/>
     </ItemGroup>

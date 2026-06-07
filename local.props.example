@@ -1,0 +1,11 @@
+﻿<!-- Copy this file and rename it to local.props, then fill in your paths. -->
+<Project>
+    <PropertyGroup>
+        <!-- Path to your Godot executable -->
+        <GodotPath>C:\...\MegaDot\MegaDot_v4.5.1_mono.exe</GodotPath>
+        <!-- Path to your Steam library's steamapps folder -->
+        <SteamLibraryPath>C:\Program Files (x86)\Steam\steamapps</SteamLibraryPath>
+        <!-- Path to your GDRE extracted Slay the Spire 2 assets folder -->
+        <AssetSourcePath>C:\...\Slay the Spire 2</AssetSourcePath>
+    </PropertyGroup>
+</Project>
