@@ -1,4 +1,3 @@
-# release.ps1  ->  bumps patch, sets version everywhere, builds, then releases  (Watcher)
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
@@ -8,13 +7,9 @@ $manifest = "Watcher.json"
 
 # Resolve game + mods paths exactly as the build does -- this honours local.props AND
 # the OS defaults in Watcher.csproj, so there's one source of truth, not a copy here.
-# (`-getProperty` needs .NET SDK 8.0.200+. Older SDK fallback below.)
 $gameRoot   = (& dotnet msbuild $csproj -getProperty:Sts2Path).Trim()
 $modsFolder = Join-Path ((& dotnet msbuild $csproj -getProperty:ModsPath).Trim()) $modName
 if ([string]::IsNullOrWhiteSpace($gameRoot)) { throw "Couldn't resolve Sts2Path from $csproj (SDK 8.0.200+?)." }
-# Fallback for older SDKs -- parse local.props directly:
-#   $steam = (Select-Xml ./local.props -XPath '//SteamLibraryPath').Node.InnerText
-#   $gameRoot = Join-Path $steam 'common/Slay the Spire 2'
 
 # StS2 version this build targets, read from the game's own release_info.json
 # (the 'version' field already includes the leading 'v', e.g. v0.107.0).
@@ -72,30 +67,33 @@ $display = "The Watcher - $new - StS2 - $gameVersion"
 # --- the zip's file name. GitHub dots out spaces in asset names, so keep it space-free. ---
 $safeName = ($display -replace ' - ', '-') -replace ' ', '_'   # The_Watcher-1.4.10-StS2-v0.107.0
 
-# --- package the zip from the published mod folder ---
+# --- package the zip from the published mod folder.
+#     Wipe dist entirely first, so each run leaves exactly one staging folder + one zip
+#     (otherwise every past release's uniquely-named zip lingers forever). ---
+if (Test-Path "dist") { Remove-Item "dist" -Recurse -Force }
 $stage = "dist/$modName"
-if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
 New-Item -ItemType Directory -Path $stage -Force | Out-Null
 Copy-Item $pck, $dll, (Join-Path $modsFolder "$modName.json") $stage
 $zip = "dist/$safeName.zip"
-if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path $stage -DestinationPath $zip
 Write-Host "Packaged $zip"
 
-# --- Steam branch this build came from. release_info.json's "branch" is just the
-#     version, so read the real branch from Steam's app manifest (betakey).
-#     Empty betakey == the default/public branch. ---
-$steamApps = Split-Path (Split-Path $gameRoot -Parent) -Parent   # ...\steamapps
-$acf = Get-ChildItem $steamApps -Filter "appmanifest_*.acf" -ErrorAction SilentlyContinue |
-        Where-Object { (Get-Content $_.FullName -Raw) -match '"name"\s+"Slay the Spire 2"' } |
-        Select-Object -First 1
-$branch = "default"
-if ($acf -and ((Get-Content $acf.FullName -Raw) -match '"betakey"\s+"([^"]+)"')) {
-    $branch = $matches[1]
+# --- Improved Steam branch detection ---
+$appId     = "2868840"
+$steamApps = Split-Path (Split-Path $gameRoot -Parent) -Parent
+$acfPath   = Join-Path $steamApps "appmanifest_$appId.acf"
+$branch    = "default"
+
+if (Test-Path $acfPath) {
+    $content = Get-Content $acfPath -Raw
+    if ($content -match '(?s)"UserConfig"\s*\{.*?"BetaKey"\s+"([^"]+)"') {
+        $branch = $matches[1]
+    }
+} else {
+    Write-Warning "Could not find manifest at $acfPath. Defaulting to 'default' branch."
 }
 
 # --- Nexus metadata rides on the release itself: NAME = display, BODY = banner + auto-notes.
-#     No metadata files are attached -- the release carries only the zip. ---
 $banner = @"
 Works on the '$branch' branch of Slay the Spire 2 (game version $gameVersion).
 Works with BaseLib $baseLib.
@@ -114,6 +112,6 @@ $repo = gh repo view --json nameWithOwner -q ".nameWithOwner"
 $auto = gh api "repos/$repo/releases/generate-notes" -f tag_name="v$new" -q ".body"
 $body = "$banner`n`n---`n`n$auto"
 
-# --- create the release once, with the combined body (attach ONLY the zip) ---
+# --- create the release once, with the combined body ---
 gh release create "v$new" "$zip" --title "$display" --notes "$body"
 Write-Host "Released v$new"
