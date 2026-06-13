@@ -7,8 +7,8 @@ public sealed class WatcherCardPool : CustomCardPoolModel
 {
     public override string Title => Watcher.CharacterId;
 
-    public override float H => 0.75f; //Hue; changes the color.
-    public override float S => 1f; //Saturation
+    public override float H => 0.8f; //Hue; changes the color.
+    public override float S => 0.5f; //Saturation
     public override float V => 1f; //Brightness
 
     public override Color DeckEntryCardColor => Watcher.Color;
