@@ -79,5 +79,7 @@
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "At the start of your turn, exit [gold]Calm[/gold].",
   "WATCHER-ANCIENT_CARD_POWER.title": "Accumulate",
   "WATCHER-ANCIENT_CARD_POWER.description": "While in [gold]Wrath[/gold], deal +50% damage.",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "While in [gold]Wrath[/gold], deal +{Amount}% damage."
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "While in [gold]Wrath[/gold], deal +{Amount}% damage.",
+  "WATCHER-VAULT_POWER.title": "",
+  "WATCHER-VAULT_POWER.description": ""
 }

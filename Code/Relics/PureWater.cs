@@ -28,7 +28,7 @@ public sealed class PureWater : WatcherRelicModel
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        if (player != Owner || combatState.RoundNumber > 1) return;
+        if (player != Owner || Owner.PlayerCombatState is not { TurnNumber: 1 }) return;
         var miracle = combatState.CreateCard<Miracle>(Owner);
         await CardPileCmd.AddGeneratedCardToCombat(miracle, PileType.Hand, player);
         Flash();

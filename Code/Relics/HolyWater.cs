@@ -29,7 +29,7 @@ public sealed class HolyWater : WatcherRelicModel
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        if (player != Owner || combatState.RoundNumber > 1) return;
+        if (player != Owner || Owner.PlayerCombatState is not { TurnNumber: 1 }) return;
         var miracles =
             new CardModel[]
             {
