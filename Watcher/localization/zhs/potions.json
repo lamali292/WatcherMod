@@ -1,10 +1,10 @@
 {
-  "WATCHER-AMBROSIA.description": "进入[gold]神格[/gold]。",
-  "WATCHER-BOTTLED_MIRACLE.description": "将{Cards:diff()}张[gold]奇迹[/gold]加入手牌。",
-  "WATCHER-CALM_POTION.description": "进入[gold]平静[/gold]。",
-  "WATCHER-WRATH_POTION.description": "进入[gold]愤怒[/gold]。",
+  "WATCHER-AMBROSIA.description": "进入[gold]神格[/gold]姿态。",
+  "WATCHER-BOTTLED_MIRACLE.description": "将[blue]{Cards:diff()}[/blue]张[gold]奇迹[/gold]加入手牌。",
+  "WATCHER-CALM_POTION.description": "进入[gold]平静[/gold]姿态。",
+  "WATCHER-WRATH_POTION.description": "进入[gold]愤怒[/gold]姿态。",
   "WATCHER-AMBROSIA.title": "仙馔密酒",
   "WATCHER-BOTTLED_MIRACLE.title": "瓶装奇迹",
-  "WATCHER-CALM_POTION.title": "瓶装奇迹",
+  "WATCHER-CALM_POTION.title": "平静药水",
   "WATCHER-WRATH_POTION.title": "愤怒药水"
 }
