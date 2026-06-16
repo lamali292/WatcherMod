@@ -19,6 +19,7 @@ if (-not (Test-Path $relPath)) {
 }
 $gameVersion = (Get-Content $relPath -Raw | ConvertFrom-Json).version
 if ([string]::IsNullOrWhiteSpace($gameVersion)) { throw "No 'version' in $relPath" }
+$gameVersionBare = $gameVersion.TrimStart('v')   # 0.107.0 for the manifest
 
 # --- read current version, compute bump ---
 $proj = Get-Content $csproj -Raw
@@ -28,11 +29,11 @@ if ($proj -notmatch '<Version>(\d+)\.(\d+)\.(\d+)</Version>') {
 $current = "{0}.{1}.{2}" -f $matches[1],$matches[2],$matches[3]
 $new     = "{0}.{1}.{2}" -f $matches[1],$matches[2],([int]$matches[3] + 1)
 
-# --- read BaseLib version straight from the PackageReference ---
-if ($proj -notmatch 'Alchyr\.Sts2\.BaseLib"\s+Version="([^"]+)"') {
-    throw "Couldn't find the Alchyr.Sts2.BaseLib PackageReference version in $csproj"
+# --- read BaseLib version from the <BaseLibVersion> property ---
+if ($proj -notmatch '<BaseLibVersion>([^<]+)</BaseLibVersion>') {
+    throw "Couldn't find <BaseLibVersion> in $csproj"
 }
-$baseLib = $matches[1]
+$baseLib = $matches[1].Trim()
 Write-Host "$current -> $new  (StS2 $gameVersion, BaseLib $baseLib)"
 
 # --- fail early on a stale tag, before changing anything ---
@@ -44,11 +45,20 @@ $proj = $proj -replace '<AssemblyVersion>\d+\.\d+\.\d+\.\d+</AssemblyVersion>', 
 $proj = $proj -replace '<FileVersion>\d+\.\d+\.\d+\.\d+</FileVersion>',         "<FileVersion>$new.0</FileVersion>"
 Set-Content $csproj $proj -Encoding UTF8 -NoNewline
 
-# --- write the manifest ---
-$json = Get-Content $manifest -Raw | ConvertFrom-Json
-$json.version = $new
-$json | ConvertTo-Json -Depth 10 | Set-Content $manifest -Encoding UTF8
-Write-Host "Set version in $manifest"
+# --- write the manifest via regex so formatting is preserved (no ConvertTo-Json reflow) ---
+$text = Get-Content $manifest -Raw
+
+# bump the top-level "version"
+$text = $text -replace '("version"\s*:\s*")\d+\.\d+\.\d+(")', "`${1}$new`$2"
+
+# set min_game_version to the game build we target (bare, no leading v)
+$text = $text -replace '("min_game_version"\s*:\s*")[^"]+(")', "`${1}$gameVersionBare`$2"
+
+# set the BaseLib dependency's min_version
+$text = $text -replace '("id"\s*:\s*"BaseLib"\s*,\s*"min_version"\s*:\s*")[^"]+(")', "`${1}$baseLib`$2"
+
+Set-Content $manifest $text -Encoding UTF8 -NoNewline
+Write-Host "Set version, min_game_version ($gameVersionBare), BaseLib ($baseLib) in $manifest"
 
 # --- build (Godot's exit-time errors are expected; a fresh .pck is the real success check) ---
 dotnet publish $csproj -c Release -p:Version=$new
