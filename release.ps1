@@ -109,7 +109,7 @@ git push origin HEAD --tags
 #     Building the full body up front means the single `gh release create` below
 #     publishes with the complete body, so the release event carries all of it. ---
 $repo = gh repo view --json nameWithOwner -q ".nameWithOwner"
-$auto = gh api "repos/$repo/releases/generate-notes" -f tag_name="v$new" -q ".body"
+$auto = (gh api "repos/$repo/releases/generate-notes" -f tag_name="v$new" -q ".body") -join "`n"
 $body = "$banner`n`n---`n`n$auto"
 
 # --- create the release once, with the combined body ---
