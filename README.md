@@ -135,6 +135,6 @@ chaendizzle - Calm, Divinity and Wrath SFX / VFX
 
 Snumodder - Korean localization. 
 
-NoFires - Chinese localization
+NoFires,ImLingCheng(vvan) - Chinese localization and translation refinement.
 
 Cany0udance - for helping me to port the animations. 
