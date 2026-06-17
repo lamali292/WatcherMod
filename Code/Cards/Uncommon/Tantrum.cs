@@ -24,7 +24,6 @@ public sealed class Tantrum : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await CommonActions.CardAttack(this, cardPlay).WithHitCount(DynamicVars.Repeat.IntValue).Execute(ctx);
         await StanceCmd.EnterWrath(ctx, Owner, cardPlay.Card);
         await Cmd.Wait(0.25f);

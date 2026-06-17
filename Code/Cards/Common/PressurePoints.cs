@@ -25,7 +25,7 @@ public sealed class PressurePoints : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
-        await CommonActions.Apply<MarkPower>(ctx,this, cardPlay);
+        await CommonActions.Apply<MarkPower>(ctx, this, cardPlay);
         var enemies = CombatState!.Enemies.ToList();
         foreach (var enemy in enemies)
         {

@@ -26,11 +26,10 @@ public sealed class CrushJoints : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await CommonActions.CardAttack(this, cardPlay)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(ctx);
         if (!WasLastCardPlayedSkill) return;
-        await CommonActions.Apply<VulnerablePower>(ctx, cardPlay.Target, this);
+        await CommonActions.Apply<VulnerablePower>(ctx, this, cardPlay);
     }
 }
