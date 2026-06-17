@@ -83,23 +83,21 @@ public partial class CalmFrostStreakSpawner : Node2D
 
             var progress = s.Age / s.Lifetime;
 
-            float yScaleMult;
-            if (progress < 0.4f)
-                yScaleMult = 0.5f + progress * 2.5f;
-            else if (progress < 0.7f)
-                yScaleMult = 1.5f;
-            else
-                yScaleMult = 1.5f - (progress - 0.7f) * 3.3f;
+            var yScaleMult = progress switch
+            {
+                < 0.4f => 0.5f + progress * 2.5f,
+                < 0.7f => 1.5f,
+                _ => 1.5f - (progress - 0.7f) * 3.3f
+            };
             yScaleMult = Mathf.Max(yScaleMult, 0.2f);
             s.Sprite.Scale = new Vector2(s.BaseScale * 0.375f, s.BaseScale * 1.76f * yScaleMult);
 
-            float alpha;
-            if (progress < 0.3f)
-                alpha = progress / 0.3f;
-            else if (progress < 0.8f)
-                alpha = 1.0f;
-            else
-                alpha = (1f - progress) / 0.2f;
+            var alpha = progress switch
+            {
+                < 0.3f => progress / 0.3f,
+                < 0.8f => 1.0f,
+                _ => (1f - progress) / 0.2f
+            };
             alpha = alpha * alpha * (3f - 2f * alpha) * 0.75f;
 
             s.Sprite.Modulate = new Color(s.BaseColor.R, s.BaseColor.G, s.BaseColor.B, alpha);

@@ -8,7 +8,7 @@ public partial class DivinityEyeSpawner : Node2D
 {
     private const float SpawnInterval = 0.2f;
 
-    private readonly List<EyeData> _eyes = new();
+    private readonly List<EyeData> _eyes = [];
     private AtlasTexture[] _frames = null!;
     private CanvasItemMaterial _mat = null!;
     private RandomNumberGenerator _rng = null!;

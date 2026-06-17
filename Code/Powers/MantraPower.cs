@@ -32,7 +32,7 @@ public sealed class MantraPower : WatcherPowerModel
         if (power is not MantraPower || amount <= 0 || applier != Owner || player == null)
             return;
 
-        StanceVfx.PlayStanceSfx("res://Watcher/audio/mantra_gain.ogg");
+        SfxCmd.Play("res://Watcher/audio/mantra_gain.ogg");
 
 
         var triggers = Amount / 10;

@@ -1,5 +1,6 @@
 ﻿using Godot;
 using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Nodes;
@@ -129,7 +130,7 @@ public class StanceVfxController(StanceVfxConfig cfg)
     private void PlayEnterSfx()
     {
         if (cfg.EnterSfxPath != null)
-            StanceVfx.PlayStanceSfx(cfg.EnterSfxPath);
+            SfxCmd.Play(cfg.EnterSfxPath);
     }
 
     private void PlayScreenFlash()

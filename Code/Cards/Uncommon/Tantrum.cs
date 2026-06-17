@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
@@ -27,6 +28,12 @@ public sealed class Tantrum : WatcherCardModel
         await CommonActions.CardAttack(this, cardPlay).WithHitCount(DynamicVars.Repeat.IntValue).Execute(ctx);
         await StanceCmd.EnterWrath(ctx, Owner, cardPlay.Card);
         await Cmd.Wait(0.25f);
-        await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
+        //await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
+    }
+
+    public override (PileType, CardPilePosition) ModifyCardPlayResultPileTypeAndPosition(CardModel card, bool isAutoPlay,
+        ResourceInfo resources, PileType pileType, CardPilePosition position)
+    {
+        return card == this && pileType == PileType.Discard ? (PileType.Draw, CardPilePosition.Random) : (pileType, position);
     }
 }
