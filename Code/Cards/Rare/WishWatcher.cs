@@ -24,7 +24,8 @@ public sealed class WishWatcher : WatcherCardModel
         WithKeywords(CardKeyword.Exhaust);
     }
 
-
+    public override bool CanBeGeneratedInCombat => false;
+    
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var cardsToChoose = new CardModel[]

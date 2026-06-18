@@ -22,6 +22,7 @@ public sealed class LessonLearned : WatcherCardModel
         WithTip(StaticHoverTip.Fatal);
     }
 
+    public override bool CanBeGeneratedInCombat => false;
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
