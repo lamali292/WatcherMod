@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using Watcher.Code.Abstract;
@@ -30,7 +31,7 @@ public sealed class LessonLearned : WatcherCardModel
         var shouldTriggerFatal = cardPlay.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal());
         var attackCommand = await CommonActions.CardAttack(this, cardPlay).WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        if (!shouldTriggerFatal || !attackCommand.Results.Any(r => r.Any(g => g.WasTargetKilled)))
+        if (!shouldTriggerFatal || !attackCommand.Results.Any(r => r.Any(g => g is { WasTargetKilled: true, Receiver.IsSecondaryEnemy: false })))
             return;
         var upgradableCards = PileType.Deck.GetPile(Owner).Cards.Where(c => c.IsUpgradable).ToList();
         if (upgradableCards.Count > 0)
