@@ -17,7 +17,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <BaseLibVersion>3.2.1</BaseLibVersion>
+        <BaseLibVersion>3.3.0</BaseLibVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
         <Optimize>false</Optimize>

@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "Choose a card in your [gold]Draw Pile[/gold].\nPlay the chosen card twice and [gold]Exhaust[/gold] it.",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "Select a card to play twice and [gold]Exhaust[/gold].",
   "WATCHER-SPIRIT_SHIELD.title": "Spirit Shield",
-  "WATCHER-SPIRIT_SHIELD.description": "Gain {Block:diff()} [gold]Block[/gold] for each card in your [gold]Hand[/gold].",
+  "WATCHER-SPIRIT_SHIELD.description": "Gain {CalculationExtra:diff()} [gold]Block[/gold] for each card in your [gold]Hand[/gold].{InCombat:cond:\n(Gain {CalculatedBlock:diff()} [gold]Block[/gold])|}",
   "WATCHER-MASTER_REALITY.title": "Master Reality",
   "WATCHER-MASTER_REALITY.description": "Whenever a card is created during combat, Upgrade it.",
   "WATCHER-WREATH_OF_FLAME.title": "Wreath of Flames",
