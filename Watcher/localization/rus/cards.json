@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "Выберите карту из [gold]стопки добора[/gold]. Разыграйте ее дважды, затем [gold]сожгите[/gold] ее.",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "Выберите карту, чтобы разыграть дважды и [gold]сжечь[/gold] ее.",
   "WATCHER-SPIRIT_SHIELD.title": "Духовный щит",
-  "WATCHER-SPIRIT_SHIELD.description": "Дает {Block:diff()} [gold]защиты[/gold] за каждую карту в руке.",
+  "WATCHER-SPIRIT_SHIELD.description": "Дает {CalculationExtra:diff()} [gold]защиты[/gold] за каждую карту в руке.",
   "WATCHER-MASTER_REALITY.title": "Подчинить реальность",
   "WATCHER-MASTER_REALITY.description": "Карты, созданные в этом бою, [gold]улучшаются[/gold].",
   "WATCHER-WREATH_OF_FLAME.title": "Венец пламени",

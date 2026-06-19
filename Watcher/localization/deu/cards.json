@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "Wähle eine Karte im Nachziehstapel. Spiele sie zweimal und erschöpfe sie.",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "Wähle eine Karte, die zweimal gespielt und erschöpft wird.",
   "WATCHER-SPIRIT_SHIELD.title": "Geistesschild",
-  "WATCHER-SPIRIT_SHIELD.description": "Erhalte {Block:diff()} [gold]Block[/gold] pro Handkarte.",
+  "WATCHER-SPIRIT_SHIELD.description": "Erhalte {CalculationExtra:diff()} [gold]Block[/gold] pro Handkarte.",
   "WATCHER-MASTER_REALITY.title": "Realität meistern",
   "WATCHER-MASTER_REALITY.description": "Jede Karte, die du im Kampf erhältst, ist verbessert.",
   "WATCHER-WREATH_OF_FLAME.title": "Flammenkranz",

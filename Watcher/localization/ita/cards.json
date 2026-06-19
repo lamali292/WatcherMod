@@ -152,7 +152,7 @@
   "WATCHER-OMNISCIENCE.description": "Scegli una carta nel tuo mazzo. Gioca la carta scelta due volte ed [gold]Esauriscila[/gold].",
   "WATCHER-OMNISCIENCE.selectionScreenPrompt": "Seleziona una carta da giocare due volte ed [gold]Esaurire[/gold].",
   "WATCHER-SPIRIT_SHIELD.title": "Scudo Spirituale",
-  "WATCHER-SPIRIT_SHIELD.description": "Ottieni {Block:diff()} [gold]Blocco[/gold] per ogni carta nella tua mano.",
+  "WATCHER-SPIRIT_SHIELD.description": "Ottieni {CalculationExtra:diff()} [gold]Blocco[/gold] per ogni carta nella tua mano.",
   "WATCHER-MASTER_REALITY.title": "Dominio della Realtà",
   "WATCHER-MASTER_REALITY.description": "Ogni volta che una carta viene creata durante il combattimento, [gold]Potenziala[/gold].",
   "WATCHER-WREATH_OF_FLAME.title": "Corona di Fiamme",
