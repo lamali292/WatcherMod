@@ -129,8 +129,16 @@ public class StanceVfxController(StanceVfxConfig cfg)
 
     private void PlayEnterSfx()
     {
-        if (cfg.EnterSfxPath != null)
-            SfxCmd.Play(cfg.EnterSfxPath);
+        try
+        {
+            if (cfg.EnterSfxPath != null)
+                SfxCmd.Play(cfg.EnterSfxPath);
+        }
+        catch (Exception e)
+        {
+            WatcherMainFile.Logger.Warn(e.ToString());
+        }
+        
     }
 
     private void PlayScreenFlash()
