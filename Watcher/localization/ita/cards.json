@@ -4,7 +4,7 @@
   "WATCHER-STRIKE_WATCHER.title": "Colpo",
   "WATCHER-STRIKE_WATCHER.description": "Infliggi {Damage:diff()} danni.",
   "WATCHER-VIGILANCE.title": "Vigilanza",
-  "WATCHER-VIGILANCE.description": "Ottieni {Block:diff()} [gold]Blocco[/gold].\nEntri in [gold]Serenità[/gold].",
+  "WATCHER-VIGILANCE.description": "Ottieni {Block:diff()} [gold]Blocco[/gold].\nEntri in [gold]Calma[/gold].",
   "WATCHER-ERUPTION.title": "Eruzione",
   "WATCHER-ERUPTION.description": "Infliggi {Damage:diff()} danni.\nEntri in [gold]Furia[/gold].",
   "WATCHER-BOWLING_BASH.title": "Sfondamento",
