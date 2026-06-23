@@ -22,14 +22,8 @@ public sealed class Wallop : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
-    }
-
-    public override async Task AfterAttack(PlayerChoiceContext ctx, AttackCommand command)
-    {
-        if (command.ModelSource != this || command.Attacker != Owner.Creature) return;
+        var command = await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
         var sum = command.Results.SelectMany(e => e).Sum(damageResult => damageResult.UnblockedDamage);
-        if (sum == 0) return;
         await CreatureCmd.GainBlock(
             Owner.Creature,
             sum,

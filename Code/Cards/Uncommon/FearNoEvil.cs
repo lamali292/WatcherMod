@@ -23,7 +23,7 @@ public sealed class FearNoEvil : WatcherCardModel
     {
         // Check if the enemy intends to attack
         var hasAttackIntent = cardPlay.Target?.Monster?.NextMove.Intents
-            .Any(intent => intent.IntentType == IntentType.Attack) ?? false;
+            .Any(intent => intent.IntentType is IntentType.Attack or IntentType.DeathBlow) ?? false;
         await CommonActions.CardAttack(this, cardPlay).Execute(ctx);
         if (hasAttackIntent) await StanceCmd.EnterCalm(ctx, Owner, cardPlay.Card);
     }
