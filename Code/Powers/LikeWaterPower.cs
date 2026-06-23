@@ -24,7 +24,7 @@ public class LikeWaterPower : WatcherPowerModel
     ];
 
 
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task BeforeSideTurnEndEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (Owner.Player?.Creature.Side != side) return;
         var isInCalm = Owner.Player.IsInWatcherStance<CalmStance>();
