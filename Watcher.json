@@ -3,14 +3,14 @@
   "name": "Watcher",
   "author": "lamali",
   "description": "The Watcher - ports the original character to Sts2\n\nCredits:\nchaendizzle - Calm, Divinity and Wrath SFX / VFX\nlammiesdotyum - Shared Wisdom and Fleeting Clarity Card Art\nSnumodder - Korean localization\nNoFires and ImLingCheng - Chinese localization\nContinuous and Nitablade - Russian localization\niwasreturnsolomon-svg - Japanese localization\nValnar38 - Italian localization\nCany0udance - for helping me port the animations\nPet-Slime - Energy counter Vfx",
-  "version": "1.4.20",
+  "version": "1.4.21",
   "has_pck": true,
   "has_dll": true,
   "min_game_version": "0.107.1",
   "dependencies": [
     {
       "id": "BaseLib",
-      "min_version": "3.3.0"
+      "min_version": "3.3.2"
     }
   ],
   "affects_gameplay": true
