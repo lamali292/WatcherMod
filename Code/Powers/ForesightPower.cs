@@ -15,12 +15,12 @@ public class ForesightPower : WatcherPowerModel
     public override PowerStackType StackType => PowerStackType.Counter;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(WatcherKeywords.Scry)];
-
-    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext,
+    
+    public override async Task BeforeHandDrawLate(Player player, PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
         if (player != Owner.Player)
             return;
-        await ScryCmd.Execute(choiceContext, player, Amount);
+        await ScryCmd.Execute(new BlockingPlayerChoiceContext(), player, Amount);
     }
 }

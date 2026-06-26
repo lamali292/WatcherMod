@@ -1,4 +1,5 @@
 ﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -19,10 +20,10 @@ public class CalmStance : WatcherStanceModel
         ScreenFlashColor: new Color(0.4f, 0.7f, 1f)
     );
 
-    public override Task OnExitStance(PlayerChoiceContext ctx, Player player, CardModel? source)
+    public override async Task OnExitStance(PlayerChoiceContext ctx, Player player, CardModel? source)
     {
         var amount = WatcherHook.ModifyCalmEnergyGain(player.Creature.CombatState!, player, 2);
-        player.PlayerCombatState!.GainEnergy(amount);
-        return base.OnExitStance(ctx, player, source);
+        await PlayerCmd.GainEnergy(amount, player);
+        await base.OnExitStance(ctx, player, source);
     }
 }
