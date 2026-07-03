@@ -75,7 +75,7 @@ public abstract class WatcherStanceModel : AbstractModel
     }
 
     // Subclasses override THIS — never the game's ModifyDamageMultiplicative.
-    public virtual decimal DownfallModifyDamageMultiplicative(Creature? target, decimal amount,
+    public virtual decimal WatcherModifyDamageMultiplicative(Creature? target, decimal amount,
         ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay) => 1;
 }
 
@@ -98,7 +98,7 @@ internal static class StanceModifyDamageMultiplicativePatch
     private static void Postfix(object __instance, object[] __args, ref decimal __result)
     {
         if (__instance is not WatcherStanceModel stance) return;
-        __result *= stance.DownfallModifyDamageMultiplicative(
+        __result *= stance.WatcherModifyDamageMultiplicative(
             (Creature?)__args[0], (decimal)__args[1], (ValueProp)__args[2],
             (Creature?)__args[3], (CardModel?)__args[4],
             __args.Length > 5 ? (CardPlay?)__args[5] : null);

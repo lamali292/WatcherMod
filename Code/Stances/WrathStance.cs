@@ -22,7 +22,7 @@ public sealed class WrathStance : WatcherStanceModel
     );
 
     
-    public override decimal DownfallModifyDamageMultiplicative(
+    public override decimal WatcherModifyDamageMultiplicative(
         Creature? target,
         decimal amount,
         ValueProp props,
