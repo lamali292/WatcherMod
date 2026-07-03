@@ -1,12 +1,16 @@
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Character;
+using Watcher.Code.Events;
 using Watcher.Code.Extensions;
 using Watcher.Code.Vfx;
 
@@ -76,4 +80,28 @@ public abstract class WatcherStanceModel : AbstractModel
             await _vfx.OnExit(owner.Creature);
         _vfx = null;
     }
+    
+    
+#if V107
+    public override decimal ModifyDamageMultiplicative(
+        Creature? target,
+        decimal amount,
+        ValueProp props,
+        Creature? dealer,
+        CardModel? cardSource)
+    {
+        return ModifyDamageMultiplicative(target, amount, props, dealer, cardSource, null);
+    }
+    
+    public override decimal ModifyDamageMultiplicative(
+        Creature? target,
+        decimal amount,
+        ValueProp props,
+        Creature? dealer,
+        CardModel? cardSource,
+        CardPlay? cardPlay)
+    {
+        return 1;
+    }
+#endif
 }

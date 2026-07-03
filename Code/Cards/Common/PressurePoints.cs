@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
+using Watcher.Code.Compatibility;
 using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Common;
@@ -26,17 +27,17 @@ public sealed class PressurePoints : WatcherCardModel
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         await CommonActions.Apply<MarkPower>(ctx, this, cardPlay);
-        var enemies = CombatState!.Enemies.ToList();
+        var enemies = CombatState?.HittableEnemies ?? [];
         foreach (var enemy in enemies)
         {
             var damage = Calc(enemy);
             if (damage <= 0) continue;
-            await CreatureCmd.Damage(
+            await CompatibilityCreatureCmd.Damage(
                 ctx,
                 enemy,
                 damage,
                 ValueProp.Move | ValueProp.Unpowered | ValueProp.Unblockable,
-                this);
+                this, cardPlay);
         }
     }
 }

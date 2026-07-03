@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
@@ -20,12 +21,14 @@ public sealed class WrathStance : WatcherStanceModel
         ScreenShakeStrength: ShakeStrength.Medium
     );
 
+    
     public override decimal ModifyDamageMultiplicative(
         Creature? target,
         decimal amount,
         ValueProp props,
         Creature? dealer,
-        CardModel? cardSource)
+        CardModel? cardSource,
+        CardPlay? cardPlay)
     {
         if (props.HasFlag(ValueProp.Unpowered) || Owner.Creature.CombatState == null) return 1m;
         var varA = WatcherHook.ModifyWrathDamage(Owner.Creature.CombatState, Owner, 0);

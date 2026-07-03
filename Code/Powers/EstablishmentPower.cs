@@ -34,13 +34,14 @@ public sealed class EstablishmentPower : WatcherPowerModel
             
         return Task.CompletedTask;
     }
-
+/*
     public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        /*
+
         if (side != Owner.Side || Owner.Player == null) return;
         if (Owner.GetPower<RetainHandPower>() == null) return;
         foreach (var card in PileType.Hand.GetPile(Owner.Player).Cards) card.EnergyCost.AddThisCombat(-Amount);
-        await Task.CompletedTask;*/
+        await Task.CompletedTask;
     }
+    */
 }

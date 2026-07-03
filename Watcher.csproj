@@ -16,8 +16,12 @@
         <Version>1.4.22</Version>
     </PropertyGroup>
 
+    <!--PropertyGroup>
+        <DefineConstants>$(DefineConstants);V107</DefineConstants>
+    </PropertyGroup-->
+    
     <PropertyGroup>
-        <BaseLibVersion>3.3.2</BaseLibVersion>
+        <BaseLibVersion>3.3.3</BaseLibVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
         <Optimize>false</Optimize>
@@ -123,6 +127,7 @@
         <None Include=".gitignore"/>
         <None Include="Watcher.json"/>
         <None Include="project.godot"/>
+        <Content Include="Code\Compatibility\CompatibilityCreatureCmd.cs.uid" />
         <Content Include="local.props"/>
         <Content Include="local.props.example"/>
         <None Include="Watcher/**"/>

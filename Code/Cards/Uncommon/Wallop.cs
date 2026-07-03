@@ -28,7 +28,7 @@ public sealed class Wallop : WatcherCardModel
             Owner.Creature,
             sum,
             ValueProp.Move,
-            null
+            cardPlay
         );
     }
 }
