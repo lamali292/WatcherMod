@@ -31,7 +31,7 @@ public class DivinityStance : WatcherStanceModel
         return base.OnEnterStance(ctx, player, source);
     }
     
-    public override decimal ModifyDamageMultiplicative(
+    public override decimal DownfallModifyDamageMultiplicative(
         Creature? target,
         decimal amount,
         ValueProp props,

@@ -6,11 +6,11 @@
   "version": "1.4.23",
   "has_pck": true,
   "has_dll": true,
-  "min_game_version": "0.108.0",
+  "min_game_version": "0.107.1",
   "dependencies": [
     {
       "id": "BaseLib",
-      "min_version": "3.3.3"
+      "min_version": "3.3.4"
     }
   ],
   "affects_gameplay": true

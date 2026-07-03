@@ -16,12 +16,12 @@
         <Version>1.4.23</Version>
     </PropertyGroup>
 
-    <!--PropertyGroup>
+    <PropertyGroup>
         <DefineConstants>$(DefineConstants);V107</DefineConstants>
-    </PropertyGroup-->
+    </PropertyGroup>
     
     <PropertyGroup>
-        <BaseLibVersion>3.3.3</BaseLibVersion>
+        <BaseLibVersion>3.3.4</BaseLibVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
         <Optimize>false</Optimize>
@@ -149,8 +149,11 @@
 
         <Message Text="Copying BaseLib to mods folder." Importance="high"/>
         <ItemGroup>
-            <BaseLibFiles Include="$(NuGetPackageRoot)alchyr.sts2.baselib/**/lib/**/BaseLib.dll;$(NuGetPackageRoot)alchyr.sts2.baselib/**/Content/BaseLib.pck;$(NuGetPackageRoot)alchyr.sts2.baselib/**/Content/BaseLib.json;"/>
+            <BaseLibFiles Include="$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/lib/**/BaseLib.dll;
+                           $(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/**/Content/BaseLib.pck;
+                           $(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/**/Content/BaseLib.json"/>
         </ItemGroup>
+        <Message Text="BaseLib files found: @(BaseLibFiles)" Importance="high"/>
         <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="$(ModsPath)BaseLib/"/>
     </Target>
 

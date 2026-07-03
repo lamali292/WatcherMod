@@ -1,5 +1,7 @@
+using System.Reflection;
 using BaseLib.Extensions;
 using Godot;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -18,13 +20,6 @@ namespace Watcher.Code.Stances;
 
 public abstract class WatcherStanceModel : AbstractModel
 {
-    //public override PowerType Type => PowerType.Buff;
-    //public override PowerStackType StackType => PowerStackType.None;
-    //protected override bool IsVisibleInternal => false;
-
-    //public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    //public override string CustomBigIconPath => CustomPackedIconPath;
-
     private Player? _player;
 
     private StanceVfxController? _vfx;
@@ -48,7 +43,6 @@ public abstract class WatcherStanceModel : AbstractModel
         }
     }
 
-
     protected abstract StanceVfxConfig VfxConfig { get; }
 
     public IEnumerable<string> AssetPaths => VfxConfig.AssetPaths;
@@ -59,7 +53,6 @@ public abstract class WatcherStanceModel : AbstractModel
         mutable._player = player;
         return mutable;
     }
-
 
     private void AddDumbVariablesToDescription(LocString description)
     {
@@ -80,28 +73,34 @@ public abstract class WatcherStanceModel : AbstractModel
             await _vfx.OnExit(owner.Creature);
         _vfx = null;
     }
-    
-    
-#if V107
-    public override decimal ModifyDamageMultiplicative(
-        Creature? target,
-        decimal amount,
-        ValueProp props,
-        Creature? dealer,
-        CardModel? cardSource)
+
+    // Subclasses override THIS — never the game's ModifyDamageMultiplicative.
+    public virtual decimal DownfallModifyDamageMultiplicative(Creature? target, decimal amount,
+        ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay) => 1;
+}
+
+[HarmonyPatch]
+internal static class StanceModifyDamageMultiplicativePatch
+{
+    private static MethodBase TargetMethod()
     {
-        return ModifyDamageMultiplicative(target, amount, props, dealer, cardSource, null);
+        const BindingFlags f = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+        Type[] oldSig = [typeof(Creature), typeof(decimal), typeof(ValueProp),
+                         typeof(Creature), typeof(CardModel)];
+
+        return typeof(AbstractModel).GetMethod("ModifyDamageMultiplicative", f, null,
+                   [.. oldSig, typeof(CardPlay)], null)
+               ?? typeof(AbstractModel).GetMethod("ModifyDamageMultiplicative", f, null, oldSig, null)
+               ?? throw new MissingMethodException("Stance ModifyDamageMultiplicative not found in any known signature.");
     }
-    
-    public override decimal ModifyDamageMultiplicative(
-        Creature? target,
-        decimal amount,
-        ValueProp props,
-        Creature? dealer,
-        CardModel? cardSource,
-        CardPlay? cardPlay)
+
+    [HarmonyPostfix]
+    private static void Postfix(object __instance, object[] __args, ref decimal __result)
     {
-        return 1;
+        if (__instance is not WatcherStanceModel stance) return;
+        __result *= stance.DownfallModifyDamageMultiplicative(
+            (Creature?)__args[0], (decimal)__args[1], (ValueProp)__args[2],
+            (Creature?)__args[3], (CardModel?)__args[4],
+            __args.Length > 5 ? (CardPlay?)__args[5] : null);
     }
-#endif
 }
