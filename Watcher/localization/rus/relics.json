@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "Дает {energyPrefix:energyIcons(1)} при выходе из [gold]Спокойствия[/gold].",
   "WATCHER-VIOLET_LOTUS.flavor": "В старых писаниях рассказывается, как \"Истоки маны\" были усеяны этими цветами.",
   "WATCHER-VIOLET_LOTUS.title": "Пурпурный лотос",
-  "WATCHER-MELANGE.description": "Вы [gold]Предсказываете[/gold] [blue]3[/blue] карты, когда перемешивается [gold]стопка добора[/gold].",
+  "WATCHER-MELANGE.description": "Вы [gold]Предсказываете[/gold] [blue]{Scry:diff()}[/blue] карты, когда перемешивается [gold]стопка добора[/gold].",
   "WATCHER-MELANGE.flavor": "Загадочный песок с неясным происхождением. Пахнет корицей.",
   "WATCHER-MELANGE.title": "Меланж",
   "SEA_GLASS.WATCHER-WATCHER.title": "Стекло Предвидения"

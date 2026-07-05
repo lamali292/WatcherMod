@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "Whenever you exit [gold]Calm[/gold], gain an additional [gold]Energy[/gold]",
   "WATCHER-VIOLET_LOTUS.flavor": "The old texts describe that the surface of \"mana pools\" were littered with these flowers.",
   "WATCHER-VIOLET_LOTUS.title": "Violet Lotus",
-  "WATCHER-MELANGE.description": "Whenever you shuffle your draw pile, [gold]Scry[/gold] 3.",
+  "WATCHER-MELANGE.description": "Whenever you shuffle your [gold]Draw Pile[/gold], [gold]Scry[/gold] {Scry:diff()}.",
   "WATCHER-MELANGE.flavor": "Mysterious sands from an unknown origin. Smells of cinnamon.",
   "WATCHER-MELANGE.title": "Melange",
   "SEA_GLASS.WATCHER-WATCHER.title": "Oracle Glass"

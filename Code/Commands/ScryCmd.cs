@@ -1,26 +1,47 @@
 ﻿using MegaCrit.Sts2.Core.CardSelection;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Hooks;
+using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Events;
-using Watcher.Code.Relics;
+using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Commands;
 
+public readonly record struct ScryResult
+{
+    private readonly IReadOnlyList<CardModel>? _discarded;
+
+    public ScryResult(IReadOnlyList<CardModel> discarded) => _discarded = discarded;
+
+    public IReadOnlyList<CardModel> Discarded => _discarded ?? [];
+
+    public static ScryResult Empty => default;
+}
+
 public static class ScryCmd
 {
-    public static async Task Execute(PlayerChoiceContext choiceContext, Player player, int amount)
+    public static Task<ScryResult> Execute(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (player.GetRelic<GoldenEye>() != null) amount += 2;
+        return Execute(choiceContext, card.Owner, card.DynamicVars.Scry().IntValue);
+    }
+    
+    public static async Task<ScryResult> Execute(PlayerChoiceContext choiceContext, Player player, int amount)
+    {
+        var modifiedAmount = WatcherHook.ModifyScryAmount(player, amount, out var modifiers);
+        await WatcherHook.AfterModifyingScryAmount(choiceContext, player, modifiers, amount, modifiedAmount);
 
-        if (amount <= 0) return;
-
+        if (modifiedAmount <= 0) return default;
+        
         var drawPile = PileType.Draw.GetPile(player);
-        var cardsToScry = drawPile.Cards.Take(amount).ToList();
-
-
-        if (cardsToScry.Count == 0) return;
+        var discardPile = PileType.Discard.GetPile(player);
+        var combatState = player.Creature.CombatState;
+        if (combatState == null) return default;
+        var cardsToScry = drawPile.Cards.Take(modifiedAmount).ToList();
+        if (cardsToScry.Count == 0) return default;
         var prefs = new CardSelectorPrefs(
             CardSelectorPrefs.DiscardSelectionPrompt,
             0,
@@ -33,7 +54,16 @@ public static class ScryCmd
             player,
             prefs
         )).ToList();
-        foreach (var card in cardsToDiscard) await CardCmd.Discard(choiceContext, card);
-        await WatcherHook.OnScryed(choiceContext, player, amount, cardsToDiscard.Count);
+       
+        foreach (var card in cardsToDiscard)
+        {
+            await CardPileCmd.Add(card, discardPile);
+            CombatManager.Instance.History.CardDiscarded(combatState, card);
+            await Hook.AfterCardDiscarded(combatState, choiceContext, card);
+        }
+        discardPile.InvokeContentsChanged();
+        
+        await WatcherHook.AfterScryed(choiceContext, player, modifiedAmount, cardsToDiscard.Count, cardsToDiscard);
+        return new ScryResult(cardsToDiscard);
     }
 }

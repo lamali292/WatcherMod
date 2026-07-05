@@ -15,8 +15,7 @@ public sealed class CutThroughFate : WatcherCardModel
     public CutThroughFate() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
         WithDamage(7, 2);
-        WithCards(2, 1);
-        WithTip(WatcherKeywords.Scry);
+        WithScry(2, 1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -24,7 +23,7 @@ public sealed class CutThroughFate : WatcherCardModel
         await CommonActions.CardAttack(this, cardPlay)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        await ScryCmd.Execute(choiceContext, Owner, DynamicVars.Cards.IntValue);
+        await ScryCmd.Execute(choiceContext, this);
         await CardPileCmd.Draw(choiceContext, 1m, Owner);
     }
 }

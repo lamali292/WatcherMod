@@ -10,9 +10,9 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Multiplayer;
 
 [Pool(typeof(WatcherCardPool))]
-public class MultiplayerCardUncommon : WatcherCardModel
+public class FleetingClarity : WatcherCardModel
 {
-    public MultiplayerCardUncommon() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
+    public FleetingClarity() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
     {
         WithPower<MultiplayerCardUncommonPower>(1, false);
         WithStanceTip<CalmStance>();

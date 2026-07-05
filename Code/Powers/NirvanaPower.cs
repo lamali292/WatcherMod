@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Abstract;
 using Watcher.Code.Events;
@@ -10,7 +11,7 @@ using Watcher.Code.Keywords;
 
 namespace Watcher.Code.Powers;
 
-public sealed class NirvanaPower : WatcherPowerModel, IOnScryed
+public sealed class NirvanaPower : WatcherPowerModel, IAfterScryed
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -22,7 +23,7 @@ public sealed class NirvanaPower : WatcherPowerModel, IOnScryed
         HoverTipFactory.FromKeyword(WatcherKeywords.Scry)
     ];
 
-    public async Task OnScryed(PlayerChoiceContext ctx, Player player, int amount, int discardedAmount)
+    public async Task AfterScryed(PlayerChoiceContext ctx, Player player, int scryAmount, int discardedAmount, IEnumerable<CardModel> discarded)
     {
         if (player != Owner.Player)
             return;
@@ -33,5 +34,6 @@ public sealed class NirvanaPower : WatcherPowerModel, IOnScryed
             ValueProp.Unpowered,
             null
         );
+        Flash();
     }
 }

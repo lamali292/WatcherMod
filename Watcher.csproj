@@ -15,13 +15,9 @@
         <FileVersion>1.5.1.0</FileVersion>
         <Version>1.5.1</Version>
     </PropertyGroup>
-
-    <PropertyGroup>
-        <DefineConstants>$(DefineConstants);V107</DefineConstants>
-    </PropertyGroup>
     
     <PropertyGroup>
-        <BaseLibVersion>3.3.4</BaseLibVersion>
+        <BaseLibVersion>3.3.5</BaseLibVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
         <Optimize>false</Optimize>
@@ -107,7 +103,7 @@
             <Private>false</Private>
         </Reference-->
         <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="All"/>
-        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.0.9"/>
+        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.1.9"/>
         <AdditionalFiles Include="Watcher/localization/**/*.json"/>
     </ItemGroup>
     <ItemGroup> <!--Allows access to originally private/protected members but may (unlikely to) cause errors.-->

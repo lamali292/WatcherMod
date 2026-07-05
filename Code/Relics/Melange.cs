@@ -3,9 +3,12 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
+using Watcher.Code.DynamicVars;
+using Watcher.Code.Extensions;
 using Watcher.Code.Keywords;
 
 namespace Watcher.Code.Relics;
@@ -15,6 +18,8 @@ public sealed class Melange : WatcherRelicModel
 {
     public override RelicRarity Rarity => RelicRarity.Shop;
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new ScryVar(3)];
+
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -23,6 +28,6 @@ public sealed class Melange : WatcherRelicModel
 
     public override async Task AfterShuffle(PlayerChoiceContext choiceContext, Player shuffler)
     {
-        await ScryCmd.Execute(choiceContext, shuffler, 3);
+        await ScryCmd.Execute(choiceContext, shuffler, DynamicVars.Scry().IntValue);
     }
 }

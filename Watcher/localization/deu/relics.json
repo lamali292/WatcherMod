@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "Immer wenn du [gold]Ruhe[/gold] verlässt, erhalte eine zusätzliche [gold]Energie[/gold].",
   "WATCHER-VIOLET_LOTUS.flavor": "Die alten Schriften beschreiben, dass die Oberfläche von \"Manapools\" mit diesen Blumen übersät waren.",
   "WATCHER-VIOLET_LOTUS.title": "Purpurlotus",
-  "WATCHER-MELANGE.description": "Immer wenn du den Nachziehstapel mischst, [gold]spähe[/gold] 3.",
+  "WATCHER-MELANGE.description": "Immer wenn du den Nachziehstapel mischst, [gold]spähe[/gold] {Scry:diff()}.",
   "WATCHER-MELANGE.flavor": "Mysteriöser Sand von unbekanntem Ursprung. Riecht nach Zimt.",
   "WATCHER-MELANGE.title": "Melange",
   "SEA_GLASS.WATCHER-WATCHER.title": "Seherinnenglas"

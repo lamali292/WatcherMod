@@ -13,22 +13,23 @@ publish/
 Properties/
 packages/
 *.user
+*.kra
 __pycache__
 loc_editor_settings.json
 
 local.props
 
-images
-fonts
-localization
-materials
-models
-scenes
-animations
-banks
-debug_audio
-shaders
-themes
-addons
+/images
+/fonts
+/localization
+/materials
+/models
+/scenes
+/animations
+/banks
+/debug_audio
+/shaders
+/themes
+/addons
 /.run
 /dist/

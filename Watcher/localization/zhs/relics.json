@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "每次你离开[gold]平静[/gold]时，额外获得[blue]1[/blue][gold]能量[/gold] 。",
   "WATCHER-VIOLET_LOTUS.flavor": "远古的经书上记载着，“法力池”的水面上总是有许多这些花朵。",
   "WATCHER-VIOLET_LOTUS.title": "紫色莲花",
-  "WATCHER-MELANGE.description": "你每次将抽牌堆洗牌时，[gold]预见[/gold][blue]3[/blue]。",
+  "WATCHER-MELANGE.description": "你每次将抽牌堆洗牌时，[gold]预见[/gold][blue]{Scry:diff()}[/blue]。",
   "WATCHER-MELANGE.flavor": "来源不明的神秘沙子，气味有点像肉桂。",
   "WATCHER-MELANGE.title": "美琅脂",
   "SEA_GLASS.WATCHER-WATCHER.title": "神谕之镜"

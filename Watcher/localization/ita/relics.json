@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "Ogni volta che abbandoni [gold]Serenità[/gold], guadagna un'[gold]Energia[/gold] aggiuntiva.",
   "WATCHER-VIOLET_LOTUS.flavor": "I testi antichi descrivono che la superficie dei \"laghi di mana\" era cosparsa di questi fiori.",
   "WATCHER-VIOLET_LOTUS.title": "Loto Viola",
-  "WATCHER-MELANGE.description": "Ogni volta che rimescoli il mazzo di pesca, [gold]Scruta[/gold] 3.",
+  "WATCHER-MELANGE.description": "Ogni volta che rimescoli il mazzo di pesca, [gold]Scruta[/gold] {Scry:diff()}.",
   "WATCHER-MELANGE.flavor": "Sabbie misteriose di origine sconosciuta. Profumano di cannella.",
   "WATCHER-MELANGE.title": "Melange",
   "SEA_GLASS.WATCHER-WATCHER.title": "Vetro Oracolare"

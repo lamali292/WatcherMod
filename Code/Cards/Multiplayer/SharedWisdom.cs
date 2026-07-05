@@ -9,9 +9,9 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Multiplayer;
 
 [Pool(typeof(WatcherCardPool))]
-public class MultiplayerCardRare : WatcherCardModel
+public class SharedWisdom : WatcherCardModel
 {
-    public MultiplayerCardRare() : base(3, CardType.Skill, CardRarity.Rare, TargetType.AnyAlly)
+    public SharedWisdom() : base(3, CardType.Skill, CardRarity.Rare, TargetType.AnyAlly)
     {
         WithStanceTip<DivinityStance>();
         WithKeyword(CardKeyword.Ethereal, UpgradeType.Remove);

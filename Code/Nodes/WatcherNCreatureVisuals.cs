@@ -9,7 +9,7 @@ namespace Watcher.Code.Nodes;
 [GlobalClass]
 public partial class WatcherNCreatureVisuals : NCreatureVisuals
 {
-    private CreatureAnimator? _animator;
+    public CreatureAnimator? Animator;
     private AnimationPlayer? _eyeAnimPlayer;
     private MegaBone? _eyeBone;
     private Node2D? _eyeNode;
@@ -64,14 +64,14 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
     }
 
 
-    private void OnAnimationTrigger(string trigger)
+    public void OnAnimationTrigger(string trigger)
     {
         switch (trigger)
         {
             case "Idle":
             case "Hit":
-                if (_animator == null) return;
-                _animator.SetTrigger(trigger);
+                if (Animator == null) return;
+                Animator.SetTrigger(trigger);
                 break;
             case "Attack":
                 if (_playback == null) return;
@@ -86,31 +86,6 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
         }
     }
 
-    [HarmonyPatch(typeof(NCreature), nameof(NCreature.SetAnimationTrigger))]
-    private static class HexaghostAnimationPatch
-    {
-        [HarmonyPrefix]
-        private static bool MyAnimations(NCreature __instance, string trigger)
-        {
-            if (__instance.Visuals is not WatcherNCreatureVisuals hexVisuals ||
-                __instance._spineAnimator == null) return true;
-            hexVisuals._animator = __instance._spineAnimator;
-            hexVisuals.OnAnimationTrigger(trigger);
-            return false;
-        }
-    }
-
-    [HarmonyPatch(typeof(NCreature), nameof(NCreature.StartDeathAnim))]
-    private static class HexaghostDeathAnimPatch
-    {
-        [HarmonyPrefix]
-        private static bool MyDeathAnimation(NCreature __instance)
-        {
-            if (__instance.Visuals is not WatcherNCreatureVisuals hexVisuals ||
-                __instance._spineAnimator == null) return true;
-            hexVisuals._animator = __instance._spineAnimator;
-            hexVisuals.OnAnimationTrigger("Dead");
-            return false;
-        }
-    }
+    
 }
+

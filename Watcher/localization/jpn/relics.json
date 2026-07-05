@@ -1,4 +1,4 @@
-﻿{
+{
   "WATCHER-PURE_WATER.description": "戦闘開始時、[gold]奇跡[/gold]を1枚手札に加える。",
   "WATCHER-PURE_WATER.flavor": "細かい砂で濾過され、不純物を含まない。",
   "WATCHER-PURE_WATER.title": "清水",
@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "平静を解除したとき、追加で{energyPrefix:energyIcons(1)}を得る。",
   "WATCHER-VIOLET_LOTUS.flavor": "古代の文献によれば、「マナの池」の表面はこれらの花で覆われていたという。",
   "WATCHER-VIOLET_LOTUS.title": "紫の蓮",
-  "WATCHER-MELANGE.description": "山札をシャッフルするたび、[gold]占術[/gold]3。",
+  "WATCHER-MELANGE.description": "山札をシャッフルするたび、[gold]占術[/gold]{Scry:diff()}。",
   "WATCHER-MELANGE.flavor": "未知の起源を持つ謎の砂。シナモンの香りがする。",
   "WATCHER-MELANGE.title": "メランジュ",
   "SEA_GLASS.WATCHER-WATCHER.title": "神託の硝子"

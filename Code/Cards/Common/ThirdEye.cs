@@ -14,13 +14,12 @@ public sealed class ThirdEye : WatcherCardModel
     public ThirdEye() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithBlock(7, 2);
-        WithCards(3, 2);
-        WithTip(WatcherKeywords.Scry);
+        WithScry(3, 2);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.CardBlock(this, cardPlay);
-        await ScryCmd.Execute(choiceContext, Owner, DynamicVars.Cards.IntValue);
+        await ScryCmd.Execute(choiceContext, this);
     }
 }
