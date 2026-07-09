@@ -8,11 +8,12 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.ValueProps;
 using Watcher.Code.Commands;
+using Watcher.Code.Patches;
 using Watcher.Code.Vfx;
 
 namespace Watcher.Code.Stances;
 
-public class DivinityStance : WatcherStanceModel
+public class DivinityStance : WatcherStanceModel, IModifyDamageMultiplicative
 {
     public override bool ShouldReceiveCombatHooks => true;
 
@@ -31,7 +32,7 @@ public class DivinityStance : WatcherStanceModel
         return base.OnEnterStance(ctx, player, source);
     }
     
-    public override decimal WatcherModifyDamageMultiplicative(
+    public decimal ModifyDamageMultiplicativeCompability(
         Creature? target,
         decimal amount,
         ValueProp props,
