@@ -1,3 +1,7 @@
+param(
+    [string]$GameVersion  # optional: fixed game version like 0.107.1 or v0.107.1
+)
+
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
@@ -13,13 +17,24 @@ if ([string]::IsNullOrWhiteSpace($gameRoot)) { throw "Couldn't resolve Sts2Path 
 
 # StS2 version this build targets, read from the game's own release_info.json
 # (the 'version' field already includes the leading 'v', e.g. v0.107.0).
-$relPath = Join-Path $gameRoot "release_info.json"
-if (-not (Test-Path $relPath)) {
-    throw "release_info.json not found at $relPath -- check the game path, or Steam hasn't written it for this build."
+if ($GameVersion) {
+    $gameVersionBare = $GameVersion.TrimStart('v')                 # 0.107.1
+    if ($gameVersionBare -notmatch '^\d+\.\d+\.\d+$') { throw "GameVersion must be X.Y.Z, got '$GameVersion'" }
+    $gameVersion = "v$gameVersionBare"                             # v0.107.1
+} else
+{
+    $relPath = Join-Path $gameRoot "release_info.json"
+    if (-not (Test-Path $relPath))
+    {
+        throw "release_info.json not found at $relPath -- check the game path, or Steam hasn't written it for this build."
+    }
+    $gameVersion = (Get-Content $relPath -Raw | ConvertFrom-Json).version
+    if ( [string]::IsNullOrWhiteSpace($gameVersion))
+    {
+        throw "No 'version' in $relPath"
+    }
+    $gameVersionBare = $gameVersion.TrimStart('v')   # 0.107.0 for the manifest
 }
-$gameVersion = (Get-Content $relPath -Raw | ConvertFrom-Json).version
-if ([string]::IsNullOrWhiteSpace($gameVersion)) { throw "No 'version' in $relPath" }
-$gameVersionBare = $gameVersion.TrimStart('v')   # 0.107.0 for the manifest
 
 # --- read current version, compute bump ---
 $proj = Get-Content $csproj -Raw
