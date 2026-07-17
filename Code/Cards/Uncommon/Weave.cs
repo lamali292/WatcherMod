@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Hooks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -19,8 +20,14 @@ public sealed class Weave : WatcherCardModel, IAfterScryed
         WithDamage(4, 2);
         WithTip(WatcherKeywords.Scry);
     }
+    
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        if (cardPlay.Target == null) return;
+        await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
+    }
 
-    public async Task AfterScryed(PlayerChoiceContext ctx, Player player, int scryAmount, int discardedAmount, IEnumerable<CardModel> discarded)
+    public async Task AfterScryed(PlayerChoiceContext ctx, Player player, int scryAmount, int discardAmount, List<CardModel> seen, List<CardModel> discarded)
     {
         if (player != Owner)
             return;
@@ -28,11 +35,5 @@ public sealed class Weave : WatcherCardModel, IAfterScryed
         // Check if this card is in discard pile
         var discardPile = PileType.Discard.GetPile(player);
         if (discardPile.Cards.Contains(this)) await CardPileCmd.Add(this, PileType.Hand);
-    }
-
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (cardPlay.Target == null) return;
-        await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
     }
 }

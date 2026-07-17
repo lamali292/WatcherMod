@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Cards.Variables;
+using BaseLib.Commands;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -7,7 +9,6 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
-using Watcher.Code.DynamicVars;
 using Watcher.Code.Extensions;
 using Watcher.Code.Keywords;
 

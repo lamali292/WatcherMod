@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using BaseLib.Hooks;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -22,8 +23,8 @@ public sealed class NirvanaPower : WatcherPowerModel, IAfterScryed
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromKeyword(WatcherKeywords.Scry)
     ];
-
-    public async Task AfterScryed(PlayerChoiceContext ctx, Player player, int scryAmount, int discardedAmount, IEnumerable<CardModel> discarded)
+    
+    public async Task AfterScryed(PlayerChoiceContext ctx, Player player, int scryAmount, int discardAmount, List<CardModel> seen, List<CardModel> discarded)
     {
         if (player != Owner.Player)
             return;

@@ -4,6 +4,7 @@ using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using Watcher.Code.Compatibility;
 using Watcher.Code.Events;
 using Watcher.Code.Patches;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
@@ -23,31 +24,21 @@ public partial class WatcherMainFile : Node
         WatcherSubscriber.Subscribe();
         var assembly = Assembly.GetExecutingAssembly();
         ScriptManagerBridge.LookupScriptsInAssembly(assembly);
-        Harmony harmony = new(ModId);
-        
-        ApplyPatch(harmony, typeof(StanceModifyDamageMultiplicativePatch));
-        ApplyPatch(harmony, typeof(PaelsEyeSourceTrackingPatches));
-        ApplyPatch(harmony, typeof(ColorfulPhilosophersPatch));
-        ApplyPatch(harmony, typeof(WatcherAnimationPatch));
-        ApplyPatch(harmony, typeof(WatcherDeathAnimPatch));
-        ApplyPatch(harmony, typeof(NEnergyCounterReadyPatch));
-        ApplyPatch(harmony, typeof(ModelDbInitIdsPatch));
-    }
-    
-    private static void ApplyPatch(Harmony harmony, Type patchClass)
-    {
-        try
-        {
-            var patched = harmony.CreateClassProcessor(patchClass).Patch();
-            if (patched == null || patched.Count == 0)
-                Logger.Error($"{patchClass.Name}: applied but patched ZERO methods (TargetMethod returned null?).");
-            else
-                Logger.Info($"{patchClass.Name}: OK ({patched.Count} method(s)).");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"{patchClass.Name}: FAILED to apply.\n{ex}");
-        }
+
+        var patcher = ModPatcher.Create(ModId, Logger);
+        patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
+            .Add(typeof(PaelsEyeSourceTrackingPatches))
+            .Add(typeof(ColorfulPhilosophersPatch))
+            .Add(typeof(WatcherAnimationPatch))
+            .Add(typeof(WatcherDeathAnimPatch))
+            .Add(typeof(NEnergyCounterReadyPatch))
+            .Add(typeof(ModelDbInitIdsPatch));
+
+        patcher.Add(AccessTools.TypeByName("MegaCrit.Sts2.Core.Entities.Cards.CardLocation") != null
+            ? typeof(ModifyCardPlayResultLocationNewPatch)
+            : typeof(ModifyCardPlayResultLocationOldPatch));
+
+        patcher.PatchAll();
     }
 }
 

@@ -27,7 +27,7 @@ public sealed class EstablishmentPower : WatcherPowerModel
         IReadOnlyCollection<CardModel> retainedCards)
     {
         if (player.Creature != Owner) return Task.CompletedTask;
-        foreach (var card in retainedCards)
+        foreach (var card in retainedCards.Where(e => e.ShouldRetainThisTurn))
         {
             card.EnergyCost.AddThisCombat(-Amount);
         }

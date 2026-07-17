@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using BaseLib.Cards.Variables;
 using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -6,7 +7,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Core;
-using Watcher.Code.DynamicVars;
 using Watcher.Code.Extensions;
 using Watcher.Code.Keywords;
 using Watcher.Code.Stances;

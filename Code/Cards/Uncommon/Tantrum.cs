@@ -8,12 +8,13 @@ using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
+using Watcher.Code.Compatibility;
 using Watcher.Code.Stances;
 
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Tantrum : WatcherCardModel
+public sealed class Tantrum : WatcherCardModel, IModifyCardPlayResultLocation
 {
     public Tantrum() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
@@ -31,9 +32,10 @@ public sealed class Tantrum : WatcherCardModel
         //await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
     }
 
-    public override (PileType, CardPilePosition) ModifyCardPlayResultPileTypeAndPosition(CardModel card, bool isAutoPlay,
-        ResourceInfo resources, PileType pileType, CardPilePosition position)
+    public CardLocationCompatiblity ModifyCardPlayResultLocationCompability(CardModel card, bool isAutoPlay,
+        ResourceInfo resources, CardLocationCompatiblity cardLocation)
     {
-        return card == this && pileType == PileType.Discard ? (PileType.Draw, CardPilePosition.Random) : (pileType, position);
+        return card == this && cardLocation.PileType == PileType.Discard ? new CardLocationCompatiblity(card.Owner, PileType.Draw, CardPilePosition.Random) : cardLocation;
     }
+    
 }

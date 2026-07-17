@@ -17,6 +17,9 @@ public sealed class Foresight : WatcherCardModel
         WithTip(WatcherKeywords.Scry);
     }
 
+    // TODO : Make it work for multiplayer seamlessly
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
+
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<ForesightPower>(ctx, this);

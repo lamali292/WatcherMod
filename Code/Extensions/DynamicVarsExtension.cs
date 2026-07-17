@@ -1,5 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using Watcher.Code.DynamicVars;
+﻿using BaseLib.Cards.Variables;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Watcher.Code.Extensions;
 

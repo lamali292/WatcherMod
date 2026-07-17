@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
+using Watcher.Code.Compatibility;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -34,7 +35,7 @@ public sealed class Omniscience : WatcherCardModel
             prefs
         )).FirstOrDefault();
         if (card == null) return;
-        var dupe = card.CreateDupe();
+        var dupe = card.CreateDupeCompat();
         await CardCmd.AutoPlay(choiceContext, card, null);
         await CardCmd.AutoPlay(choiceContext, dupe, null);
         if (card.Type != CardType.Power) await CardCmd.Exhaust(choiceContext, card);
