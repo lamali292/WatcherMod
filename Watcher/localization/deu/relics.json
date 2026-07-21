@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "Beginne jeden Kampf in [gold]Ruhe[/gold].",
   "WATCHER-TEARDROP_LOCKET.flavor": "Ist der Besitzer blind, bleibt der Inhalt ungesehen.",
   "WATCHER-TEARDROP_LOCKET.title": "Tränenmedaillon",
-  "WATCHER-GOLDEN_EYE.description": "Immer wenn du [gold]spähst[/gold], spähe 2 Karten mehr.",
+  "WATCHER-GOLDEN_EYE.description": "Immer wenn du [gold]spähst[/gold], spähe [blue]{Scry:diff()}[/blue] Karten mehr.",
   "WATCHER-GOLDEN_EYE.flavor": "Lies die Gedanken der Umstehenden und sieh voraus, was sie gleich tun.",
   "WATCHER-GOLDEN_EYE.title": "Goldenes Auge",
   "WATCHER-HOLY_WATER.description": "Ersetzt [gold]Reines Wasser[/gold]. Nimm zu Beginn jedes Kampfes 3 [gold]Wunder[/gold] auf die [gold]Hand[/gold].",

@@ -17,8 +17,11 @@
     </PropertyGroup>
     
     <PropertyGroup>
-        <BaseLibVersion>3.3.6</BaseLibVersion>
+        <BaseLibVersion>3.3.8</BaseLibVersion>
+        <UseCustomBaseLib>false</UseCustomBaseLib>
+        <CustomBaseLibRepo>C:\Users\lamal\Desktop\Programmieren\sts2mods\BaseLib-StS2</CustomBaseLibRepo>
     </PropertyGroup>
+    
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
         <Optimize>false</Optimize>
         <DebugType>portable</DebugType>
@@ -83,6 +86,7 @@
         <NoWarn>$(NoWarn);MSB3270</NoWarn>
     </PropertyGroup>
 
+    
     <ItemGroup>
         <Reference Include="0Harmony">
             <HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath>
@@ -97,11 +101,15 @@
             <Private>false</Private>
         </Reference>
 
-        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="$(BaseLibVersion)" PrivateAssets="All" />
-        <!--Reference Include="BaseLib">
-            <HintPath>C:\Users\lamal\Desktop\Programmieren\sts2mods\BaseLib-StS2\publish\BaseLib.dll</HintPath>
+        <!-- NuGet BaseLib -->
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="$(BaseLibVersion)" PrivateAssets="All"
+                          Condition="'$(UseCustomBaseLib)' != 'true'"/>
+
+        <!-- Local BaseLib build -->
+        <Reference Include="BaseLib" Condition="'$(UseCustomBaseLib)' == 'true'">
+            <HintPath>$(CustomBaseLibRepo)\publish\BaseLib.dll</HintPath>
             <Private>false</Private>
-        </Reference-->
+        </Reference>
         <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="All"/>
         <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.1.9"/>
         <AdditionalFiles Include="Watcher/localization/**/*.json"/>
@@ -144,12 +152,21 @@
               Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
 
         <Message Text="Copying BaseLib to mods folder." Importance="high"/>
-        <ItemGroup>
+        <!-- BaseLib from NuGet -->
+        <ItemGroup Condition="'$(UseCustomBaseLib)' != 'true'">
             <BaseLibFiles Include="$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/lib/**/BaseLib.dll;
-                           $(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/**/Content/BaseLib.pck;
-                           $(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/**/Content/BaseLib.json"/>
+                   $(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/**/Content/BaseLib.pck;
+                   $(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/**/Content/BaseLib.json"/>
         </ItemGroup>
-        <Message Text="BaseLib files found: @(BaseLibFiles)" Importance="high"/>
+
+        <!-- BaseLib from local build -->
+        <ItemGroup Condition="'$(UseCustomBaseLib)' == 'true'">
+            <BaseLibFiles Include="$(CustomBaseLibRepo)\publish\BaseLib.dll;
+                   $(CustomBaseLibRepo)\build\BaseLib.pck;
+                   $(CustomBaseLibRepo)\BaseLib.json"/>
+        </ItemGroup>
+
+        <Message Text="BaseLib source: $([MSBuild]::ValueOrDefault('$(UseCustomBaseLib)', 'false')) (custom) — files: @(BaseLibFiles)" Importance="high"/>
         <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="$(ModsPath)BaseLib/"/>
     </Target>
 

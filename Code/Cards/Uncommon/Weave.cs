@@ -7,8 +7,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
-using Watcher.Code.Events;
-using Watcher.Code.Keywords;
 
 namespace Watcher.Code.Cards.Uncommon;
 
@@ -18,7 +16,7 @@ public sealed class Weave : WatcherCardModel, IAfterScryed
     public Weave() : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         WithDamage(4, 2);
-        WithTip(WatcherKeywords.Scry);
+        WithTip(BaseLibTip.Scry);
     }
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

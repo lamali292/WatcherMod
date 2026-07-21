@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
-using Watcher.Code.Keywords;
 using Watcher.Code.Powers;
 
 namespace Watcher.Code.Cards.Uncommon;
@@ -17,7 +16,7 @@ public sealed class Nirvana : WatcherCardModel
     {
         WithPower<NirvanaPower>(3, 1, false);
         WithTip(StaticHoverTip.Block);
-        WithTip(WatcherKeywords.Scry);
+        WithTip(BaseLibTip.Scry);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)

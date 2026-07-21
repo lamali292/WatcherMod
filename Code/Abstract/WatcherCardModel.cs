@@ -8,7 +8,6 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Core;
 using Watcher.Code.Extensions;
-using Watcher.Code.Keywords;
 using Watcher.Code.Stances;
 
 namespace Watcher.Code.Abstract;
@@ -34,12 +33,9 @@ public abstract class WatcherCardModel(
         return this;
     }
 
-    protected ConstructedCardModel WithScry(int baseVal, int upgrade,
-        bool showTooltip = true)
+    protected ConstructedCardModel WithScry(int baseVal, int upgrade)
     {
         WithVar(new ScryVar(baseVal).WithUpgrade(upgrade));
-        if (showTooltip)
-            WithTip(WatcherKeywords.Scry);
         return this;
     }
     

@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "Вы начинаете каждый бой в [gold]Спокойствии[/gold].",
   "WATCHER-TEARDROP_LOCKET.flavor": "Незрячий владелец, незримое содержимое.",
   "WATCHER-TEARDROP_LOCKET.title": "Кулон-слеза",
-  "WATCHER-GOLDEN_EYE.description": "Когда вы [gold]Предсказываете[/gold], вы [gold]Предсказываете[/gold] на [blue]2[/blue] карты больше.",
+  "WATCHER-GOLDEN_EYE.description": "Когда вы [gold]Предсказываете[/gold], вы [gold]Предсказываете[/gold] на [blue]{Scry:diff()}[/blue] карты больше.",
   "WATCHER-GOLDEN_EYE.flavor": "Пронзает разумы окружающих, дарует знание об их намерениях.",
   "WATCHER-GOLDEN_EYE.title": "Золотое око",
   "WATCHER-HOLY_WATER.description": "Заменяет [gold]«Чистую воду»[/gold]. Добавляет в [gold]руку[/gold] [blue]3[/blue] [gold]«Чуда»[/gold] в начале каждого боя.",

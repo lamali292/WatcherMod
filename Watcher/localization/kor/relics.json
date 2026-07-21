@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "모든 전투 시작 시 [gold]명상[/gold]합니다.",
   "WATCHER-TEARDROP_LOCKET.flavor": "소유주의 눈이 멀었기 때문에, 내용물은 볼 수 없습니다.",
   "WATCHER-TEARDROP_LOCKET.title": "눈물모양 목걸이",
-  "WATCHER-GOLDEN_EYE.description": "[gold]예지[/gold]할 때마다, 추가로 2 만큼 [gold]예지[/gold]합니다.",
+  "WATCHER-GOLDEN_EYE.description": "[gold]예지[/gold]할 때마다, 추가로 [blue]{Scry:diff()}[/blue] 만큼 [gold]예지[/gold]합니다.",
   "WATCHER-GOLDEN_EYE.flavor": "근처에 있는 이들의 움직임을 예지하면서, 그들의 마음을 들여다보세요.",
   "WATCHER-GOLDEN_EYE.title": "황금 눈",
   "WATCHER-HOLY_WATER.description": "[gold]순수한 물[/gold]과 교체됩니다. 매 전투 시작 시, [gold]기적[/gold]을 3장 손으로 가져옵니다.",
