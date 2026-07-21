@@ -32,7 +32,8 @@ public partial class WatcherMainFile : Node
             .Add(typeof(WatcherAnimationPatch))
             .Add(typeof(WatcherDeathAnimPatch))
             .Add(typeof(NEnergyCounterReadyPatch))
-            .Add(typeof(ModelDbInitIdsPatch));
+            .Add(typeof(ModelDbInitIdsPatch))
+            .Add(typeof(FakeMerchantAnimationPatch));
 
         patcher.Add(AccessTools.TypeByName("MegaCrit.Sts2.Core.Entities.Cards.CardLocation") != null
             ? typeof(ModifyCardPlayResultLocationNewPatch)

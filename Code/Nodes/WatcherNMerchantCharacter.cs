@@ -9,7 +9,7 @@ public partial class WatcherNMerchantCharacter : NMerchantCharacter
 {
     public override void _Ready()
     {
-        base._Ready();
+        //base._Ready();
 
         // Fix dark seams: atlas uses premultiplied alpha data,
         // so the spine sprite must use PremultAlpha blend mode
