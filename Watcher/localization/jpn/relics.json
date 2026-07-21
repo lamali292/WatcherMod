@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "戦闘開始時、平静のスタンスに入る。",
   "WATCHER-TEARDROP_LOCKET.flavor": "持ち主は盲目で、中身は見えない。",
   "WATCHER-TEARDROP_LOCKET.title": "涙のロケット",
-  "WATCHER-GOLDEN_EYE.description": "占術をするたび、追加で[gold]占術[/gold][blue]{Scry:diff()}[/blue]。",
+  "WATCHER-GOLDEN_EYE.description": "占術をするたび、追加で[gold]占術[/gold][blue]{Cards:diff()}[/blue]。",
   "WATCHER-GOLDEN_EYE.flavor": "近くの者の心を見通し、彼らの未来の動きを予測する。",
   "WATCHER-GOLDEN_EYE.title": "黄金の眼",
   "WATCHER-HOLY_WATER.description": "清水と置き換える。戦闘開始時、[gold]奇跡[/gold]を3枚手札に加える。",

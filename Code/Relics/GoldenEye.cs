@@ -5,6 +5,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
@@ -16,8 +17,11 @@ public sealed class GoldenEye : WatcherRelicModel, IModifyScryAmount
 {
     public override RelicRarity Rarity => RelicRarity.Rare;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new ScryVar(2)];
-    
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
+
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(BaseLibTip.Scry)];
+
     public int ModifyScryAmount(Player player, int amount)
     {
         return player == Owner ? amount + DynamicVars.Scry().IntValue : amount;

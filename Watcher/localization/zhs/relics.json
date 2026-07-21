@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "每场战斗开始时处于[gold]平静[/gold]姿态。",
   "WATCHER-TEARDROP_LOCKET.flavor": "盒子的主人双目失明，其中的东西无人知晓。",
   "WATCHER-TEARDROP_LOCKET.title": "泪滴吊坠盒",
-  "WATCHER-GOLDEN_EYE.description": "你每次[gold]预见[/gold]时，额外[gold]预见[/gold][blue]{Scry:diff()}[/blue]。",
+  "WATCHER-GOLDEN_EYE.description": "你每次[gold]预见[/gold]时，额外[gold]预见[/gold][blue]{Cards:diff()}[/blue]。",
   "WATCHER-GOLDEN_EYE.flavor": "能够看见近处生灵的心智，让你可以预判他们将来的动作。",
   "WATCHER-GOLDEN_EYE.title": "黄金眼",
   "WATCHER-HOLY_WATER.description": "替换[gold]至纯之水[/gold]。在每场战斗开始时，将[blue]3[/blue]张[gold]奇迹[/gold]放入你的手牌。",

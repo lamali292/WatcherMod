@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "Start each combat in [gold]Calm[/gold].",
   "WATCHER-TEARDROP_LOCKET.flavor": "Its owner blind, its contents unseen.",
   "WATCHER-TEARDROP_LOCKET.title": "Teardrop Locket",
-  "WATCHER-GOLDEN_EYE.description": "Whenever you [gold]Scry[/gold], [gold]Scry[/gold] [blue]{Scry:diff()}[/blue] additional cards.",
+  "WATCHER-GOLDEN_EYE.description": "Whenever you [gold]Scry[/gold], [gold]Scry[/gold] [blue]{Cards:diff()}[/blue] additional cards.",
   "WATCHER-GOLDEN_EYE.flavor": "See into the minds of those nearby, predicting their future moves.",
   "WATCHER-GOLDEN_EYE.title": "Golden Eye",
   "WATCHER-HOLY_WATER.description": "Replaces [gold]Pure Water[/gold]. At the start of each combat, add [blue]3[/blue] [gold]Miracles[/gold] into your [gold]Hand[/gold].",
@@ -20,7 +20,7 @@
   "WATCHER-VIOLET_LOTUS.description": "Whenever you exit [gold]Calm[/gold], gain an additional [gold]Energy[/gold]",
   "WATCHER-VIOLET_LOTUS.flavor": "The old texts describe that the surface of \"mana pools\" were littered with these flowers.",
   "WATCHER-VIOLET_LOTUS.title": "Violet Lotus",
-  "WATCHER-MELANGE.description": "Whenever you shuffle your [gold]Draw Pile[/gold], [gold]Scry[/gold] {Scry:diff()}.",
+  "WATCHER-MELANGE.description": "Whenever you shuffle your [gold]Draw Pile[/gold], [gold]Scry[/gold] [blue]{Scry:diff()}[/blue].",
   "WATCHER-MELANGE.flavor": "Mysterious sands from an unknown origin. Smells of cinnamon.",
   "WATCHER-MELANGE.title": "Melange",
   "SEA_GLASS.WATCHER-WATCHER.title": "Oracle Glass"

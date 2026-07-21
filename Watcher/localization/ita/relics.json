@@ -11,7 +11,7 @@
   "WATCHER-TEARDROP_LOCKET.description": "Inizi i combattimenti in [gold]Quiete[/gold].",
   "WATCHER-TEARDROP_LOCKET.flavor": "Il suo proprietario cieco, il suo contenuto invisibile.",
   "WATCHER-TEARDROP_LOCKET.title": "Medaglione Lacrimale",
-  "WATCHER-GOLDEN_EYE.description": "Ogni volta che [gold]Scrutini[/gold], [gold]Scruta[/gold] [blue]{Scry:diff()}[/blue] carte aggiuntive.",
+  "WATCHER-GOLDEN_EYE.description": "Ogni volta che [gold]Scrutini[/gold], [gold]Scruta[/gold] [blue]{Cards:diff()}[/blue] carte aggiuntive.",
   "WATCHER-GOLDEN_EYE.flavor": "Leggi nella mente di chi ti sta vicino, prevedendo le loro mosse future.",
   "WATCHER-GOLDEN_EYE.title": "Occhio Dorato",
   "WATCHER-HOLY_WATER.description": "Sostituisce [gold]Acqua Pura[/gold]. All'inizio di ogni combattimento, aggiungi 3 [gold]Miracoli[/gold] alla tua mano.",
