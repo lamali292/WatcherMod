@@ -11,9 +11,9 @@
     </PropertyGroup>
     <Import Project="$(MSBuildThisFileDirectory)local.props" Condition="Exists('$(MSBuildThisFileDirectory)local.props')"/>
     <PropertyGroup>
-        <AssemblyVersion>1.5.3.0</AssemblyVersion>
-        <FileVersion>1.5.3.0</FileVersion>
-        <Version>1.5.3</Version>
+        <AssemblyVersion>1.5.4.0</AssemblyVersion>
+        <FileVersion>1.5.4.0</FileVersion>
+        <Version>1.5.4</Version>
     </PropertyGroup>
     
     <PropertyGroup>
