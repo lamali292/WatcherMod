@@ -1,0 +1,10 @@
+{
+  "WATCHER-BOTTLED_MIRACLE.title": "Zabutelkowany cud",
+  "WATCHER-BOTTLED_MIRACLE.description": "Dodaj {Cards:diff()} [gold]Cuda[/gold] do swojej [gold]ręki[/gold].",
+  "WATCHER-CALM_POTION.title": "Mikstura spokoju",
+  "WATCHER-CALM_POTION.description": "Przyjmij [gold]Postawę Spokoju[/gold].",
+  "WATCHER-WRATH_POTION.title": "Mikstura gniewu",
+  "WATCHER-WRATH_POTION.description": "Przyjmij [gold]Postawę Gniewu[/gold].",
+  "WATCHER-AMBROSIA.title": "Ambrozja",
+  "WATCHER-AMBROSIA.description": "Przyjmij [gold]Postawę Boskości[/gold]."
+}
