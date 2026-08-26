@@ -1,4 +1,5 @@
 using System.Reflection;
+using BaseLib.Utils;
 using Godot;
 using Godot.Bridge;
 using HarmonyLib;
@@ -39,6 +40,12 @@ public static class WatcherMainFile
             : typeof(ModifyCardPlayResultLocationOldPatch));
 
         patcher.PatchAll();
+        
+        ModCredits.Register("Watcher", 
+            new ModCredits.Section("Dev"),
+            new ModCredits.Section("Art", ModCredits.Layout.Roles),
+            new ModCredits.Section("Loc", ModCredits.Layout.Roles)
+            );
     }
 }
 
