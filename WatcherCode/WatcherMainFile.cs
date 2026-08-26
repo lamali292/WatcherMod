@@ -4,7 +4,6 @@ using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
-using Watcher.Code.Compatibility;
 using Watcher.Code.Events;
 using Watcher.Code.Patches;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
@@ -12,7 +11,7 @@ using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 namespace Watcher.Code;
 
 [ModInitializer(nameof(Initialize))]
-public partial class WatcherMainFile : Node
+public static class WatcherMainFile
 {
     public const string ModId = "Watcher"; //At the moment, this is used only for the Logger and harmony names.
 
