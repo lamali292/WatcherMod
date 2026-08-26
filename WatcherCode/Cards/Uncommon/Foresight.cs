@@ -16,10 +16,6 @@ public sealed class Foresight : WatcherCardModel
         WithTip(BaseLibTip.Scry);
     }
 
-    // TODO : Make it work for multiplayer seamlessly
-    // has same problem as old Well-Laid Plans, was also disabled for multiplayer
-    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
-
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<ForesightPower>(ctx, this);

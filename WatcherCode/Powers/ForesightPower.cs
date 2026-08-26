@@ -21,6 +21,6 @@ public class ForesightPower : WatcherPowerModel
     {
         if (player != Owner.Player)
             return;
-        await ScryCmd.Execute(new BlockingPlayerChoiceContext(), player, Amount);
+        await ScryCmd.Execute(choiceContext, player, Amount);
     }
 }
