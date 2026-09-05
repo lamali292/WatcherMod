@@ -22,16 +22,6 @@ public class Watcher : CustomCharacterModel
     public override string CustomIconTexturePath => "res://Watcher/images/watcher/character_icon_watcher.png";
     public override string CustomCharacterSelectIconPath => "res://Watcher/images/watcher/char_select_watcher.png";
 
-
-    /*
-    public override CustomEnergyCounter? CustomEnergyCounter =>
-        new CustomEnergyCounter(EnergyCounterPaths, new Color(0.4f, 0.1f, 0.9f), new Color(0.7f, 0.1f, 0.9f));
-    private static string EnergyCounterPaths(int i)
-    {
-        return "res://Watcher/images/ui/combat/energy_counters/watcher/watcher_orb_layer_" + i + ".png";
-    }
-    */
-
     public override string CustomEnergyCounterPath => "res://Watcher/scenes/watcher/watcher_energy_counter.tscn";
     public override Color EnergyLabelOutlineColor => new(0x552262FF);
 
@@ -136,11 +126,5 @@ public class Watcher : CustomCharacterModel
             "vfx/vfx_attack_blunt", "vfx/vfx_heavy_blunt", "vfx/vfx_attack_slash", "vfx/vfx_bloody_impact",
             "vfx/vfx_rock_shatter"
         ];
-    }
-
-
-    public override CreatureAnimator SetupCustomAnimationStates(MegaSprite controller)
-    {
-        return SetupAnimationState(controller, "Idle", hitName: "Hit");
     }
 }

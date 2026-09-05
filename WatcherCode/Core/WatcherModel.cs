@@ -53,10 +53,10 @@ public class WatcherModel() : CustomSingletonModel(HookType.Combat)
         var visuals = creatureNode?.Visuals as WatcherNCreatureVisuals;
         visuals?.SetEyeStance(mutable switch
         {
-            WrathStance => "wrath",
-            CalmStance => "calm",
-            DivinityStance => "divinity",
-            _ => "RESET"
+            WrathStance => "Wrath",
+            CalmStance => "Calm",
+            DivinityStance => "Divinity",
+            _ => "None"
         });
         await WatcherHook.OnStanceChange(ctx, player, current!, ActiveStance[player]!);
     }

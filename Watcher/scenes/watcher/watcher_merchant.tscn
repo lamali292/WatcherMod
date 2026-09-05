@@ -1,18 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=3 format=3 ]
 
 [ext_resource type="Script" path="res://WatcherCode/Nodes/WatcherNMerchantCharacter.cs" id="1_b7tdn"]
-[ext_resource type="PackedScene" path="res://Watcher/animation/watcher_node.tscn" id="2_50di6"]
-[ext_resource type="PackedScene" path="res://Watcher/animation/eye/eye_godot.tscn" id="3_it3wk"]
-
+[ext_resource type="PackedScene" path="res://Watcher/scenes/watcher/watcher_spine.tscn" id="2_xou3u"]
 
 [node name="WatcherMerchant" type="Node2D"]
 script = ExtResource("1_b7tdn")
 
-[node name="SpineSprite" parent="." instance=ExtResource("2_50di6")]
-preview_animation = "Idle"
-unique_name_in_owner = true
-scale = Vector2(1.532, 1.532)
-
-[node name="Eye" parent="SpineSprite" instance=ExtResource("3_it3wk")]
-show_behind_parent = true
-position = Vector2(-147, -246)
+[node name="WatcherSpine" parent="." instance=ExtResource("2_xou3u")]
+scale = Vector2(1.6228307, 1.6228307)

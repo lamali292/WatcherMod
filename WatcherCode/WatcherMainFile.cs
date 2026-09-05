@@ -29,11 +29,8 @@ public static class WatcherMainFile
         patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
             .Add(typeof(PaelsEyeSourceTrackingPatches))
             .Add(typeof(ColorfulPhilosophersPatch))
-            .Add(typeof(WatcherAnimationPatch))
-            .Add(typeof(WatcherDeathAnimPatch))
             .Add(typeof(NEnergyCounterReadyPatch))
-            .Add(typeof(ModelDbInitIdsPatch))
-            .Add(typeof(FakeMerchantAnimationPatch));
+            .Add(typeof(ModelDbInitIdsPatch));
 
         patcher.Add(AccessTools.TypeByName("MegaCrit.Sts2.Core.Entities.Cards.CardLocation") != null
             ? typeof(ModifyCardPlayResultLocationNewPatch)

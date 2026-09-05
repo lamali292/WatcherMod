@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 ]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="PackedScene" path="res://Watcher/scenes/watcher/watcher.tscn" id="1_j0o0l"]
 [ext_resource type="PackedScene" path="res://Watcher/scenes/watcher_mod/vfx/calm_aura.tscn" id="2_j0o0l"]
+
 
 [node name="TestScene" type="Node2D"]
 

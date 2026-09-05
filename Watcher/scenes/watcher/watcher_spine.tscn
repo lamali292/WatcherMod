@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 ]
+
+[ext_resource type="SpineAtlasResource" path="res://Watcher/scenes/watcher/spine/skeleton.atlas" id="1_ogubx"]
+[ext_resource type="SpineSkeletonFileResource" path="res://Watcher/scenes/watcher/spine/skeleton.skel" id="2_p2i1n"]
+[ext_resource type="SpineAtlasResource" path="res://Watcher/scenes/watcher/spine/eye/skeleton.atlas" id="3_krx4v"]
+[ext_resource type="SpineSkeletonFileResource" path="res://Watcher/scenes/watcher/spine/eye/skeleton.skel" id="4_b758p"]
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_s47n1"]
+atlas_res = ExtResource("1_ogubx")
+skeleton_file_res = ExtResource("2_p2i1n")
+default_mix = 0.15
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_g141m"]
+atlas_res = ExtResource("3_krx4v")
+skeleton_file_res = ExtResource("4_b758p")
+default_mix = 0.3
+
+[node name="WatcherSpine" type="SpineSprite"]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_s47n1")
+preview_skin = "Default"
+preview_animation = "relaxed_loop"
+preview_frame = false
+preview_time = 0.0
+
+[node name="SpineSlotNode" type="SpineSlotNode" parent="."]
+slot_name = "eye_anchor"
+show_behind_parent = true
+position = Vector2(-147.69289, -251.9533)
+rotation = 0.51198214
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="SpineEye" type="SpineSprite" parent="SpineSlotNode"]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_g141m")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+unique_name_in_owner = true
+rotation = -0.41887903
+scale = Vector2(0.8, 0.8)

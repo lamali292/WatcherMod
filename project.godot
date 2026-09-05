@@ -541,12 +541,12 @@ config/attach_log=false
 config/logger_messages_as_breadcrumbs=false
 config/max_breadcrumbs=100
 options/auto_init=false
+schema_version=4
 options/debug_printing=0
 options/diagnostic_level=2
 options/attach_log=false
 godot_logger/events=9
 godot_logger/breadcrumbs=11
-schema_version=4
 
 [xr]
 
