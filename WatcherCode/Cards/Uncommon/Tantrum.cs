@@ -14,7 +14,7 @@ using Watcher.Code.Stances;
 namespace Watcher.Code.Cards.Uncommon;
 
 [Pool(typeof(WatcherCardPool))]
-public sealed class Tantrum : WatcherCardModel, IModifyCardPlayResultLocation
+public sealed class Tantrum : WatcherCardModel
 {
     public Tantrum() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
@@ -29,13 +29,9 @@ public sealed class Tantrum : WatcherCardModel, IModifyCardPlayResultLocation
         await CommonActions.CardAttack(this, cardPlay).WithHitCount(DynamicVars.Repeat.IntValue).Execute(ctx);
         await StanceCmd.EnterWrath(ctx, Owner, cardPlay.Card);
         await Cmd.Wait(0.25f);
-        //await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
+        // TODO go back to card play result location on branch merge
+        await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
     }
-
-    public CardLocationCompatiblity ModifyCardPlayResultLocationCompability(CardModel card, bool isAutoPlay,
-        ResourceInfo resources, CardLocationCompatiblity cardLocation)
-    {
-        return card == this && cardLocation.PileType == PileType.Discard ? new CardLocationCompatiblity(card.Owner, PileType.Draw, CardPilePosition.Random) : cardLocation;
-    }
+    
     
 }

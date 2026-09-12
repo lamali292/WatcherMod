@@ -28,14 +28,8 @@ public static class WatcherMainFile
         var patcher = ModPatcher.Create(ModId, Logger);
         patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
             .Add(typeof(PaelsEyeSourceTrackingPatches))
-            .Add(typeof(ColorfulPhilosophersPatch))
-            .Add(typeof(NEnergyCounterReadyPatch))
-            .Add(typeof(ModelDbInitIdsPatch));
-
-        patcher.Add(AccessTools.TypeByName("MegaCrit.Sts2.Core.Entities.Cards.CardLocation") != null
-            ? typeof(ModifyCardPlayResultLocationNewPatch)
-            : typeof(ModifyCardPlayResultLocationOldPatch));
-
+            .Add(typeof(ColorfulPhilosophersPatch));
+        
         patcher.PatchAll();
         
         ModCredits.Register("Watcher", 

@@ -1,0 +1,16 @@
+{
+  "WATCHER-WATCHER.aromaPrinciple": "[sine][purple]Par la Discipline je trouve la Lucidité...[/purple][/sine]",
+  "WATCHER-WATCHER.banter.alive.endTurnPing": "[sine]Le temps passe.[/sine]",
+  "WATCHER-WATCHER.banter.dead.endTurnPing": "...",
+  "WATCHER-WATCHER.cardsModifierDescription": "Les cartes de La Gardienne apparaitront maintenant dans la boutique et les récompenses",
+  "WATCHER-WATCHER.cardsModifierTitle": "Cartes de La Gardienne",
+  "WATCHER-WATCHER.description": "Une ascétique aveugle qui est venue pour \"Évaluer\" la Tour.\nMaîtresse des Positions divines.",
+  "WATCHER-WATCHER.eventDeathPrevention": "Je dois survivre. L'équilibre en dépend.",
+  "WATCHER-WATCHER.goldMonologue": "[sine]Je ne cherche point la richesse... cependant mon voyage demande de la préparation.[/sine]",
+  "WATCHER-WATCHER.possessiveAdjective": "sa",
+  "WATCHER-WATCHER.pronounObject": "sa",
+  "WATCHER-WATCHER.pronounPossessive": "siennes",
+  "WATCHER-WATCHER.pronounSubject": "elle",
+  "WATCHER-WATCHER.title": "La Gardienne",
+  "WATCHER-WATCHER.titleObject": "La Gardienne"
+}

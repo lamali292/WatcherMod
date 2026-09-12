@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=13 format=3 ]
 
 [ext_resource type="Script" path="res://src/Core/Nodes/Combat/NEnergyCounter.cs" id="1_vejs6"]
 [ext_resource type="PackedScene" path="res://Watcher/scenes/watcher/watcher_energy_vfx_back.tscn" id="2_b6j3t"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" path="res://Watcher/images/ui/combat/energy_counters/layer5.png" id="7_7mya8"]
 [ext_resource type="FontFile" path="res://fonts/kreon_bold.ttf" id="9_56gsp"]
 [ext_resource type="Script" path="res://addons/mega_text/MegaLabel.cs" id="9_61yas"]
-
+[ext_resource type="Script" path="res://src/Core/Nodes/Vfx/Utilities/NParticlesContainer.cs" id="10_ttvdt"]
 
 [sub_resource type="FontVariation" id="FontVariation_o1hxt"]
 base_font = ExtResource("9_56gsp")
@@ -29,6 +29,7 @@ metadata/_edit_group_ = true
 [node name="EnergyVfxBack" parent="." instance=ExtResource("2_b6j3t")]
 unique_name_in_owner = true
 position = Vector2(64, 64)
+script = ExtResource("10_ttvdt")
 
 [node name="Layers" type="Control" parent="."]
 unique_name_in_owner = true
@@ -118,6 +119,7 @@ stretch_mode = 5
 [node name="EnergyVfxFront" parent="." instance=ExtResource("3_mubnd")]
 unique_name_in_owner = true
 position = Vector2(64, 64)
+script = ExtResource("10_ttvdt")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

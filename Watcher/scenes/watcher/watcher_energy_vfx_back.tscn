@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 ]
 
-[ext_resource type="Script" path="res://WatcherCode/Nodes/WatcherNParticlesContainer.cs" id="1_dcan6"]
+[ext_resource type="Script" path="res://src/Core/Nodes/Vfx/Utilities/NParticlesContainer.cs" id="1_y5gtb"]
 [ext_resource type="PackedScene" path="res://Watcher/scenes/watcher/vfx_common_glow.tscn" id="2_y5gtb"]
 
-
-[node name="watcher_energy_vfx_back" type="Node2D"]
-script = ExtResource("1_dcan6")
+[node name="watcher_energy_vfx_back" type="Node2D" node_paths=PackedStringArray("_particles")]
+script = ExtResource("1_y5gtb")
+_particles = [NodePath("vfx_common_glow")]
 
 [node name="vfx_common_glow" parent="." instance=ExtResource("2_y5gtb")]
 rotation = 0.045707636
