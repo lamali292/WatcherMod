@@ -180,23 +180,15 @@ jobs:
       # ---- Steam Workshop upload (opt-in) ----
       # Requires repo VARIABLE  STEAM_WORKSHOP_ID  (the id from mod_id.txt)
       # and repo SECRETS:
-      #   STEAM_USERNAME       - builder account login name
-      #   STEAM_PASSWORD       - builder account password
-      #   STEAM_SHARED_SECRET  - that account's Steam Guard shared secret (for TOTP)
-      - name: Generate Steam TOTP
-        if: vars.STEAM_WORKSHOP_ID != '' && (github.event_name != 'workflow_dispatch' || inputs.steam)
-        id: steam-totp
-        uses: CyberAndrii/steam-totp@v1
-        with:
-          shared_secret: ${{ secrets.STEAM_SHARED_SECRET }}
-
+      #   STEAM_USERNAME     - builder account login name
+      #   STEAM_CONFIG_VDF   - cached SteamCMD session (same config.vdf pattern as Downfall's
+      #                        release.yml) instead of live password+TOTP
       - name: Upload to Steam Workshop
         if: vars.STEAM_WORKSHOP_ID != '' && (github.event_name != 'workflow_dispatch' || inputs.steam)
         uses: m00nl1ght-dev/steam-workshop-deploy@v4
         with:
           username: ${{ secrets.STEAM_USERNAME }}
-          password: ${{ secrets.STEAM_PASSWORD }}
-          totp: ${{ steps.steam-totp.outputs.code }}
+          configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: 2868840
           publishedFileId: ${{ vars.STEAM_WORKSHOP_ID }}
           path: output/mods/Watcher
