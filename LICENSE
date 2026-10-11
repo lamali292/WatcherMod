@@ -1,6 +1,21 @@
-MIT License
+Watcher for Slay the Spire 2 - Mixed License
 
-Copyright (c) 2026 Laurin Liebhart
+Copyright (c) 2026 Laurin Liebhart and contributors
+
+This repository contains material under different terms. Which terms apply
+depends on the kind of file. Read all three parts.
+
+
+PART 1 - SOURCE CODE (MIT License)
+----------------------------------
+
+Applies to: all source code written for this project, including C# (*.cs),
+project and build files (*.csproj, *.props, *.ps1), the image_gen tool, and
+the technical documentation.
+
+It does NOT apply to anything listed in Part 2 or Part 3, and it does NOT
+extend to the card, relic, power and character designs those files implement
+(see Part 3).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +34,54 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+PART 2 - ORIGINAL ARTWORK AND AUDIO (CC BY-NC 4.0)
+--------------------------------------------------
+
+Applies to: images, animations, Spine skeletons, audio and other creative
+assets that were created from scratch for this project and are NOT derived from
+Slay the Spire (1 or 2), existing Slay the Spire 1 mods, or any other
+third-party work.
+
+These are licensed under the Creative Commons Attribution-NonCommercial 4.0
+International License (https://creativecommons.org/licenses/by-nc/4.0/). You
+may share and adapt them with attribution for non-commercial purposes only.
+
+Contributors retain copyright in their own submissions. Where an asset's
+author has stated different terms, those terms apply to that asset.
+
+
+PART 3 - THIRD-PARTY AND DERIVED MATERIAL (NO LICENSE GRANTED)
+--------------------------------------------------------------
+
+Much of this project - its artwork (card art, relic/power/potion icons,
+character art, Spine skeleton/atlas/skin files) and its game design (card,
+relic and power concepts, names, mechanics and descriptions) - originates from
+Slay the Spire and from existing Slay the Spire 1 mods, or is derived from
+those works. Slay the Spire, its characters, names, art and related
+intellectual property belong to Mega Crit Games, LLC and/or their respective
+original creators and licensors. Ideas and designs adapted from earlier
+community mods remain the work of their original authors.
+
+This project is an unofficial, non-commercial fan work. The copyright holder of
+this repository has NO authority to, and does NOT, license any of that material.
+Part 1 and Part 2 do NOT apply to it. Nothing in this repository grants you any
+right to reuse, redistribute or modify such assets or designs outside of this
+mod. If you want to reuse them, obtain permission from the original rights
+holders.
+
+Likewise, files belonging to the game itself or to other third parties (the
+game's decompiled source and assets, the Godot engine, BaseLib, Harmony,
+SmartFormat, fonts, and any other dependency) remain under their own licenses
+and are not covered by this file.
+
+If you are a rights holder and want something removed or credited differently,
+please open an issue or contact the maintainer and it will be handled promptly.
+
+
+WHEN UNSURE
+-----------
+
+If a file is not clearly original work from Part 1 or Part 2, treat it as
+Part 3: no license is granted.
