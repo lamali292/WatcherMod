@@ -42,6 +42,23 @@
             <BaseLibFiles Include="$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/lib/**/BaseLib.dll;$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/Content/BaseLib.pck;$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/Content/BaseLib.json;"/>
         </ItemGroup>
         <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="$(ModsPath)BaseLib/"/>
+
+        <!-- Also drop the build into the OTHER configured branch's mods folder (dll compiled against THIS
+             branch's sts2.dll; build with -p:Sts2Branch=<other> to replace it with a native one). -->
+        <ItemGroup>
+            <_MirrorFile Include="$(TargetPath);Watcher.json"/>
+            <_MirrorFile Include="$(TargetDir)$(TargetName).pdb" Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
+            <_MirrorDir Include="$(Sts2BetaPath)/mods/$(ModOutputFolder)/"
+                        Condition="'$(Sts2BetaPath)' != '' and '$(Sts2BetaPath)' != '$(Sts2Path)' and Exists('$(Sts2BetaPath)/mods')"/>
+            <_MirrorDir Include="$(Sts2PublicPath)/mods/$(ModOutputFolder)/"
+                        Condition="'$(Sts2PublicPath)' != '' and '$(Sts2PublicPath)' != '$(Sts2Path)' and Exists('$(Sts2PublicPath)/mods')"/>
+            <_MirrorBaseLibDir Include="$(Sts2BetaPath)/mods/BaseLib/"
+                               Condition="'$(Sts2BetaPath)' != '' and '$(Sts2BetaPath)' != '$(Sts2Path)' and Exists('$(Sts2BetaPath)/mods')"/>
+            <_MirrorBaseLibDir Include="$(Sts2PublicPath)/mods/BaseLib/"
+                               Condition="'$(Sts2PublicPath)' != '' and '$(Sts2PublicPath)' != '$(Sts2Path)' and Exists('$(Sts2PublicPath)/mods')"/>
+        </ItemGroup>
+        <Copy SourceFiles="@(_MirrorFile)" DestinationFolder="%(_MirrorDir.Identity)" Condition="'@(_MirrorDir)' != ''"/>
+        <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="%(_MirrorBaseLibDir.Identity)" Condition="'@(_MirrorBaseLibDir)' != ''"/>
     </Target>
 
     <Target Name="GodotImport" BeforeTargets="GodotPublish"
@@ -59,6 +76,16 @@
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1;Configuration=$(Configuration)"
               IgnoreExitCode="false"
               IgnoreStandardErrorWarningFormat="true"/>
+
+        <!-- Mirror the freshly packed pck into the other configured branch's mods folder too. -->
+        <ItemGroup>
+            <_PckMirrorDir Include="$(Sts2BetaPath)/mods/$(ModOutputFolder)/"
+                           Condition="'$(Sts2BetaPath)' != '' and '$(Sts2BetaPath)' != '$(Sts2Path)' and Exists('$(Sts2BetaPath)/mods')"/>
+            <_PckMirrorDir Include="$(Sts2PublicPath)/mods/$(ModOutputFolder)/"
+                           Condition="'$(Sts2PublicPath)' != '' and '$(Sts2PublicPath)' != '$(Sts2Path)' and Exists('$(Sts2PublicPath)/mods')"/>
+        </ItemGroup>
+        <Copy SourceFiles="$(ModsPath)$(ModOutputFolder)/Watcher.pck" DestinationFolder="%(_PckMirrorDir.Identity)"
+              Condition="'@(_PckMirrorDir)' != ''"/>
     </Target>
 
 

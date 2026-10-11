@@ -1,10 +1,15 @@
-﻿<!-- Copy this file and rename it to local.props, then fill in your paths. -->
+<!-- Copy this file and rename it to local.props, then fill in your paths. -->
 <Project>
     <PropertyGroup>
         <!-- Path to your Godot executable -->
         <GodotPath>C:\...\MegaDot\MegaDot_v4.5.1_mono.exe</GodotPath>
         <!-- Path to your Steam library's steamapps folder -->
         <SteamLibraryPath>C:\Program Files (x86)\Steam\steamapps</SteamLibraryPath>
+        <!-- Optional: two game installs (beta + public branch). Sts2Branch picks the one the mod is built
+             against / deployed to; build/test.ps1 runs the tests on both. Leave out to use SteamLibraryPath. -->
+        <Sts2Branch>beta</Sts2Branch>
+        <Sts2BetaPath>C:\...\sts2-beta\Slay the Spire 2</Sts2BetaPath>
+        <Sts2PublicPath>C:\...\sts2-public\Slay the Spire 2</Sts2PublicPath>
         <!-- Path to your GDRE extracted Slay the Spire 2 assets folder -->
         <AssetSourcePath>C:\...\Slay the Spire 2</AssetSourcePath>
     </PropertyGroup>

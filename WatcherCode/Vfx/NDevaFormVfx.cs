@@ -2,7 +2,6 @@
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
-using MegaCrit.Sts2.Core.Nodes.Vfx.Forms;
 using MegaCrit.Sts2.Core.TestSupport;
 
 namespace Watcher.WatcherCode.Vfx;

@@ -33,6 +33,14 @@
     </PropertyGroup>
 
     <Import Project="$(MSBuildThisFileDirectory)..\local.props" Condition="Exists('$(MSBuildThisFileDirectory)..\local.props')"/>
+
+    <!-- Game install selection: local.props may set Sts2Branch (beta|public) plus Sts2BetaPath/Sts2PublicPath.
+         An explicit -p:Sts2Path=... on the command line still wins. Without them the Steam defaults below apply. -->
+    <PropertyGroup>
+        <Sts2Branch Condition="'$(Sts2Branch)' == ''">beta</Sts2Branch>
+        <Sts2Path Condition="'$(Sts2Path)' == '' and '$(Sts2Branch)' == 'public' and '$(Sts2PublicPath)' != ''">$(Sts2PublicPath)</Sts2Path>
+        <Sts2Path Condition="'$(Sts2Path)' == '' and '$(Sts2Branch)' == 'beta' and '$(Sts2BetaPath)' != ''">$(Sts2BetaPath)</Sts2Path>
+    </PropertyGroup>
     <!-- OS Detection -->
     <PropertyGroup>
         <IsWindows Condition="$([MSBuild]::IsOSPlatform('Windows'))">true</IsWindows>
