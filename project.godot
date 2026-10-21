@@ -72,6 +72,13 @@ import/blender/enabled=false
 common/snap_controls_to_pixels=false
 fonts/dynamic_fonts/use_oversampling=false
 
+[importer_defaults]
+
+texture={
+"compress/lossy_quality": 0.87,
+"compress/mode": 1
+}
+
 [input]
 
 ui_accept={
