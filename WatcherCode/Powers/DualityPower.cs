@@ -15,6 +15,6 @@ public class DualityPower : CustomTemporaryPowerModelWrapper<Duality, DexterityP
     public override PowerModel InternallyAppliedPower => ModelDb.Power<DexterityPower>();
     public override AbstractModel OriginModel => ModelDb.Relic<Duality>();
     */
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => CustomPackedIconPath;
+    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.tres".PowerImagePath();
+    public override string CustomBigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
 }

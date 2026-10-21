@@ -1,4 +1,4 @@
-using BaseLib.Extensions;
+﻿using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -24,7 +24,7 @@ public abstract class WatcherStanceModel : AbstractModel
     private LocString Description =>
         new("powers", $"{WatcherMainFile.ModId.ToUpperInvariant()}-{Id.Entry}.description");
 
-    private string PackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+    private string PackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
     private Texture2D Icon => ResourceLoader.Load<Texture2D>(PackedIconPath);
 
     public HoverTip DumbHoverTip

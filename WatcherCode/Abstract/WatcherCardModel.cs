@@ -21,7 +21,7 @@ public abstract class WatcherCardModel(
     : ConstructedCardModel(canonicalEnergyCost, type, rarity, targetType, shouldShowInCardLibrary)
 {
     public sealed override string CustomPortraitPath =>
-        $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+        $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.tres".CardImagePath();
 
     protected ConstructedCardModel WithPower<T>(int baseVal, int upgrade,
         bool showTooltip)
