@@ -71,10 +71,10 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Пластинчатая броня",
   "WATCHER-PLATED_ARMOR_POWER.description": "Дает [blue]X[/blue] [gold]защиты[/gold] в конце хода. Эффект снижается на [blue]1[/blue] при получении незаблокированного урона.",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "Дает [blue]{Amount}[/blue] [gold]защиты[/gold] в конце хода. Эффект снижается на [blue]1[/blue] при получении незаблокированного урона.",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Мимолетная ясность",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "Вы выходите из [gold]Спокойствия[/gold] в начале следующего хода.",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Вы выходите из [gold]Спокойствия[/gold] в начале следующего хода.",
   "WATCHER-CLAIRVOYANCE_POWER.title": "Прозрение",
   "WATCHER-CLAIRVOYANCE_POWER.description": "Вы добираете [blue]X[/blue] карт, когда [gold]Предсказываете[/gold].",
-  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Вы добираете [blue]{Amount}[/blue] {Amount:plural(ru):карту|карты|карт}, когда [gold]Предсказываете[/gold]."
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Вы добираете [blue]{Amount}[/blue] {Amount:plural(ru):карту|карты|карт}, когда [gold]Предсказываете[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.title": "Благословение стойки",
+  "WATCHER-STANCE_BLESSING_POWER.description": "Дает [blue]X[/blue] [gold]бодрости[/gold] другим игрокам при смене [gold]Стойки[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Дает [blue]{Amount}[/blue] [gold]бодрости[/gold] другим игрокам при смене [gold]Стойки[/gold]."
 }

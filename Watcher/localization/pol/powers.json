@@ -50,9 +50,6 @@
   "WATCHER-MENTAL_FORTRESS_POWER.description": "Kiedykolwiek zmienisz Postawę, zyskaj [gold]Blok[/gold]",
   "WATCHER-MENTAL_FORTRESS_POWER.smartDescription": "Kiedykolwiek zmienisz Postawę, zyskaj [blue]{Amount}[/blue] pkt. [gold]Bloku[/gold]",
   "WATCHER-MENTAL_FORTRESS_POWER.title": "Umysłowa forteca",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "Na początku swojej tury, opuść [gold]postawę Spokoju[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Na początku swojej tury, opuść [gold]postawę Spokoju[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Jasność umysłu",
   "WATCHER-NIRVANA_POWER.description": "Kiedykolwiek [gold]Prognozujesz[/gold], zyskaj [gold]Blok[/gold]",
   "WATCHER-NIRVANA_POWER.smartDescription": "Kiedykolwiek [gold]Prognozujesz[/gold], zyskaj [blue]{Amount}[/blue] pkt. [gold]Bloku[/gold]",
   "WATCHER-NIRVANA_POWER.title": "Nirwana",
@@ -76,5 +73,8 @@
   "WATCHER-WAVE_OF_THE_HAND_POWER.title": "Podmuch dłonią",
   "WATCHER-WRATH_STANCE.description": "Zadajesz i otrzymujesz podwójne obrażenia.",
   "WATCHER-WRATH_STANCE.smartDescription": "Zadajesz i otrzymujesz podwójne obrażenia.",
-  "WATCHER-WRATH_STANCE.title": "Postawa Gniewu"
+  "WATCHER-WRATH_STANCE.title": "Postawa Gniewu",
+  "WATCHER-STANCE_BLESSING_POWER.title": "Błogosławieństwo postawy",
+  "WATCHER-STANCE_BLESSING_POWER.description": "Gdy zmieniasz [gold]Postawę[/gold], pozostali gracze zyskują [blue]X[/blue] pkt. [gold]Wigoru[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Gdy zmieniasz [gold]Postawę[/gold], pozostali gracze zyskują [blue]{Amount}[/blue] pkt. [gold]Wigoru[/gold]."
 }

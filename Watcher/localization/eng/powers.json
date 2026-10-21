@@ -71,10 +71,10 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Plated Armor",
   "WATCHER-PLATED_ARMOR_POWER.description": "At the end of your turn, gain [gold]Block[/gold]. Receiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Block[/gold].\nReceiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Fleeting Clarity",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "At the start of your turn, exit [gold]Calm[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "At the start of your turn, exit [gold]Calm[/gold].",
   "WATCHER-CLAIRVOYANCE_POWER.title": "Clairvoyance",
   "WATCHER-CLAIRVOYANCE_POWER.description": "Whenever you [gold]Scry[/gold], draw [blue]X[/blue] cards.",
-  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Whenever you [gold]Scry[/gold], draw [blue]{Amount}[/blue] {Amount:plural:card|cards}."
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Whenever you [gold]Scry[/gold], draw [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
+  "WATCHER-STANCE_BLESSING_POWER.title": "Stance Blessing",
+  "WATCHER-STANCE_BLESSING_POWER.description": "Whenever you change Stances, other players gain [blue]X[/blue] [gold]Vigor[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Whenever you change Stances, other players gain [blue]{Amount}[/blue] [gold]Vigor[/gold]."
 }

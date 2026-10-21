@@ -71,9 +71,6 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Armure plaquée",
   "WATCHER-PLATED_ARMOR_POWER.description": "À la fin de chaque tour, gagnez de [gold]l'Armure[/gold]. \nRecevoir des dégâts d'attaque non bloqués réduit [gold]l'Armure Plaquée[/gold] de [blue]1[/blue].",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "À la fin de chaque tour, gagnez de [gold]l'Armure[/gold]. \nRecevoir des dégâts d'attaque non bloqués réduit [gold]l'Armure Plaquée[/gold] de [blue]1[/blue].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Élan de Lucidité",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "Au début de votre prochain tour, quittez [gold]la Position de Calme[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Au début de votre prochain tour, quittez [gold]la Position de Calme[/gold].",
   "WATCHER-CLAIRVOYANCE_POWER.title": "Clairvoyance",
   "WATCHER-CLAIRVOYANCE_POWER.description": "Lorsque vous [gold]Scrutez[/gold], piochez [blue]X[/blue] cartes.",
   "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Lorsque vous [gold]Scrutez[/gold], piochez [blue]{Amount}[/blue] {Amount:plural:carte|cartes}.",
@@ -83,5 +80,8 @@
   "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.UP.description": "Augmente un [gold]Pouvoir[/gold] pour une durée.",
   "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.UP.smartDescription": "Gagnez [blue]{Amount:abs()}[/blue] [gold]{TemporaryPowerTitle}[/gold] jusqu'à la fin de vôtre {UntilEndOfOtherSideTurn:cond:|enemies }tour.{Repeat:cond:>0?\\nPersiste pour encore [blue]{Repeat:diff()}[/blue] {Repeat:plural:tour|tours} supplémentaires.|}",
   "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.DOWN.description": "Réduit un [gold]Pouvoir[/gold] pour une durée.",
-  "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.DOWN.smartDescription": "Perdez [blue]{Amount:abs()}[/blue] [gold]{TemporaryPowerTitle}[/gold] jusqu'à la fin de vôtre {UntilEndOfOtherSideTurn:cond:|enemies }tour.{Repeat:cond:>0?\\nPersiste pour encore [blue]{Repeat:diff()}[/blue] {Repeat:plural:tour|tours} supplémentaires.|}"
+  "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.DOWN.smartDescription": "Perdez [blue]{Amount:abs()}[/blue] [gold]{TemporaryPowerTitle}[/gold] jusqu'à la fin de vôtre {UntilEndOfOtherSideTurn:cond:|enemies }tour.{Repeat:cond:>0?\\nPersiste pour encore [blue]{Repeat:diff()}[/blue] {Repeat:plural:tour|tours} supplémentaires.|}",
+  "WATCHER-STANCE_BLESSING_POWER.title": "Bénédiction de Position",
+  "WATCHER-STANCE_BLESSING_POWER.description": "Lorsque vous changez de [gold]Position[/gold], les autres joueurs gagnent [blue]X[/blue] de [gold]Vigueur[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Lorsque vous changez de [gold]Position[/gold], les autres joueurs gagnent [blue]{Amount}[/blue] de [gold]Vigueur[/gold]."
 }

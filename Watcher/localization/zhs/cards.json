@@ -180,8 +180,6 @@
   "WATCHER-REVELATION.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n进入[gold]平静[/gold]。\n每当你离开[gold]平静[/gold]时，将这张牌从[gold]弃牌堆[/gold]放回你的[gold]手牌[/gold]。",
   "WATCHER-SHARED_WISDOM.description": "另一名玩家进入[gold]神格[/gold]。",
   "WATCHER-SHARED_WISDOM.title": "共享智慧",
-  "WATCHER-FLEETING_CLARITY.description": "所有盟友进入[gold]平静[/gold]。\n他们在下一回合开始时退出[gold]平静[/gold]。",
-  "WATCHER-FLEETING_CLARITY.title": "昙花一悟",
   "WATCHER-SHARED_FORESIGHT.title": "共享预见",
   "WATCHER-SHARED_FORESIGHT.description": "所有玩家[gold]预见[/gold]{Scry:diff()}。",
   "WATCHER-HOLD_FAST.title": "坚守",
@@ -191,5 +189,7 @@
   "WATCHER-ENTER_CALM.title": "平静",
   "WATCHER-ENTER_CALM.description": "进入[gold]平静[/gold]。",
   "WATCHER-ENTER_WRATH.title": "愤怒",
-  "WATCHER-ENTER_WRATH.description": "进入[gold]愤怒[/gold]。"
+  "WATCHER-ENTER_WRATH.description": "进入[gold]愤怒[/gold]。",
+  "WATCHER-STANCE_BLESSING.title": "姿态祝福",
+  "WATCHER-STANCE_BLESSING.description": "每当你转换[gold]姿态[/gold]时，其他玩家获得{StanceBlessingPower:diff()}点[gold]活力[/gold]。"
 }

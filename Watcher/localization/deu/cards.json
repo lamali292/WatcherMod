@@ -178,12 +178,6 @@
   "WATCHER-WISH_WATCHER.title": "Wünschen",
   "WATCHER-WISH_WATCHER.description": "Wähle eins:\nErhalte {PlatedArmorPower:diff()} [gold]Panzerrüstung[/gold],\n{StrengthPower:diff()} [gold]Stärke[/gold] oder {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Wähle eine Karte zum Spielen.",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.title": "Flüchtige Klarheit",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON.description": "ALLE Verbündeten nehmen [gold]Ruhe[/gold] an.\nSie verlassen [gold]Ruhe[/gold] zu Beginn ihres nächsten Zuges.",
-  "WATCHER-MULTIPLAYER_CARD_RARE.title": "Geteilte Weisheit",
-  "WATCHER-MULTIPLAYER_CARD_RARE.description": "Ein anderer Spieler nimmt [gold]Göttlichkeit[/gold] an.",
-  "WATCHER-FLEETING_CLARITY.title": "Flüchtige Klarheit",
-  "WATCHER-FLEETING_CLARITY.description": "ALLE Verbündeten nehmen [gold]Ruhe[/gold] an.\nSie verlassen [gold]Ruhe[/gold] zu Beginn ihres nächsten Zuges.",
   "WATCHER-SHARED_WISDOM.title": "Geteilte Weisheit",
   "WATCHER-SHARED_WISDOM.description": "Ein Mitspieler nimmt [gold]Göttlichkeit[/gold] an.",
   "WATCHER-SHARED_FORESIGHT.title": "Geteilte Voraussicht",
@@ -195,5 +189,7 @@
   "WATCHER-ENTER_CALM.title": "Ruhe",
   "WATCHER-ENTER_CALM.description": "Nimm [gold]Ruhe[/gold] an.",
   "WATCHER-ENTER_WRATH.title": "Zorn",
-  "WATCHER-ENTER_WRATH.description": "Nimm [gold]Zorn[/gold] an."
+  "WATCHER-ENTER_WRATH.description": "Nimm [gold]Zorn[/gold] an.",
+  "WATCHER-STANCE_BLESSING.title": "Haltungssegen",
+  "WATCHER-STANCE_BLESSING.description": "Immer wenn du deine [gold]Haltung[/gold] änderst, erhalten Mitspieler {StanceBlessingPower:diff()} [gold]Elan[/gold]."
 }

@@ -71,10 +71,10 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Panzerrüstung",
   "WATCHER-PLATED_ARMOR_POWER.description": "Am Ende deines Zuges erhalte [gold]Block[/gold]. Ungeblockter Angriffsschaden reduziert [gold]Panzerrüstung[/gold] um [blue]1[/blue].",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "Am Ende deines Zuges erhalte [blue]{Amount}[/blue] [gold]Block[/gold].\nUngeblockter Angriffsschaden reduziert [gold]Panzerrüstung[/gold] um [blue]1[/blue].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Flüchtige Klarheit",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "Zu Beginn deines Zuges verlasse [gold]Ruhe[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Zu Beginn deines Zuges verlasse [gold]Ruhe[/gold].",
   "WATCHER-CLAIRVOYANCE_POWER.title": "Hellsicht",
   "WATCHER-CLAIRVOYANCE_POWER.description": "Immer wenn du [gold]spähst[/gold], ziehe [blue]X[/blue] Karten.",
-  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Immer wenn du [gold]spähst[/gold], ziehe [blue]{Amount}[/blue] {Amount:plural:Karte|Karten}."
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Immer wenn du [gold]spähst[/gold], ziehe [blue]{Amount}[/blue] {Amount:plural:Karte|Karten}.",
+  "WATCHER-STANCE_BLESSING_POWER.title": "Haltungssegen",
+  "WATCHER-STANCE_BLESSING_POWER.description": "Immer wenn du deine [gold]Haltung[/gold] änderst, erhalten Mitspieler [blue]X[/blue] [gold]Elan[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Immer wenn du deine [gold]Haltung[/gold] änderst, erhalten Mitspieler [blue]{Amount}[/blue] [gold]Elan[/gold]."
 }

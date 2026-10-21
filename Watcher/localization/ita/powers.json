@@ -71,10 +71,10 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Armatura a Piastre",
   "WATCHER-PLATED_ARMOR_POWER.description": "Alla fine del tuo turno, guadagna [blue]X[/blue] [gold]Blocco[/gold]. Subire danno da attacco non bloccato riduce l'[gold]Armatura a Piastre[/gold] di [blue]1[/blue].",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "Alla fine del tuo turno, guadagna [blue]{Amount}[/blue] [gold]Blocco[/gold].\nSubire danno da attacco non bloccato riduce l'[gold]Armatura a Piastre[/gold] di [blue]1[/blue].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Chiarezza Fugace",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "All'inizio del tuo turno, esci dalla [gold]Calma[/gold].",
-  "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "All'inizio del tuo turno, esci dalla [gold]Calma[/gold].",
   "WATCHER-CLAIRVOYANCE_POWER.title": "Chiaroveggenza",
   "WATCHER-CLAIRVOYANCE_POWER.description": "Ogni volta che [gold]Scruti[/gold], peschi [blue]X[/blue] carte.",
-  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Ogni volta che [gold]Scruti[/gold], peschi [blue]{Amount}[/blue] {Amount:plural:carta|carte}."
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Ogni volta che [gold]Scruti[/gold], peschi [blue]{Amount}[/blue] {Amount:plural:carta|carte}.",
+  "WATCHER-STANCE_BLESSING_POWER.title": "Benedizione della Posa",
+  "WATCHER-STANCE_BLESSING_POWER.description": "Ogni volta che cambi [gold]Posa[/gold], gli altri giocatori ottengono [blue]X[/blue] di [gold]Vigore[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Ogni volta che cambi [gold]Posa[/gold], gli altri giocatori ottengono [blue]{Amount}[/blue] di [gold]Vigore[/gold]."
 }

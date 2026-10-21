@@ -180,8 +180,6 @@
   "WATCHER-REVELATION.title": "재계시",
   "WATCHER-SHARED_WISDOM.description": "다른 플레이어가 [gold]강림[/gold]에 진입한다。",
   "WATCHER-SHARED_WISDOM.title": "공유된 지혜",
-  "WATCHER-FLEETING_CLARITY.description": "모든 아군이 [gold]명상[/gold]합니다. \n다음 턴 시작 시 [gold]명상[/gold]에서 벗어납니다.",
-  "WATCHER-FLEETING_CLARITY.title": "순간의 명료함",
   "WATCHER-SHARED_FORESIGHT.title": "공유된 예지",
   "WATCHER-SHARED_FORESIGHT.description": "모든 플레이어가 [gold]예지[/gold] {Scry:diff()}.",
   "WATCHER-HOLD_FAST.title": "버티기",
@@ -191,5 +189,7 @@
   "WATCHER-ENTER_CALM.title": "명상",
   "WATCHER-ENTER_CALM.description": "[gold]명상[/gold]합니다.",
   "WATCHER-ENTER_WRATH.title": "진노",
-  "WATCHER-ENTER_WRATH.description": "[gold]진노[/gold]합니다."
+  "WATCHER-ENTER_WRATH.description": "[gold]진노[/gold]합니다.",
+  "WATCHER-STANCE_BLESSING.title": "경지의 축복",
+  "WATCHER-STANCE_BLESSING.description": "[gold]경지[/gold]를 바꿀 때마다, 다른 플레이어가 [gold]활력[/gold]을 {StanceBlessingPower:diff()} 얻습니다."
 }

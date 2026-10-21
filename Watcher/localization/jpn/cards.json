@@ -180,8 +180,6 @@
   "WATCHER-REVELATION.title": "再啓示",
   "WATCHER-SHARED_WISDOM.description": "別のプレイヤーが[gold]神聖[/gold]に入る。",
   "WATCHER-SHARED_WISDOM.title": "共有の知恵",
-  "WATCHER-FLEETING_CLARITY.description": "すべての味方が[gold]平静[/gold]の[gold]スタンス[/gold]に入る。\n彼らは次のターンの開始時に[gold]平静[/gold]から抜け出す。",
-  "WATCHER-FLEETING_CLARITY.title": "刹那の明晰",
   "WATCHER-SHARED_FORESIGHT.title": "共有の先見",
   "WATCHER-SHARED_FORESIGHT.description": "すべてのプレイヤーが[gold]占術[/gold]{Scry:diff()}を行う。",
   "WATCHER-HOLD_FAST.title": "踏みとどまる",
@@ -191,5 +189,7 @@
   "WATCHER-ENTER_CALM.title": "平静",
   "WATCHER-ENTER_CALM.description": "[gold]平静[/gold]の[gold]スタンス[/gold]に入る。",
   "WATCHER-ENTER_WRATH.title": "憤怒",
-  "WATCHER-ENTER_WRATH.description": "[gold]憤怒[/gold]の[gold]スタンス[/gold]に入る。"
+  "WATCHER-ENTER_WRATH.description": "[gold]憤怒[/gold]の[gold]スタンス[/gold]に入る。",
+  "WATCHER-STANCE_BLESSING.title": "スタンスの祝福",
+  "WATCHER-STANCE_BLESSING.description": "[gold]スタンス[/gold]を変更するたび、他の全プレイヤーは[gold]活力[/gold]{StanceBlessingPower:diff()}を得る。"
 }

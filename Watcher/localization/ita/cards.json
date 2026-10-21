@@ -178,8 +178,6 @@
   "WATCHER-WISH_WATCHER.title": "Desiderio",
   "WATCHER-WISH_WATCHER.description": "Scegli uno:\nOttieni {PlatedArmorPower:diff()} [gold]Armatura a Placche[/gold],\n{StrengthPower:diff()} [gold]Forza[/gold], oppure {Gold:diff()} [gold]Oro[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Scegli una carta da giocare.",
-  "WATCHER-FLEETING_CLARITY.title": "Chiarezza Fugace",
-  "WATCHER-FLEETING_CLARITY.description": "TUTTI gli alleati entrano in [gold]Calma[/gold].\nEscono dalla [gold]Calma[/gold] all'inizio del loro prossimo turno.",
   "WATCHER-SHARED_WISDOM.title": "Saggezza Condivisa",
   "WATCHER-SHARED_WISDOM.description": "Un altro giocatore entra in [gold]Divinità[/gold].",
   "WATCHER-SHARED_FORESIGHT.title": "Preveggenza Condivisa",
@@ -191,5 +189,7 @@
   "WATCHER-ENTER_CALM.title": "Calma",
   "WATCHER-ENTER_CALM.description": "Entri in [gold]Calma[/gold].",
   "WATCHER-ENTER_WRATH.title": "Furia",
-  "WATCHER-ENTER_WRATH.description": "Entri in [gold]Furia[/gold]."
+  "WATCHER-ENTER_WRATH.description": "Entri in [gold]Furia[/gold].",
+  "WATCHER-STANCE_BLESSING.title": "Benedizione della Posa",
+  "WATCHER-STANCE_BLESSING.description": "Ogni volta che cambi [gold]Posa[/gold], gli altri giocatori ottengono {StanceBlessingPower:diff()} di [gold]Vigore[/gold]."
 }

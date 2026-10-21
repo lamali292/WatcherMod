@@ -63,8 +63,6 @@
   "WATCHER-FASTING.title": "Post",
   "WATCHER-FEAR_NO_EVIL.description": "Zadaj {Damage:diff()} pkt. obrażeń.\nJeśli przeciwnik zamierza zaatakować, przyjmij [gold]postawę Spokoju[/gold].",
   "WATCHER-FEAR_NO_EVIL.title": "Zła się nie ulęknę",
-  "WATCHER-FLEETING_CLARITY.description": "WSZYSCY przyjmują [gold]postawę Spokoju[/gold].\nOpuszczają [gold]postawę Spokoju[/gold] na początku kolejnej tury.",
-  "WATCHER-FLEETING_CLARITY.title": "Jasność umysłu",
   "WATCHER-FLURRY_OF_BLOWS.description": "Zadaj {Damage:diff()} pkt. obrażeń.\nPrzy zmianie [gold]Postawy[/gold], przywróć tę kartę ze [gold]stosu kart odrzuconych[/gold] do swojej [gold]ręki[/gold].",
   "WATCHER-FLURRY_OF_BLOWS.title": "Lawina ciosów",
   "WATCHER-FLYING_SLEEVES.description": "Zadaj dwukrotnie {Damage:diff()} pkt. obrażeń.",
@@ -191,5 +189,7 @@
   "WATCHER-ENTER_CALM.title": "Spokój",
   "WATCHER-ENTER_CALM.description": "Przyjmij [gold]postawę Spokoju[/gold].",
   "WATCHER-ENTER_WRATH.title": "Gniew",
-  "WATCHER-ENTER_WRATH.description": "Przyjmij [gold]postawę Gniewu[/gold]."
+  "WATCHER-ENTER_WRATH.description": "Przyjmij [gold]postawę Gniewu[/gold].",
+  "WATCHER-STANCE_BLESSING.title": "Błogosławieństwo postawy",
+  "WATCHER-STANCE_BLESSING.description": "Gdy zmieniasz [gold]Postawę[/gold], pozostali gracze zyskują {StanceBlessingPower:diff()} pkt. [gold]Wigoru[/gold]."
 }
