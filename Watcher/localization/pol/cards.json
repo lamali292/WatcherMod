@@ -181,5 +181,15 @@
   "WATCHER-WORSHIP.description": "Zyskaj 5 pkt. [gold]Mantry[/gold].",
   "WATCHER-WORSHIP.title": "Ubóstwienie",
   "WATCHER-WREATH_OF_FLAME.description": "Twoja następna karta Ataku zada {VigorPower:diff()} dodatkowych obrażeń.",
-  "WATCHER-WREATH_OF_FLAME.title": "Wieniec płomieni"
+  "WATCHER-WREATH_OF_FLAME.title": "Wieniec płomieni",
+  "WATCHER-SHARED_FORESIGHT.title": "Wspólna przepowiednia",
+  "WATCHER-SHARED_FORESIGHT.description": "WSZYSCY gracze [gold]prognozują[/gold] {Scry:diff()}.",
+  "WATCHER-HOLD_FAST.title": "Trzymaj się",
+  "WATCHER-HOLD_FAST.description": "W tej turze [gold]Zachowaj[/gold] [gold]rękę[/gold] innego gracza.",
+  "WATCHER-GIFT_OF_MIRACLES.title": "Dar cudów",
+  "WATCHER-GIFT_OF_MIRACLES.description": "WSZYSCY sojusznicy dodają {Cards:diff()} [gold]{Cards:plural:Cud+|Cuda+|Cudów+}[/gold] do swojej [gold]ręki[/gold].",
+  "WATCHER-ENTER_CALM.title": "Spokój",
+  "WATCHER-ENTER_CALM.description": "Przyjmij [gold]postawę Spokoju[/gold].",
+  "WATCHER-ENTER_WRATH.title": "Gniew",
+  "WATCHER-ENTER_WRATH.description": "Przyjmij [gold]postawę Gniewu[/gold]."
 }

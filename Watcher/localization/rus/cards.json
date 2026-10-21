@@ -181,5 +181,15 @@
   "WATCHER-FLEETING_CLARITY.title": "Мимолетная ясность",
   "WATCHER-FLEETING_CLARITY.description": "Другие игроки переходят в [gold]Спокойствие[/gold].\nОни выходят из [gold]Стойки[/gold] в начале следующего хода.",
   "WATCHER-SHARED_WISDOM.title": "Единство разума",
-  "WATCHER-SHARED_WISDOM.description": "Другой игрок переходит в [gold]Божественность[/gold]."
+  "WATCHER-SHARED_WISDOM.description": "Другой игрок переходит в [gold]Божественность[/gold].",
+  "WATCHER-SHARED_FORESIGHT.title": "Общее предвидение",
+  "WATCHER-SHARED_FORESIGHT.description": "ВСЕ игроки [gold]предсказывают[/gold] {Scry:diff()} карты.",
+  "WATCHER-HOLD_FAST.title": "Держаться",
+  "WATCHER-HOLD_FAST.description": "В этом ходу другой игрок [gold]оставляет[/gold] карты в [gold]руке[/gold].",
+  "WATCHER-GIFT_OF_MIRACLES.title": "Дар чудес",
+  "WATCHER-GIFT_OF_MIRACLES.description": "Добавляет в [gold]руку[/gold] ВСЕМ союзникам {Cards:diff()} [gold]{Cards:plural(ru):«Чудо+»|«Чуда+»|«Чудес+»}[/gold].",
+  "WATCHER-ENTER_CALM.title": "Спокойствие",
+  "WATCHER-ENTER_CALM.description": "Вы переходите в [gold]Спокойствие[/gold].",
+  "WATCHER-ENTER_WRATH.title": "Гнев",
+  "WATCHER-ENTER_WRATH.description": "Вы переходите в [gold]Гнев[/gold]."
 }

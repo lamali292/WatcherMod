@@ -3,8 +3,6 @@
   "WATCHER-AMBROSIA.title": "Ambrozja",
   "WATCHER-BOTTLED_MIRACLE.description": "Dodaj {Cards:diff()} [gold]Cuda[/gold] do swojej [gold]ręki[/gold].",
   "WATCHER-BOTTLED_MIRACLE.title": "Zabutelkowany cud",
-  "WATCHER-CALM_POTION.description": "Przyjmij [gold]Postawę Spokoju[/gold].",
-  "WATCHER-CALM_POTION.title": "Mikstura spokoju",
-  "WATCHER-WRATH_POTION.description": "Przyjmij [gold]Postawę Gniewu[/gold].",
-  "WATCHER-WRATH_POTION.title": "Mikstura gniewu"
+  "WATCHER-STANCE_POTION.title": "Mikstura postawy",
+  "WATCHER-STANCE_POTION.description": "Przyjmij [gold]postawę Spokoju[/gold] lub [gold]Gniewu[/gold]."
 }

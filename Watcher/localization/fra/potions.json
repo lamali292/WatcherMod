@@ -1,10 +1,8 @@
 {
   "WATCHER-BOTTLED_MIRACLE.title": "Miracle embouteillé",
   "WATCHER-BOTTLED_MIRACLE.description": "Ajoutez {Cards:diff()} [gold]Miracles[/gold] à votre [gold]Main[/gold].",
-  "WATCHER-CALM_POTION.title": "Potion de Calme",
-  "WATCHER-CALM_POTION.description": "Entrez en [gold]Calme[/gold].",
-  "WATCHER-WRATH_POTION.title": "Potion de Colère",
-  "WATCHER-WRATH_POTION.description": "Entrez en [gold]Colère[/gold].",
   "WATCHER-AMBROSIA.title": "Ambroisie",
-  "WATCHER-AMBROSIA.description": "Entrez en [gold]Divinité[/gold]."
+  "WATCHER-AMBROSIA.description": "Entrez en [gold]Divinité[/gold].",
+  "WATCHER-STANCE_POTION.title": "Potion de Position",
+  "WATCHER-STANCE_POTION.description": "Entrez en [gold]Calme[/gold] ou en [gold]Colère[/gold]."
 }

@@ -181,5 +181,15 @@
   "WATCHER-FLEETING_CLARITY.title": "Élan de Lucidité",
   "WATCHER-FLEETING_CLARITY.description": "TOUS les alliés entrent en [gold]Calme[/gold].\nIls quittent cette [gold]Position[/gold] au début de leur prochain tour.",
   "WATCHER-SHARED_WISDOM.title": "Sagesse Partagée",
-  "WATCHER-SHARED_WISDOM.description": "Un autre joueur entre en [pink]Divinité[/pink]."
+  "WATCHER-SHARED_WISDOM.description": "Un autre joueur entre en [pink]Divinité[/pink].",
+  "WATCHER-SHARED_FORESIGHT.title": "Prévoyance partagée",
+  "WATCHER-SHARED_FORESIGHT.description": "TOUS les joueurs [gold]scrutent[/gold] {Scry:diff()} cartes.",
+  "WATCHER-HOLD_FAST.title": "Tenir bon",
+  "WATCHER-HOLD_FAST.description": "[gold]Retenez[/gold] la [gold]Main[/gold] d'un autre joueur jusqu'au tour suivant.",
+  "WATCHER-GIFT_OF_MIRACLES.title": "Don de miracles",
+  "WATCHER-GIFT_OF_MIRACLES.description": "TOUS les alliés ajoutent {Cards:diff()} [gold]{Cards:plural:Miracle+|Miracles+}[/gold] à leur [gold]Main[/gold].",
+  "WATCHER-ENTER_CALM.title": "Calme",
+  "WATCHER-ENTER_CALM.description": "Entrez en [gold]Calme[/gold].",
+  "WATCHER-ENTER_WRATH.title": "Colère",
+  "WATCHER-ENTER_WRATH.description": "Entrez en [gold]Colère[/gold]."
 }
