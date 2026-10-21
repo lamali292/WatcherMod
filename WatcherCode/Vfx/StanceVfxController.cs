@@ -13,8 +13,9 @@ namespace Watcher.Code.Stances;
 
 public class StanceVfxController(StanceVfxConfig cfg)
 {
-    private static Color? _originalModulate;
-    private static string? _ambienceLoop;
+    // One controller per stance instance (and so per player): state must not be shared between players.
+    private Color? _originalModulate;
+    private string? _ambienceLoop;
     private Node2D? _vfxInstance;
 
     public async Task OnEnter(Creature owner)
@@ -22,9 +23,9 @@ public class StanceVfxController(StanceVfxConfig cfg)
         await CreateAura(owner);
         ApplyBodyTint(owner);
         PlayEnterSfx();
-        StartAmbience();
         if (LocalContext.IsMe(owner))
         {
+            StartAmbience();
             PlayScreenFlash();
             PlayScreenShake();
         }
@@ -156,13 +157,13 @@ public class StanceVfxController(StanceVfxConfig cfg)
     {
         if (cfg.AmbienceLoopPath == null) return;
 
-        // The event fades in/out itself (see fmod/); no loop parameter, so StopLoop just stops it with fade-out.
+        // Local player only; the event fades in/out itself (see fmod/), StopLoop just stops it with its release.
         StopAmbience();
         _ambienceLoop = cfg.AmbienceLoopPath;
         SfxCmd.PlayLoop(_ambienceLoop, false);
     }
 
-    private static void StopAmbience()
+    private void StopAmbience()
     {
         if (_ambienceLoop == null) return;
 
