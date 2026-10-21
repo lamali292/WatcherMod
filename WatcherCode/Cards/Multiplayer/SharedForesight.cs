@@ -16,7 +16,6 @@ public class SharedForesight : WatcherCardModel
     public SharedForesight() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
     {
         WithScry(3, 1);
-        WithTip(BaseLibTip.Scry);
         WithKeyword(CardKeyword.Exhaust);
     }
 
