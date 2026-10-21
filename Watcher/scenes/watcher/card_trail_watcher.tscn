@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=15 format=3 ]
 
 [ext_resource type="Script" path="res://src/Core/Nodes/Vfx/NCardTrailVfx.cs" id="1_num8n"]
 [ext_resource type="Material" path="res://themes/canvas_item_material_additive_shared.tres" id="2_ps8f6"]
-[ext_resource type="Texture2D" path="res://Watcher/images/packed/vfx/trail.png" id="3_hk2in"]
+[ext_resource type="Texture2D" path="res://images/packed/vfx/trail.png" id="3_4vagt"]
 [ext_resource type="Script" path="res://src/Core/Nodes/Vfx/NCardTrail.cs" id="4_num8n"]
-[ext_resource type="Texture2D" path="res://Watcher/images/packed/vfx/trail2.png" id="5_2uixr"]
+[ext_resource type="Texture2D" path="res://images/packed/vfx/trail2.png" id="5_2p3ga"]
 [ext_resource type="Texture2D" path="res://Watcher/images/vfx/brush_particle_2.png" id="6_i2v5g"]
 [ext_resource type="Texture2D" path="res://Watcher/images/vfx/vfx_ghostly_power_up/sparkle.png" id="7_d3bhx"]
-[ext_resource type="Texture2D" path="res://Watcher/images/packed/vfx/small_card_silhouette.png" id="8_js030"]
-
+[ext_resource type="Texture2D" path="res://images/packed/vfx/small_card_silhouette.png" id="8_86pwj"]
 
 [sub_resource type="Curve" id="Curve_0ojw2"]
 _data = [Vector2(0, 0.111037), 0.0, 0.0, 0, 0, Vector2(0.839578, 0.663793), -2.61019, -2.61019, 0, 0, Vector2(0.922468, 0.94341), 0.0, 0.0, 0, 0, Vector2(1, 0.685611), 0.0, 0.0, 0, 0]
@@ -46,7 +45,7 @@ width = 96.0
 width_curve = SubResource("Curve_0ojw2")
 default_color = Color(1, 1, 1, 0.752941)
 gradient = SubResource("Gradient_6eyfw")
-texture = ExtResource("3_hk2in")
+texture = ExtResource("3_4vagt")
 texture_mode = 2
 joint_mode = 2
 script = ExtResource("4_num8n")
@@ -57,7 +56,7 @@ material = ExtResource("2_ps8f6")
 width = 64.0
 width_curve = SubResource("Curve_eaky7")
 gradient = SubResource("Gradient_fdg7u")
-texture = ExtResource("5_2uixr")
+texture = ExtResource("5_2p3ga")
 texture_mode = 2
 joint_mode = 2
 script = ExtResource("4_num8n")
@@ -115,10 +114,10 @@ color_ramp = SubResource("Gradient_ytddg")
 modulate = Color(0.67721146, 0.0009868729, 0.78063303, 0.7529412)
 material = ExtResource("2_ps8f6")
 scale = Vector2(1.1, 1.054)
-texture = ExtResource("8_js030")
+texture = ExtResource("8_86pwj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprites"]
 modulate = Color(0.9197349, 0.24102429, 0.99999994, 0.5019608)
 material = ExtResource("2_ps8f6")
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_js030")
+texture = ExtResource("8_86pwj")

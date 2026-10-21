@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 ]
 
 [ext_resource type="Material" path="res://materials/vfx/common/vfx_glow.tres" id="1_r4x4e"]
-[ext_resource type="Texture2D" path="res://Watcher/images/ui/combat/energy_counters/common_glow.png" id="2_upwo5"]
-
+[ext_resource type="Texture2D" path="res://images/vfx/common/common_glow.png" id="2_r4x4e"]
 
 [sub_resource type="Curve" id="Curve_y5gtb"]
 _data = [Vector2(0, 0.353), 0.0, -0.753, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -31,5 +30,5 @@ self_modulate = Color(0.8280576, 0.59821755, 1, 1)
 material = ExtResource("1_r4x4e")
 emitting = false
 amount = 1
-texture = ExtResource("2_upwo5")
+texture = ExtResource("2_r4x4e")
 process_material = SubResource("ParticleProcessMaterial_x046i")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=18 format=3 ]
 
 [ext_resource type="Material" path="res://materials/vfx/common/vfx_speck_glow_white.tres" id="1_hqlpk"]
-[ext_resource type="Texture2D" path="res://Watcher/images/ui/combat/energy_counters/common_glow_speck.png" id="2_2rlyg"]
-
+[ext_resource type="Texture2D" path="res://images/vfx/common/common_glow_speck.png" id="2_hqlpk"]
 
 [sub_resource type="Curve" id="Curve_hyyfl"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.178, 1), 0.0, 0.0, 0, 0, Vector2(0.18, 0), 0.0, 0.0, 0, 0, Vector2(0.245, 0), 0.0, 0.0, 0, 0, Vector2(0.251, 1), 0.0, 0.0, 0, 0, Vector2(0.695, 1), 0.0, 0.0, 0, 0, Vector2(0.702, 0), 0.0, 0.0, 0, 0, Vector2(0.749, 0), 0.0, 0.0, 0, 0, Vector2(0.752, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -96,7 +95,7 @@ material = ExtResource("1_hqlpk")
 rotation = 1.5732375
 emitting = false
 amount = 6
-texture = ExtResource("2_2rlyg")
+texture = ExtResource("2_hqlpk")
 lifetime = 0.8
 one_shot = true
 explosiveness = 1.0
