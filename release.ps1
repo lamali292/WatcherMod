@@ -75,6 +75,10 @@ $text = $text -replace '("id"\s*:\s*"BaseLib"\s*,\s*"min_version"\s*:\s*")[^"]+(
 Set-Content $manifest $text -Encoding UTF8 -NoNewline
 Write-Host "Set version, min_game_version ($gameVersionBare), BaseLib ($baseLib) in $manifest"
 
+# --- generate the (git-ignored) image atlases before packing ---
+dotnet run --project (Join-Path $PSScriptRoot "ImageGen/ImageGen.csproj") -c Release
+if ($LASTEXITCODE -ne 0) { throw "ImageGen failed. Nothing committed." }
+
 # --- build (Godot's exit-time errors are expected; a fresh .pck is the real success check) ---
 dotnet publish $csproj -c Release -p:Version=$new
 

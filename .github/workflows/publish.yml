@@ -72,6 +72,10 @@ jobs:
           unzip -oq spine-godot.zip -d "${{ github.workspace }}"
 
 
+      # Atlases are generated, not committed: build them BEFORE Godot imports them.
+      - name: Build image atlases
+        run: dotnet run --project ImageGen -c Release
+
       # First cold import often exits non-zero while bootstrapping .godot/ — run twice.
       # With a warm import cache this step only re-imports changed assets.
       - name: Import Godot resources

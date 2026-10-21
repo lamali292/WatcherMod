@@ -134,6 +134,10 @@ jobs:
           sed -i -E 's/("version"[[:space:]]*:[[:space:]]*")[0-9]+\.[0-9]+\.[0-9]+(")/\1'"$VERSION"'\2/' Watcher.json
           grep '"version"' Watcher.json
 
+      # Atlases are generated, not committed: build them BEFORE Godot imports them.
+      - name: Build image atlases
+        run: dotnet run --project ImageGen -c Release
+
       - name: Import Godot resources
         run: |
           "$GODOT_PATH" --headless --audio-driver Dummy --import || true
