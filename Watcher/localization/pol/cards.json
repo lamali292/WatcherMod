@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "Gniew",
   "WATCHER-ENTER_WRATH.description": "Przyjmij [gold]postawę Gniewu[/gold].",
   "WATCHER-STANCE_BLESSING.title": "Błogosławieństwo postawy",
-  "WATCHER-STANCE_BLESSING.description": "Gdy zmieniasz [gold]Postawę[/gold], pozostali gracze zyskują {StanceBlessingPower:diff()} pkt. [gold]Wigoru[/gold]."
+  "WATCHER-STANCE_BLESSING.description": "Gdy zmieniasz [gold]Postawę[/gold], losowy sojusznik zyskuje {StanceBlessingPower:diff()} pkt. [gold]Wigoru[/gold]."
 }

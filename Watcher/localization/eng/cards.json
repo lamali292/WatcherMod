@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "Wrath",
   "WATCHER-ENTER_WRATH.description": "Enter [gold]Wrath[/gold].",
   "WATCHER-STANCE_BLESSING.title": "Stance Blessing",
-  "WATCHER-STANCE_BLESSING.description": "Whenever you change Stances, other players gain {StanceBlessingPower:diff()} [gold]Vigor[/gold]."
+  "WATCHER-STANCE_BLESSING.description": "Whenever you change Stances, a random ally gains {StanceBlessingPower:diff()} [gold]Vigor[/gold]."
 }

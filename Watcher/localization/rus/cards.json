@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "Гнев",
   "WATCHER-ENTER_WRATH.description": "Вы переходите в [gold]Гнев[/gold].",
   "WATCHER-STANCE_BLESSING.title": "Благословение стойки",
-  "WATCHER-STANCE_BLESSING.description": "Дает {StanceBlessingPower:diff()} [gold]бодрости[/gold] другим игрокам при смене [gold]Стойки[/gold]."
+  "WATCHER-STANCE_BLESSING.description": "Дает {StanceBlessingPower:diff()} [gold]бодрости[/gold] случайному игроку при смене [gold]Стойки[/gold]."
 }

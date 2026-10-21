@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "Zorn",
   "WATCHER-ENTER_WRATH.description": "Nimm [gold]Zorn[/gold] an.",
   "WATCHER-STANCE_BLESSING.title": "Haltungssegen",
-  "WATCHER-STANCE_BLESSING.description": "Immer wenn du deine [gold]Haltung[/gold] änderst, erhalten Mitspieler {StanceBlessingPower:diff()} [gold]Elan[/gold]."
+  "WATCHER-STANCE_BLESSING.description": "Immer wenn du deine [gold]Haltung[/gold] änderst, erhält ein zufälliger Mitspieler {StanceBlessingPower:diff()} [gold]Elan[/gold]."
 }

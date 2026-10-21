@@ -72,6 +72,6 @@
   "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "[gold]占術[/gold]を行うたび、カードを[blue]{Amount}[/blue]枚引く。",
   "WATCHER-CLAIRVOYANCE_POWER.title": "千里眼",
   "WATCHER-STANCE_BLESSING_POWER.title": "スタンスの祝福",
-  "WATCHER-STANCE_BLESSING_POWER.description": "[gold]スタンス[/gold]を変更するたび、他の全プレイヤーは[gold]活力[/gold][blue]X[/blue]を得る。",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "[gold]スタンス[/gold]を変更するたび、他の全プレイヤーは[gold]活力[/gold][blue]{Amount}[/blue]を得る。"
+  "WATCHER-STANCE_BLESSING_POWER.description": "[gold]スタンス[/gold]を変更するたび、ランダムな味方は[gold]活力[/gold][blue]X[/blue]を得る。",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "[gold]スタンス[/gold]を変更するたび、ランダムな味方は[gold]活力[/gold][blue]{Amount}[/blue]を得る。"
 }

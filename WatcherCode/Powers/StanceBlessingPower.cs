@@ -11,7 +11,8 @@ using Watcher.Code.Stances;
 
 namespace Watcher.Code.Powers;
 
-// Mental Fortress for the team's offence: every stance change of the owner gives every other player Vigor.
+// Mental Fortress for the team's offence: every stance change of the owner gives a random other player Vigor.
+// One random ally (combat RNG, so every client picks the same one) keeps it from scaling with the player count.
 public sealed class StanceBlessingPower : WatcherPowerModel, IOnStanceChange
 {
     public override PowerType Type => PowerType.Buff;
@@ -25,10 +26,10 @@ public sealed class StanceBlessingPower : WatcherPowerModel, IOnStanceChange
         if (player != Owner.Player) return;
 
         var others = player.AllTeammates.Where(teammate => teammate != player).ToList();
-        if (others.Count == 0) return;
+        var ally = player.RunState.Rng.CombatTargets.NextItem(others);
+        if (ally == null) return;
 
         Flash();
-        foreach (var other in others)
-            await PowerCmd.Apply<VigorPower>(ctx, other.Creature, Amount, Owner, null);
+        await PowerCmd.Apply<VigorPower>(ctx, ally.Creature, Amount, Owner, null);
     }
 }

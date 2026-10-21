@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "Colère",
   "WATCHER-ENTER_WRATH.description": "Entrez en [gold]Colère[/gold].",
   "WATCHER-STANCE_BLESSING.title": "Bénédiction de Position",
-  "WATCHER-STANCE_BLESSING.description": "Lorsque vous changez de [gold]Position[/gold], les autres joueurs gagnent {StanceBlessingPower:diff()} de [gold]Vigueur[/gold]."
+  "WATCHER-STANCE_BLESSING.description": "Lorsque vous changez de [gold]Position[/gold], un allié aléatoire gagne {StanceBlessingPower:diff()} de [gold]Vigueur[/gold]."
 }

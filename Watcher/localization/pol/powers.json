@@ -75,6 +75,6 @@
   "WATCHER-WRATH_STANCE.smartDescription": "Zadajesz i otrzymujesz podwójne obrażenia.",
   "WATCHER-WRATH_STANCE.title": "Postawa Gniewu",
   "WATCHER-STANCE_BLESSING_POWER.title": "Błogosławieństwo postawy",
-  "WATCHER-STANCE_BLESSING_POWER.description": "Gdy zmieniasz [gold]Postawę[/gold], pozostali gracze zyskują [blue]X[/blue] pkt. [gold]Wigoru[/gold].",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Gdy zmieniasz [gold]Postawę[/gold], pozostali gracze zyskują [blue]{Amount}[/blue] pkt. [gold]Wigoru[/gold]."
+  "WATCHER-STANCE_BLESSING_POWER.description": "Gdy zmieniasz [gold]Postawę[/gold], losowy sojusznik zyskuje [blue]X[/blue] pkt. [gold]Wigoru[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Gdy zmieniasz [gold]Postawę[/gold], losowy sojusznik zyskuje [blue]{Amount}[/blue] pkt. [gold]Wigoru[/gold]."
 }

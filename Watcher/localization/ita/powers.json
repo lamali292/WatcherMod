@@ -75,6 +75,6 @@
   "WATCHER-CLAIRVOYANCE_POWER.description": "Ogni volta che [gold]Scruti[/gold], peschi [blue]X[/blue] carte.",
   "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Ogni volta che [gold]Scruti[/gold], peschi [blue]{Amount}[/blue] {Amount:plural:carta|carte}.",
   "WATCHER-STANCE_BLESSING_POWER.title": "Benedizione della Posa",
-  "WATCHER-STANCE_BLESSING_POWER.description": "Ogni volta che cambi [gold]Posa[/gold], gli altri giocatori ottengono [blue]X[/blue] di [gold]Vigore[/gold].",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Ogni volta che cambi [gold]Posa[/gold], gli altri giocatori ottengono [blue]{Amount}[/blue] di [gold]Vigore[/gold]."
+  "WATCHER-STANCE_BLESSING_POWER.description": "Ogni volta che cambi [gold]Posa[/gold], un alleato casuale ottiene [blue]X[/blue] di [gold]Vigore[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Ogni volta che cambi [gold]Posa[/gold], un alleato casuale ottiene [blue]{Amount}[/blue] di [gold]Vigore[/gold]."
 }

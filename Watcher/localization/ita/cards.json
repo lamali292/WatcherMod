@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "Furia",
   "WATCHER-ENTER_WRATH.description": "Entri in [gold]Furia[/gold].",
   "WATCHER-STANCE_BLESSING.title": "Benedizione della Posa",
-  "WATCHER-STANCE_BLESSING.description": "Ogni volta che cambi [gold]Posa[/gold], gli altri giocatori ottengono {StanceBlessingPower:diff()} di [gold]Vigore[/gold]."
+  "WATCHER-STANCE_BLESSING.description": "Ogni volta che cambi [gold]Posa[/gold], un alleato casuale ottiene {StanceBlessingPower:diff()} di [gold]Vigore[/gold]."
 }

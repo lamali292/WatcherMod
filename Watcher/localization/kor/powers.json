@@ -72,6 +72,6 @@
   "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "[gold]예지[/gold]할 때마다, 카드를 [blue]{Amount}[/blue] 장 뽑습니다.",
   "WATCHER-CLAIRVOYANCE_POWER.title": "천리안",
   "WATCHER-STANCE_BLESSING_POWER.title": "경지의 축복",
-  "WATCHER-STANCE_BLESSING_POWER.description": "[gold]경지[/gold]를 바꿀 때마다, 다른 플레이어가 [gold]활력[/gold]을 [blue]X[/blue] 얻습니다.",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "[gold]경지[/gold]를 바꿀 때마다, 다른 플레이어가 [gold]활력[/gold]을 [blue]{Amount}[/blue] 얻습니다."
+  "WATCHER-STANCE_BLESSING_POWER.description": "[gold]경지[/gold]를 바꿀 때마다, 무작위 아군이 [gold]활력[/gold]을 [blue]X[/blue] 얻습니다.",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "[gold]경지[/gold]를 바꿀 때마다, 무작위 아군이 [gold]활력[/gold]을 [blue]{Amount}[/blue] 얻습니다."
 }

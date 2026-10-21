@@ -75,6 +75,6 @@
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "在你的回合结束时获得 [blue]{Amount}[/blue] 点[gold]格挡[/gold]。受到攻击伤害而失去生命时，[gold]多层护甲[/gold]的层数将会减少[blue]1[/blue]。",
   "WATCHER-PLATED_ARMOR_POWER.description": "在你的回合结束时获得 [blue]X[/blue] 点[gold]格挡[/gold]。受到攻击伤害而失去生命时，[gold]多层护甲[/gold]的层数将会减少[blue]1[/blue]。",
   "WATCHER-STANCE_BLESSING_POWER.title": "姿态祝福",
-  "WATCHER-STANCE_BLESSING_POWER.description": "每当你转换[gold]姿态[/gold]时，其他玩家获得[blue]X[/blue]点[gold]活力[/gold]。",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "每当你转换[gold]姿态[/gold]时，其他玩家获得[blue]{Amount}[/blue]点[gold]活力[/gold]。"
+  "WATCHER-STANCE_BLESSING_POWER.description": "每当你转换[gold]姿态[/gold]时，一名随机盟友获得[blue]X[/blue]点[gold]活力[/gold]。",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "每当你转换[gold]姿态[/gold]时，一名随机盟友获得[blue]{Amount}[/blue]点[gold]活力[/gold]。"
 }

@@ -75,6 +75,6 @@
   "WATCHER-CLAIRVOYANCE_POWER.description": "Whenever you [gold]Scry[/gold], draw [blue]X[/blue] cards.",
   "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Whenever you [gold]Scry[/gold], draw [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
   "WATCHER-STANCE_BLESSING_POWER.title": "Stance Blessing",
-  "WATCHER-STANCE_BLESSING_POWER.description": "Whenever you change Stances, other players gain [blue]X[/blue] [gold]Vigor[/gold].",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Whenever you change Stances, other players gain [blue]{Amount}[/blue] [gold]Vigor[/gold]."
+  "WATCHER-STANCE_BLESSING_POWER.description": "Whenever you change Stances, a random ally gains [blue]X[/blue] [gold]Vigor[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Whenever you change Stances, a random ally gains [blue]{Amount}[/blue] [gold]Vigor[/gold]."
 }

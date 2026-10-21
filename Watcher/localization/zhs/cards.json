@@ -191,5 +191,5 @@
   "WATCHER-ENTER_WRATH.title": "愤怒",
   "WATCHER-ENTER_WRATH.description": "进入[gold]愤怒[/gold]。",
   "WATCHER-STANCE_BLESSING.title": "姿态祝福",
-  "WATCHER-STANCE_BLESSING.description": "每当你转换[gold]姿态[/gold]时，其他玩家获得{StanceBlessingPower:diff()}点[gold]活力[/gold]。"
+  "WATCHER-STANCE_BLESSING.description": "每当你转换[gold]姿态[/gold]时，一名随机盟友获得{StanceBlessingPower:diff()}点[gold]活力[/gold]。"
 }

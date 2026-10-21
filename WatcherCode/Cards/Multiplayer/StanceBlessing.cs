@@ -14,7 +14,7 @@ public class StanceBlessing : WatcherCardModel
 {
     public StanceBlessing() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<StanceBlessingPower>(2, 1, false);
+        WithPower<StanceBlessingPower>(3, 1, false);
         WithTip(typeof(VigorPower));
     }
 

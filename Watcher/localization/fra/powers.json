@@ -82,6 +82,6 @@
   "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.DOWN.description": "Réduit un [gold]Pouvoir[/gold] pour une durée.",
   "BASELIB-CUSTOM_TEMPORARY_POWER_MODEL.DOWN.smartDescription": "Perdez [blue]{Amount:abs()}[/blue] [gold]{TemporaryPowerTitle}[/gold] jusqu'à la fin de vôtre {UntilEndOfOtherSideTurn:cond:|enemies }tour.{Repeat:cond:>0?\\nPersiste pour encore [blue]{Repeat:diff()}[/blue] {Repeat:plural:tour|tours} supplémentaires.|}",
   "WATCHER-STANCE_BLESSING_POWER.title": "Bénédiction de Position",
-  "WATCHER-STANCE_BLESSING_POWER.description": "Lorsque vous changez de [gold]Position[/gold], les autres joueurs gagnent [blue]X[/blue] de [gold]Vigueur[/gold].",
-  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Lorsque vous changez de [gold]Position[/gold], les autres joueurs gagnent [blue]{Amount}[/blue] de [gold]Vigueur[/gold]."
+  "WATCHER-STANCE_BLESSING_POWER.description": "Lorsque vous changez de [gold]Position[/gold], un allié aléatoire gagne [blue]X[/blue] de [gold]Vigueur[/gold].",
+  "WATCHER-STANCE_BLESSING_POWER.smartDescription": "Lorsque vous changez de [gold]Position[/gold], un allié aléatoire gagne [blue]{Amount}[/blue] de [gold]Vigueur[/gold]."
 }
