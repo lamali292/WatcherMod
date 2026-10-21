@@ -5,6 +5,12 @@ const SKIP_EXTENSIONS: Array[String] = [
 	".ogg", ".mp3", ".wav",
 ]
 
+# Source-only art files that are never meant to ship: no Godot import exists for them,
+# so unlike SKIP_EXTENSIONS they're just dropped outright rather than replaced by an import.
+const EXCLUDE_EXTENSIONS: Array[String] = [
+	".kra",
+]
+
 const REMAP_PATH_KEYS: Array[String] = [
 	"path.s3tc_bptc",
 	"path.etc2_astc",
@@ -64,6 +70,9 @@ func _pack_folder_recursive(packer: PCKPacker, path: String) -> void:
 	if dir == null:
 		return
 
+	if FileAccess.file_exists(path + "/.gdignore"):
+		return
+
 	dir.list_dir_begin()
 	var file_name: String = dir.get_next()
 
@@ -77,16 +86,20 @@ func _pack_folder_recursive(packer: PCKPacker, path: String) -> void:
 		if dir.current_is_dir():
 			_pack_folder_recursive(packer, full_path)
 		else:
-			var is_raw_image: bool = SKIP_EXTENSIONS.any(
+			var is_excluded: bool = EXCLUDE_EXTENSIONS.any(
 				func(ext: String) -> bool: return file_name.ends_with(ext)
 			)
-			if not is_raw_image:
-				var err: int = packer.add_file(full_path, full_path)
-				if err != OK:
-					printerr("Failed to pack file: ", full_path)
+			if not is_excluded:
+				var is_raw_image: bool = SKIP_EXTENSIONS.any(
+					func(ext: String) -> bool: return file_name.ends_with(ext)
+				)
+				if not is_raw_image:
+					var err: int = packer.add_file(full_path, full_path)
+					if err != OK:
+						printerr("Failed to pack file: ", full_path)
 
-			if file_name.ends_with(".import"):
-				_pack_imported_dependency(packer, full_path)
+				if file_name.ends_with(".import"):
+					_pack_imported_dependency(packer, full_path)
 
 		file_name = dir.get_next()
 
