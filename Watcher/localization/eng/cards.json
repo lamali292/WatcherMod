@@ -181,5 +181,11 @@
   "WATCHER-FLEETING_CLARITY.title": "Fleeting Clarity",
   "WATCHER-FLEETING_CLARITY.description": "ALL allies enter [gold]Calm[/gold].\nThey exit [gold]Calm[/gold] at the start of their next turn.",
   "WATCHER-SHARED_WISDOM.title": "Shared Wisdom",
-  "WATCHER-SHARED_WISDOM.description": "Another player enters [gold]Divinity[/gold]."
+  "WATCHER-SHARED_WISDOM.description": "Another player enters [gold]Divinity[/gold].",
+  "WATCHER-SHARED_FORESIGHT.title": "Shared Foresight",
+  "WATCHER-SHARED_FORESIGHT.description": "ALL players [gold]Scry[/gold] {Scry:diff()}.",
+  "WATCHER-HOLD_FAST.title": "Hold Fast",
+  "WATCHER-HOLD_FAST.description": "Another player [gold]Retains[/gold] their entire hand this turn.",
+  "WATCHER-GIFT_OF_MIRACLES.title": "Gift of Miracles",
+  "WATCHER-GIFT_OF_MIRACLES.description": "ALL allies add {Cards:diff()} [gold]Miracle+[/gold] to their [gold]Hand[/gold]."
 }
