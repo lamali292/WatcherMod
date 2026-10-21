@@ -1,0 +1,6 @@
+/obj/
+/bin/
+/.cards_cache.json
+/.powers_cache.json
+/.relics_cache.json
+/.potions_cache.json
