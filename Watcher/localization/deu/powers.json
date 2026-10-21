@@ -74,7 +74,7 @@
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Flüchtige Klarheit",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "Zu Beginn deines Zuges verlasse [gold]Ruhe[/gold].",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Zu Beginn deines Zuges verlasse [gold]Ruhe[/gold].",
-  "WATCHER-ANCIENT_CARD_POWER.title": "Anhäufen",
-  "WATCHER-ANCIENT_CARD_POWER.description": "Solange du in [gold]Zorn[/gold] bist, füge [blue]+50%[/blue] Schaden zu.",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Solange du in [gold]Zorn[/gold] bist, füge [blue]+{Amount}%[/blue] Schaden zu."
+  "WATCHER-CLAIRVOYANCE_POWER.title": "Hellsicht",
+  "WATCHER-CLAIRVOYANCE_POWER.description": "Immer wenn du [gold]spähst[/gold], ziehe [blue]X[/blue] Karten.",
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Immer wenn du [gold]spähst[/gold], ziehe [blue]{Amount}[/blue] {Amount:plural:Karte|Karten}."
 }

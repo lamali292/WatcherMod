@@ -74,7 +74,7 @@
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Мимолетная ясность",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "Вы выходите из [gold]Спокойствия[/gold] в начале следующего хода.",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "Вы выходите из [gold]Спокойствия[/gold] в начале следующего хода.",
-  "WATCHER-ANCIENT_CARD_POWER.title": "Накопление",
-  "WATCHER-ANCIENT_CARD_POWER.description": "Наносимый урон повышается на [blue]50%[/blue], если вы в [gold]Гневе[/gold].",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Наносимый урон повышается на [blue]{Amount}%[/blue], если вы в [gold]Гневе[/gold]."
+  "WATCHER-CLAIRVOYANCE_POWER.title": "Прозрение",
+  "WATCHER-CLAIRVOYANCE_POWER.description": "Вы добираете [blue]X[/blue] карт, когда [gold]Предсказываете[/gold].",
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Вы добираете [blue]{Amount}[/blue] {Amount:plural(ru):карту|карты|карт}, когда [gold]Предсказываете[/gold]."
 }

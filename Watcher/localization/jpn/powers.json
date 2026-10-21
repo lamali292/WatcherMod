@@ -68,9 +68,9 @@
   "WATCHER-MASTER_REALITY_POWER.title": "掌握した現実",
   "WATCHER-MASTER_REALITY_POWER.description": "カードが戦闘中に作られるたび、それが[gold]アップグレード[/gold]される。",
   "WATCHER-MASTER_REALITY_POWER.smartDescription": "カードが戦闘中に作られるたび、それが[gold]アップグレード[/gold]される。",
-  "WATCHER-ANCIENT_CARD_POWER.description": "[gold]憤怒[/gold]状態中、ダメージが+50%増加する",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "[gold]憤怒[/gold]状態中、ダメージが+{Amount}%増加する。",
-  "WATCHER-ANCIENT_CARD_POWER.title": "蓄積",
+  "WATCHER-CLAIRVOYANCE_POWER.description": "[gold]占術[/gold]を行うたび、カードを[blue]X[/blue]枚引く。",
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "[gold]占術[/gold]を行うたび、カードを[blue]{Amount}[/blue]枚引く。",
+  "WATCHER-CLAIRVOYANCE_POWER.title": "千里眼",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "ターン開始時、[gold]平静[/gold]の[gold]スタンス[/gold]から抜け出す。",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "ターン開始時、[gold]平静[/gold]の[gold]スタンス[/gold]から抜け出す。",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "刹那の明晰"

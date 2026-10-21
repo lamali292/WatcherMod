@@ -74,7 +74,7 @@
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Chiarezza Fugace",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "All'inizio del tuo turno, esci dalla [gold]Calma[/gold].",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "All'inizio del tuo turno, esci dalla [gold]Calma[/gold].",
-  "WATCHER-ANCIENT_CARD_POWER.title": "Accumulo",
-  "WATCHER-ANCIENT_CARD_POWER.description": "Mentre sei in [gold]Ira[/gold], infliggi +50% di danni.",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Mentre sei in [gold]Ira[/gold], infliggi +{Amount}% di danni."
-} 
+  "WATCHER-CLAIRVOYANCE_POWER.title": "Chiaroveggenza",
+  "WATCHER-CLAIRVOYANCE_POWER.description": "Ogni volta che [gold]Scruti[/gold], peschi [blue]X[/blue] carte.",
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Ogni volta che [gold]Scruti[/gold], peschi [blue]{Amount}[/blue] {Amount:plural:carta|carte}."
+}

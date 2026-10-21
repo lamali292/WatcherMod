@@ -1,7 +1,7 @@
 {
-  "WATCHER-ANCIENT_CARD_POWER.description": "Jeżeli jesteś w [gold]postawie Gniewu[/gold], zadajesz obrażenia większe o 50%.",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "Jeżeli jesteś w [gold]postawie Gniewu[/gold], zadajesz obrażenia większe o +{Amount}%.",
-  "WATCHER-ANCIENT_CARD_POWER.title": "Kumulacja",
+  "WATCHER-CLAIRVOYANCE_POWER.description": "Kiedykolwiek [gold]Prognozujesz[/gold], dobierz [blue]X[/blue] kart.",
+  "WATCHER-CLAIRVOYANCE_POWER.smartDescription": "Kiedykolwiek [gold]Prognozujesz[/gold], dobierz [blue]{Amount}[/blue] {Amount:plural:kartę|karty|kart}.",
+  "WATCHER-CLAIRVOYANCE_POWER.title": "Jasnowidzenie",
   "WATCHER-BATTLE_HYMN_POWER.description": "Na początku każdej tury, dodaj [gold]Kary[/gold] do swojej [gold]ręki[/gold]",
   "WATCHER-BATTLE_HYMN_POWER.smartDescription": "Na początku każdej tury, dodaj [blue]{Amount}[/blue] [gold]Kary[/gold] do swojej [gold]ręki[/gold]",
   "WATCHER-BATTLE_HYMN_POWER.title": "Hymn bitewny",
