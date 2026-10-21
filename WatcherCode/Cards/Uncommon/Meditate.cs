@@ -22,34 +22,28 @@ public sealed class Meditate : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
-        var discardPile = PileType.Discard.GetPile(Owner);
-        var cardsInDiscard = discardPile.Cards.ToList();
-        if (cardsInDiscard.Count != 0)
+        var numCards = DynamicVars.Cards.IntValue;
+        var prefs = new CardSelectorPrefs(
+            SelectionScreenPrompt,
+            numCards,
+            numCards
+        )
         {
-            var numCards = DynamicVars.Cards.IntValue;
-            var maxSelect = Math.Min(numCards, cardsInDiscard.Count);
-            var prefs = new CardSelectorPrefs(
-                SelectionScreenPrompt,
-                maxSelect,
-                maxSelect
-            )
-            {
-                Cancelable = false,
-                PretendCardsCanBePlayed = true
-            };
-            var selectedCards = await CardSelectCmd.FromSimpleGrid(
-                ctx,
-                cardsInDiscard,
-                Owner,
-                prefs
-            );
+            Cancelable = false,
+            PretendCardsCanBePlayed = true
+        };
+        var selectedCards = await CardSelectCmd.FromCombatPile(
+            ctx,
+            PileType.Discard.GetPile(Owner),
+            Owner,
+            prefs
+        );
 
-            foreach (var card in selectedCards)
-            {
-                await CardPileCmd.Add(card, PileType.Hand);
+        foreach (var card in selectedCards.ToList())
+        {
+            await CardPileCmd.Add(card, PileType.Hand);
 
-                card.GiveSingleTurnRetain();
-            }
+            card.GiveSingleTurnRetain();
         }
 
         await StanceCmd.EnterCalm(ctx, Owner, cardPlay.Card);
