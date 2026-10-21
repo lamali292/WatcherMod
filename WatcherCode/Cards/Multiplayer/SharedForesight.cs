@@ -1,11 +1,10 @@
-using BaseLib.Commands;
 using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
+using Watcher.Code.Commands;
 using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Multiplayer;
@@ -24,11 +23,6 @@ public class SharedForesight : WatcherCardModel
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         if (CombatState == null) return;
-        var amount = DynamicVars.Scry().IntValue;
-        var players = Owner.AllTeammates;
-        foreach (var player in players)
-        {
-            await ScryCmd.Execute(ctx, player, amount);
-        }
+        await MultiplayerCmd.Scry(ctx, this, Owner.AllTeammates, DynamicVars.Scry().IntValue);
     }
 }
