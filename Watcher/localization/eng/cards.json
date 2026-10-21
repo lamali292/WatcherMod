@@ -187,5 +187,9 @@
   "WATCHER-HOLD_FAST.title": "Hold Fast",
   "WATCHER-HOLD_FAST.description": "Another player [gold]Retains[/gold] their entire hand this turn.",
   "WATCHER-GIFT_OF_MIRACLES.title": "Gift of Miracles",
-  "WATCHER-GIFT_OF_MIRACLES.description": "ALL allies add {Cards:diff()} [gold]Miracle+[/gold] to their [gold]Hand[/gold]."
+  "WATCHER-GIFT_OF_MIRACLES.description": "ALL allies add {Cards:diff()} [gold]Miracle+[/gold] to their [gold]Hand[/gold].",
+  "WATCHER-ENTER_CALM.title": "Calm",
+  "WATCHER-ENTER_CALM.description": "Enter [gold]Calm[/gold].",
+  "WATCHER-ENTER_WRATH.title": "Wrath",
+  "WATCHER-ENTER_WRATH.description": "Enter [gold]Wrath[/gold]."
 }

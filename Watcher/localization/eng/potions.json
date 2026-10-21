@@ -1,10 +1,10 @@
 {
   "WATCHER-BOTTLED_MIRACLE.title": "Bottled Miracle",
-  "WATCHER-BOTTLED_MIRACLE.description": "Add {Cards:diff()} [gold]Miracles[/gold] to your [gold]Hand[/gold].",
-  "WATCHER-CALM_POTION.title": "Calm Potion",
-  "WATCHER-CALM_POTION.description": "Enter [gold]Calm[/gold].",
-  "WATCHER-WRATH_POTION.title": "Wrath Potion",
-  "WATCHER-WRATH_POTION.description": "Enter [gold]Wrath[/gold].",
+  "WATCHER-BOTTLED_MIRACLE.description": "Add {Cards:diff()} [gold]Miracles[/gold] into your [gold]Hand[/gold].",
+  "WATCHER-STANCE_POTION.title": "Stance Potion",
+  "WATCHER-STANCE_POTION.description": "Enter [gold]Calm[/gold] or [gold]Wrath[/gold].",
   "WATCHER-AMBROSIA.title": "Ambrosia",
-  "WATCHER-AMBROSIA.description": "Enter [gold]Divinity[/gold]."
+  "WATCHER-AMBROSIA.description": "Enter [gold]Divinity[/gold].",
+  "WATCHER-CALM_POTION.title": "Calm Potion",
+  "WATCHER-CALM_POTION.description": "Enter [gold]Calm[/gold]."
 }
