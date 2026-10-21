@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 ]
 
-[ext_resource type="Script" path="res://WatcherCode/Nodes/WatcherNMerchantCharacter.cs" id="1_b7tdn"]
+[ext_resource type="Script" path="res://src/Core/Nodes/Screens/Shops/NMerchantCharacter.cs" id="1_xou3u"]
 [ext_resource type="PackedScene" path="res://Watcher/scenes/watcher/watcher_spine.tscn" id="2_xou3u"]
 
 [node name="WatcherMerchant" type="Node2D"]
-script = ExtResource("1_b7tdn")
+script = ExtResource("1_xou3u")
 
 [node name="WatcherSpine" parent="." instance=ExtResource("2_xou3u")]
 scale = Vector2(1.6228307, 1.6228307)
