@@ -183,7 +183,7 @@
   "WATCHER-SHARED_FORESIGHT.title": "共有の先見",
   "WATCHER-SHARED_FORESIGHT.description": "すべてのプレイヤーが[gold]占術[/gold]{Scry:diff()}を行う。",
   "WATCHER-HOLD_FAST.title": "踏みとどまる",
-  "WATCHER-HOLD_FAST.description": "このターン、他のプレイヤー1人の[gold]手札[/gold]をすべて[gold]保留[/gold]する。",
+  "WATCHER-HOLD_FAST.description": "他のプレイヤー1人は、このターン[gold]手札[/gold]をすべて[gold]保留[/gold]する。",
   "WATCHER-GIFT_OF_MIRACLES.title": "奇跡の贈り物",
   "WATCHER-GIFT_OF_MIRACLES.description": "すべての味方は[gold]奇跡＋[/gold]を{Cards:diff()}枚[gold]手札[/gold]に加える。",
   "WATCHER-ENTER_CALM.title": "平静",

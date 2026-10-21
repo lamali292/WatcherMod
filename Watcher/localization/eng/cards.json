@@ -183,7 +183,7 @@
   "WATCHER-SHARED_FORESIGHT.title": "Shared Foresight",
   "WATCHER-SHARED_FORESIGHT.description": "ALL players [gold]Scry[/gold] {Scry:diff()}.",
   "WATCHER-HOLD_FAST.title": "Hold Fast",
-  "WATCHER-HOLD_FAST.description": "[gold]Retain[/gold] another player's [gold]Hand[/gold] this turn.",
+  "WATCHER-HOLD_FAST.description": "Another player [gold]Retains[/gold] their [gold]Hand[/gold] this turn.",
   "WATCHER-GIFT_OF_MIRACLES.title": "Gift of Miracles",
   "WATCHER-GIFT_OF_MIRACLES.description": "ALL allies add {Cards:diff()} [gold]{Cards:plural:Miracle+|Miracles+}[/gold] into their [gold]Hand[/gold].",
   "WATCHER-ENTER_CALM.title": "Calm",

@@ -183,7 +183,7 @@
   "WATCHER-SHARED_FORESIGHT.title": "Geteilte Voraussicht",
   "WATCHER-SHARED_FORESIGHT.description": "ALLE Spieler [gold]spähen[/gold] {Scry:diff()}.",
   "WATCHER-HOLD_FAST.title": "Festhalten",
-  "WATCHER-HOLD_FAST.description": "[gold]Behalte[/gold] in diesem Zug die [gold]Hand[/gold] eines Mitspielers.",
+  "WATCHER-HOLD_FAST.description": "Ein Mitspieler [gold]behält[/gold] in diesem Zug seine [gold]Hand[/gold].",
   "WATCHER-GIFT_OF_MIRACLES.title": "Gabe der Wunder",
   "WATCHER-GIFT_OF_MIRACLES.description": "ALLE Verbündeten erhalten {Cards:diff()} [gold]Wunder+[/gold] auf die [gold]Hand[/gold].",
   "WATCHER-ENTER_CALM.title": "Ruhe",

@@ -183,7 +183,7 @@
   "WATCHER-SHARED_FORESIGHT.title": "Prévoyance partagée",
   "WATCHER-SHARED_FORESIGHT.description": "TOUS les joueurs [gold]scrutent[/gold] {Scry:diff()} cartes.",
   "WATCHER-HOLD_FAST.title": "Tenir bon",
-  "WATCHER-HOLD_FAST.description": "[gold]Retenez[/gold] la [gold]Main[/gold] d'un autre joueur jusqu'au tour suivant.",
+  "WATCHER-HOLD_FAST.description": "Un autre joueur [gold]retient[/gold] sa [gold]Main[/gold] jusqu'au tour suivant.",
   "WATCHER-GIFT_OF_MIRACLES.title": "Don de miracles",
   "WATCHER-GIFT_OF_MIRACLES.description": "TOUS les alliés ajoutent {Cards:diff()} [gold]{Cards:plural:Miracle+|Miracles+}[/gold] à leur [gold]Main[/gold].",
   "WATCHER-ENTER_CALM.title": "Calme",

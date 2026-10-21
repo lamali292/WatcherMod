@@ -183,7 +183,7 @@
   "WATCHER-SHARED_FORESIGHT.title": "공유된 예지",
   "WATCHER-SHARED_FORESIGHT.description": "모든 플레이어가 [gold]예지[/gold] {Scry:diff()}.",
   "WATCHER-HOLD_FAST.title": "버티기",
-  "WATCHER-HOLD_FAST.description": "이번 턴에 다른 플레이어의 [gold]손[/gold]에 있는 카드를 [gold]보존[/gold]합니다.",
+  "WATCHER-HOLD_FAST.description": "다른 플레이어가 이번 턴에 [gold]손[/gold]에 있는 카드를 [gold]보존[/gold]합니다.",
   "WATCHER-GIFT_OF_MIRACLES.title": "기적의 선물",
   "WATCHER-GIFT_OF_MIRACLES.description": "모든 아군의 [gold]손[/gold]에 [gold]기적+[/gold]을 {Cards:diff()}장 추가합니다.",
   "WATCHER-ENTER_CALM.title": "명상",
