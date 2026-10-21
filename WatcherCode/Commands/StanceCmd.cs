@@ -27,4 +27,24 @@ public static class StanceCmd
     {
         return WatcherModel.SetStance<NoStance>(ctx, player, cardSource);
     }
+    
+    public static Task EnterWrath(PlayerChoiceContext ctx, IEnumerable<Player> players, CardModel? cardSource)
+    {
+        return WatcherModel.SetStance<WrathStance>(ctx, players, cardSource);
+    }
+
+    public static Task EnterCalm(PlayerChoiceContext ctx, IEnumerable<Player> players, CardModel? cardSource)
+    {
+        return WatcherModel.SetStance<CalmStance>(ctx, players, cardSource);
+    }
+
+    public static Task EnterDivinity(PlayerChoiceContext ctx, IEnumerable<Player> players, CardModel? cardSource)
+    {
+        return WatcherModel.SetStance<DivinityStance>(ctx, players, cardSource);
+    }
+
+    public static Task ExitStance(PlayerChoiceContext ctx, IEnumerable<Player> players, CardModel? cardSource)
+    {
+        return WatcherModel.SetStance<NoStance>(ctx, players, cardSource);
+    }
 }

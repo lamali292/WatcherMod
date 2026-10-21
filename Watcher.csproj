@@ -2,6 +2,7 @@
     <Import Project="build/mod.build.props"/>
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>14</LangVersion>
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
         <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
         <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>

@@ -29,6 +29,16 @@ public class WatcherModel() : CustomSingletonModel(HookType.Combat)
         return ActiveStance[player] is T;
     }
 
+    public static async Task SetStance<T>(PlayerChoiceContext ctx, IEnumerable<Player> players, CardModel? source)
+        where T : WatcherStanceModel
+    {
+        foreach (var player in players)
+        {
+            await SetStance(ctx, player, WatcherModelDb.WatcherStance<T>(), source);
+        }
+    }
+
+    
 
     public static async Task SetStance<T>(PlayerChoiceContext ctx, Player player, CardModel? source)
         where T : WatcherStanceModel

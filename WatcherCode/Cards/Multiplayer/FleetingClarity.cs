@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
+using Watcher.Code.Extensions;
 using Watcher.Code.Powers;
 using Watcher.Code.Stances;
 
@@ -24,12 +25,8 @@ public class FleetingClarity : WatcherCardModel
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
         if (CombatState == null) return;
-        var players = CombatState.PlayerCreatures.Where(c => c.IsAlive && c != Owner.Creature).ToList();
-        await CommonActions.Apply<MultiplayerCardUncommonPower>(ctx, players, this, true);
-        foreach (var player in players.Select(e => e.Player))
-        {
-            if (player == null) continue;
-            await StanceCmd.EnterCalm(ctx, player, this);
-        }
+        var players = Owner.AllTeammates;
+        await CommonActions.Apply<MultiplayerCardUncommonPower>(ctx, players.Select(e => e.Creature), this, true);
+        await StanceCmd.EnterCalm(ctx, players, this);
     }
 }
