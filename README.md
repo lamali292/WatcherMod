@@ -40,13 +40,15 @@ It would also be unfair to the modding ecosystem if multiple incompatible mods w
 
 ## Features
 
-- 83 Watcher Cards + associated powers / status effects
+- 82 Watcher cards + associated powers / status effects, including 5 multiplayer-only cards and the Ancient cards (Revelation is the Archaic Tooth upgrade of Vigilance)
 
-- 10 related colorless
+- 11 related colorless cards (Miracle, Smite, Insight, Safety, ...)
 
-- 8 relics unique to the Watcher
+- 8 relics and 3 potions unique to the Watcher
 
 - Fully implemented **Wrath**, **Calm**, and **Divinity** stances
+
+- Stance, Mantra and character sounds through FMOD (bank built from the `fmod/` project)
 
 
 
@@ -71,17 +73,11 @@ git clone https://github.com/lamali292/WatcherMod.git
 
 
 
-Open the `Watcher.csproj` file and update the paths to match your system:
-
-i.e in Windows look for
+Copy `local.props.example` to `local.props` and fill in your paths:
 
 ```xml
-<PropertyGroup Condition="'$(IsWindows)' == 'true'">
-  <GodotPath Condition="'$(GodotPath)' == ''">C:\Path\To\Godot\Godot4.5.1.exe</GodotPath>
-  <SteamLibraryPath Condition="'$(SteamLibraryPath)' == ''">C:\Program Files (x86)\Steam\steamapps</SteamLibraryPath>
-  <!-- The below should not need to be changed. -->
-  ...
-</PropertyGroup>
+<GodotPath>C:\...\MegaDot\MegaDot_v4.5.1_mono.exe</GodotPath>
+<SteamLibraryPath>C:\Program Files (x86)\Steam\steamapps</SteamLibraryPath>
 ```
 
 
@@ -93,6 +89,8 @@ You only need to change:
 - **SteamLibraryPath** → Path to your Steam Library
 
 - **GodotPath** → Path to your Godot
+
+(`local.props.example` also has optional entries for a second game install, beta + public.)
   
 Recommended: [MegaDot — MegaCrit's custom Godot fork](https://megadot.megacrit.com/)
 
@@ -100,7 +98,21 @@ Standard: [Godot 4.5.1 .Net exe](https://godotengine.org/download/archive/4.5.1-
 
 
 
-### 3. Build the Mod
+### 3. Generate the image atlases
+
+
+
+Card, power, relic and potion art is **not** committed as atlases. The source PNGs live in `ImageGen/images/<kind>/` (named after the card/power/relic ID, e.g. `battle_hymn.png`) and are packed into `Watcher/images/` by the ImageGen tool. Run it once after cloning and again whenever art changes (CI and `release.ps1` do this automatically):
+
+```bash
+dotnet run --project ImageGen/ImageGen.csproj
+```
+
+Art that is missing falls back to a `todo` placeholder.
+
+
+
+### 4. Build the Mod
 
 
 
@@ -128,12 +140,14 @@ I’d greatly appreciate it if you report any problems as issues or contribute f
 
 Animations are not included because Slay the Spire 2 uses Spine, and I currently don’t have the time or resources to learn it.
 
+Audio: the sounds are FMOD events. The compiled banks are committed in `Watcher/audio/`; to change them open the project in `fmod/` with FMOD Studio (see `fmod/README.md`), build, and copy `Master.strings.bank` and `Watcher.bank` over.
+
 
 ### Credits
 
 - lamali - Hi, that's me - most of the programming
 - chaendizzle - Calm, Divinity and Wrath SFX / VFX
-- lammiesdotyum - Shared Wisdom, Fleeting Clarity and Accelerate Card Art
+- lammiesdotyum - Shared Wisdom, Stance Blessing (art originally made for Fleeting Clarity) and Accelerate Card Art
 - Snumodder - Korean localization
 - ImLingCheng - Chinese localization
 - NoFires - Chinese localization
