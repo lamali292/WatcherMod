@@ -141,19 +141,3 @@ I’d greatly appreciate it if you report any problems as issues or contribute f
 Animations are not included because Slay the Spire 2 uses Spine, and I currently don’t have the time or resources to learn it.
 
 Audio: the sounds are FMOD events. The compiled banks are committed in `Watcher/audio/`; to change them open the project in `fmod/` with FMOD Studio (see `fmod/README.md`), build, and copy `Master.strings.bank` and `Watcher.bank` over.
-
-
-### Credits
-
-- lamali - Hi, that's me - most of the programming
-- chaendizzle - Calm, Divinity and Wrath SFX / VFX
-- lammiesdotyum - Shared Wisdom, Stance Blessing (art originally made for Fleeting Clarity) and Accelerate Card Art
-- Snumodder - Korean localization
-- ImLingCheng - Chinese localization
-- NoFires - Chinese localization
-- Nitablade - Russian localization
-- Continuous - Russian localization
-- iwasreturnsolomon-svg - Japanese localization
-- Valnar38 - Italian localization
-- Cany0udance - Animation and Character Assets porting help
-- Pet-Slime - Energy counter VFX
