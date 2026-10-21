@@ -49,8 +49,7 @@
     {
       "id": "power",
       "markers": [
-        "WatcherPowerModel",
-        "CustomTemporaryPowerModel"
+        "WatcherPowerModel"
       ],
       "fields": [
         {

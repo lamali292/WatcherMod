@@ -71,15 +71,10 @@
   "WATCHER-PLATED_ARMOR_POWER.title": "Plated Armor",
   "WATCHER-PLATED_ARMOR_POWER.description": "At the end of your turn, gain [gold]Block[/gold]. Receiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
   "WATCHER-PLATED_ARMOR_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Block[/gold].\nReceiving unblocked attack damage reduces [gold]Plated Armor[/gold] by [blue]1[/blue].",
-  "WATCHER-DUALITY_POWER.title": "Duality",
-  "WATCHER-DUALITY_POWER.description": "Gain [gold]Dexterity[/gold] until the end of this turn.",
-  "WATCHER-DUALITY_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Dexterity[/gold] until the end of this turn.",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.title": "Fleeting Clarity",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.description": "At the start of your turn, exit [gold]Calm[/gold].",
   "WATCHER-MULTIPLAYER_CARD_UNCOMMON_POWER.smartDescription": "At the start of your turn, exit [gold]Calm[/gold].",
   "WATCHER-ANCIENT_CARD_POWER.title": "Accumulate",
   "WATCHER-ANCIENT_CARD_POWER.description": "While in [gold]Wrath[/gold], deal +50% damage.",
-  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "While in [gold]Wrath[/gold], deal +{Amount}% damage.",
-  "WATCHER-VAULT_POWER.title": "",
-  "WATCHER-VAULT_POWER.description": ""
+  "WATCHER-ANCIENT_CARD_POWER.smartDescription": "While in [gold]Wrath[/gold], deal +{Amount}% damage."
 }

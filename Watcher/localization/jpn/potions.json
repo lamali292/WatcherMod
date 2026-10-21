@@ -1,6 +1,6 @@
 {
-  "WATCHER-AMBROSIA.description": "[blue]神聖[/blue]に入る。",
-  "WATCHER-BOTTLED_MIRACLE.description": "{Cards:diff()} 枚の[blue]奇跡[/blue]を手札に加える。",
+  "WATCHER-AMBROSIA.description": "[gold]神聖[/gold]に入る。",
+  "WATCHER-BOTTLED_MIRACLE.description": "{Cards:diff()} 枚の[gold]奇跡[/gold]を[gold]手札[/gold]に加える。",
   "WATCHER-AMBROSIA.title": "アンブロシア",
   "WATCHER-BOTTLED_MIRACLE.title": "瓶詰めの奇跡",
   "WATCHER-STANCE_POTION.title": "スタンスのポーション",

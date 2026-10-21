@@ -1,8 +1,8 @@
 {
   "WATCHER-BOTTLED_MIRACLE.title": "Miracolo in bottiglia",
-  "WATCHER-BOTTLED_MIRACLE.description": "Aggiungi {Cards:diff()} [blue]Miracoli[/blue] alla tua mano.",
+  "WATCHER-BOTTLED_MIRACLE.description": "Aggiungi {Cards:diff()} [gold]Miracoli[/gold] alla tua [gold]mano[/gold].",
   "WATCHER-AMBROSIA.title": "Ambrosia",
-  "WATCHER-AMBROSIA.description": "Enteri in [blue]Divinità[/blue].",
+  "WATCHER-AMBROSIA.description": "Enteri in [gold]Divinità[/gold].",
   "WATCHER-STANCE_POTION.title": "Pozione della Posa",
   "WATCHER-STANCE_POTION.description": "Entri in [gold]Calma[/gold] o in [gold]Furia[/gold]."
 }

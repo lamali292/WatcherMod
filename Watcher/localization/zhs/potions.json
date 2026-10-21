@@ -1,6 +1,6 @@
 {
   "WATCHER-AMBROSIA.description": "进入[gold]神格[/gold]姿态。",
-  "WATCHER-BOTTLED_MIRACLE.description": "将[blue]{Cards:diff()}[/blue]张[gold]奇迹[/gold]加入手牌。",
+  "WATCHER-BOTTLED_MIRACLE.description": "将[blue]{Cards:diff()}[/blue]张[gold]奇迹[/gold]加入[gold]手牌[/gold]。",
   "WATCHER-AMBROSIA.title": "仙馔密酒",
   "WATCHER-BOTTLED_MIRACLE.title": "瓶装奇迹",
   "WATCHER-STANCE_POTION.title": "姿态药水",
