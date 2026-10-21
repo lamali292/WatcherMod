@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="ParameterPreset" id="{deb95e3b-4713-4eea-a319-2dd6899fcd38}">
+    <property name="name">
+      <value>sfx_duck</value>
+    </property>
+    <relationship name="folder">
+      <destination>{fed40e97-f270-42bf-a8de-5d27f53b97ec}</destination>
+    </relationship>
+    <relationship name="parameter">
+      <destination>{a36ba432-c5b1-44ff-b5e4-12f654cfa067}</destination>
+    </relationship>
+  </object>
+  <object class="GameParameter" id="{a36ba432-c5b1-44ff-b5e4-12f654cfa067}">
+    <property name="parameterType">
+      <value>0</value>
+    </property>
+    <property name="maximum">
+      <value>1</value>
+    </property>
+    <property name="initialValue">
+      <value>0</value>
+    </property>
+    <property name="isExposedRecursively">
+      <value>true</value>
+    </property>
+    <property name="isGlobal">
+      <value>true</value>
+    </property>
+  </object>
+</objects>

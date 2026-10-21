@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="Snapshot" id="{f2ae3fc3-8cee-4c7e-84e2-89b61eb1c120}">
+    <property name="name">
+      <value>pause</value>
+    </property>
+    <relationship name="mixer">
+      <destination>{a4fadc6c-5290-4487-b501-561f9bfc4f89}</destination>
+    </relationship>
+    <relationship name="automatableProperties">
+      <destination>{240e4bfb-33ba-4535-8c28-86a0290ce5d0}</destination>
+    </relationship>
+    <relationship name="timeline">
+      <destination>{5af7b194-073c-410d-854f-da32f81d9042}</destination>
+    </relationship>
+    <relationship name="snapshotMasterTrack">
+      <destination>{e974614e-98e2-4816-b99c-93251acd1094}</destination>
+    </relationship>
+    <relationship name="banks">
+      <destination>{ce596aab-d27b-4226-91ba-e4d964c3c08f}</destination>
+    </relationship>
+  </object>
+  <object class="EventMixer" id="{a4fadc6c-5290-4487-b501-561f9bfc4f89}"/>
+  <object class="EventAutomatableProperties" id="{240e4bfb-33ba-4535-8c28-86a0290ce5d0}"/>
+  <object class="Timeline" id="{5af7b194-073c-410d-854f-da32f81d9042}"/>
+  <object class="SnapshotMasterTrack" id="{e974614e-98e2-4816-b99c-93251acd1094}"/>
+</objects>

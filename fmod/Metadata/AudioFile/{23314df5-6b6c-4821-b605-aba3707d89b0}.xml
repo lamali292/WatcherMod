@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="AudioFile" id="{23314df5-6b6c-4821-b605-aba3707d89b0}">
+    <property name="assetPath">
+      <value>wrath_loop.ogg</value>
+    </property>
+    <property name="frequencyInKHz">
+      <value>44.1</value>
+    </property>
+    <property name="channelCount">
+      <value>2</value>
+    </property>
+    <property name="length">
+      <value>10.013741</value>
+    </property>
+    <relationship name="masterAssetFolder">
+      <destination>{aa864338-a582-4286-9df3-132b1c18f066}</destination>
+    </relationship>
+  </object>
+</objects>

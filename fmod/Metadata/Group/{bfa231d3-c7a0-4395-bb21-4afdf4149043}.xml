@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="MixerGroup" id="{bfa231d3-c7a0-4395-bb21-4afdf4149043}">
+    <property name="name">
+      <value>sfx_ducking_big</value>
+    </property>
+    <property name="volume">
+      <value>1</value>
+    </property>
+    <relationship name="effectChain">
+      <destination>{492f32a4-7847-4543-bb5f-783b82c05901}</destination>
+    </relationship>
+    <relationship name="panner">
+      <destination>{aeeffb4a-9a90-4d8e-a89c-e4910f5840ea}</destination>
+    </relationship>
+    <relationship name="output">
+      <destination>{a080420e-7210-41ab-936a-d9a56e426f39}</destination>
+    </relationship>
+  </object>
+  <object class="MixerBusEffectChain" id="{492f32a4-7847-4543-bb5f-783b82c05901}">
+    <relationship name="effects">
+      <destination>{dfa29f3d-46a2-408c-8133-d0ad32ed9ba9}</destination>
+    </relationship>
+  </object>
+  <object class="MixerBusPanner" id="{aeeffb4a-9a90-4d8e-a89c-e4910f5840ea}"/>
+  <object class="MixerBusFader" id="{dfa29f3d-46a2-408c-8133-d0ad32ed9ba9}"/>
+</objects>

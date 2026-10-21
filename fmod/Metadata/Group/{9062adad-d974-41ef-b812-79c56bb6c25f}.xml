@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="MixerGroup" id="{9062adad-d974-41ef-b812-79c56bb6c25f}">
+    <property name="name">
+      <value>sfx_ducking_bass</value>
+    </property>
+    <property name="volume">
+      <value>1</value>
+    </property>
+    <relationship name="effectChain">
+      <destination>{da78fc6a-3960-4548-b88a-51c0ef10775b}</destination>
+    </relationship>
+    <relationship name="panner">
+      <destination>{77717034-5781-4b9e-8404-a3413a6146d8}</destination>
+    </relationship>
+    <relationship name="output">
+      <destination>{a080420e-7210-41ab-936a-d9a56e426f39}</destination>
+    </relationship>
+  </object>
+  <object class="MixerBusEffectChain" id="{da78fc6a-3960-4548-b88a-51c0ef10775b}">
+    <relationship name="effects">
+      <destination>{abcb64fb-f2a4-4dbe-8620-2bb29fb3fa55}</destination>
+    </relationship>
+  </object>
+  <object class="MixerBusPanner" id="{77717034-5781-4b9e-8404-a3413a6146d8}"/>
+  <object class="MixerBusFader" id="{abcb64fb-f2a4-4dbe-8620-2bb29fb3fa55}"/>
+</objects>

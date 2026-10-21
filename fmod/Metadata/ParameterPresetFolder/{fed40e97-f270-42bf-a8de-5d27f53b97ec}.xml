@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="MasterParameterPresetFolder" id="{fed40e97-f270-42bf-a8de-5d27f53b97ec}">
+    <property name="name">
+      <value>Master</value>
+    </property>
+  </object>
+</objects>

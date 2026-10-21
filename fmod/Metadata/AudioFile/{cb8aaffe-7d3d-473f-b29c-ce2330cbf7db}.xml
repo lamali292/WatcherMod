@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="AudioFile" id="{cb8aaffe-7d3d-473f-b29c-ce2330cbf7db}">
+    <property name="assetPath">
+      <value>watcher_select.ogg</value>
+    </property>
+    <property name="frequencyInKHz">
+      <value>44.1</value>
+    </property>
+    <property name="channelCount">
+      <value>2</value>
+    </property>
+    <property name="length">
+      <value>2.246667</value>
+    </property>
+    <relationship name="masterAssetFolder">
+      <destination>{aa864338-a582-4286-9df3-132b1c18f066}</destination>
+    </relationship>
+  </object>
+</objects>

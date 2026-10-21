@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="MasterEffectPresetFolder" id="{8e3f2b95-b94d-4570-bca9-7bca59c1eadb}">
+    <property name="name">
+      <value>Master</value>
+    </property>
+  </object>
+</objects>

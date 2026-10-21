@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+  <object class="AudioFile" id="{03b2b9ea-bbbb-4042-a4a3-ef1f6f324766}">
+    <property name="assetPath">
+      <value>mantra_gain.ogg</value>
+    </property>
+    <property name="frequencyInKHz">
+      <value>44.1</value>
+    </property>
+    <property name="channelCount">
+      <value>2</value>
+    </property>
+    <property name="length">
+      <value>2.594966</value>
+    </property>
+    <relationship name="masterAssetFolder">
+      <destination>{aa864338-a582-4286-9df3-132b1c18f066}</destination>
+    </relationship>
+  </object>
+</objects>

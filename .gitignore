@@ -51,3 +51,7 @@ local.props
 !/ImageGen/images/
 !/ImageGen/images/**/
 !/ImageGen/images/**/*.png
+
+# FMOD Studio project cache
+/fmod/.cache/
+/fmod/Build/
