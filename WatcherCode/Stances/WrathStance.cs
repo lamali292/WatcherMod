@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Audio;
 using Watcher.Code.Events;
 using Watcher.Code.Patches;
 using Watcher.Code.Vfx;
@@ -16,8 +17,8 @@ public sealed class WrathStance : WatcherStanceModel, IModifyDamageMultiplicativ
 
     protected override StanceVfxConfig VfxConfig => new(
         "res://Watcher/scenes/watcher_mod/vfx/wrath_aura.tscn",
-        EnterSfxPath: "res://Watcher/audio/wrath_enter.ogg",
-        AmbienceLoopPath: "res://Watcher/audio/wrath_loop.ogg",
+        EnterSfxPath: WatcherSfx.WrathEnter,
+        AmbienceLoopPath: WatcherSfx.WrathLoop,
         ScreenFlashColor: new Color(1f, 0.15f, 0.1f),
         ScreenShakeStrength: ShakeStrength.Medium
     );

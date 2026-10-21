@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
@@ -13,11 +13,8 @@ namespace Watcher.Code.Stances;
 
 public class StanceVfxController(StanceVfxConfig cfg)
 {
-    private const float AmbienceFadeTime = 0.6f;
-    private const float AmbienceVolume = -6f;
-
     private static Color? _originalModulate;
-    private static AudioStreamPlayer? _ambiencePlayer;
+    private static string? _ambienceLoop;
     private Node2D? _vfxInstance;
 
     public async Task OnEnter(Creature owner)
@@ -159,38 +156,17 @@ public class StanceVfxController(StanceVfxConfig cfg)
     {
         if (cfg.AmbienceLoopPath == null) return;
 
-        if (_ambiencePlayer != null && GodotObject.IsInstanceValid(_ambiencePlayer))
-            _ambiencePlayer.QueueFree();
-
-        var combatRoom = NCombatRoom.Instance;
-        if (combatRoom == null) return;
-
-        _ambiencePlayer = new AudioStreamPlayer
-        {
-            Stream = PreloadManager.Cache.GetAsset<AudioStream>(cfg.AmbienceLoopPath),
-            Bus = "SFX",
-            VolumeDb = -80f
-        };
-
-        combatRoom.AddChild(_ambiencePlayer);
-        _ambiencePlayer.Play();
-
-        _ambiencePlayer.CreateTween()
-            .TweenProperty(_ambiencePlayer, "volume_db", AmbienceVolume, AmbienceFadeTime);
+        // The event fades in/out itself (see fmod/); no loop parameter, so StopLoop just stops it with fade-out.
+        StopAmbience();
+        _ambienceLoop = cfg.AmbienceLoopPath;
+        SfxCmd.PlayLoop(_ambienceLoop, false);
     }
 
     private static void StopAmbience()
     {
-        if (_ambiencePlayer == null || !GodotObject.IsInstanceValid(_ambiencePlayer)) return;
+        if (_ambienceLoop == null) return;
 
-        var player = _ambiencePlayer;
-        _ambiencePlayer = null;
-
-        var tween = player.CreateTween();
-        tween.TweenProperty(player, "volume_db", -80f, AmbienceFadeTime);
-        tween.TweenCallback(Callable.From(() =>
-        {
-            if (GodotObject.IsInstanceValid(player)) player.QueueFree();
-        }));
+        SfxCmd.StopLoop(_ambienceLoop);
+        _ambienceLoop = null;
     }
 }

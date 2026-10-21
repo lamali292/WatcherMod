@@ -1,8 +1,9 @@
-﻿using Godot;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using Watcher.Code.Audio;
 using Watcher.Code.Events;
 using Watcher.Code.Vfx;
 
@@ -15,8 +16,8 @@ public class CalmStance : WatcherStanceModel
     protected override StanceVfxConfig VfxConfig => new(
         "res://Watcher/scenes/watcher_mod/vfx/calm_aura.tscn",
         new Color(0.7f, 0.85f, 1.3f),
-        "res://Watcher/audio/calm_enter.ogg",
-        AmbienceLoopPath: "res://Watcher/audio/calm_loop.ogg",
+        WatcherSfx.CalmEnter,
+        AmbienceLoopPath: WatcherSfx.CalmLoop,
         ScreenFlashColor: new Color(0.4f, 0.7f, 1f)
     );
 

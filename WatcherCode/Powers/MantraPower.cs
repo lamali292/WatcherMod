@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Abstract;
+using Watcher.Code.Audio;
 using Watcher.Code.Commands;
 using Watcher.Code.Core;
 using Watcher.Code.Stances;
@@ -32,7 +33,7 @@ public sealed class MantraPower : WatcherPowerModel
         if (power is not MantraPower || amount <= 0 || applier != Owner || player == null)
             return;
 
-        SfxCmd.Play("res://Watcher/audio/mantra_gain.ogg");
+        SfxCmd.Play(WatcherSfx.MantraGain);
 
 
         var triggers = Amount / 10;

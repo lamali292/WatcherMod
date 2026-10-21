@@ -1,4 +1,4 @@
-﻿using BaseLib.Abstracts;
+using BaseLib.Abstracts;
 using BaseLib.Patches.UI;
 using Godot;
 using MegaCrit.Sts2.Core.Animation;
@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Cards.Basic;
+using Watcher.Code.Audio;
 using Watcher.Code.Core;
 using Watcher.Code.Extensions;
 using Watcher.Code.Relics;
@@ -61,7 +62,7 @@ public class Watcher : CustomCharacterModel
 
     //public override string CustomCastSfx => "res://";
     //public override string CustomDeathSfx => "res://";
-    public override string CharacterSelectSfx => "res://Watcher/audio/watcher_select.ogg";
+    public override string CharacterSelectSfx => WatcherSfx.CharacterSelect;
 
     public override RelicIconData CustomYummyCookie => new(
         "watcher_cookie.png".BigRelicImagePath(),

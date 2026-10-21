@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.ValueProps;
+using Watcher.Code.Audio;
 using Watcher.Code.Commands;
 using Watcher.Code.Patches;
 using Watcher.Code.Vfx;
@@ -20,8 +21,8 @@ public class DivinityStance : WatcherStanceModel, IModifyDamageMultiplicative
     protected override StanceVfxConfig VfxConfig => new(
         "res://Watcher/scenes/watcher_mod/vfx/divinity_aura.tscn",
         new Color(1.1f, 0.7f, 1.4f),
-        "res://Watcher/audio/divinity_enter.ogg",
-        AmbienceLoopPath: "res://Watcher/audio/divinity_loop.ogg",
+        WatcherSfx.DivinityEnter,
+        AmbienceLoopPath: WatcherSfx.DivinityLoop,
         ScreenFlashColor: new Color(0.8f, 0.3f, 1f),
         ScreenShakeStrength: ShakeStrength.Strong
     );
