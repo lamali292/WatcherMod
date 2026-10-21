@@ -5,6 +5,7 @@ using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using Watcher.Code.Audio;
 using Watcher.Code.Events;
 using Watcher.Code.Patches;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
@@ -28,9 +29,14 @@ public static class WatcherMainFile
         var patcher = ModPatcher.Create(ModId, Logger);
         patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
             .Add(typeof(PaelsEyeSourceTrackingPatches))
-            .Add(typeof(ColorfulPhilosophersPatch));
+            .Add(typeof(ColorfulPhilosophersPatch))
+            .Add(typeof(DeferredInitializationFmodFlushPatch));
         
         patcher.PatchAll();
+
+        // Queued now, loaded once the game's deferred init has finished (see DeferredInitializationFmodFlushPatch).
+        FmodStudio.RegisterBank("res://Watcher/audio/Master.strings.bank");
+        FmodStudio.RegisterBank("res://Watcher/audio/Watcher.bank");
         
         ModCredits.Register("Watcher", 
             new ModCredits.Section("Dev"),
