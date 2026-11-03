@@ -1,9 +1,10 @@
-﻿using BaseLib.Utils;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
 using Watcher.Code.Extensions;
@@ -22,51 +23,33 @@ public sealed class ForeignInfluence : WatcherCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (Owner.Creature.CombatState == null) return;
-        var rng = Owner.RunState.Rng.CombatCardGeneration;
 
-        // Build 3 distinct weighted-rarity attack cards from ALL pools
-        var attacksByRarity = CardFactory
-            .FilterForCombat(ModelDb.AllCards)
-            .FilterForPlayerCount(Owner.RunState)
-            .Where(c => c.Type == CardType.Attack)
-            .GroupBy(c => c.Rarity)
-            .ToDictionary(g => g.Key, g => g.ToList());
-
-        var weightedAttacks = new List<CardModel>();
-        var seen = new HashSet<string>();
-
-        while (weightedAttacks.Count < 3)
-        {
-            var roll = rng.NextInt(100);
-            var rarity = roll < 55 ? CardRarity.Common
-                : roll < 85 ? CardRarity.Uncommon
-                : CardRarity.Rare;
-
-            if (!attacksByRarity.TryGetValue(rarity, out var pool)) continue;
-
-            var candidate = rng.NextItem(pool);
-            if (candidate == null || !seen.Add(candidate.Id.Entry)) continue;
-
-            weightedAttacks.Add(Owner.Creature.CombatState.CreateCard(candidate, Owner));
-        }
+        // Attacks of any colour (own and colourless included), like STS1. Taken from the unlocked pools, so
+        // restrictions from other mods apply; the game filters rarity, player count and generatability.
+        var attacks = Owner.UnlockState.CharacterCardPools
+            .Append(ModelDb.CardPool<ColorlessCardPool>())
+            .SelectMany(pool => pool.GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint))
+            .Where(c => c.Type == CardType.Attack);
+        var options = CardFactory.GetDistinctForCombat(Owner, attacks, 3,
+            Owner.RunState.Rng.CombatCardGeneration).ToList();
+        if (options.Count == 0) return;
 
         // Let player choose 1 of 3
         var chosenCard = await CardSelectCmd.FromChooseACardScreen(
             choiceContext,
-            weightedAttacks,
+            options,
             Owner,
             true
         );
 
-        if (chosenCard != null)
-        {
-            if (IsUpgraded) chosenCard.SetToFreeThisTurn();
+        if (chosenCard == null) return;
 
-            await CardPileCmd.AddGeneratedCardToCombat(
-                chosenCard,
-                PileType.Hand,
-                Owner
-            );
-        }
+        if (IsUpgraded) chosenCard.SetToFreeThisTurn();
+
+        await CardPileCmd.AddGeneratedCardToCombat(
+            chosenCard,
+            PileType.Hand,
+            Owner
+        );
     }
 }
