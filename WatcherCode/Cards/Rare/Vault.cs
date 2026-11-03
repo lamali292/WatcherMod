@@ -1,4 +1,4 @@
-﻿using BaseLib.Utils;
+using BaseLib.Utils;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -23,7 +23,10 @@ public sealed class Vault : WatcherCardModel
     
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
     {
-        await CommonActions.ApplySelf<VaultPower>(ctx, this);
+        // One extra turn however often Vault is played this turn (Replay, Burst, Duplicator), like STS1's flag;
+        // every stack would otherwise be another extra turn.
+        if (!Owner.Creature.HasPower<VaultPower>())
+            await CommonActions.ApplySelf<VaultPower>(ctx, this);
         PlayerCmd.EndTurn(Owner, false);
     }
 }
