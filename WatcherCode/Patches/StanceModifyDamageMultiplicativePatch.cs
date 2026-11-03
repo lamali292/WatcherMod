@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -61,6 +61,7 @@ internal static class StanceModifyDamageMultiplicativePatch
         var addBridge = AccessTools.Method(typeof(StanceModifyDamageMultiplicativePatch), nameof(AdditiveBridge));
         var mulBridge = AccessTools.Method(typeof(StanceModifyDamageMultiplicativePatch), nameof(MultiplicativeBridge));
         
+        var patched = 0;
         for (var i = 0; i < code.Count; i++)
         {
             var isAdd = code[i].Calls(addMethod);
@@ -91,8 +92,14 @@ internal static class StanceModifyDamageMultiplicativePatch
             };
 
             code.InsertRange(storeIndex + 1, injected);
+            patched++;
             i = storeIndex + injected.Count; 
         }
+
+        // Add + multiply. Anything less means the game's IL changed and stances silently stop modifying damage.
+        if (patched != 2)
+            WatcherMainFile.Logger.Warn(
+                $"[Watcher] ModifyDamageInternal: patched {patched} of 2 damage hooks, Wrath/Divinity damage will not work.");
 
         return code;
     }
