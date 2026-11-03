@@ -16,6 +16,10 @@ public class StanceVfxController(StanceVfxConfig cfg)
     // One controller per stance instance (and so per player): state must not be shared between players.
     private Color? _originalModulate;
     private string? _ambienceLoop;
+
+    // The game keeps a LIST of FMOD instances per loop path and StopLoop pops only one, so every start we
+    // make has to be matched by a stop, or the loops pile up and overlap. Counted so they can all be ended.
+    private static readonly Dictionary<string, int> ActiveLoops = new();
     private Node2D? _vfxInstance;
 
     public async Task OnEnter(Creature owner)
@@ -33,10 +37,16 @@ public class StanceVfxController(StanceVfxConfig cfg)
 
     public async Task OnExit(Creature owner)
     {
+        Cleanup(owner);
+        await Task.CompletedTask;
+    }
+
+    /// <summary>Synchronous teardown, also used when combat ends without a regular stance exit.</summary>
+    public void Cleanup(Creature owner)
+    {
         RemoveAura();
         ResetBodyTint(owner);
         StopAmbience();
-        await Task.CompletedTask;
     }
 
     // ── Aura ──────────────────────────────────────
@@ -161,6 +171,16 @@ public class StanceVfxController(StanceVfxConfig cfg)
         StopAmbience();
         _ambienceLoop = cfg.AmbienceLoopPath;
         SfxCmd.PlayLoop(_ambienceLoop, false);
+        ActiveLoops[_ambienceLoop] = ActiveLoops.GetValueOrDefault(_ambienceLoop) + 1;
+    }
+
+    /// <summary>Ends every stance loop still running (combat start/end, or a stance that never got its exit).</summary>
+    public static void StopAllAmbience()
+    {
+        foreach (var (path, count) in ActiveLoops)
+            for (var i = 0; i < count; i++)
+                SfxCmd.StopLoop(path);
+        ActiveLoops.Clear();
     }
 
     private void StopAmbience()
@@ -168,6 +188,12 @@ public class StanceVfxController(StanceVfxConfig cfg)
         if (_ambienceLoop == null) return;
 
         SfxCmd.StopLoop(_ambienceLoop);
+        if (ActiveLoops.TryGetValue(_ambienceLoop, out var n))
+        {
+            if (n <= 1) ActiveLoops.Remove(_ambienceLoop);
+            else ActiveLoops[_ambienceLoop] = n - 1;
+        }
+
         _ambienceLoop = null;
     }
 }

@@ -1,4 +1,4 @@
-﻿using BaseLib.Extensions;
+using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -67,5 +67,11 @@ public abstract class WatcherStanceModel : AbstractModel
             await _vfx.OnExit(owner.Creature);
         _vfx = null;
     }
-}
 
+    /// <summary>Tears down aura, tint and sound without running exit hooks (combat is over).</summary>
+    public void CleanupWithoutExit(Player owner)
+    {
+        _vfx?.Cleanup(owner.Creature);
+        _vfx = null;
+    }
+}
