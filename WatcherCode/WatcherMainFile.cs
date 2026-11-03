@@ -30,7 +30,8 @@ public static class WatcherMainFile
         patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
             .Add(typeof(PaelsEyeSourceTrackingPatches))
             .Add(typeof(ColorfulPhilosophersPatch))
-            .Add(typeof(DeferredInitializationFmodFlushPatch));
+            .Add(typeof(DeferredInitializationFmodFlushPatch))
+            .Add(typeof(WorkshopPlaytimePatch));
         
         patcher.PatchAll();
 
