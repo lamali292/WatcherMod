@@ -28,7 +28,6 @@ public static class WatcherMainFile
 
         var patcher = ModPatcher.Create(ModId, Logger);
         patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
-            .Add(typeof(PaelsEyeSourceTrackingPatches))
             .Add(typeof(ColorfulPhilosophersPatch))
             .Add(typeof(DeferredInitializationFmodFlushPatch))
             .Add(typeof(WorkshopPlaytimePatch));
