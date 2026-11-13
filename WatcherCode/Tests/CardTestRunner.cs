@@ -191,7 +191,7 @@ public class CardTestRunner
 			.Select(netId => Player.CreateForNewRun(characterModel, UnlockState.all, (ulong)netId))
 			.ToList();
 
-		_run = RunState.CreateForTest(players: newPlayers, seed: seed);
+		_run = GameApiCompat.CreateRunStateForTest(newPlayers, seed);
 		var run = _run;
 		// A bare test RunState has no map progression, so RunState.CurrentMapPointHistoryEntry is
 		// null - that NREs in code that assumes a real run (e.g. CardReward.OnSelect logging card
@@ -206,9 +206,9 @@ public class CardTestRunner
 		var encounter = attr.EncounterType != null
 			? ((EncounterModel)ModelDb.GetById<AbstractModel>(ModelDb.GetId(attr.EncounterType))).ToMutable()
 			: ModelDb.AllEncounters.First().ToMutable();
-		encounter.DebugRandomizeRng();
+		GameApiCompat.RandomizeEncounterRng(encounter);
 
-		var combat = new CombatState(encounter, run, run.Modifiers, run.BadgeModels, run.MultiplayerScalingModel);
+		var combat = GameApiCompat.CreateCombatState(encounter, run);
 		foreach (var p in players) combat.AddPlayer(p);
 
 		if (!encounter.HaveMonstersBeenGenerated)

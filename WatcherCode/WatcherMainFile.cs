@@ -5,6 +5,7 @@ using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using Watcher.Code.Compatibility;
 using Watcher.Code.Audio;
 using Watcher.Code.Events;
 using Watcher.Code.Patches;
@@ -30,7 +31,8 @@ public static class WatcherMainFile
         patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
             .Add(typeof(ColorfulPhilosophersPatch))
             .Add(typeof(DeferredInitializationFmodFlushPatch))
-            .Add(typeof(WorkshopPlaytimePatch));
+            .Add(typeof(WorkshopPlaytimePatch))
+            .Add(typeof(AfterDeathSourceCompatPatch));
         
         patcher.PatchAll();
 

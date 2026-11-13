@@ -31,6 +31,11 @@ public static class CardSelectCmdCompatibility
 
         var oneArgMethod = typeof(CardSelectCmd).GetMethod("UseSelector",
                                BindingFlags.Public | BindingFlags.Static, null, [typeof(ICardSelector)], null)
+                           // 0.113+: moved to the static CardSelectorStack.SetTestSelector.
+                           ?? typeof(CardSelectCmd).Assembly
+                               .GetType("MegaCrit.Sts2.Core.CardSelection.CardSelectorStack")?
+                               .GetMethod("SetTestSelector", BindingFlags.Public | BindingFlags.Static, null,
+                                   [typeof(ICardSelector)], null)
                            ?? throw new MissingMethodException("CardSelectCmd.UseSelector not found");
         var oneArgCall = Expression.Call(oneArgMethod, selector);
         var oneArgDel = Expression.Lambda<OneArgUseSelectorDel>(oneArgCall, selector).Compile();

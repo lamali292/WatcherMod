@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using BaseLib.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Multiplayer;
@@ -18,8 +19,28 @@ public static class MultiplayerCmd
     ///     Runs <paramref name="action" /> for every player, each in its own branch. The context's owner goes last, because
     ///     their branch is the existing context and blocks until they are done (the others do not block).
     /// </summary>
-    public static async Task ForEachPlayer(PlayerChoiceContext ctx, AbstractModel source, IEnumerable<Player> players,
+    public static Task ForEachPlayer(PlayerChoiceContext ctx, AbstractModel source, IEnumerable<Player> players,
         Func<PlayerChoiceContext, Player, Task> action)
+    {
+        return BranchingAvailable
+            ? ForEachPlayerBranching(ctx, source, players, action)
+            : ForEachPlayerSequential(ctx, players, action);
+    }
+
+    // BranchingPlayerChoiceContext only exists in newer game versions; older ones fall back to one shared context.
+    // The type is only referenced from ForEachPlayerBranching so it never loads where it is missing.
+    private static readonly bool BranchingAvailable =
+        typeof(AbstractModel).Assembly.GetType("MegaCrit.Sts2.Core.GameActions.Multiplayer.BranchingPlayerChoiceContext") != null;
+
+    private static async Task ForEachPlayerSequential(PlayerChoiceContext ctx, IEnumerable<Player> players,
+        Func<PlayerChoiceContext, Player, Task> action)
+    {
+        foreach (var player in players) await action(ctx, player);
+    }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private static async Task ForEachPlayerBranching(PlayerChoiceContext ctx, AbstractModel source,
+        IEnumerable<Player> players, Func<PlayerChoiceContext, Player, Task> action)
     {
         var localId = LocalContext.NetId;
         if (localId == null) return;
@@ -27,7 +48,7 @@ public static class MultiplayerCmd
         var order = players.OrderBy(player => player.NetId == ctx.OwnerId).ToList();
         foreach (var player in order)
         {
-            var branch = new BranchingPlayerChoiceContext(source, localId.Value, GameActionType.Combat, ctx);
+            var branch = new BranchingPlayerChoiceContext(source, localId.Value, ctx);
             await branch.AssignTaskAndWaitForPauseOrCompletion(action(branch, player));
         }
     }

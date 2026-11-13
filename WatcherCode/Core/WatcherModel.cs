@@ -107,7 +107,7 @@ public class WatcherModel() : CustomSingletonModel(HookType.Combat)
 
     // A lost combat never fires AfterCombatEnd, so without this the stance sound would keep playing on the
     // death screen. A prevented death (revive) keeps the stance.
-    public override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented,
+    public override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, CardModel? source, bool wasRemovalPrevented,
         float deathAnimLength)
     {
         if (wasRemovalPrevented || creature.Player is not { } player) return Task.CompletedTask;

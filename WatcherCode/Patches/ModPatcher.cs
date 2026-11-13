@@ -97,6 +97,13 @@ public sealed class ModPatcher
     {
         try
         {
+            // A patch class whose static Prepare() returns false opts out on purpose (e.g. a compat shim for a
+            // game version other than the running one); that is not a failure.
+            var prepare = patchClass.GetMethod("Prepare", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic,
+                null, Type.EmptyTypes, null);
+            if (prepare?.ReturnType == typeof(bool) && !(bool)prepare.Invoke(null, null)!)
+                return (0, null);
+
             var patched = _harmony.CreateClassProcessor(patchClass).Patch();
 
             if (patched == null || patched.Count == 0)
