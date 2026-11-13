@@ -17,7 +17,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <BaseLibVersion>3.4.7</BaseLibVersion>
+        <BaseLibVersion>3.4.8</BaseLibVersion>
         <UseLocalBaseLib Condition="'$(UseLocalBaseLib)' == ''">false</UseLocalBaseLib>
     </PropertyGroup>
 
@@ -93,7 +93,7 @@
     <!-- RefLib covers sts2 + Harmony; SmartFormat and Steamworks come as compile-only packages
          (ExcludeAssets=runtime so the game's own DLLs are used at runtime, nothing is shipped). -->
     <ItemGroup Condition="!Exists('$(Sts2DataDir)')">
-        <PackageReference Include="lamali.StS2.RefLib" Version="0.111.0-beta" PrivateAssets="all"/>
+        <PackageReference Include="lamali.StS2.RefLib" Version="0.113.0" PrivateAssets="all"/>
         <PackageReference Include="SmartFormat.NET" Version="3.*" ExcludeAssets="runtime" PrivateAssets="all"/>
         <PackageReference Include="Steamworks.NET" Version="2024.8.0" ExcludeAssets="runtime" PrivateAssets="all"/>
     </ItemGroup>
