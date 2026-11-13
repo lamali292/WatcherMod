@@ -25,7 +25,8 @@ env:
   SPINE_VERSION: 4.2-4.5.1-stable
 jobs:
   release:
-    runs-on: ubuntu-latest
+    # ubuntu-latest (26.04) breaks steamcmd inside the steam-workshop-deploy container; 24.04 works
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
