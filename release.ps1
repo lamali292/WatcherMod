@@ -7,6 +7,7 @@ Set-Location $PSScriptRoot
 
 $modName  = "Watcher"
 $csproj   = "Watcher.csproj"
+$verFile  = "build/mod.build.props"   # Version / AssemblyVersion / FileVersion / BaseLibVersion live here
 $manifest = "Watcher.json"
 
 # Resolve game + mods paths exactly as the build does -- this honours local.props AND
@@ -37,16 +38,16 @@ if ($GameVersion) {
 }
 
 # --- read current version, compute bump ---
-$proj = Get-Content $csproj -Raw
+$proj = Get-Content $verFile -Raw
 if ($proj -notmatch '<Version>(\d+)\.(\d+)\.(\d+)</Version>') {
-    throw "Couldn't find <Version>X.Y.Z</Version> in $csproj"
+    throw "Couldn't find <Version>X.Y.Z</Version> in $verFile"
 }
 $current = "{0}.{1}.{2}" -f $matches[1],$matches[2],$matches[3]
 $new     = "{0}.{1}.{2}" -f $matches[1],$matches[2],([int]$matches[3] + 1)
 
 # --- read BaseLib version from the <BaseLibVersion> property ---
 if ($proj -notmatch '<BaseLibVersion>([^<]+)</BaseLibVersion>') {
-    throw "Couldn't find <BaseLibVersion> in $csproj"
+    throw "Couldn't find <BaseLibVersion> in $verFile"
 }
 $baseLib = $matches[1].Trim()
 Write-Host "$current -> $new  (StS2 $gameVersion, BaseLib $baseLib)"
@@ -54,11 +55,11 @@ Write-Host "$current -> $new  (StS2 $gameVersion, BaseLib $baseLib)"
 # --- fail early on a stale tag, before changing anything ---
 if (git tag --list "v$new") { throw "Tag v$new already exists. Delete it (git tag -d v$new) or bump." }
 
-# --- write version into the .csproj (all three fields) ---
+# --- write version into the props file (all three fields) ---
 $proj = $proj -replace '<Version>\d+\.\d+\.\d+</Version>',                      "<Version>$new</Version>"
 $proj = $proj -replace '<AssemblyVersion>\d+\.\d+\.\d+\.\d+</AssemblyVersion>', "<AssemblyVersion>$new.0</AssemblyVersion>"
 $proj = $proj -replace '<FileVersion>\d+\.\d+\.\d+\.\d+</FileVersion>',         "<FileVersion>$new.0</FileVersion>"
-Set-Content $csproj $proj -Encoding UTF8 -NoNewline
+Set-Content $verFile $proj -Encoding UTF8 -NoNewline
 
 # --- write the manifest via regex so formatting is preserved (no ConvertTo-Json reflow) ---
 $text = Get-Content $manifest -Raw
@@ -129,7 +130,7 @@ Works with BaseLib $baseLib.
 "@
 
 # --- commit + tag first; generate-notes reads the pushed tag ---
-git add $csproj $manifest
+git add $verFile $manifest
 git commit -m "Release v$new (StS2 $gameVersion, BaseLib $baseLib)"
 git tag "v$new"
 git push origin HEAD --tags
