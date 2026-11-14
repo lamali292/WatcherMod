@@ -10,9 +10,9 @@
             localization/**;materials/**;models/**;RiderTestRunner/**;scenes/**
         </DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
-        <AssemblyVersion>1.5.15.0</AssemblyVersion>
-        <FileVersion>1.5.15.0</FileVersion>
-        <Version>1.5.15</Version>
+        <AssemblyVersion>1.5.16.0</AssemblyVersion>
+        <FileVersion>1.5.16.0</FileVersion>
+        <Version>1.5.16</Version>
         <NoWarn>$(NoWarn);MSB3270;CS0436</NoWarn>
     </PropertyGroup>
 
