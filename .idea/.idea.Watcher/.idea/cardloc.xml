@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CardLocSettings" defaultKeyPrefix="WATCHER-" defaultLocalizationBase="Watcher/localization/eng">
+    <defaults>
+      <preset id="card" markers="CustomCardModel,WatcherCardModel,WishableWatcherCard">
+        <files>
+          <file name="cards" fields="title,description,selectionScreenPrompt?" />
+        </files>
+      </preset>
+      <preset id="power" markers="CustomPowerModel,CustomTemporaryPowerModel,WatcherPowerModel">
+        <files>
+          <file name="powers" fields="title,description,smartDescription?,selectionScreenPrompt?,remoteDescription?" />
+        </files>
+      </preset>
+      <preset id="relic" markers="CustomRelicModel,WatcherRelicModel">
+        <files>
+          <file name="relics" fields="title,description,flavor,selectionScreenPrompt?" />
+        </files>
+      </preset>
+      <preset id="potion" markers="CustomPotionModel,WatcherPotion">
+        <files>
+          <file name="potions" fields="title,description,selectionScreenPrompt?" />
+        </files>
+      </preset>
+      <preset id="character" markers="CustomCharacterModel">
+        <files>
+          <file name="characters" fields="title,titleObject,shortTitle,pronounSubject,pronounPossessive,pronounObject,possessiveAdjective,goldMonologue,eventDeathPrevention,description,cardsModifierTitle,cardsModifierDescription,banter.dead.endTurnPing,banter.alive.endTurnPing,aromaPrinciple" />
+        </files>
+      </preset>
+      <preset id="enchantment" markers="CustomEnchantmentModel">
+        <files>
+          <file name="enchantments" fields="title,description,extraCardText?" />
+        </files>
+      </preset>
+      <preset id="affliction" markers="AfflictionModel">
+        <files>
+          <file name="afflictions" fields="title,description" />
+        </files>
+      </preset>
+      <preset id="orb" markers="CustomOrbModel">
+        <files>
+          <file name="orbs" fields="title,description,smartDescription?" />
+        </files>
+      </preset>
+      <preset id="monster" markers="CustomMonsterModel">
+        <files>
+          <file name="monsters" fields="name,description?" />
+        </files>
+      </preset>
+      <preset id="ancient" markers="CustomAncientModel">
+        <files>
+          <file name="ancients" fields="title,epithet" />
+        </files>
+      </preset>
+    </defaults>
+  </component>
+</project>
