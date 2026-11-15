@@ -20,9 +20,10 @@ public sealed class Ragnarok : WatcherCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        // Lightning strike on each struck enemy, like Ragnarok's divine bolts in Slay the Spire 1.
         await CommonActions.CardAttack(this, cardPlay)
             .WithHitCount(DynamicVars.Repeat.IntValue)
-            .WithHitFx("vfx/vfx_attack_slash")
+            .WithHitFx("vfx/vfx_attack_lightning")
             .Execute(choiceContext);
     }
 }
