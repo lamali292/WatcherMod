@@ -1,0 +1,6 @@
+; Copy to override.cfg and fix the paths to your game install (machine-specific, gitignored).
+; Needs MoDot (https://github.com/quipsol/godot_4.5.1_sts2_modding) as GodotPath in local.props.
+[editor]
+
+mounted_packs/paths=PackedStringArray("C:/.../Slay the Spire 2/SlayTheSpire2.pck")
+mounted_assemblies/paths=PackedStringArray("C:/.../Slay the Spire 2/data_sts2_windows_x86_64/sts2.dll")

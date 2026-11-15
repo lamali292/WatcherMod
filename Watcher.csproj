@@ -6,7 +6,11 @@
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
         <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
         <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
-        <AssemblyName>Watcher</AssemblyName>
+        <!-- "Debug" is reserved for the MoDot/Godot editor: it builds an empty stub (just editor/) so the real
+             Watcher.dll in mods/ doesn't clash ("Assembly with same name is already loaded"). Use
+             -c ExportDebug for everyday local builds against the game. -->
+        <AssemblyName Condition="'$(Configuration)' == 'Debug'">WatcherEditorStub</AssemblyName>
+        <AssemblyName Condition="'$(Configuration)' != 'Debug'">Watcher</AssemblyName>
         <!--NoWarn>$(NoWarn);STS002</NoWarn-->
     </PropertyGroup>
 
@@ -23,6 +27,8 @@
         <None Include="local.props"/>
         <None Include="local.props.example"/>
         <None Include=".gitignore"/>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Configuration)' != 'Debug'">
         <Compile Include="WatcherCode/**/*.cs"/>
     </ItemGroup>
 
@@ -31,18 +37,14 @@
         <PackFolders>Watcher</PackFolders>
     </PropertyGroup>
 
-    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
+    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent"
+            Condition="'$(Configuration)' != 'Debug'">
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(ModOutputFolder)/"/>
         <Copy SourceFiles="Watcher.json" DestinationFolder="$(ModsPath)$(ModOutputFolder)/"/>
         <Copy SourceFiles="$(TargetDir)$(TargetName).pdb"
               DestinationFolder="$(ModsPath)$(ModOutputFolder)/"
               Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
 
-        <Message Text="Copying BaseLib dependencies..." Importance="high"/>
-        <ItemGroup Condition="'$(UseLocalBaseLib)' != 'true'">
-            <BaseLibFiles Include="$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/lib/**/BaseLib.dll;$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/Content/BaseLib.pck;$(NuGetPackageRoot)alchyr.sts2.baselib/$(BaseLibVersion)/Content/BaseLib.json;"/>
-        </ItemGroup>
-        <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="$(ModsPath)BaseLib/"/>
 
         <!-- Also drop the build into the OTHER configured branch's mods folder (dll compiled against THIS
              branch's sts2.dll; build with -p:Sts2Branch=<other> to replace it with a native one). -->
@@ -53,13 +55,20 @@
                         Condition="'$(Sts2BetaPath)' != '' and '$(Sts2BetaPath)' != '$(Sts2Path)' and Exists('$(Sts2BetaPath)/mods')"/>
             <_MirrorDir Include="$(Sts2PublicPath)/mods/$(ModOutputFolder)/"
                         Condition="'$(Sts2PublicPath)' != '' and '$(Sts2PublicPath)' != '$(Sts2Path)' and Exists('$(Sts2PublicPath)/mods')"/>
-            <_MirrorBaseLibDir Include="$(Sts2BetaPath)/mods/BaseLib/"
-                               Condition="'$(Sts2BetaPath)' != '' and '$(Sts2BetaPath)' != '$(Sts2Path)' and Exists('$(Sts2BetaPath)/mods')"/>
-            <_MirrorBaseLibDir Include="$(Sts2PublicPath)/mods/BaseLib/"
-                               Condition="'$(Sts2PublicPath)' != '' and '$(Sts2PublicPath)' != '$(Sts2Path)' and Exists('$(Sts2PublicPath)/mods')"/>
         </ItemGroup>
         <Copy SourceFiles="@(_MirrorFile)" DestinationFolder="%(_MirrorDir.Identity)" Condition="'@(_MirrorDir)' != ''"/>
-        <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="%(_MirrorBaseLibDir.Identity)" Condition="'@(_MirrorBaseLibDir)' != ''"/>
+    </Target>
+
+    <!-- MoDot looks for mods in a "mods" folder next to its own executable. Opt in via local.props:
+         <CopyToGodotMods>true</CopyToGodotMods>. BaseLib comes from the Steam Workshop. -->
+    <PropertyGroup Condition="'$(GodotPath)' != ''">
+        <GodotModsPath Condition="'$(GodotModsPath)' == ''">$([System.IO.Path]::GetDirectoryName('$(GodotPath)'))\mods</GodotModsPath>
+    </PropertyGroup>
+    <Target Name="CopyToGodotModsOnBuild" AfterTargets="CopyToModsFolderOnBuild"
+            Condition="'$(CopyToGodotMods)' == 'true' and '$(Configuration)' != 'Debug'">
+        <Copy SourceFiles="$(TargetPath);Watcher.json" DestinationFolder="$(GodotModsPath)/$(ModOutputFolder)/"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(GodotModsPath)/$(ModOutputFolder)/"
+              Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
     </Target>
 
     <Target Name="GodotImport" BeforeTargets="GodotPublish"
@@ -77,6 +86,9 @@
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1;Configuration=$(Configuration)"
               IgnoreExitCode="false"
               IgnoreStandardErrorWarningFormat="true"/>
+
+        <Copy SourceFiles="$(ModsPath)$(ModOutputFolder)/Watcher.pck" DestinationFolder="$(GodotModsPath)/$(ModOutputFolder)/"
+              Condition="'$(CopyToGodotMods)' == 'true' and '$(Configuration)' != 'Debug'"/>
 
         <!-- Mirror the freshly packed pck into the other configured branch's mods folder too. -->
         <ItemGroup>

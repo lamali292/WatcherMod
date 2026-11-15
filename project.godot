@@ -28,13 +28,13 @@ config/windows_native_icon="res://images/icon.ico"
 
 [autoload]
 
-SentryInit="*res://addons/sentry/SentryInit.gd"
+SentryBootstrap="*res://addons/sentry/SentryBootstrap.cs"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 
 [debug]
 
-file_logging/max_file_size_mb=64
 settings/gdscript/always_track_call_stacks=true
+file_logging/max_file_size_mb=64
 
 [display]
 
@@ -48,11 +48,13 @@ mouse_cursor/custom_image_hotspot=Vector2(14, 5)
 
 [dotnet]
 
-project/assembly_name="sts2"
+project/assembly_name="WatcherEditorStub"
 project/solution_directory="../"
 
 [editor]
 
+mounted_packs/addons=PackedStringArray("res://addons/dev_tools", "res://addons/fmod", "res://addons/mega_text", "res://addons/megacontentcreator", "res://addons/sentry")
+pre_patches/enabled=PackedStringArray("modot.baselib.modeldbpreload", "modot.native.releaseinfo")
 export/convert_text_resources_to_binary=false
 
 [editor_overrides]
@@ -61,7 +63,7 @@ text_editor/behavior/indent/type=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/atlas_generator/plugin.cfg", "res://addons/dev_tools/plugin.cfg", "res://addons/fmod/plugin.cfg", "res://addons/mega_text/plugin.cfg", "res://addons/megacontentcreator/plugin.cfg")
+enabled=PackedStringArray("res://addons/dev_tools/plugin.cfg", "res://addons/fmod/plugin.cfg", "res://addons/mega_text/plugin.cfg", "res://addons/megacontentcreator/plugin.cfg")
 
 [filesystem]
 

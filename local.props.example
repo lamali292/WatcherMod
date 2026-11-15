@@ -1,7 +1,7 @@
-<!-- Copy this file and rename it to local.props, then fill in your paths. -->
+﻿<!-- Copy this file and rename it to local.props, then fill in your paths. -->
 <Project>
     <PropertyGroup>
-        <!-- Path to your Godot executable -->
+        <!-- Path to your MoDot executable (Godot 4.5.1 fork for StS2 mods) -->
         <GodotPath>C:\...\MegaDot\MegaDot_v4.5.1_mono.exe</GodotPath>
         <!-- Path to your Steam library's steamapps folder -->
         <SteamLibraryPath>C:\Program Files (x86)\Steam\steamapps</SteamLibraryPath>
@@ -10,7 +10,7 @@
         <Sts2Branch>beta</Sts2Branch>
         <Sts2BetaPath>C:\...\sts2-beta\Slay the Spire 2</Sts2BetaPath>
         <Sts2PublicPath>C:\...\sts2-public\Slay the Spire 2</Sts2PublicPath>
-        <!-- Path to your GDRE extracted Slay the Spire 2 assets folder -->
-        <AssetSourcePath>C:\...\Slay the Spire 2</AssetSourcePath>
+        <!-- Mirror ExportDebug builds into the mods/ folder next to MoDot (needed to run the mod in the editor) -->
+        <CopyToGodotMods>true</CopyToGodotMods>
     </PropertyGroup>
 </Project>

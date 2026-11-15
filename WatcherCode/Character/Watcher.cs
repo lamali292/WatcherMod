@@ -71,13 +71,7 @@ public class Watcher : CustomCharacterModel
     );
 
     public override Color NameColor => Color;
-
-    /// <summary>
-    ///     Colour of the name shown on the Dread character select screen. The vanilla characters use a bright,
-    ///     saturated tone at 0xC0 alpha because the label is additively blended over a greyscale background.
-    ///     This is the Watcher card purple (the card frame tint from <see cref="WatcherCardPool" />,
-    ///     H 0.8 / S 0.5 / V 1 → #E680FF) rather than the pink-purple used by the Necrobinder.
-    /// </summary>
+    
     public override Color DreadNameColor => new("E680FFC0");
     public override CharacterGender Gender => CharacterGender.Feminine;
     protected override CharacterModel? UnlocksAfterRunAs => null;
