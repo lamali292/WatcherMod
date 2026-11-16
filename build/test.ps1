@@ -47,8 +47,9 @@ function Invoke-BranchTests([string]$BranchName) {
 
     if ($BranchName -ne $BuildBranch) {
         # The mod is compiled once, against $BuildBranch, and must run unchanged on every branch.
-        # Only the mod's own folders are synced so other installed mods on this branch are left alone.
-        foreach ($folder in "Watcher", "BaseLib") {
+        # Only the mod's own folder is synced so other installed mods on this branch are left alone.
+        # BaseLib is not synced: it comes from the Steam Workshop on every branch.
+        foreach ($folder in "Watcher") {
             $src = Join-Path (Get-Sts2Path $props $BuildBranch) "mods\$folder"
             Write-Host "=== [$BranchName] Syncing $BuildBranch-compiled $folder from $src ===" -ForegroundColor Cyan
             robocopy $src (Join-Path $gameDir "mods\$folder") /MIR /NFL /NDL /NJH /NJS /NP | Out-Null

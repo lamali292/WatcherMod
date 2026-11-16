@@ -107,7 +107,7 @@
         </Reference>
         <PackageReference Include="Alchyr.Sts2.BaseLib" Version="$(BaseLibVersion)" Condition="'$(UseLocalBaseLib)' != 'true'"/>
         <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="All"/>
-        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.1.9"/>
+        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.2.1"/>
     </ItemGroup>
     
     
