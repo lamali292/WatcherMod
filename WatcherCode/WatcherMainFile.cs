@@ -28,8 +28,7 @@ public static class WatcherMainFile
         ScriptManagerBridge.LookupScriptsInAssembly(assembly);
 
         var patcher = ModPatcher.Create(ModId, Logger);
-        patcher.Add(typeof(StanceModifyDamageMultiplicativePatch))
-            .Add(typeof(ColorfulPhilosophersPatch))
+        patcher.Add(typeof(ColorfulPhilosophersPatch))
             .Add(typeof(DeferredInitializationFmodFlushPatch))
             .Add(typeof(WorkshopPlaytimePatch))
             .Add(typeof(AfterDeathSourceCompatPatch));

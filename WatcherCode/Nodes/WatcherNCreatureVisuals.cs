@@ -17,7 +17,7 @@ public partial class WatcherNCreatureVisuals : NCreatureVisuals
 
 	private SpineAnimationAccess SpineEyeAnimation => new(SpineEye);
 
-	// SetAnimation returns void on newer game builds and MegaTrackEntry on 0.107.x. The return type is part of the
+	// SetAnimation returns void on newer game builds and MegaTrackEntry on older builds. The return type is part of the
 	// call signature, so a direct call compiled against one branch throws MissingMethodException on the other.
 	private static readonly MethodInfo SetAnimationMethod = typeof(SpineAnimationAccess).GetMethods()
 		.First(m => m.Name == "SetAnimation" && m.GetParameters()[0].ParameterType == typeof(string));

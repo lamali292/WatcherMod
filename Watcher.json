@@ -6,7 +6,7 @@
   "version": "1.5.16",
   "has_pck": true,
   "has_dll": true,
-  "min_game_version": "0.107.1",
+  "min_game_version": "0.111.0",
   "dependencies": [
     {
       "id": "BaseLib",

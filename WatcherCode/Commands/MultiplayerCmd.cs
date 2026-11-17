@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Reflection;
 using BaseLib.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Multiplayer;
@@ -48,9 +49,24 @@ public static class MultiplayerCmd
         var order = players.OrderBy(player => player.NetId == ctx.OwnerId).ToList();
         foreach (var player in order)
         {
-            var branch = new BranchingPlayerChoiceContext(source, localId.Value, ctx);
+            var branch = CreateBranch(source, localId.Value, ctx);
             await branch.AssignTaskAndWaitForPauseOrCompletion(action(branch, player));
         }
+    }
+
+    // 0.111 takes a GameActionType between the net id and the parent context; 0.113 dropped it.
+    private static readonly ConstructorInfo BranchCtor = typeof(BranchingPlayerChoiceContext).GetConstructors()
+        .OrderByDescending(c => c.GetParameters().Length).First();
+
+    private static BranchingPlayerChoiceContext CreateBranch(AbstractModel source, ulong netId, PlayerChoiceContext parent)
+    {
+        var args = BranchCtor.GetParameters().Select(p =>
+            p.ParameterType == typeof(AbstractModel) ? (object)source
+            : p.ParameterType == typeof(ulong) ? netId
+            : p.ParameterType == typeof(GameActionType) ? GameActionType.Combat
+            : p.ParameterType == typeof(PlayerChoiceContext) ? parent
+            : p.HasDefaultValue ? p.DefaultValue : null).ToArray();
+        return (BranchingPlayerChoiceContext)BranchCtor.Invoke(args);
     }
 
     /// <summary>Every given player Scrys <paramref name="amount" /> at the same time.</summary>
