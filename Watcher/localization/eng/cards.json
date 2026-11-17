@@ -179,7 +179,7 @@
   "WATCHER-WISH_WATCHER.description": "Choose one:\nGain {PlatedArmorPower:diff()} [gold]Plated Armor[/gold],\n{StrengthPower:diff()} [gold]Strength[/gold], or {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Choose a Card to play.",
   "WATCHER-SHARED_WISDOM.title": "Shared Wisdom",
-  "WATCHER-SHARED_WISDOM.description": "Another player enters [gold]Divinity[/gold].",
+  "WATCHER-SHARED_WISDOM.description": "Choose an ally to enter [gold]Divinity[/gold] with you.",
   "WATCHER-SHARED_FORESIGHT.title": "Shared Foresight",
   "WATCHER-SHARED_FORESIGHT.description": "ALL players [gold]Scry[/gold] {Scry:diff()}.",
   "WATCHER-HOLD_FAST.title": "Hold Fast",

@@ -179,7 +179,7 @@
   "WATCHER-WISH_WATCHER.description": "Выберите и получите одно:\n{PlatedArmorPower:diff()} [gold]Пластинчатой брони[/gold],\n{StrengthPower:diff()} [gold]силы[/gold] или {Gold:diff()} [gold]золота[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Выберите карту, которую хотите разыграть.",
   "WATCHER-SHARED_WISDOM.title": "Единство разума",
-  "WATCHER-SHARED_WISDOM.description": "Другой игрок переходит в [gold]Божественность[/gold].",
+  "WATCHER-SHARED_WISDOM.description": "Выберите союзника, который перейдёт в [gold]Божественность[/gold] вместе с вами.",
   "WATCHER-SHARED_FORESIGHT.title": "Общее предвидение",
   "WATCHER-SHARED_FORESIGHT.description": "ВСЕ игроки [gold]предсказывают[/gold] {Scry:diff()} карты.",
   "WATCHER-HOLD_FAST.title": "Держаться",
