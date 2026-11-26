@@ -2,11 +2,11 @@
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Forms;
 using MegaCrit.Sts2.Core.TestSupport;
 
 namespace Watcher.WatcherCode.Vfx;
 
-/*
 [GlobalClass]
 public partial class NDevaFormVfx  : NFormVfx
 {
@@ -15,7 +15,7 @@ public partial class NDevaFormVfx  : NFormVfx
     
     public static NDevaFormVfx? Create(Creature target)
     {
-        if (TestMode.IsOn)
+        if (TestMode.IsOn || target.Player == null)
             return null;
         var creatureNode = NCombatRoom.Instance?.GetCreatureNode(target);
         if (creatureNode == null) return null;
@@ -24,4 +24,4 @@ public partial class NDevaFormVfx  : NFormVfx
         creatureNode.Visuals.AddFormVfx(formVfx);
         return formVfx;
     }
-}*/
+}

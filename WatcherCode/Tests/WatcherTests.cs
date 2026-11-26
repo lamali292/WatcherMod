@@ -1,8 +1,10 @@
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using Watcher.Code.Cards.Basic;
+using Watcher.Code.Cards.Rare;
 using Watcher.Code.Core;
 using Watcher.Code.Powers;
 using Watcher.Code.Stances;
@@ -50,5 +52,25 @@ public class WatcherTests
 
         Assert.IsTrue(!enemy.IsAlive, "Precondition: the second hit should kill.");
         Assert.IsTrue(lethal == nonLethal, $"Killing blow should return the power's block exactly once (non-lethal {nonLethal}, lethal {lethal}).");
+    }
+
+    // Regression: the Fatal upgrade must still happen when the killing blow ends the combat. CardCmd.Upgrade skips
+    // once combat is ending, so LessonLearned upgrades by hand. Lone enemy => this kill ends the combat.
+    [CardTest(typeof(Character.Watcher))]
+    public async Task LessonLearnedUpgradesWhenKillEndsCombat(TestContext ctx)
+    {
+        var enemies = ctx.Combat.HittableEnemies.ToList();
+        foreach (var other in enemies.Skip(1)) await CreatureCmd.Kill(other, true);
+        var enemy = enemies[0];
+        await CreatureCmd.SetCurrentHp(enemy, 1);
+
+        var deck = PileType.Deck.GetPile(ctx.Player).Cards;
+        var upgradedBefore = deck.Count(c => c.IsUpgraded);
+        Assert.IsTrue(deck.Any(c => c.IsUpgradable), $"Precondition: needs an upgradable deck card (deck has {deck.Count()} cards).");
+        await ctx.PlayCard(await ctx.AddCardToHand<LessonLearned>(), enemy);
+
+        Assert.IsTrue(!enemy.IsAlive, "Precondition: the hit should kill the last enemy.");
+        Assert.IsTrue(deck.Count(c => c.IsUpgraded) == upgradedBefore + 1,
+            $"Killing the last enemy should upgrade one deck card ({upgradedBefore} upgraded before, {deck.Count(c => c.IsUpgraded)} after).");
     }
 }

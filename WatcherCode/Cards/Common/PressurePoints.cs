@@ -32,7 +32,7 @@ public sealed class PressurePoints : WatcherCardModel
         {
             var damage = Calc(enemy);
             if (damage <= 0) continue;
-            await CompatibilityCreatureCmd.Damage(
+            await CreatureCmd.Damage(
                 ctx,
                 enemy,
                 damage,

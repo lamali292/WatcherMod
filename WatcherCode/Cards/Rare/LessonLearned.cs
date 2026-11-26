@@ -3,13 +3,13 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
+using Watcher.Code.Compatibility;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -39,8 +39,10 @@ public sealed class LessonLearned : WatcherCardModel
             await Cmd.Wait(0.5f);
             var cardModel = Owner.RunState.Rng.Niche.NextItem(upgradableCards);
             if (cardModel == null) return;
+            // Not CardCmd.Upgrade: it does nothing once combat is ending, and a killing blow on the last enemy
+            // ends the combat before this runs, which would silently drop the upgrade.
             Owner.RunState.CurrentMapPointHistoryEntry?.GetEntry(Owner.NetId).UpgradedCards.Add(cardModel.Id);
-            cardModel.UpgradeInternal();
+            cardModel.UpgradeInternalCompat();
             cardModel.FinalizeUpgradeInternal();
             if (LocalContext.IsMe(Owner))
                 NRun.Instance?.GlobalUi.CardPreviewContainer.AddChildSafely(NCardSmithVfx.Create([

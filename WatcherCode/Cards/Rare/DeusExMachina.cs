@@ -27,6 +27,6 @@ public sealed class DeusExMachina : WatcherCardModel
     {
         if (drawnCard != this) return;
         await WatcherCmd.GiveCards<Miracle>(Owner, DynamicVars.Cards.IntValue, PileType.Hand, animationTime: 0.1f);
-        await CardCmdCompatibility.Exhaust(choiceContext, this);
+        await CardCmd.Exhaust(choiceContext, this);
     }
 }

@@ -16,12 +16,7 @@ public sealed class Collect : WatcherCardModel
     public Collect() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithKeywords(CardKeyword.Exhaust);
-        WithTip(new TooltipSource(_ =>
-        {
-            var beam = ModelDb.GetById<Miracle>(ModelDb.Card<Miracle>().Id).ToMutable();
-            beam.UpgradeInternal();
-            return HoverTipFactory.FromCard(beam);
-        }));
+        WithTip(new TooltipSource(_ => HoverTipFactory.FromCard<Miracle>(true)));
     }
 
     protected override bool HasEnergyCostX => true;

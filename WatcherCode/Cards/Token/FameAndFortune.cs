@@ -20,7 +20,7 @@ public sealed class FameAndFortune : WishableWatcherCard
 
     public override async Task OnWish(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        VfxCmd.PlayOnCreature(Owner.Creature, "vfx/vfx_coin_explosion_regular");
+        VfxCmd.PlayOnCreatures([Owner.Creature],"vfx/vfx_coin_explosion_regular");
         await PlayerCmd.GainGold(DynamicVars.Gold.IntValue, Owner);
     }
 }

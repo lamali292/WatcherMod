@@ -4,6 +4,8 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using Watcher.WatcherCode.Vfx;
 using Watcher.Code.Abstract;
 
 namespace Watcher.Code.Powers;
@@ -25,48 +27,34 @@ public sealed class DevaPower : WatcherPowerModel
             return;
 
         // Give energy
+        Vfx?.OnEffectTriggered();
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, player);
         DynamicVars.Energy.UpgradeValueBy(Amount);
         Flash();
     }
 
-    /*
-    private NDevaFormVfx? _vfx;
-
+    // Same pattern as the base game's form powers (e.g. DemonFormPower): the idle VFX is created when the power is
+    // applied and switched off when it is removed. A destroyed node (combat over) reads as null.
     private NDevaFormVfx? Vfx
     {
-        get => _vfx == null || _vfx.IsValid() ? _vfx : null;
+        get => field == null || field.IsValid() ? field : null;
         set
         {
             AssertMutable();
-            _vfx = value;
+            field = value;
         }
-    }*/
-    
-    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
-    {
-        /*Vfx = NDevaFormVfx.Create(Owner); */
-        return Task.CompletedTask;
-    }
-    
-    /*
-    
-    public override Task BeforeSideTurnStart(
-        PlayerChoiceContext choiceContext,
-        CombatSide side,
-        IReadOnlyList<Creature> participants,
-        ICombatState combatState)
-    {
-        if (!participants.Contains(Owner))
-            return Task.CompletedTask;
-        Vfx?.SetActive(true);
-        return Task.CompletedTask;
     }
 
+    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        // Stacking applies the power again; keep the one VFX instead of adding another.
+        Vfx ??= NDevaFormVfx.Create(Owner);
+        return Task.CompletedTask;
+    }
 
     public override Task AfterRemoved(Creature oldOwner)
     {
         Vfx?.SetActive(false);
         return Task.CompletedTask;
-    }*/
+    }
 }

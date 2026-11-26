@@ -2,6 +2,7 @@
 using Watcher.Code.Compatibility;
 using MegaCrit.Sts2.Core.AutoSlay;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.CardRewardAlternatives;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -23,13 +24,26 @@ public class CardTestRunner
 	private readonly List<string> _passed = [];
 	private RunState _run = null!;
 
+	/// Installs a test-only card selector. The mod is compiled once against beta but also runs on public, where the
+	/// selector still lives on CardSelectCmd.UseSelector(selector, localOnly); beta moved it to CardSelectorStack.
+	private static IDisposable UseTestSelector(ICardSelector selector)
+	{
+		var asm = typeof(CardSelectCmd).Assembly;
+		var stack = asm.GetType("MegaCrit.Sts2.Core.CardSelection.CardSelectorStack")?
+			.GetMethod("SetTestSelector", BindingFlags.Public | BindingFlags.Static, null, [typeof(ICardSelector)], null);
+		if (stack != null) return (IDisposable)stack.Invoke(null, [selector])!;
+		var cmd = typeof(CardSelectCmd).GetMethod("UseSelector", BindingFlags.Public | BindingFlags.Static, null,
+			[typeof(ICardSelector), typeof(bool)], null) ?? throw new MissingMethodException("No test selector API found");
+		return (IDisposable)cmd.Invoke(null, [selector, false])!;
+	}
+
 	/// <param name="filter">Optional case-insensitive substring matched against "Type.Method"; null runs everything.</param>
 	public async Task<TestRunResult> RunAllTestsAsync(string seed, CancellationToken ct, string? filter = null)
 	{
 		var started = DateTime.UtcNow;
 		var wasTestMode = TestMode.IsOn;
 		TestMode.IsOn = true;
-		var selectorScope = CardSelectCmdCompatibility.UseSelector(new FirstCardSelector());
+		var selectorScope = UseTestSelector(new FirstCardSelector());
 
 		try
 		{
@@ -37,8 +51,8 @@ public class CardTestRunner
 			// ReflectionTypeLoadException for some assemblies - those are skipped, not fatal.
 			var testMethods = AppDomain.CurrentDomain.GetAssemblies()
 				.SelectMany(GetLoadableTypes)
-				.SelectMany(t => t.GetMethods())
-				.Where(m => m.GetCustomAttributes(typeof(CardTestAttribute), false).Length > 0)
+				.SelectMany(GetLoadableMethods)
+				.Where(IsCardTest)
 				.Where(m => string.IsNullOrEmpty(filter) ||
 				            $"{m.DeclaringType?.Name}.{m.Name}".Contains(filter, StringComparison.OrdinalIgnoreCase))
 				// Quick single-combat tests first, slow "play every card" pool tests last.
@@ -144,6 +158,32 @@ public class CardTestRunner
 			{
 				EndCombat();
 			}
+		}
+	}
+
+	// Other mods' types can reference assemblies that aren't loadable (e.g. a missing Downfall sub-assembly on public);
+	// reflecting over them throws FileNotFoundException, which must not abort the whole run.
+	private static IEnumerable<MethodInfo> GetLoadableMethods(Type type)
+	{
+		try
+		{
+			return type.GetMethods();
+		}
+		catch
+		{
+			return [];
+		}
+	}
+
+	private static bool IsCardTest(MethodInfo method)
+	{
+		try
+		{
+			return method.GetCustomAttributes(typeof(CardTestAttribute), false).Length > 0;
+		}
+		catch
+		{
+			return false;
 		}
 	}
 
