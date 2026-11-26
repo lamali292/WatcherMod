@@ -178,7 +178,7 @@
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "选择一张要打出的牌。",
   "WATCHER-WISH_WATCHER.title": "许愿",
   "WATCHER-REVELATION.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n进入[gold]平静[/gold]。\n每当你离开[gold]平静[/gold]时，将这张牌从[gold]弃牌堆[/gold]放回你的[gold]手牌[/gold]。",
-  "WATCHER-SHARED_WISDOM.description": "另一名玩家进入[gold]神格[/gold]。",
+  "WATCHER-SHARED_WISDOM.description": "选择一名盟友与你进入[gold]神格[/gold]。",
   "WATCHER-SHARED_WISDOM.title": "共享智慧",
   "WATCHER-SHARED_FORESIGHT.title": "共享预见",
   "WATCHER-SHARED_FORESIGHT.description": "所有玩家[gold]预见[/gold]{Scry:diff()}。",

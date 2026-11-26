@@ -178,7 +178,7 @@
   "WATCHER-WISH_WATCHER.title": "願いごと",
   "WATCHER-REVELATION.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n[gold]平静[/gold]の[gold]スタンス[/gold]に入る。\n[gold]平静[/gold]を解除するたび、[gold]捨札[/gold]から[gold]手札[/gold]に戻す。",
   "WATCHER-REVELATION.title": "再啓示",
-  "WATCHER-SHARED_WISDOM.description": "別のプレイヤーが[gold]神聖[/gold]に入る。",
+  "WATCHER-SHARED_WISDOM.description": "味方を1人選び、その味方と共に[gold]神聖[/gold]に入る。",
   "WATCHER-SHARED_WISDOM.title": "共有の知恵",
   "WATCHER-SHARED_FORESIGHT.title": "共有の先見",
   "WATCHER-SHARED_FORESIGHT.description": "すべてのプレイヤーが[gold]占術[/gold]{Scry:diff()}を行う。",

@@ -179,7 +179,7 @@
   "WATCHER-WISH_WATCHER.description": "Choisissez:\nGagnez {PlatedArmorPower:diff()} [gold]d'Armure Plaquée[/gold],\n{StrengthPower:diff()} de [gold]Force[/gold], ou {Gold:diff()} [gold]d'Or[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Choisissez une carte à Jouer.",
   "WATCHER-SHARED_WISDOM.title": "Sagesse Partagée",
-  "WATCHER-SHARED_WISDOM.description": "Un autre joueur entre en [gold]Divinité[/gold].",
+  "WATCHER-SHARED_WISDOM.description": "Choisissez un allié qui entre en [gold]Divinité[/gold] avec vous.",
   "WATCHER-SHARED_FORESIGHT.title": "Prévoyance partagée",
   "WATCHER-SHARED_FORESIGHT.description": "TOUS les joueurs [gold]scrutent[/gold] {Scry:diff()} cartes.",
   "WATCHER-HOLD_FAST.title": "Tenir bon",

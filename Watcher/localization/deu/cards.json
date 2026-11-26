@@ -179,7 +179,7 @@
   "WATCHER-WISH_WATCHER.description": "Wähle eins:\nErhalte {PlatedArmorPower:diff()} [gold]Panzerrüstung[/gold],\n{StrengthPower:diff()} [gold]Stärke[/gold] oder {Gold:diff()} [gold]Gold[/gold].",
   "WATCHER-WISH_WATCHER.selectionScreenPrompt": "Wähle eine Karte zum Spielen.",
   "WATCHER-SHARED_WISDOM.title": "Geteilte Weisheit",
-  "WATCHER-SHARED_WISDOM.description": "Ein Mitspieler nimmt [gold]Göttlichkeit[/gold] an.",
+  "WATCHER-SHARED_WISDOM.description": "Wähle einen Verbündeten, der mit dir [gold]Göttlichkeit[/gold] annimmt.",
   "WATCHER-SHARED_FORESIGHT.title": "Geteilte Voraussicht",
   "WATCHER-SHARED_FORESIGHT.description": "ALLE Spieler [gold]spähen[/gold] {Scry:diff()}.",
   "WATCHER-HOLD_FAST.title": "Festhalten",

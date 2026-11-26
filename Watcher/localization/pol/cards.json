@@ -133,7 +133,7 @@
   "WATCHER-SASH_WHIP.title": "Smagnięcie szarfą",
   "WATCHER-SCRAWL_WATCHER.description": "Dobieraj karty aż do zapełnienia [gold]ręki[/gold].",
   "WATCHER-SCRAWL_WATCHER.title": "Bazgroły",
-  "WATCHER-SHARED_WISDOM.description": "Inny gracz przyjmuje [gold]postawę Boskości[/gold].",
+  "WATCHER-SHARED_WISDOM.description": "Wybierz sojusznika, który przyjmie [gold]postawę Boskości[/gold] razem z tobą.",
   "WATCHER-SHARED_WISDOM.title": "Wspólna mądrość",
   "WATCHER-SIGNATURE_MOVE.description": "Można zagrać jeżeli to jedyna karta ataku w twojej [gold]ręce[/gold].\nZadaj {Damage:diff()} pkt. obrażeń.",
   "WATCHER-SIGNATURE_MOVE.title": "Popisowy numer",
