@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Watcher.Code.Abstract;
 using Watcher.Code.Character;
+using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -14,7 +15,7 @@ public sealed class Ragnarok : WatcherCardModel
     public Ragnarok() : base(3, CardType.Attack, CardRarity.Rare, TargetType.RandomEnemy)
     {
         WithDamage(5, 1);
-        WithVars(new RepeatVar(5).WithUpgrade(1));
+        WithHitCount(5, 1);
     }
 
 
@@ -22,7 +23,7 @@ public sealed class Ragnarok : WatcherCardModel
     {
         // Lightning strike on each struck enemy, like Ragnarok's divine bolts in Slay the Spire 1.
         await CommonActions.CardAttack(this, cardPlay)
-            .WithHitCount(DynamicVars.Repeat.IntValue)
+            .WithHitCount(DynamicVars.HitCountCompat.IntValue)
             .WithHitFx("vfx/vfx_attack_lightning")
             .Execute(choiceContext);
     }

@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Watcher.Code.Core;
+using Watcher.Code.DynamicVars;
 using Watcher.Code.Extensions;
 using Watcher.Code.Stances;
 
@@ -31,6 +32,16 @@ public abstract class WatcherCardModel(
         if (showTooltip)
             WithTips(e => [HoverTipFactory.FromPower<T>(e.DynamicVars.Power<T>().IntValue)]);
         return this;
+    }
+
+    /// <summary>
+    ///     The attack's hit count ("HitCount"): the previewed value includes hit-count modifiers such as Thumbscrew.
+    ///     Pass <paramref name="name"/> to use a different variable name than "HitCount".
+    /// </summary>
+    protected ConstructedCardModel WithHitCount(int baseVal, int upgradeVal = 0,
+        string name = WatcherHitCountVar.DefaultName)
+    {
+        return WithVar(new WatcherHitCountVar(name, baseVal).WithUpgrade(upgradeVal));
     }
 
     protected ConstructedCardModel WithScry(int baseVal, int upgrade)

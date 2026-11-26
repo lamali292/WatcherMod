@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using Watcher.Code.Cards.Basic;
 using Watcher.Code.Cards.Rare;
+using Watcher.Code.Cards.Uncommon;
 using Watcher.Code.Core;
 using Watcher.Code.Powers;
 using Watcher.Code.Stances;
@@ -72,5 +73,16 @@ public class WatcherTests
         Assert.IsTrue(!enemy.IsAlive, "Precondition: the hit should kill the last enemy.");
         Assert.IsTrue(deck.Count(c => c.IsUpgraded) == upgradedBefore + 1,
             $"Killing the last enemy should upgrade one deck card ({upgradedBefore} upgraded before, {deck.Count(c => c.IsUpgraded)} after).");
+    }
+
+    // Tantrum shuffles itself into the draw pile via ModifyCardPlayResultLocation instead of going to the discard pile.
+    [CardTest(typeof(Character.Watcher))]
+    public async Task TantrumShufflesIntoDrawPile(TestContext ctx)
+    {
+        var tantrum = await ctx.AddCardToHand<Tantrum>();
+        await ctx.PlayCard(tantrum, ctx.Combat.HittableEnemies.First());
+
+        Assert.IsTrue(tantrum.Pile?.Type == PileType.Draw,
+            $"Tantrum should end up in the draw pile after being played (was {tantrum.Pile?.Type}).");
     }
 }

@@ -5,6 +5,7 @@ using Watcher.Code.Abstract;
 using Watcher.Code.Cards.Token;
 using Watcher.Code.Character;
 using Watcher.Code.Commands;
+using Watcher.Code.Extensions;
 
 namespace Watcher.Code.Cards.Rare;
 
@@ -25,6 +26,6 @@ public sealed class ConjureBlade : WatcherCardModel
         if (IsUpgraded)
             x += 1;
         var expunger = await WatcherCmd.GiveCard<Expunger>(Owner, PileType.Draw, CardPilePosition.Random);
-        expunger?.DynamicVars.Repeat.UpgradeValueBy(x + 1);
+        expunger?.DynamicVars.HitCountCompat.UpgradeValueBy(x + 1);
     }
 }
